@@ -1,0 +1,53 @@
+{
+  "paper_id": "bf109c1cdab0c8d597081be6962ea5848fa06221",
+  "title": "Friendly Sharpness-Aware Minimization",
+  "authors": ["Li, T.", "Zhou, P.", "He, Z.", "Cheng, X.", "Huang, X."],
+  "year": 2024,
+  "venue": "Computer Vision and Pattern Recognition",
+  "publication_status_observed": "CVPR 2024 (arXiv:2403.12350v1)",
+  "main_claims": [
+    "The batch-specific stochastic gradient noise component in SAM's adversarial perturbation is the primary driver of SAM's generalization improvement, not the full gradient component.",
+    "The full gradient component in SAM's perturbation actually degrades generalization by increasing dataset-level sharpness inconsistently with the per-minibatch minimization step.",
+    "F-SAM, which removes the full gradient component via an EMA approximation and retains only the stochastic noise component, outperforms vanilla SAM while being robust to perturbation radius choices."
+  ],
+  "methodology": "SAM's minibatch gradient perturbation is decomposed into a full-gradient projection and a residual stochastic-noise component. Ablations (SAM-full, SAM-db, SAM-noise) isolate each component's effect on CIFAR-10/100 and fine-tuning tasks. F-SAM uses an exponential moving average of historical gradients to estimate the full gradient, then subtracts it from the minibatch gradient to obtain the noise-only perturbation. Convergence is proved for non-convex problems. Experiments use ResNet-18, VGG16-BN, and DeiT-S on CIFAR and Oxford datasets.",
+  "key_results": [
+    "SAM-noise (using only the noise component) achieves 81.21% on ResNet-18/CIFAR-100, versus 80.88% for vanilla SAM and 78.02% for SAM-full.",
+    "F-SAM demonstrates superior generalization performance and better robustness to perturbation radius across multiple datasets compared to vanilla SAM.",
+    "As minibatch size for the perturbation step increases (strengthening the full-gradient component), SAM's classification accuracy on CIFAR-100 monotonically decreases."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Theoretical analysis assumes SGD as base optimizer; convergence guarantees for Adam-based variants are not provided.",
+    "EMA approximation of the full gradient introduces a hyper-parameter λ whose interaction with learning rate schedules is not fully characterized.",
+    "Experiments are limited to classification on standard CIFAR/ImageNet-subset benchmarks; no OOD corruption benchmarks (CIFAR-C) are tested."
+  ],
+  "relevance_to_rq": "Directly relevant to the RQ's 'why SAM works' sub-question: F-SAM provides evidence that SAM's generalization gains come from stochastic noise in the perturbation rather than loss sharpness reduction per se, challenging a purely sharpness-centric explanation of SAM's OOD gains.",
+  "key_quotes": [
+    {
+      "text": "using only the full gradient component for perturbation significantly degrades SAM's generalization, which is also observed by [15]",
+      "page_approx": 2,
+      "context": "Empirical finding that the full-gradient direction in SAM's perturbation hurts rather than helps generalization"
+    },
+    {
+      "text": "the effectiveness of SAM primarily arises from the presence of the stochastic gradient noise component within the minibatch gradient",
+      "page_approx": 2,
+      "context": "Central mechanistic claim attributing SAM's benefit to noise, not sharpness reduction"
+    },
+    {
+      "text": "removing the full gradient component in the perturbation step can relieve the adversarial perturbation impact on other data points except for current minibatch data",
+      "page_approx": 2,
+      "context": "Explanation for why F-SAM improves consistency between the perturbation and minimization steps"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-aware minimization for efficiently improving generalization (Foret et al.)",
+    "Towards understanding sharpness-aware minimization (Andriushchenko & Flammarion)",
+    "How sharpness-aware minimization minimizes sharpness? (Wen et al.)",
+    "Surrogate gap minimization improves sharpness-aware training (GSAM, Zhuang et al.)",
+    "Adaptive sharpness-aware minimization (ASAM, Kwon et al.)"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": "evidence_strength is mixed: the decomposition experiments are causal ablations within the training pipeline, but the generalization claims remain correlational/demonstrative at the aggregate level."
+}

@@ -1,0 +1,53 @@
+{
+  "paper_id": "58123025178256279bb060ca5da971b62bc329ee",
+  "title": "Sharp Minima Can Generalize For Deep Nets",
+  "authors": ["Dinh, L.", "Pascanu, R.", "Bengio, S.", "Bengio, Y."],
+  "year": 2017,
+  "venue": "International Conference on Machine Learning",
+  "publication_status_observed": "ICML 2017 proceedings (34th International Conference on Machine Learning, Sydney)",
+  "main_claims": [
+    "Most standard notions of flatness (volume epsilon-flatness, Hessian spectral norm, epsilon-sharpness) are problematic for deep rectifier networks because the non-negative homogeneity of ReLU activations allows construction of observationally equivalent parameters with arbitrarily sharper or flatter loss surfaces.",
+    "Reparametrisation of the function (e.g., weight normalisation, batch normalisation) can change the geometry of the loss landscape drastically without affecting the function's generalisation properties.",
+    "Flatness as commonly measured cannot be used directly to explain or predict generalisation in deep networks without first specifying and justifying a particular parametrisation."
+  ],
+  "methodology": "The paper presents theoretical arguments using alpha-scale transformations of a single hidden-layer rectifier network to show that every minimum is observationally equivalent to a minimum with arbitrarily large Hessian spectral norm or arbitrarily small epsilon-sharpness. Proofs are given for volume epsilon-flatness (Theorem 2), Hessian-based measures (Theorems 3-5), and epsilon-sharpness (Section 4.3), and analogous results for reparametrised functions are derived in Section 5.",
+  "key_results": [
+    "For any deep rectifier network, every non-constant minimum has infinite volume epsilon-flatness (Theorem 2), rendering that measure uninformative for comparing generalisability.",
+    "For any minimum with non-zero Hessian, there exists an observationally equivalent parametrisation with arbitrarily large spectral norm of the Hessian, so sharpness defined by spectral norm is not parametrisation-invariant.",
+    "With weight normalisation reparametrisation, every minimum is observationally equivalent to both an infinitely sharp minimum and an infinitely flat minimum, further undermining flatness-based generalization arguments."
+  ],
+  "evidence_strength": "theoretical",
+  "limitations": [
+    "The counter-examples rely on specific scale symmetries of ReLU networks; the argument may not extend directly to architectures without such symmetries (e.g., batch-normalised networks where the symmetry is broken differently).",
+    "The paper does not provide empirical evidence that the constructed sharp-but-equivalent parametrisations are ever visited by gradient-based optimisers in practice.",
+    "The analysis focuses on 0-1 loss KL-divergence arguments from Hochreiter & Schmidhuber; more recent PAC-Bayes bounds with KL-invariant measures are not refuted."
+  ],
+  "relevance_to_rq": "This is a foundational counter-argument to flatness-based explanations of generalisation, directly motivating the RQ's scepticism that sharpness alone explains SAM's OOD gains and supporting the need for complementary representation-stability measures like CKA.",
+  "key_quotes": [
+    {
+      "text": "most notions of flatness are problematic for deep models and can not be directly applied to explain generalization",
+      "page_approx": 1,
+      "context": "Abstract statement of the paper's central thesis challenging flatness-based generalization arguments"
+    },
+    {
+      "text": "by exploiting the non-Euclidean geometry and non-identiﬁability of rectiﬁed neural networks, we were able to demonstrate some of the limits of using typical deﬁnitions of minimum's ﬂatness as core explanation for generalization",
+      "page_approx": 7,
+      "context": "Summary of theoretical contributions at the end of Section 4"
+    },
+    {
+      "text": "the geometry of the associated parameter space can alter the ranking between prediction functions when considering several measures of ﬂatness/sharpness",
+      "page_approx": 2,
+      "context": "Motivation for why scale symmetries undermine standard flatness definitions"
+    }
+  ],
+  "related_work_mentioned": [
+    "Flat minima (Hochreiter & Schmidhuber, 1997)",
+    "On large-batch training for deep learning: generalization gap and sharp minima (Keskar et al., 2017)",
+    "Entropy-SGD: Biasing gradient descent into wide valleys (Chaudhari et al., 2017)",
+    "NICE: Non-linear independent components estimation (Dinh et al., 2014)",
+    "Density estimation using Real NVP (Dinh et al., 2016)"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": null
+}

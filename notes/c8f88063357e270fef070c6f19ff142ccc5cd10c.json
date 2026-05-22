@@ -1,0 +1,53 @@
+{
+  "paper_id": "c8f88063357e270fef070c6f19ff142ccc5cd10c",
+  "title": "Towards Efficient and Scalable Sharpness-Aware Minimization",
+  "authors": ["Liu, Y.", "Mai, S.", "Chen, X.", "Hsieh, C.", "You, Y."],
+  "year": 2022,
+  "venue": "Computer Vision and Pattern Recognition",
+  "publication_status_observed": "CVPR 2022 (arXiv:2203.02714v1)",
+  "main_claims": [
+    "SAM's per-step direction towards flat regions (the orthogonal component gv) changes slowly across iterations and can be reused periodically without significant accuracy loss.",
+    "LookSAM, which recomputes the flat-region-seeking direction only every k steps, achieves accuracy comparable to vanilla SAM while reducing training time substantially.",
+    "Look-LayerSAM (combining periodic updates with layer-wise perturbation scaling) enables ViT training at batch sizes up to 64k, setting a new speed record."
+  ],
+  "methodology": "SAM's update direction is decomposed into gh (parallel to SGD gradient) and gv (orthogonal, pointing toward flatter regions). LookSAM recomputes gv every k steps and reuses it otherwise. The stability of gv across iterations is verified empirically and theoretically via Taylor expansion. Experiments cover ResNet-18/50, WideResNet on CIFAR-100, and ViT-B/S models on ImageNet-1k. Large-batch experiments use up to 1024 TPU-v3 chips.",
+  "key_results": [
+    "LookSAM-5 achieves the same accuracy as vanilla SAM on ResNet-18/CIFAR-100 (80.7%) and ViT-B-16/ImageNet (79.8%) while reducing training time by roughly 32% per epoch for ViT-B-16.",
+    "Look-LayerSAM scales ViT-B-16 training to 32k batch size with 77.1% top-1 accuracy on ImageNet-1k, completing training in 0.7 hours.",
+    "The gap between LookSAM and SAM-k (naive periodic SAM) is 0.6–1.0% on WideResNet-28-10/CIFAR-100, demonstrating the importance of reusing the projected component rather than simply skipping steps."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "The efficiency analysis focuses on ViTs; whether LookSAM's accuracy-speed tradeoff holds for smaller CNN models under OOD conditions is not examined.",
+    "No OOD or corruption benchmark experiments (e.g. CIFAR-C) are included; only in-distribution accuracy is reported.",
+    "The theoretical stability bound for gv ignores third-order terms; how well this approximation holds in practice for different architectures is not fully characterized."
+  ],
+  "relevance_to_rq": "Peripheral to the core RQ but relevant as a SAM variant: LookSAM's decomposition of SAM into a loss-descent and a flat-region component provides mechanistic insight into what SAM actually optimizes, but the paper does not study OOD generalization or compare to SWA.",
+  "key_quotes": [
+    {
+      "text": "the direction pointing to the flat region won't change significantly within a few iterations",
+      "page_approx": 4,
+      "context": "Empirical motivation for reusing gv across iterations in LookSAM"
+    },
+    {
+      "text": "LookSAM achieves similar accuracy gains to SAM while being tremendously faster - it enjoys comparable computational complexity with first-order optimizers such as SGD or Adam",
+      "page_approx": 1,
+      "context": "Main efficiency claim of LookSAM"
+    },
+    {
+      "text": "Keskar et al. showed that the main challenge in large-batch training is the convergence to sharp local minima due to insufficient noise in first-order stochastic updates, and SAM is a natural remedy for this problem",
+      "page_approx": 3,
+      "context": "Motivation linking SAM to the sharpness problem in large-batch training"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-aware minimization for efficiently improving generalization (Foret et al.)",
+    "An image is worth 16x16 words: Transformers for image recognition at scale (ViT, Dosovitskiy et al.)",
+    "Averaging weights leads to wider optima and better generalization (SWA, Izmailov et al.)",
+    "On large-batch training for deep learning: Generalization gap and sharp minima (Keskar et al.)",
+    "Sharp minima can generalize for deep nets (Dinh et al.)"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": null
+}

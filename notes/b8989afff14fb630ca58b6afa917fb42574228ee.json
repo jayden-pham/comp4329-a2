@@ -1,0 +1,53 @@
+{
+  "paper_id": "b8989afff14fb630ca58b6afa917fb42574228ee",
+  "title": "Averaging Weights Leads to Wider Optima and Better Generalization",
+  "authors": ["Izmailov, P.", "Podoprikhin, D.", "Garipov, T.", "Vetrov, D.", "Wilson, A. G."],
+  "year": 2018,
+  "venue": "Conference on Uncertainty in Artificial Intelligence",
+  "publication_status_observed": "Proceedings of the 34th Conference on Uncertainty in Artificial Intelligence (UAI); arXiv preprint arXiv:1803.05407v3",
+  "main_claims": [
+    "Stochastic Weight Averaging (SWA) — averaging SGD iterates with cyclical or constant learning rates — finds much wider optima than SGD and consistently improves generalization.",
+    "SGD with cyclical/constant learning rates traverses the periphery of a set of high-performing weight solutions; SWA moves toward the center of this set, yielding flatter and better-generalizing solutions.",
+    "SWA approximates Fast Geometric Ensembling (FGE) with a single model at essentially no additional computational overhead."
+  ],
+  "methodology": "SWA averages model weights collected at minimum learning rate points (cyclical schedule) or at each epoch (constant schedule) after initial SGD training. Evaluated on CIFAR-10, CIFAR-100 (VGG-16, Preactivation ResNet-164, WRN-28-10, Shake-Shake, PyramidNet-272) and ImageNet (ResNet-50/152, DenseNet-161). Flatness/width of optima compared via loss landscape visualization along random directions and the SWA-SGD line segment.",
+  "key_results": [
+    "SWA improves WRN-28-10 accuracy on CIFAR-100 from 80.82% (SGD) to 81.46%–82.15% (1–1.5 budgets).",
+    "SWA improves ResNet-50 on ImageNet from 76.15% to 76.97% (top-1) with 10 epochs of averaging.",
+    "SWA finds solutions in flatter loss basins than SGD: much further displacement is needed to increase test error by a given amount from SWA compared to SGD."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "SWA uses a single final average rather than an ensemble, which limits the diversity of predictions compared to FGE.",
+    "SWA finds solutions in the same loss basin as SGD initialization; it does not escape to different basins.",
+    "The paper does not evaluate OOD generalization on corruption benchmarks; improvements are shown on standard i.i.d. test sets."
+  ],
+  "relevance_to_rq": "Directly relevant to the weight_averaging and flat_minima_for_dg sub-topics: SWA is the flat-minima-oriented control optimizer in the RQ's experiment. The paper establishes that SWA finds flatter solutions than SGD by a different mechanism (weight trajectory averaging) than SAM (adversarial perturbation), motivating using SWA as a control to separate flatness from optimization trajectory effects.",
+  "key_quotes": [
+    {
+      "text": "SWA procedure finds much flatter solutions than SGD, and approximates the recent Fast Geometric Ensembling (FGE) approach with a single model.",
+      "page_approx": 1,
+      "context": "Main claim about SWA finding flat minima"
+    },
+    {
+      "text": "SGD generally converges to a point near the boundary of the wide flat region of optimal points. SWA on the other hand is able to find a point centered in this region",
+      "page_approx": 2,
+      "context": "Geometric intuition explaining why SWA finds flatter solutions than SGD"
+    },
+    {
+      "text": "SWA is not finding a different minima than SGD, but rather a flatter region in the same basin of attraction.",
+      "page_approx": 7,
+      "context": "Clarification of SWA's relationship to SGD's basin of attraction"
+    }
+  ],
+  "related_work_mentioned": [
+    "Fast Geometric Ensembling (Garipov et al. 2018)",
+    "On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima",
+    "Flat minima (Hochreiter & Schmidhuber 1997)",
+    "Sharp minima can generalize for deep nets (Dinh et al.)",
+    "Entropy-SGD (Chaudhari et al.)"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": null
+}

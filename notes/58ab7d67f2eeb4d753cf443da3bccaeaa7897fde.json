@@ -1,0 +1,53 @@
+{
+  "paper_id": "58ab7d67f2eeb4d753cf443da3bccaeaa7897fde",
+  "title": "Surrogate Gap Minimization Improves Sharpness-Aware Training",
+  "authors": ["Zhuang, J.", "Gong, B.", "Yuan, L.", "Cui, Y.", "Adam, H.", "Dvornek, N.", "Tatikonda, S.", "Duncan, J. S.", "Liu, T."],
+  "year": 2022,
+  "venue": "International Conference on Learning Representations",
+  "publication_status_observed": "Published as a conference paper at ICLR 2022",
+  "main_claims": [
+    "SAM's perturbed loss can be low at both sharp and flat minima, so minimising the perturbed loss alone does not guarantee convergence to flat minima.",
+    "The surrogate gap h(w) = f_p(w) - f(w) is equivalent to the dominant Hessian eigenvalue at a local minimum when the perturbation radius is small, making it a principled sharpness measure.",
+    "GSAM, which jointly minimises the perturbed loss and the surrogate gap via gradient decomposition, achieves provably better generalisation than SAM with negligible computation overhead."
+  ],
+  "methodology": "The authors first prove (Lemma 3.3) that the surrogate gap is equivalent to the dominant Hessian eigenvalue at a local minimum. They then propose GSAM, which decomposes the gradient of the original loss into components parallel and orthogonal to the perturbed-loss gradient, and takes an ascent step in the orthogonal direction to minimise the surrogate gap without affecting the perturbed loss. Convergence and generalisation bounds are proved theoretically, and GSAM is evaluated on image classification with ResNets, ViT-B/32, and MLP-Mixer on ImageNet and CIFAR.",
+  "key_results": [
+    "GSAM achieves +3.2% over SAM and +5.4% over AdamW on ImageNet top-1 accuracy for ViT-B/32.",
+    "Lemma 3.3 proves sigma_max ≈ 2h(w*)/rho^2, establishing the surrogate gap as a sharpness measure equivalent to the dominant Hessian eigenvalue at local minima.",
+    "Ablation confirms that the ascent step in the orthogonal direction (the distinguishing feature of GSAM over SAM) is responsible for the additional improvement over SAM."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "The convergence analysis assumes a specific learning rate schedule and does not account for adaptive optimisers such as Adam.",
+    "The reparametrisation concern raised by Dinh et al. (2017) regarding flatness measures is explicitly set aside, potentially limiting theoretical applicability.",
+    "Empirical gains over SAM are modest on some benchmarks and the computational overhead, while described as negligible, still involves gradient decomposition."
+  ],
+  "relevance_to_rq": "GSAM's central insight—that SAM does not reliably minimise sharpness—directly supports the RQ's premise that SAM's benefits may not be fully explained by sharpness reduction. The paper motivates looking beyond the perturbed loss to understand what SAM actually achieves, complementing the RQ's focus on representation stability.",
+  "key_quotes": [
+    {
+      "text": "both sharp and ﬂat minima can have a low perturbed loss, implying that SAM does not always prefer ﬂat minima",
+      "page_approx": 1,
+      "context": "Central motivation for proposing GSAM, showing SAM's perturbed loss can disagree with sharpness"
+    },
+    {
+      "text": "the surrogate gap h(w∗) is an equivalent measure of the sharpness: σmax ≈ 2h(w∗)/ρ2",
+      "page_approx": 3,
+      "context": "Lemma 3.3 establishing the formal link between surrogate gap and dominant Hessian eigenvalue"
+    },
+    {
+      "text": "GSAM seeks a region with both small loss (by step 1) and low sharpness (by step 2), giving rise to a model with high generalization capabilities",
+      "page_approx": 1,
+      "context": "Conceptual description of the two-step GSAM algorithm in the abstract"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-aware minimization for efficiently improving generalization (Foret et al., 2020)",
+    "Averaging weights leads to wider optima and better generalization (Izmailov et al., 2018)",
+    "Entropy-SGD: Biasing gradient descent into wide valleys (Chaudhari et al., 2019)",
+    "ASAM: Adaptive sharpness-aware minimization (Kwon et al., 2021)",
+    "An image is worth 16x16 words: Vision transformers (Dosovitskiy et al., 2020)"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": "evidence_strength is mixed: theoretical results (convergence, Lemma 3.3) are formal proofs; empirical results are observational/correlational comparisons across architectures."
+}

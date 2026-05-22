@@ -1,0 +1,52 @@
+{
+  "paper_id": "aa12f44062c06f90526cb128f10e829846145b1f",
+  "title": "Improving robustness against common corruptions by covariate shift adaptation",
+  "authors": ["Schneider, S.", "Rusak, E.", "Eck, L.", "Bringmann, O.", "Brendel, W.", "Bethge, M."],
+  "year": 2020,
+  "venue": "Neural Information Processing Systems",
+  "publication_status_observed": "NeurIPS 2020 (34th Conference on Neural Information Processing Systems, Vancouver); arXiv preprint arXiv:2006.16971v2",
+  "main_claims": [
+    "Popular corruption benchmarks like ImageNet-C underestimate model robustness in scenarios where multiple unlabeled examples of the same corruption are available for adaptation.",
+    "Replacing batch normalization statistics (mean and variance) estimated on training data with statistics estimated on corrupted test images consistently improves robustness across 25 computer vision models.",
+    "Even adapting to a single corrupted sample improves robustness; 32 samples suffice to reach or surpass prior state-of-the-art on ImageNet-C for ResNet-50 architectures."
+  ],
+  "methodology": "BN statistics (running mean and variance) are adapted using unlabeled corrupted test images via a weighted mixture of training statistics (prior) and test statistics (likelihood), controlled by pseudo-sample-size hyperparameter N. Evaluated on 25 torchvision models, four leading ImageNet-C methods, and multiple datasets (ImageNet-C, ImageNet-A, ImageNet-V2, ObjectNet, ImageNet-R) at varying adaptation batch sizes.",
+  "key_results": [
+    "Vanilla ResNet-50 improves from 76.7% mCE to 62.2% mCE with full adaptation (n=50,000) on ImageNet-C.",
+    "DeepAug+AugMix model improves from 53.6% to 45.4% mCE with full adaptation.",
+    "Even with n=1 (single sample), ResNet-50 mCE improves from 76.7% to 71.4%."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "Requires multiple unlabeled samples from the same corruption type at test time; not applicable in truly ad hoc (single-sample) settings.",
+    "Adaptation is specific to shifts expressible as changes in BN statistics; other forms of distribution shift may not benefit.",
+    "Does not address representation stability or the source of improved robustness beyond covariate shift correction."
+  ],
+  "relevance_to_rq": "Relevant to the ood_benchmarks sub-topic: establishes ImageNet-C benchmark conventions and demonstrates that batch normalization statistics capture covariate shifts in corrupted images. The paper motivates careful benchmark design and shows that OOD robustness can be improved without optimizer changes, providing context for interpreting CIFAR-C results.",
+  "key_quotes": [
+    {
+      "text": "Replacing the activation statistics estimated by batch normalization on the training set with the statistics of the corrupted images consistently improves the robustness across 25 different popular computer vision models.",
+      "page_approx": 1,
+      "context": "Core finding: BN statistic adaptation improves OOD robustness"
+    },
+    {
+      "text": "ResNet-50 reaches 62.2% mCE on ImageNet-C compared to 76.7% without adaptation.",
+      "page_approx": 1,
+      "context": "Main quantitative result for ImageNet-C benchmark"
+    },
+    {
+      "text": "high-level distributional shifts from clean to corrupted images largely manifest themselves in a difference of first and second order moments in the internal representations of a deep network",
+      "page_approx": 3,
+      "context": "Mechanistic explanation: corruptions alter representation statistics"
+    }
+  ],
+  "related_work_mentioned": [
+    "Benchmarking Neural Network Robustness to Common Corruptions and Perturbations (ImageNet-C)",
+    "AugMix",
+    "DeepAugment",
+    "Domain adaptation"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": null
+}

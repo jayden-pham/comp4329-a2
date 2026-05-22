@@ -1,0 +1,3442 @@
+{
+  "max_papers": 60,
+  "n_seeds_kept": 16,
+  "n_others_kept": 44,
+  "n_deselected": 220,
+  "selected_others": [
+    {
+      "paperId": "0265144c696bf9371a0a63ece590dd2403ee71be",
+      "title": "When Do Flat Minima Optimizers Work?",
+      "year": 2022,
+      "score": 15.184,
+      "components": {
+        "kw_hits": 7,
+        "citation_count": 94,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "edb93cd1046a923f465e17a3707176c6d0c8018b",
+      "title": "GAQAT: gradient-adaptive quantization-aware training for domain generalization",
+      "year": 2024,
+      "score": 12.874,
+      "components": {
+        "kw_hits": 6,
+        "citation_count": 1,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "9a900ead92e413f909a815e1991dbcedf1b4c1e4",
+      "title": "Enhancing Robustness of Offline Reinforcement Learning Under Data Corruption via Sharpness-Aware Minimization (Student Abstract)",
+      "year": 2025,
+      "score": 12.87,
+      "components": {
+        "kw_hits": 6,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "0da44af38f5bbe7c342dd0bf05988378fb5dc192",
+      "title": "DGSAM: Domain Generalization via Individual Sharpness-Aware Minimization",
+      "year": 2025,
+      "score": 12.87,
+      "components": {
+        "kw_hits": 6,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "627fcbbc030c7dd7c89457e436741ec79c5025f7",
+      "title": "Locally Estimated Global Perturbations are Better than Local Perturbations for Federated Sharpness-aware Minimization",
+      "year": 2024,
+      "score": 11.529,
+      "components": {
+        "kw_hits": 5,
+        "citation_count": 36,
+        "year": 2024,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "ad6a428ce6e834e194385052ada41d07d21b1809",
+      "title": "Why is SAM Robust to Label Noise?",
+      "year": 2024,
+      "score": 11.486,
+      "components": {
+        "kw_hits": 5,
+        "citation_count": 25,
+        "year": 2024,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "a82ae40ecc5ea5e33b52c87c9464510cab7bf9d9",
+      "title": "Efficient Sharpness-aware Minimization for Improved Training of Neural Networks",
+      "year": 2021,
+      "score": 11.175,
+      "components": {
+        "kw_hits": 5,
+        "citation_count": 170,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "5a41152cfa769414f9d54cf436b98f36ffb0b729",
+      "title": "GA-SAM: Gradient-Strength based Adaptive Sharpness-Aware Minimization for Improved Generalization",
+      "year": 2022,
+      "score": 10.988,
+      "components": {
+        "kw_hits": 5,
+        "citation_count": 18,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "75d56a94035b9f00591145d4a4b542305e9cc9e8",
+      "title": "Implicit Sharpness-Aware Minimization for Domain Generalization",
+      "year": 2024,
+      "score": 10.886,
+      "components": {
+        "kw_hits": 5,
+        "citation_count": 4,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "b9af7e291f4ede06b251708f2477f2484b85e929",
+      "title": "GCSAM: Gradient Centralized Sharpness Aware Minimization",
+      "year": 2025,
+      "score": 10.87,
+      "components": {
+        "kw_hits": 5,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "1d83afc69d4b773c9ec808451f30f1157594a61e",
+      "title": "Weight Averaging for Out-of-Distribution Generalization and Few-Shot Domain Adaptation",
+      "year": 2025,
+      "score": 10.87,
+      "components": {
+        "kw_hits": 5,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "8407371dfe5d6a2ae082b6256b1ba1e25c0361c2",
+      "title": "Exploring Flatter Loss Landscape Surface via Sharpness-Aware Minimization with Linear Mode Connectivity",
+      "year": 2025,
+      "score": 10.854,
+      "components": {
+        "kw_hits": 5,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "58ab7d67f2eeb4d753cf443da3bccaeaa7897fde",
+      "title": "Surrogate Gap Minimization Improves Sharpness-Aware Training",
+      "year": 2022,
+      "score": 9.285,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 218,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "c8f88063357e270fef070c6f19ff142ccc5cd10c",
+      "title": "Towards Efficient and Scalable Sharpness-Aware Minimization",
+      "year": 2022,
+      "score": 9.256,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 171,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "efeaa77602c13e521e8359d2dad21228cac435f6",
+      "title": "AdaSAM: Boosting Sharpness-Aware Minimization with Adaptive Learning Rate and Momentum for Training Deep Neural Networks",
+      "year": 2023,
+      "score": 9.188,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 50,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "8adf430deefe6af08b894d28399eb027c2e8e69e",
+      "title": "An Adaptive Policy to Employ Sharpness-Aware Minimization",
+      "year": 2023,
+      "score": 9.183,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 48,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "19fe3894ce5b0a0be8fc7a8e21afc67657d75915",
+      "title": "Focal-SAM: Focal Sharpness-Aware Minimization for Long-Tailed Classification",
+      "year": 2025,
+      "score": 9.182,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 12,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "f86ed04b3613fdbc0a83ce86d7dbad75423a0f9e",
+      "title": "Sharpness-Aware Minimization: General Analysis and Improved Rates",
+      "year": 2025,
+      "score": 9.172,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 11,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "3a02d91d96f3594e0d25e9b978d3ea71c887d345",
+      "title": "Deep Neural Network Confidence Calibration from Stochastic Weight Averaging",
+      "year": 2024,
+      "score": 9.07,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 9,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "b4926d7efab904a97475f0fd53f62f9fe2a926b3",
+      "title": "When Flatness Does (Not) Guarantee Adversarial Robustness",
+      "year": 2025,
+      "score": 9.066,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 4,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "eb9eec791922d755667c0c7216f5c4d5135cb54e",
+      "title": "Sharpness-Aware Minimization Alone can Improve Adversarial Robustness",
+      "year": 2023,
+      "score": 9.061,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 17,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "6c895aa70c5649fce6abbd39d859ab12222be51b",
+      "title": "Modality-Balanced Collaborative Distillation for Multi-Modal Domain Generalization",
+      "year": 2025,
+      "score": 9.039,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 3,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "9f260770917a1bb7e86b36cb465cb6c10abbb2cc",
+      "title": "Gradient Compression May Hurt Generalization: A Remedy by Synthetic Data Guided Sharpness Aware Minimization",
+      "year": 2026,
+      "score": 9.034,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 1,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "bf109c1cdab0c8d597081be6962ea5848fa06221",
+      "title": "Towards Understanding The Calibration Benefits of Sharpness-Aware Minimization",
+      "year": 2025,
+      "score": 9.004,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 2,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "570b747a6b225022fdc004ca41f52e23bed9caad",
+      "title": "Understanding Flatness in Generative Models: Its Role and Benefits",
+      "year": 2025,
+      "score": 9.004,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 2,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "cff1cdb0cb3a1b2d11e30f2ccb382ee173cb79fa",
+      "title": "Exploring Flat Minima for Domain Generalization With Large Learning Rates",
+      "year": 2023,
+      "score": 8.963,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 7,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "6175af271685e1beefd8b1e0398434275e1acdd7",
+      "title": "Domain-Generalization to Improve Learning in Meta-Learning Algorithms",
+      "year": 2025,
+      "score": 8.954,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "a4002b51cf357bd741882062806b9204ce6e6a33",
+      "title": "Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization",
+      "year": 2024,
+      "score": 8.874,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 1,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "154f74a36a8ead7c2cabbbfe31431edefbc9f6ae",
+      "title": "Convergence of Sharpness-Aware Minimization Algorithms using Increasing Batch Size and Decaying Learning Rate",
+      "year": 2024,
+      "score": 8.874,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 1,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "4fd04422b0f8745d941cd3c33dfe98da90a225c8",
+      "title": "Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models",
+      "year": 2025,
+      "score": 8.87,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "91bdfebd256720253d142dd703fe93957846530b",
+      "title": "Efficiently Seeking Flat Minima for Better Generalization in Fine-Tuning Large Language Models and Beyond",
+      "year": 2025,
+      "score": 8.87,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "bb536b6b08a43e7c7543cab19bdea177f6c474f5",
+      "title": "Improving Sharpness-Aware Minimization Using Label Smoothing and Adaptive Adversarial Cross-Entropy Loss",
+      "year": 2025,
+      "score": 8.854,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "80f121d3d36bf4cf219f2b9856e13a04b2b7f210",
+      "title": "MGSER-SAM: Memory-Guided Soft Experience Replay with Sharpness-Aware Optimization for Enhanced Continual Learning",
+      "year": 2024,
+      "score": 8.79,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 0,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "7ba5cf55748aa1ee362bf45e925850b507291ca7",
+      "title": "Domain Generalization Needs Stochastic Weight Averaging for Robustness on Domain Shifts",
+      "year": 2021,
+      "score": 8.737,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 15,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "b5e53862f3274af5782b41b184effd275641d82d",
+      "title": "A Fair Comparison of Two Popular Flat-Minima Optimizers: Stochastic Weight Averaging vs. Sharpness-Aware Minimization",
+      "year": 2022,
+      "score": 8.733,
+      "components": {
+        "kw_hits": 4,
+        "citation_count": 7,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "744ef5b04a5322bb5f1c336755c0471e19c8e3ae",
+      "title": "Make Continual Learning Stronger via C-Flat",
+      "year": 2024,
+      "score": 7.529,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 36,
+        "year": 2024,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "11adeccff9c777798482097a9bade806c027eeb6",
+      "title": "The Dynamics of Sharpness-Aware Minimization: Bouncing Across Ravines and Drifting Towards Wide Minima",
+      "year": 2022,
+      "score": 7.417,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 54,
+        "year": 2022,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "06bd069861fe1a35223b41404b82d9fd9b0f75c6",
+      "title": "Sharpness-Aware Pretraining Mitigates Catastrophic Forgetting",
+      "year": 2026,
+      "score": 7.384,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 2,
+        "year": 2026,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "1c032413f8c26ff693aca0d941ceba48a4711b6e",
+      "title": "Generalized Federated Learning via Sharpness Aware Minimization",
+      "year": 2022,
+      "score": 7.287,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 221,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "ce871754f3ce42c507f4643082c17573509e54a6",
+      "title": "Friendly Sharpness-Aware Minimization",
+      "year": 2024,
+      "score": 7.275,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 53,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "aa12f44062c06f90526cb128f10e829846145b1f",
+      "title": "Improving robustness against common corruptions by covariate shift adaptation",
+      "year": 2020,
+      "score": 7.253,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 627,
+        "year": 2020,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "613ce6b5cf9c5b7093582134631ef77f368a9067",
+      "title": "Explicit Eigenvalue Regularization Improves Sharpness-Aware Minimization",
+      "year": 2025,
+      "score": 7.246,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 21,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "d931b38b84d2fca1371a5b643546872984b0cfc0",
+      "title": "Improving Generalization in Federated Learning by Seeking Flat Minima",
+      "year": 2022,
+      "score": 7.239,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 149,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "aa5741c74b7fac10680c1cfbdd49d9ffb5751a68",
+      "title": "Using Pre-Training Can Improve Model Robustness and Uncertainty",
+      "year": 2019,
+      "score": 7.207,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 827,
+        "year": 2019,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    }
+  ],
+  "deselected": [
+    {
+      "paperId": "7427156bbf19829a956c0ce130443ee5a6045345",
+      "title": "Sharpness-Aware Minimization Leads to Low-Rank Features",
+      "year": 2023,
+      "score": 7.164,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 41,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "994a95139915e787298b260b32274388a236ace8",
+      "title": "Sharpness-Aware Minimization Efficiently Selects Flatter Minima Late in Training",
+      "year": 2024,
+      "score": 7.154,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 19,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "a848529e1e8f9501c3e5c4cbeb5595cffb28f787",
+      "title": "Flatness-Aware Minimization for Domain Generalization",
+      "year": 2023,
+      "score": 7.152,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 37,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "4a33b7b3425805822d487d283c4f82b9f55c4473",
+      "title": "Rethinking Centered Kernel Alignment in Knowledge Distillation",
+      "year": 2024,
+      "score": 7.141,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 17,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "6af5cdb1c6d54ed75a32353f3c31097eca6cb35e",
+      "title": "On Interaction Between Augmentations and Corruptions in Natural Corruption Robustness",
+      "year": 2021,
+      "score": 7.139,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 126,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "169ead48300d7d775fdb0fcb88005c02720a5efb",
+      "title": "The Crucial Role of Normalization in Sharpness-Aware Minimization",
+      "year": 2023,
+      "score": 7.135,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 32,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "3f88cc75affa68705dadd5b59089665c0d3e5c0b",
+      "title": "Gaussian Stochastic Weight Averaging for Bayesian Low-Rank Adaptation of Large Language Models",
+      "year": 2024,
+      "score": 7.134,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 16,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "0522f97eebe1e653dd875883d10fae8a3dde0d53",
+      "title": "Why Does Sharpness-Aware Minimization Generalize Better Than SGD?",
+      "year": 2023,
+      "score": 7.124,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 29,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "c5ee9fc8bd862efc8afdf0866142ff572dd34c73",
+      "title": "Practical Sharpness-Aware Minimization Cannot Converge All the Way to Optima",
+      "year": 2023,
+      "score": 7.124,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 29,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "186c34066e44f2b3b9b61b5e5ae73fd4911d8dcc",
+      "title": "A Universal Class of Sharpness-Aware Minimization Algorithms",
+      "year": 2024,
+      "score": 7.119,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 14,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "342c5b0c831ac0d6d3a3325997e0e1f97c67abe0",
+      "title": "Efficient Sharpness-Aware Minimization for Molecular Graph Transformer Models",
+      "year": 2024,
+      "score": 7.111,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 13,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "88b8afb9003c710e8984a67ef22194eac9ee284d",
+      "title": "Sharpness-Aware Model-Agnostic Long-Tailed Domain Generalization",
+      "year": 2024,
+      "score": 7.092,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 11,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "677da51c5866c0532bb56223c8410ad265e2b11a",
+      "title": "Stochastic Weight Averaging Revisited",
+      "year": 2022,
+      "score": 7.072,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 37,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "0fbc23db45c484e85296d4f37cebe24003a1334b",
+      "title": "Seeking Consistent Flat Minima for Better Domain Generalization via Refining Loss Landscapes",
+      "year": 2024,
+      "score": 7.07,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 9,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "fd2de9f4e5baa2a70c9cb1e19860efa5d8097ca3",
+      "title": "\u03bc P2: Effective Sharpness Aware Minimization Requires Layerwise Perturbation Scaling",
+      "year": 2024,
+      "score": 7.043,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 7,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "67a247273c759afe4e0c0a38abfd5b6250d11f6e",
+      "title": "Adaptive Stochastic Weight Averaging",
+      "year": 2024,
+      "score": 7.043,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 7,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "466386f9a8db8aebcbbf9df3174c793344dbeebf",
+      "title": "Investigating Calibration and Corruption Robustness of Post-hoc Pruned Perception CNNs: An Image Classification Benchmark Study",
+      "year": 2024,
+      "score": 7.027,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 6,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "53ca11e0393ab21b6021eb6cf8ab9d3d8eef4081",
+      "title": "Neural Ensemble Search for Uncertainty Estimation and Dataset Shift",
+      "year": 2020,
+      "score": 7.016,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 88,
+        "year": 2020,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "7f4c9985c69d4cf474d78ddb4edc9e7e5e72160a",
+      "title": "Deconfounded Representation Similarity for Comparison of Neural Networks",
+      "year": 2022,
+      "score": 7.006,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 21,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "12d8b2ec10f0b9b6a6d50681ab386563fd175c6c",
+      "title": "A Fast and Flat Federated Learning Method via Weighted Momentum and Sharpness-Aware Minimization",
+      "year": 2025,
+      "score": 7.004,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 2,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "d1994e34349b351e589a163c254138a4374f621b",
+      "title": "Learning from Loss Landscape: Generalizable Mixed-Precision Quantization via Adaptive Sharpness-Aware Gradient Aligning",
+      "year": 2025,
+      "score": 7.004,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 2,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "e49a78f72a90ce29ca1af9d684afb58e7459f78e",
+      "title": "Estimating Neural Representation Alignment from Sparsely Sampled Inputs and Features",
+      "year": 2025,
+      "score": 7.004,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 2,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "e6a338b7464c719fef57515a4b7c0beaa9097a35",
+      "title": "Sharpness-Aware Gradient Alignment for Domain Generalization With Noisy Labels in Intelligent Fault Diagnosis",
+      "year": 2024,
+      "score": 6.992,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 11,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "d9f7d495701b81c5244258a2fb2f14b96dfa7869",
+      "title": "Grounding Representation Similarity with Statistical Testing",
+      "year": 2021,
+      "score": 6.989,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 36,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "24e1b2f2157d81f122553b4c2a001e50638c92a1",
+      "title": "Enhancing Robustness and Generalization Capability for Multimodal Recommender Systems via Sharpness-Aware Minimization",
+      "year": 2025,
+      "score": 6.957,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 6,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "228349ebb4c960dcce461a69774a748c1500a3d4",
+      "title": "Sharp Minima Can Generalize: A Loss Landscape Perspective On Data",
+      "year": 2025,
+      "score": 6.954,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "2856fa7d8e43951f51e9ace00743853067ddcc3f",
+      "title": "FEDTAIL: Federated Long-Tailed Domain Generalization with Sharpness-Guided Gradient Matching",
+      "year": 2025,
+      "score": 6.954,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "b0253a3e2e1ba943cd6957e5f214cb8d64985110",
+      "title": "Evaluating Uncertainty in Deep Gaussian Processes",
+      "year": 2025,
+      "score": 6.954,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "914c01b27b5fb4a79c36c492c18bf1d4ba76a36a",
+      "title": "PurSAMERE: Reliable Adversarial Purification via Sharpness-Aware Minimization of Expected Reconstruction Error",
+      "year": 2026,
+      "score": 6.95,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "711a422ec46419556d1d2c9b756ea73f281933d6",
+      "title": "Data Distribution as a Lever for Guiding Optimizers Toward Superior Generalization in LLMs",
+      "year": 2026,
+      "score": 6.95,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "4c5f4b13fefd4945492a44d2ecb85e312f52fdf8",
+      "title": "Sharpness-Aware Lookahead for Accelerating Convergence and Improving Generalization",
+      "year": 2024,
+      "score": 6.927,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 6,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "13354e5ecc6655c6911386c3b4c1f74ebdad4ceb",
+      "title": "Toward Universal Medical Image Registration via Sharpness-Aware Meta-Continual Learning",
+      "year": 2024,
+      "score": 6.924,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 2,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "d227e45f02d8d324a3cd1eb6d7d3cf5e5d501707",
+      "title": "Adaptive Sharpness-Aware Minimization for Adversarial Domain Generalization",
+      "year": 2025,
+      "score": 6.904,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 2,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "ddf28e24bf945f7ce3291dd62505647208c488b6",
+      "title": "SAR: Sharpness-Aware minimization for enhancing DNNs' Robustness against bit-flip errors",
+      "year": 2024,
+      "score": 6.893,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 7,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "921373a0bb614c6157b9037dc1ee29ba2f698b75",
+      "title": "FAM: Relative Flatness Aware Minimization",
+      "year": 2023,
+      "score": 6.879,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 3,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "f59800126b35ea942402b7ae5e7ceb9387639f7f",
+      "title": "FairSAM: Fair Classification on Corrupted Data Through Sharpness-Aware Minimization",
+      "year": 2025,
+      "score": 6.87,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "f2779ec5f717ee1194fcef565aafef33abf9c11f",
+      "title": "On the Relation between Sharpness-Aware Minimization and Adversarial Robustness",
+      "year": 2023,
+      "score": 6.794,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 2,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "5e3162fd3d0fe819f283f2f96990dd6154d989f0",
+      "title": "Research on the improvement of domain generalization by the fusion of invariant features and sharpness-aware minimization",
+      "year": 2024,
+      "score": 6.774,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 2,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "e036024b2874c5ce53101d549988d5012955297b",
+      "title": "Hyperbolic-SAM: sharpness-aware minimization in hyperbolic space for enhanced deep learning generalization",
+      "year": 2025,
+      "score": 6.77,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "ea33c2dccbdefbe81a4988fe099e741db1971576",
+      "title": "Sharpness-aware minimization (SAM) improves classification accuracy of bacterial Raman spectral data enabling portable diagnostics",
+      "year": 2025,
+      "score": 6.77,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "658520f9436dba9970fdb5a240b6315bdf631242",
+      "title": "General Dynamic Regularization Federated Learning with Hybrid Sharpness-Aware Minimization",
+      "year": 2025,
+      "score": 6.77,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "7761b497aa0096d43f7696040a20d0b5d206eb47",
+      "title": "Single-Domain Generalization via Path Flatness-Aware Optimization of Loss Landscapes",
+      "year": 2025,
+      "score": 6.77,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "00f625432f453a2ad2879e5f2c068582fa0bd65d",
+      "title": "Enhancing Robustness of Offline Reinforcement Learning Under Data Corruption via Sharpness-Aware Minimization",
+      "year": 2025,
+      "score": 6.72,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "665b540c001a3b7af742c7ddf8700118d28c648b",
+      "title": "Sharpness-aware debiased alignment for imbalanced domain generalization fault diagnosis",
+      "year": 2025,
+      "score": 6.72,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "241d461b387af5e55854847363816020dd4fde40",
+      "title": "SAMSON: Sharpness-Aware Minimization Scaled by Outlier Normalization for Improving DNN Generalization and Robustness",
+      "year": 2022,
+      "score": 6.714,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 1,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "0f06fefc9eee2712929f93c82e7aac6087b5b6da",
+      "title": "Applying Adaptive Sharpness-Aware Minimization to Improve Out-of-distribution Generalization",
+      "year": 2023,
+      "score": 6.694,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 1,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "0cf9d34b4e750b1fc763e0bf897a9594998561ad",
+      "title": "Improving Model Robustness With Frequency Component Modification and Mixing",
+      "year": 2024,
+      "score": 6.69,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "aa6470ae429f709ba18a3087212c31fa320c8ab9",
+      "title": "Stochastic Perturbation Averaging Boosts Transferability of Adversarial Examples",
+      "year": 2023,
+      "score": 6.61,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "2c443cc87a1bd847fe38905840f09228cf08f1f2",
+      "title": "Memory-Free Stochastic Weight Averaging by One-Way Variational Pruning",
+      "year": 2021,
+      "score": 6.584,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 2,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "35732422004de4c07ffc6d760f8926999eda6a81",
+      "title": "Supplementary Materials to \u2018Sharpness-Aware Gradient Matching for Domain Generalization\u2019",
+      "year": 2023,
+      "score": 6.56,
+      "components": {
+        "kw_hits": 3,
+        "citation_count": 0,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "c2dbd4460f73b4a91584717b08fcc5125706848a",
+      "title": "Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond",
+      "year": 2025,
+      "score": 5.366,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 58,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "20ba55ee3229db5cb190a00e788c59f08d2a767d",
+      "title": "Self-Training With Noisy Student Improves ImageNet Classification",
+      "year": 2019,
+      "score": 5.352,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 2739,
+        "year": 2019,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "ba8926f5d2615a233216ae7e98a50c6ffaa5eebf",
+      "title": "Benchmarking Robustness of 3D Object Detection to Common Corruptions in Autonomous Driving",
+      "year": 2023,
+      "score": 5.337,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 173,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "c8f5f6d981d96ebc84ba0a2665f00be3d1cfc27e",
+      "title": "SAMformer: Unlocking the Potential of Transformers in Time Series Forecasting with Sharpness-Aware Minimization and Channel-Wise Attention",
+      "year": 2024,
+      "score": 5.299,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 65,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "161a779f4c7b772604b01ed72f6e6ef6fe344199",
+      "title": "FedSWA: Improving Generalization in Federated Learning with Highly Heterogeneous Data via Momentum-Based Stochastic Controlled Weight Averaging",
+      "year": 2025,
+      "score": 5.279,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 28,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "44b6463ff3b39c51891235a0e891919dd21f00c0",
+      "title": "Diverse Weight Averaging for Out-of-Distribution Generalization",
+      "year": 2022,
+      "score": 5.254,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 169,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "d7b74d4aa41f46fab81aab880c0c9b17a8aa0695",
+      "title": "Tracing Representation Progression: Analyzing and Enhancing Layer-Wise Similarity",
+      "year": 2024,
+      "score": 5.199,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 28,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "716c25f3c9dda90a6980fbdd8664326868a1bde3",
+      "title": "Robust Generalization Against Photon-Limited Corruptions via Worst-Case Sharpness Minimization",
+      "year": 2023,
+      "score": 5.173,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 44,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "52640047b9c83fb00d711a823f7f38a67d94c9f7",
+      "title": "Analysing the Robustness of Vision-Language-Models to Common Corruptions",
+      "year": 2025,
+      "score": 5.172,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 11,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "d53fb3feeeab07a0d70bf466dd473ec6052ecc07",
+      "title": "Exploring Generalization in Deep Learning",
+      "year": 2017,
+      "score": 5.111,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 1406,
+        "year": 2017,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "04e38f986c123b6463ba56fd6d3863fbb06bb749",
+      "title": "Towards Robust Out-of-Distribution Generalization Bounds via Sharpness",
+      "year": 2024,
+      "score": 5.111,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 13,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "ae083ea4f920026d745d25d565553aa4170420bc",
+      "title": "Flatness is Necessary, Neural Collapse is Not: Rethinking Generalization via Grokking",
+      "year": 2025,
+      "score": 5.088,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 5,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "f0f6aa56d74bce44cbf511cd692038e9145e8462",
+      "title": "RegMixup: Mixup as a Regularizer Can Surprisingly Improve Accuracy and Out Distribution Robustness",
+      "year": 2022,
+      "score": 5.084,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 41,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "c8d6bedd54f4fc6190889c42be48e27a6f88c831",
+      "title": "Where are we with calibration under dataset shift in image classification?",
+      "year": 2025,
+      "score": 5.066,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 4,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "4846f7ed2f3c657ce88fad2ab926af9c1467f352",
+      "title": "Sample Weight Averaging for Stable Prediction",
+      "year": 2025,
+      "score": 5.039,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 3,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "8409af613ec9c96625ffb72497905584fea5e80d",
+      "title": "On the Interconnections of Calibration, Quantification, and Classifier Accuracy Prediction under Dataset Shift",
+      "year": 2025,
+      "score": 5.039,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 3,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "b5b7364609685b04876e5635cc7bcfc0ae353178",
+      "title": "Short-Term Load Forecasting Method Based on Bidirectional Long Short-Term Memory Model with Stochastic Weight Averaging Algorithm",
+      "year": 2024,
+      "score": 5.027,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 6,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "639b07626d140513a2aeac68ff52c3bb6db90bed",
+      "title": "Revisiting Batch Normalization for Improving Corruption Robustness",
+      "year": 2020,
+      "score": 5.022,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 93,
+        "year": 2020,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "2f4906d528b06f4c0ade342e4d610a937f8b23a5",
+      "title": "Assessments of epistemic uncertainty using Gaussian stochastic weight averaging for fluid-flow regression",
+      "year": 2021,
+      "score": 5.013,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 44,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "ad4d18424014c533452ae97affa2f18b73a82cc1",
+      "title": "Hide & Seek: Transformer Symmetries Obscure Sharpness & Riemannian Geometry Finds It",
+      "year": 2025,
+      "score": 5.004,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 2,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "5420213bb71bf4aecabd8c6f9ea24960ccc9af52",
+      "title": "A Single-Step, Sharpness-Aware Minimization is All You Need to Achieve Efficient and Accurate Sparse Training",
+      "year": 2024,
+      "score": 5.002,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 12,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "48fbf15ed5d7dc432db1db17858c3ff745ffb0ab",
+      "title": "Uncertainty-Aware Natural Language Inference with Stochastic Weight Averaging",
+      "year": 2023,
+      "score": 5.002,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 10,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "186613c43e79786d19ff845dc4709898fce7a719",
+      "title": "TimeCF: A TimeMixer-Based Model with adaptive Convolution and Sharpness-Aware Minimization Frequency Domain Loss for long-term time seris forecasting",
+      "year": 2025,
+      "score": 4.954,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "1c157969f3df1de4b6d09e7c3e8d33f3f80ca0e5",
+      "title": "Benchmarking Corruption Robustness of LVLMs: A Discriminative Benchmark and Robustness Alignment Metric",
+      "year": 2025,
+      "score": 4.954,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "05b2540c134a6afc77a96fac554384be385f425d",
+      "title": "From Snow to Rain: Evaluating Robustness, Calibration, and Complexity of Model-Based Robust Training",
+      "year": 2026,
+      "score": 4.95,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "1fad32195bcc0961b52e82535b6475b4e1c5bd2a",
+      "title": "Feature-Augmented Transformers for Robust AI-Text Detection Across Domains and Generators",
+      "year": 2026,
+      "score": 4.95,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "56ca51fdce18e23ce65d858805a847b450ebbc55",
+      "title": "Lost Domain Generalization Is a Natural Consequence of Lack of Training Domains",
+      "year": 2024,
+      "score": 4.943,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 7,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "dce18f1925220acc928f30afc55c4d174f4c986b",
+      "title": "Estimating calibration error under label shift without labels",
+      "year": 2023,
+      "score": 4.928,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 5,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "9f317c1e0dede56f455b949e2cd970435977dbe0",
+      "title": "DSDRNet: Disentangling Representation and Reconstruct Network for Domain Generalization",
+      "year": 2024,
+      "score": 4.924,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 2,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "3a222aa22ebb10325ddfe1df696876bc4fe6af6c",
+      "title": "\u03bdSAM: Memory-Efficient Sharpness-Aware Minimization via Nuclear Norm Constraints",
+      "year": 2025,
+      "score": 4.916,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 4,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "f533ed838c6ead5a3160c6bd26d005774e4c9a8c",
+      "title": "Efficient skin lesion segmentation using separable-Unet with stochastic weight averaging",
+      "year": 2019,
+      "score": 4.913,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 167,
+        "year": 2019,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "d3a97e45f2eeff48fbb28674ff742b7154e6208b",
+      "title": "Gaussian RBF Centered Kernel Alignment (CKA) in the Large-Bandwidth Limit",
+      "year": 2021,
+      "score": 4.894,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 16,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "9d607547cc9ebbd91efb3e5f52d40c997c42ea8d",
+      "title": "Generalization Analysis of Stochastic Weight Averaging with General Sampling",
+      "year": 2024,
+      "score": 4.877,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 6,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "9578149b8428e1bb662ebf7c93027e63ad657292",
+      "title": "Assessing Visually-Continuous Corruption Robustness of Neural Networks Relative to Human Performance",
+      "year": 2024,
+      "score": 4.874,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 1,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "d0a4d34a6d8b0c4f4e850ca1e9bb63d8b9bc5f9b",
+      "title": "Zero-Order Sharpness-Aware Minimization",
+      "year": 2025,
+      "score": 4.87,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "d14511db4fc4ec2a19141be962e8baf40d8aa1cf",
+      "title": "Enhancing Generalization via Sharpness-Aware Trajectory Matching for Dataset Condensation",
+      "year": 2025,
+      "score": 4.87,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "4db009a653df0c4ff8b350eed68f8b0e9872cbba",
+      "title": "AR2: Attention-Guided Repair for the Robustness of CNNs Against Common Corruptions",
+      "year": 2025,
+      "score": 4.87,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "12f6300c39ebfb5a2046af329e7b0bd015722d48",
+      "title": "DEEDEE: Fast and Scalable Out-of-Distribution Dynamics Detection",
+      "year": 2025,
+      "score": 4.87,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "2b64201dfb97cc8bcf514cbb49722b991fa34bd0",
+      "title": "Distilling Representational Similarity using Centered Kernel Alignment (CKA)",
+      "year": 2022,
+      "score": 4.85,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 20,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "37dc42047cd17c880cbbc57abf1387c77bc468c6",
+      "title": "ADCT: Improving Robustness and Calibration of Pattern Recognition Models Against Visual Illusions",
+      "year": 2026,
+      "score": 4.85,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "cf7c246309b79ef79b1759e8d905d93c04c84cc7",
+      "title": "An Uncertainty-Aware Multimodal Deep Learning Framework for Robust Cancer Diagnosis Under Dataset Shift",
+      "year": 2026,
+      "score": 4.85,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "d1a329e19c7c18f7000a975f214239af3766e34d",
+      "title": "Policy Generalization Enhancement for UAV Active Object Detection via Divide-and-Conquer Sharpness-Aware Gradient Matching",
+      "year": 2026,
+      "score": 4.85,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "95e82b438ba5a6242a0683d2301e1ea30fc8d88c",
+      "title": "BNN-SAM: Improving generalization of binary object detector by Seeking Flat Minima",
+      "year": 2024,
+      "score": 4.836,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 4,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "20e4b48a7e5e92b3b932e7af810512e34d6fe3d1",
+      "title": "Sufficient Invariant Learning for Distribution Shift",
+      "year": 2022,
+      "score": 4.826,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 4,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "b4516e0531d64b4b6cc7a35bd26ad29c07573a4a",
+      "title": "Sharpness-Aware Minimization with Z-Score Gradient Filtering for Neural Networks",
+      "year": 2025,
+      "score": 4.804,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "69beb7136f62cb3ec4dd3356d35f059cc67e1cf1",
+      "title": "Seeking Flat Minima with Mean Teacher on Semi- and Weakly-Supervised Domain Generalization for Object Detection",
+      "year": 2023,
+      "score": 4.794,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 1,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "fa47453a95d751ea310306cc6d1f9791b505d746",
+      "title": "DiM: f-Divergence Minimization Guided Sharpness-Aware Optimization for Semi-supervised Medical Image Segmentation",
+      "year": 2024,
+      "score": 4.79,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "e5dddfb9eeabe9ab15e99ef9bbd404e0cd8b7c37",
+      "title": "PathoWAve: A Deep Learning-Based Weight Averaging Method for Improving Domain Generalization in Histopathology Images",
+      "year": 2024,
+      "score": 4.79,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "b8b6107166e5b964d195fe1c415f865554b5a08f",
+      "title": "DSDRNet: Disentangling Representation and Reconstruct Network for Domain Generalization",
+      "year": 2024,
+      "score": 4.79,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "9fc7b3f09cb8ebfc64790f97c3005f12afd49b42",
+      "title": "How Image Corruption and Perturbation Affect Out-of-Distribution Generalization and Calibration",
+      "year": 2023,
+      "score": 4.779,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 3,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "f3ece84cf9da5aa38239a1427911abcb4bb7c537",
+      "title": "Domain Generalization of Deep Learning Models Under Subgroup Shift in Breast Cancer Prognosis",
+      "year": 2024,
+      "score": 4.774,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 1,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "5487862cce6c4e4241792de3fd3a3b68bd138c6d",
+      "title": "Improving Robustness of Post-hoc Calibration Against Common Corruptions By Learnable Augmentation",
+      "year": 2025,
+      "score": 4.77,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "51cad8bc83e946aa11d3cd0d0eba09228d645a41",
+      "title": "Reliable and Interpretable Cross-Population Machine Learning Framework for Chronic Kidney Disease Prediction",
+      "year": 2025,
+      "score": 4.77,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "b91f744a58209078d19a10b0bc2b001039097d80",
+      "title": "Robustness Benchmark for Unsupervised Anomaly Detection Models",
+      "year": 2023,
+      "score": 4.71,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "27a0eddf5fbc4761180d368184f1462afe129556",
+      "title": "Enhancing Deep Neural Network Corruption Robustness using Evolutionary Algorithm",
+      "year": 2023,
+      "score": 4.694,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 1,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "113a77ccd41689eb87235f16766c4a3184bdbe90",
+      "title": "A centered kernel alignment-based strategy for pest evolution tracing: Myiopsitta monachus case",
+      "year": 2023,
+      "score": 4.694,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 1,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "42ba510e0256f08bc014865dc276d602da01863e",
+      "title": "Sharpness-Aware Minimization Scaled by Outlier Normalization for Robust DNNs on In-Memory Computing Accelerators",
+      "year": 2024,
+      "score": 4.69,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "285f0a4df78aa0b5468e62f399ac1a031e4fb3a2",
+      "title": "C AN STOCHASTIC WEIGHT AVERAGING IMPROVE GENERALIZATION IN PRIVATE LEARNING ?",
+      "year": 2023,
+      "score": 4.644,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 1,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "992f0ba2c6082f85cfd3cec61b003372c2d94b04",
+      "title": "Meta-free representation learning for few-shot learning via stochastic weight averaging",
+      "year": 2022,
+      "score": 4.58,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "a7dfd558731130400a1087863f7f823394294f04",
+      "title": "Assessments of model-form uncertainty using Gaussian stochastic weight averaging for fluid-flow regression",
+      "year": 2021,
+      "score": 4.534,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 2,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "fc9405c00bab5873d9fadb167cdc65f36e20c007",
+      "title": "Calibration of Confidence in Deep Learning under Dataset Shift",
+      "year": 2019,
+      "score": 4.24,
+      "components": {
+        "kw_hits": 2,
+        "citation_count": 0,
+        "year": 2019,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "995c5f5e62614fcb4d2796ad2faab969da51713e",
+      "title": "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift",
+      "year": 2015,
+      "score": 3.757,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 46669,
+        "year": 2015,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "fc5fd1075795c43a5892858afbd78908c99816ea",
+      "title": "Why are Sensitive Functions Hard for Transformers?",
+      "year": 2024,
+      "score": 3.594,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 62,
+        "year": 2024,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "ae6cb93cb70c783ecc28d88ac9052de26d31d25a",
+      "title": "Gradient Pruning Interactive Attack for Vision-Language Pre-Training Models",
+      "year": 2026,
+      "score": 3.284,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 2,
+        "year": 2026,
+        "discovery_source": "snowball",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "b7a4be5a703f251b2d341d30ccec5e201881981b",
+      "title": "Gradient Matching for Domain Generalization",
+      "year": 2021,
+      "score": 3.268,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 365,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "629bc57782bb4326a3eb5f89314e350729c5f417",
+      "title": "AdapterSoup: Weight Averaging to Improve Generalization of Pretrained Language Models",
+      "year": 2023,
+      "score": 3.267,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 97,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "ec873d166eb68554ac95a117d9bb74908e593e01",
+      "title": "Steering Out-of-Distribution Generalization with Concept Ablation Fine-Tuning",
+      "year": 2025,
+      "score": 3.234,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 19,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "b3f1aa12dde233aaf543bb9ccb27213c494e0fd5",
+      "title": "Unlabeled Data Improves Adversarial Robustness",
+      "year": 2019,
+      "score": 3.203,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 803,
+        "year": 2019,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "5435d05882f189a1359e3395225959169a7888c4",
+      "title": "Flat-LoRA: Low-Rank Adaptation over a Flat Loss Landscape",
+      "year": 2024,
+      "score": 3.141,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 17,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "05c86e2ecdd3e2b3945a41305ec683a1babc2af0",
+      "title": "Graph neural networks extrapolate out-of-distribution for shortest paths",
+      "year": 2025,
+      "score": 3.137,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 8,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "b999f62546b9ebf17f11c8506307b83c862db49e",
+      "title": "DIVE: Subgraph Disagreement for Graph Out-of-Distribution Generalization",
+      "year": 2024,
+      "score": 3.134,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 16,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "c118fb3e009f3b4fb4974a659d4f532579e7521d",
+      "title": "Common Corruptions for Evaluating and Enhancing Robustness in Air-to-Air Visual Object Detection",
+      "year": 2024,
+      "score": 3.134,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 16,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "4c45a3e31084f159c04e14c7439553c962a06e8d",
+      "title": "Cross Contrasting Feature Perturbation for Domain Generalization",
+      "year": 2023,
+      "score": 3.119,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 28,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "1b4a54670bb4fe15bcb0d06de0391d5b6d10ace2",
+      "title": "Understanding the Failure Modes of Out-of-Distribution Generalization",
+      "year": 2020,
+      "score": 3.118,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 206,
+        "year": 2020,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "2d65798c7dcb31ce07864b35dc80f399f87ce9d0",
+      "title": "HYPO: Hyperspherical Out-of-Distribution Generalization",
+      "year": 2024,
+      "score": 3.111,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 13,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "e0bc25d7683d7042897a66b26a86ec08ed3005d4",
+      "title": "On the Robustness Tradeoff in Fine-Tuning",
+      "year": 2025,
+      "score": 3.088,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 5,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "d0839852326006cc0b8e4aa100a28214a56bad3d",
+      "title": "Systematic Review of Approaches to Preserve Machine Learning Performance in the Presence of Temporal Dataset Shift in Clinical Medicine",
+      "year": 2021,
+      "score": 3.075,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 74,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "e8d91a9a4366864e6f57187c083471e68285117d",
+      "title": "Robust deep learning object recognition models rely on low frequency information in natural images",
+      "year": 2022,
+      "score": 3.072,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 37,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "b67ded6580f4cc95b0f94a4a00b5fb7577f35552",
+      "title": "Antibody DomainBed: Out-of-Distribution Generalization in Therapeutic Protein Design",
+      "year": 2024,
+      "score": 3.057,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 8,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "892e308ebecd85c88282b45f21fe3f4027e360c8",
+      "title": "Causal Balancing for Domain Generalization",
+      "year": 2022,
+      "score": 3.055,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 32,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "b0c8727b8eaa858fcee2a9bfb52a00e1b9ed183f",
+      "title": "Deep networks on toroids: removing symmetries reveals the structure of flat regions in the landscape geometry",
+      "year": 2022,
+      "score": 3.048,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 30,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "f906919d4bfcdfc412eafe655a89e407ca4652bb",
+      "title": "FastDINOv2: Frequency Based Curriculum Learning Improves Robustness and Training Speed",
+      "year": 2025,
+      "score": 3.039,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 3,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "2fff1d71c751ad8bdaaa96b625d2b65eb2fb5eaa",
+      "title": "Certified Adversarial Robustness with Additive Noise",
+      "year": 2018,
+      "score": 3.033,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 381,
+        "year": 2018,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "f2fe8383f7634ec502ee8153f97c6ca450dcae30",
+      "title": "Test time Adaptation through Perturbation Robustness",
+      "year": 2021,
+      "score": 3.013,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 44,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "0774c5e725b7f9425296b0c6cfc88677fea8a7dc",
+      "title": "Estimating the Robustness Radius for Randomized Smoothing with 100\u2a09 Sample Efficiency",
+      "year": 2024,
+      "score": 3.008,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 5,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "24c0d237cd88fc2f6124f730c67e3ce2a08fb8b0",
+      "title": "Plug-and-Play PPO: An Adaptive Point Prompt Optimizer Making SAM Greater",
+      "year": 2025,
+      "score": 2.988,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 5,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "3c418d83183e00e6c5692e07f70bf1ed7311e10c",
+      "title": "Neural Collapse Inspired Feature Alignment for Out-of-Distribution Generalization",
+      "year": 2024,
+      "score": 2.982,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 10,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "4b1f2c68a9b09989b3e62bd7d4062d25058423c6",
+      "title": "Evaluating the Robustness of the\"Ensemble Everything Everywhere\"Defense",
+      "year": 2024,
+      "score": 2.959,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 3,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "7a2d9ee70246e7d35129862ad591e81d7d54faf9",
+      "title": "R\u00e9nyi Sharpness: A Novel Sharpness that Strongly Correlates with Generalization",
+      "year": 2025,
+      "score": 2.954,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "4d78085d2168b485ce065f6e34143f2d07a33ae6",
+      "title": "Adversarial Robustness against Multiple and Single lp-Threat Models via Quick Fine-Tuning of Robust Classifiers",
+      "year": 2021,
+      "score": 2.951,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 26,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "19d846a761c22e551d265f50cc3f625a6cfc9a00",
+      "title": "Conformal Prediction Under Distribution Shift: A COVID-19 Natural Experiment",
+      "year": 2026,
+      "score": 2.95,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "33036b28ab1064a58b6dbc64e63ee2f087f3e2f8",
+      "title": "CRISP: Rank-Guided Iterative Squeezing for Robust Medical Image Segmentation under Domain Shift",
+      "year": 2026,
+      "score": 2.95,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "e92f18b199ff5087ffa62d8c29332e30b855f962",
+      "title": "The Role of ViT Design and Training in Robustness to Common Corruptions",
+      "year": 2025,
+      "score": 2.939,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 3,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "5884ec9357d76ee6804f31611c65f905681ae227",
+      "title": "Can We Leverage Predictive Uncertainty to Detect Dataset Shift and Adversarial Examples in Android Malware Detection?",
+      "year": 2021,
+      "score": 2.926,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 21,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "16ab716dd8cbe2ee24a38b1fcad651d25b2bf36c",
+      "title": "Few-Shot Parameter Efficient Finetuning for SAM in Salient Steel Surface Defect Detection",
+      "year": 2025,
+      "score": 2.904,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 2,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "8191bfba6dc7e478f15bdf23442a61b187755f06",
+      "title": "Adversarial Robustness Overestimation and Instability in TRADES",
+      "year": 2024,
+      "score": 2.874,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 1,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "ba4df78a25779d82f2f7648bfcd4a2f57a21fd45",
+      "title": "Control the GNN: Utilizing Neural Controller with Lyapunov Stability for Test-Time Feature Reconstruction",
+      "year": 2024,
+      "score": 2.874,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 1,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "39c469839a7c4b799b685d0063ff5249736281eb",
+      "title": "Flat Minima and Generalization: Insights from Stochastic Convex Optimization",
+      "year": 2025,
+      "score": 2.87,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "d1e2807470413cc1a5b8b4236fb42aee53547ad9",
+      "title": "Frequency-Adaptive Sharpness Regularization for Improving 3D Gaussian Splatting Generalization",
+      "year": 2025,
+      "score": 2.87,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "f7b65720af591d69e0b1d370f23c6ea55d312059",
+      "title": "DRO-Augment Framework: Robustness by Synergizing Wasserstein Distributionally Robust Optimization and Data Augmentation",
+      "year": 2025,
+      "score": 2.87,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "a270fa8ebd2065e9905389584e84cac6f9e68411",
+      "title": "Evaluating the Impact of Compression Techniques on the Robustness of CNNs under Natural Corruptions",
+      "year": 2025,
+      "score": 2.87,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "a4bea21995fa1ab140bedf5dfdab167c1c2c684f",
+      "title": "Deep Neural Network Calibration by Reducing Classifier Shift with Stochastic Masking",
+      "year": 2025,
+      "score": 2.87,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "ee23179b669909090cca2e5daff91d366b85c4c9",
+      "title": "When Distributions Shifts: Causal Generalization for Low-Resource Languages",
+      "year": 2025,
+      "score": 2.87,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "9b80a448424ea11f7771cdfccc214741fc77bc00",
+      "title": "Brain-SAM: a general automatic SAM-based segmentation model for brain science images",
+      "year": 2025,
+      "score": 2.854,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "14bcdd8c56872349f3e50017c138f73a4bf80f13",
+      "title": "Sleep-Like Replay Reduces Loss-Landscape Sharpness to Improve Generalization (Student Abstract)",
+      "year": 2026,
+      "score": 2.85,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "29a3bdaab4091694eb3960b4adf3cb89902a702e",
+      "title": "A novel deep learning approach for mosquito species classification via a dual-head structure and calibration-aware fusion architecture",
+      "year": 2026,
+      "score": 2.85,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "f8179e9fe4da9e92fe331a7430332475b2afb250",
+      "title": "CaliFusion-CNN: A Confidence-Calibrated Multimodal Framework for Robust Cancer Diagnosis Under Dataset Shift",
+      "year": 2026,
+      "score": 2.85,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "1ffae58d796fe511ced7007d1fd8285f8213b1f3",
+      "title": "Graph adiabatic diffusion neural networks for distribution-shift breast tumor image classification",
+      "year": 2026,
+      "score": 2.85,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "857a3bcbf438166708c9b63cb8ec060451095d64",
+      "title": "Image Representation Induced Subspaces for Practical Classification Robustness",
+      "year": 2026,
+      "score": 2.85,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "a2308c1358cbb2f0331c8a138270927817fb863c",
+      "title": "Improving Out-of-Distribution Generalization in SAR Image Scene Classification with Limited Training Samples",
+      "year": 2023,
+      "score": 2.844,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 2,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "c36fd1662a7152dc538d8062e5d4975c3e2d7bf5",
+      "title": "Iterative Views Agreement: An Iterative Low-Rank Based Structured Optimization Method to Multi-View Spectral Clustering",
+      "year": 2016,
+      "score": 2.819,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 244,
+        "year": 2016,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "8cab64f41144e257c2b3f9da4132919bda2af2cb",
+      "title": "Simulating electric field intensity distribution of LSPR based on gold nanobipyramids",
+      "year": 2021,
+      "score": 2.808,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 18,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "a20efbe0bf1e5af0af29cd8966c8bc983a8ac6d0",
+      "title": "SmoothOut: Smoothing Out Sharp Minima to Improve Generalization in Deep Learning",
+      "year": 2018,
+      "score": 2.799,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 55,
+        "year": 2018,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "477699944d07696cc6d831fb5a71773bbbceeead",
+      "title": "Out of Distribution Generalization: KPI vs Spectrogram Based Jamming Classification in 5G",
+      "year": 2024,
+      "score": 2.774,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 1,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "f6751ede6ed1cd369287262620105fdd7f2a7972",
+      "title": "Predictive measures of out-of-distribution generalization",
+      "year": 2025,
+      "score": 2.77,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "3adf9edc4f36f7eb6ad5af572eafff4f24442461",
+      "title": "Self-supervised out-of-distribution detection: detecting metal implants and other anomalous CTs",
+      "year": 2025,
+      "score": 2.77,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "4111dd5a747dac44fffd630d72d335e69770dd10",
+      "title": "Stable Representation Learning on Graphs from Multiple Environments with Structure Distribution Shift",
+      "year": 2025,
+      "score": 2.77,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "bcb1be012855fadb5230d0d8faf39d04f5f18590",
+      "title": "Contrastive Learning with Positive Augmentation in Open World Test-Time Training",
+      "year": 2025,
+      "score": 2.77,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "81cf3f0b7d5fc833b0a14cabb621f5b37e62ec0d",
+      "title": "Spectral-Based Temperature Sensing in Cr:LiCAF Crystals Using Fluorescence Peak Shift Calibration",
+      "year": 2025,
+      "score": 2.77,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "eb952358bdee54c792e8d379ac55b7a716ac2b50",
+      "title": "Cross-Dataset Evaluation of Support Vector Machines: A Reproducible, Calibration-Aware Baseline for Tabular Classification",
+      "year": 2025,
+      "score": 2.77,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "d9fae6595005e491430c9726db223245b97653b2",
+      "title": "Cross Contrastive Feature Perturbation for Domain Generalization",
+      "year": 2023,
+      "score": 2.744,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 1,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "74d8ebadc43e677334bc99310d5d78051b1122ae",
+      "title": "BGD: Generalization Using Large Step Sizes to Attract Flat Minima",
+      "year": 2023,
+      "score": 2.71,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "00e13ee8f45ea5d84c2718a69e9cea629fe94632",
+      "title": "Exponential weight averaging as damped harmonic motion",
+      "year": 2023,
+      "score": 2.71,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "efa2cbb9cc3644340fdf4778aabc58964992d323",
+      "title": "Towards Eight-Bit Quantization for 3D U-Net Medical Image Segmentation via ROI-Based Calibration and Background-Aware Shift",
+      "year": 2024,
+      "score": 2.69,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "3901a8cebcd6f988f84e01f029e90a3c75884630",
+      "title": "A Model-Risk-Friendly Probability of Default Workflow: Calibration, Distribution-Free Uncertainty Quantification, and SHAP Explanations on the UCI Credit Card Default Dataset",
+      "year": 2024,
+      "score": 2.69,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "e426763e30266a117e718c75898dc30d29feb5cd",
+      "title": "Robust Contrastive Active Learning with Feature-guided Query Strategies",
+      "year": 2021,
+      "score": 2.684,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 2,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "77d20208c21fce9c2d59f57062e0e6ae464f4b76",
+      "title": "Adversarial robustness against multiple lp-threat models at the price of one and how to quickly fine-tune robust models to another threat model",
+      "year": 2021,
+      "score": 2.667,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 8,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "e485423b019f46b731c8d4267d4e81164c7ebc12",
+      "title": "Improving Identically Distributed and Out-of-Distribution Medical Image Classification with Segmentation-Guided Attention in Small Dataset Scenarios",
+      "year": 2024,
+      "score": 2.64,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "ad7e2dd9ce31c2093d5b611372c44654d8d594de",
+      "title": "Improving Consistency-Based Semi-Supervised Learning with Weight Averaging",
+      "year": 2018,
+      "score": 2.599,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 36,
+        "year": 2018,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "d627abde4cbdc3ed9c1423a14ae02b128adee08a",
+      "title": "Impact of realistic properties of the point spread function on classification tasks to reveal a possible distribution shift",
+      "year": 2022,
+      "score": 2.564,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 1,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "55e00df9038278ca5536df02dc993496120633ee",
+      "title": "Supplementary of Improved Test-Time Adapting for Domain Generalization",
+      "year": 2023,
+      "score": 2.56,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "ae6585b8402a03829d23b81a1eef835ac81ed664",
+      "title": "SmoothOut: Smoothing Out Sharp Minima for Generalization in Large-Batch Deep Learning",
+      "year": 2018,
+      "score": 2.427,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 8,
+        "year": 2018,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "eda9ee59894ca6ef7c3c345eb15667f36b18cfa9",
+      "title": "Limitations of Post-Hoc Feature Alignment for Robustness",
+      "year": 2021,
+      "score": 2.4,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "e86d43e0500b1b9a45b960bf2b4e1e0440f49fe7",
+      "title": "On the Generalization Capabilities of Sharp Minima in Case-Based Reasoning",
+      "year": 2019,
+      "score": 2.24,
+      "components": {
+        "kw_hits": 1,
+        "citation_count": 0,
+        "year": 2019,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "268d347e8a55b5eb82fb5e7d2f800e33c75ab18a",
+      "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+      "year": 2020,
+      "score": 2.112,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 62421,
+        "year": 2020,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "2c03df8b48bf3fa39054345bafabfeff15bfd11d",
+      "title": "Deep Residual Learning for Image Recognition",
+      "year": 2015,
+      "score": 1.95,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 228100,
+        "year": 2015,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "a6cb366736791bcccc5c8639de5a8f9636bf87e8",
+      "title": "Adam: A Method for Stochastic Optimization",
+      "year": 2014,
+      "score": 1.911,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 166147,
+        "year": 2014,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "9f1b79d77201016a2579c013c5d490a12ab596b7",
+      "title": "Seaborn: Statistical Data Visualization",
+      "year": 2021,
+      "score": 1.9,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 5622,
+        "year": 2021,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "23ffaa0fe06eae05817f527a47ac3291077f9e58",
+      "title": "Rethinking the Inception Architecture for Computer Vision",
+      "year": 2015,
+      "score": 1.707,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 30864,
+        "year": 2015,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "34f25a8704614163c4095b3ee2fc969b60de4698",
+      "title": "Dropout: a simple way to prevent neural networks from overfitting",
+      "year": 2014,
+      "score": 1.597,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 43112,
+        "year": 2014,
+        "discovery_source": "snowball",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "77f0a39b8e02686fd85b01971f8feb7f60971f80",
+      "title": "Identity Mappings in Deep Residual Networks",
+      "year": 2016,
+      "score": 1.583,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 11149,
+        "year": 2016,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "4177ec52d1b80ed57f2e72b0f9a42365f1a8598d",
+      "title": "Speech recognition with deep recurrent neural networks",
+      "year": 2013,
+      "score": 1.556,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 8956,
+        "year": 2013,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "bea3593ba91fda7c9ae2ee07ad3b9465cd45ffff",
+      "title": "Dichotomy of Early and Late Phase Implicit Biases Can Provably Induce Grokking",
+      "year": 2023,
+      "score": 1.535,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 74,
+        "year": 2023,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "54ddb00fa691728944fd8becea90a373d21597cf",
+      "title": "Understanding deep learning requires rethinking generalization",
+      "year": 2016,
+      "score": 1.487,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 5076,
+        "year": 2016,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "7e6c5ab94194eb0f7e8952432ddd5f5eaf9f8787",
+      "title": "Antibody: Strengthening Defense Against Harmful Fine-Tuning for Large Language Models via Attenuating Harmful Gradient Influence",
+      "year": 2026,
+      "score": 1.487,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 6,
+        "year": 2026,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "5541f9691641e7f61b4a0713cf1c7a6e688a36eb",
+      "title": "Does SGD really happen in tiny subspaces?",
+      "year": 2024,
+      "score": 1.476,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 23,
+        "year": 2024,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "8a4e2828777c9b3703e8e2b68ac27d9af496261a",
+      "title": "Same Pre-training Loss, Better Downstream: Implicit Bias Matters for Language Models",
+      "year": 2022,
+      "score": 1.467,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 82,
+        "year": 2022,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "7bbba5def4ceae2726bbc810983f5569d2c0494e",
+      "title": "Pre-training LLM without Learning Rate Decay Enhances Supervised Fine-Tuning",
+      "year": 2026,
+      "score": 1.446,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 4,
+        "year": 2026,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "bbb289167e727e1454bd6037113c0650411b62d1",
+      "title": "HTMuon: Improving Muon via Heavy-Tailed Spectral Correction",
+      "year": 2026,
+      "score": 1.384,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 2,
+        "year": 2026,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "540c226fdf7047ac602c7cb05a18db19ee595df0",
+      "title": "Computing Nonvacuous Generalization Bounds for Deep (Stochastic) Neural Networks with Many More Parameters than Training Data",
+      "year": 2017,
+      "score": 1.362,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 937,
+        "year": 2017,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "4478c3b1d0bebbdbf0a1c4f652c5a299206ab274",
+      "title": "Consolidation-Expansion Operator Mechanics:A Unified Framework for Adaptive Learning",
+      "year": 2026,
+      "score": 1.334,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 1,
+        "year": 2026,
+        "discovery_source": "snowball",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "655e4837a05afdfa03124d9c41c0912805423571",
+      "title": "Representation Topology Divergence: A Method for Comparing Neural Network Representations",
+      "year": 2021,
+      "score": 1.07,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 71,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "a22a6c6f6e3f33fdc6a09cb92b19709ecdb92110",
+      "title": "Neural-network-based practical specified-time resilient formation maneuver control for second-order nonlinear multi-robot systems under FDI attacks",
+      "year": 2025,
+      "score": 1.023,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 7,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "b07ba3dbdc56e1f1bf813c8bbad2ee9502b4b396",
+      "title": "Bina-Rep Event Frames: A Simple and Effective Representation for Event-Based Cameras",
+      "year": 2022,
+      "score": 0.988,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 18,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "3abb4f55d51108eaa2841bef03c9d5b2a3fc174a",
+      "title": "A comparison of cepstral and spectral features using recurrent neural network for spoken language identification",
+      "year": 2024,
+      "score": 0.959,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 3,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "f4154359828a5c01832fa86e21ec38acada47201",
+      "title": "Extrapolation Guarantees for Perturbation Modeling Under the Additive Latent Shift Assumption",
+      "year": 2025,
+      "score": 0.954,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 1,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "9654d1b2457a41db446e4f79a8f35e17047c31d7",
+      "title": "Predictive uncertainty estimation in deep learning for lung carcinoma classification in digital pathology under real dataset shifts",
+      "year": 2024,
+      "score": 0.924,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 2,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "60ef5e1b6c2cf0747f343fe311da78e280f9b7c0",
+      "title": "Long-only cryptocurrency portfolio management by ranking the assets: a neural network approach",
+      "year": 2025,
+      "score": 0.87,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "c86abcec884c96d839c2127a1f86448b7259bd70",
+      "title": "Trustworthy Explainable AI for Cross-Dataset Brain Tumor Diagnosis from MRI",
+      "year": 2026,
+      "score": 0.85,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 0,
+        "year": 2026,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "aa2c44ff32c5055657d1873acad36212e68416ab",
+      "title": "Questions for Flat-Minima Optimization of Modern Neural Networks",
+      "year": 2022,
+      "score": 0.792,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 12,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "bc4790348ade7bb1b16bdc90aab0269bcd66d34f",
+      "title": "Generalization Measures for Zero-Shot Cross-Lingual Transfer",
+      "year": 2024,
+      "score": 0.79,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 0,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": true
+      }
+    },
+    {
+      "paperId": "bdc0125a3f36a183bb63e99d6a351f65caebfba2",
+      "title": "Label Shift Correction via Bidirectional Marginal Distribution Matching",
+      "year": 2024,
+      "score": 0.774,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 1,
+        "year": 2024,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "2f40cde8a180c73cd4c882a7566b6b1335f7d124",
+      "title": "Comparative Assessment of Uncertainty-Aware Deep Learning Methods for Atherosclerosis Risk Stratification from Carotid Ultrasound Imaging",
+      "year": 2025,
+      "score": 0.77,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "7c53422b0b1437bd46632932344f6ff57032f3c2",
+      "title": "V2G Technology in PHEVs for Sustainable Energy and Grid Stability",
+      "year": 2025,
+      "score": 0.77,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "97044aace0bdccbc60ea7a88609e8052d460cd0a",
+      "title": "Ensemble-Based Fish Species Recognition in Challenging Underwater Environments",
+      "year": 2025,
+      "score": 0.72,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "daa0f48fac2ec0aac5c124255f51075a27ecfd20",
+      "title": "Mask-PINNs: Regulating Feature Distributions in Physics-Informed Neural Networks",
+      "year": 2025,
+      "score": 0.72,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 0,
+        "year": 2025,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "d04395e933bd707e2d4f1f5134ae47cfb75c35e5",
+      "title": "ON SOME PROPERTIES OF THE DIGIT SHIFT OPERATOR Q_s^*-REPRESENTATION OF REAL NUMBERS AND UNIFORMLY DISTRIBUTED SEQUENCES PRODUCED BY IT",
+      "year": 2023,
+      "score": 0.61,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 0,
+        "year": 2023,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "3d73293b6f6177a7fbf49a2e5cb13b4a4fcf5fe4",
+      "title": "Utilizing Representation Learning for Robust Text Classification Under Datasetshift",
+      "year": 2021,
+      "score": 0.534,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 2,
+        "year": 2021,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "78812d7052497641a29b60ca80c8f624f9f08ba9",
+      "title": "Using a Deep Neural Network in a Relative Risk Model to Estimate Vaccination Protection for COVID-19",
+      "year": 2022,
+      "score": 0.48,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 0,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    },
+    {
+      "paperId": "adf781ad9e02e83bf330d6c67ee06bab9f1c2b7c",
+      "title": "Meta-learning from relevant demonstrations improves compositional generalization",
+      "year": 2022,
+      "score": 0.48,
+      "components": {
+        "kw_hits": 0,
+        "citation_count": 0,
+        "year": 2022,
+        "discovery_source": "search",
+        "has_pdf_hint": false
+      }
+    }
+  ]
+}

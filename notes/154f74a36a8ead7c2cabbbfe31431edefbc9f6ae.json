@@ -1,0 +1,53 @@
+{
+  "paper_id": "154f74a36a8ead7c2cabbbfe31431edefbc9f6ae",
+  "title": "Convergence of Sharpness-Aware Minimization Algorithms using Increasing Batch Size and Decaying Learning Rate",
+  "authors": ["Harada, H.", "Iiduka, H."],
+  "year": 2024,
+  "venue": "arXiv.org",
+  "publication_status_observed": "arXiv preprint v1 (arXiv:2409.09984v1, 16 Sep 2024)",
+  "main_claims": [
+    "GSAM with an increasing batch size achieves epsilon-approximation convergence to the approximated SAM problem with provable convergence guarantees.",
+    "GSAM with a decaying learning rate (cosine annealing or linear) also achieves epsilon-approximation convergence.",
+    "Using an increasing batch size or decaying learning rate empirically finds flatter local minima than using constant batch size and learning rate."
+  ],
+  "methodology": "The authors prove convergence theorems for the GSAM algorithm (gap-guided SAM) under two schedules: increasing batch size with constant learning rate (Theorem 2.3), and constant batch size with decaying learning rate (cosine annealing or linear; Theorem 2.4). The proofs proceed by bounding the norm of the 'search direction noise' between GSAM and gradient descent (Theorems 2.1 and 2.2). Numerical experiments train ResNets and ViT-Tiny on CIFAR-100 and measure flatness of converged minima.",
+  "key_results": [
+    "GSAM with doubly increasing batch size or cosine-annealing learning rate finds flatter local minima than GSAM with constant batch size and constant learning rate on CIFAR-100 with ResNets and ViT-Tiny.",
+    "The search direction noise norm E[eta_t * ||omega_t||] is monotonically decreasing in batch size b_t, confirming that larger batch sizes reduce stochasticity in GSAM's update direction.",
+    "Convergence rate for GSAM with increasing batch (result 7) and decaying LR (result 8): E[||grad f_SAM*||] <= epsilon, matching or improving on prior SAM convergence results."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Limited number of models and datasets used in experiments (ResNet and ViT-Tiny on CIFAR-100 only).",
+    "Analysis focuses on GSAM rather than vanilla SAM; convergence guarantees are for the approximated SAM problem (gradient-norm surrogate), not the original minimax.",
+    "Flatness comparison is observational and does not establish that flatter minima found by these schedules lead to better generalization."
+  ],
+  "relevance_to_rq": "Peripheral relevance: this paper studies SAM convergence theory and training schedules for finding flat minima, tangentially related to the flatness_theory and sam_origin sub-topics. It does not address OOD generalization or representation stability, so it does not directly inform the core RQ.",
+  "key_quotes": [
+    {
+      "text": "using an increasing batch size or decaying learning rate finds flatter local minima than using a constant batch size and learning rate.",
+      "page_approx": 1,
+      "context": "Main empirical conclusion supporting the use of adaptive schedules to improve flatness in SAM-based training"
+    },
+    {
+      "text": "the sharpness-aware minimization (SAM) algorithm and its variants, including gap guided SAM (GSAM), have been successful at improving the generalization capability of deep neural network models by finding flat local minima",
+      "page_approx": 1,
+      "context": "Context statement motivating the study of SAM convergence with adaptive batch/LR schedules"
+    },
+    {
+      "text": "the norm of the noise is approximately Theta(eta_t / sqrt(b_t)). Since this implies that GSAM using a large batch size b or a small learning rate eta behaves approximately the same as GD in solving the SAM problem",
+      "page_approx": 2,
+      "context": "Key insight linking search direction noise to batch size and learning rate, motivating increasing batch / decaying LR strategies"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "Surrogate Gap Guided Sharpness-Aware Minimization",
+    "Towards Understanding Sharpness-Aware Minimization",
+    "Towards Efficient and Scalable Sharpness-Aware Minimization",
+    "Sharpness is Not All You Need"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

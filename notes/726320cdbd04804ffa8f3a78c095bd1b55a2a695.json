@@ -1,0 +1,53 @@
+{
+  "paper_id": "726320cdbd04804ffa8f3a78c095bd1b55a2a695",
+  "title": "Similarity of Neural Network Representations Revisited",
+  "authors": ["Kornblith, S.", "Norouzi, M.", "Lee, H.", "Hinton, G. E."],
+  "year": 2019,
+  "venue": "International Conference on Machine Learning",
+  "publication_status_observed": "Proceedings of the 36th International Conference on Machine Learning (ICML 2019), Long Beach, California, PMLR 97",
+  "main_claims": [
+    "Statistics invariant to invertible linear transformation (including CCA and SVCCA) cannot measure meaningful similarity between representations of higher dimension than the number of data points.",
+    "Centered Kernel Alignment (CKA) reliably identifies correspondences between layers of neural networks trained from different random initialisations, outperforming CCA, SVCCA, PWCCA, and linear regression.",
+    "CKA is related to but distinct from CCA: it weights eigenvectors by their eigenvalues (variance explained), making it sensitive to scale and more informative than CCA for neural network representations."
+  ],
+  "methodology": "The paper provides a theoretical analysis of invariance properties of similarity indices (invertible linear transformation, orthogonal transformation, isotropic scaling) and proves that any index invariant to invertible linear transformation gives the same value for any pair of full-rank representations (Theorem 1). CKA is introduced as HSIC(K, L) / sqrt(HSIC(K,K) * HSIC(L,L)) with a linear kernel (equivalent to the RV coefficient). A sanity check evaluates each index by its ability to find the corresponding layer in architecturally identical networks trained from different initialisations. Experiments use VGG-like CNNs, ResNets, and Transformers on CIFAR-10.",
+  "key_results": [
+    "Linear CKA achieves 99.3% accuracy in identifying corresponding layers across 10 networks, versus CCA (R²_CCA) at 10.6%, SVCCA at 9.9-15.1%, PWCCA at 11.1%, and linear regression at 45.4%.",
+    "CKA reveals that models trained on CIFAR-10 and CIFAR-100 develop similar early-layer representations, while later layers differ, which SVCCA and CCA do not consistently capture.",
+    "CKA applied to ResNets reveals a grid pattern corresponding to the residual architecture, while CKA on pathologically deep networks reveals representation collapse in later layers."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "The reparametrisation invariance concern (Dinh et al., 2017) applies: CKA is invariant to isotropic scaling but not non-isotropic scaling, so different parametrisations can still affect the measured similarity.",
+    "CKA is a summary statistic collapsing similarity to a single number; it does not decompose which directions of the representation contribute to similarity.",
+    "The choice of kernel (linear vs. RBF) and bandwidth can affect results, though the authors report linear and RBF kernels give similar results in most experiments."
+  ],
+  "relevance_to_rq": "CKA is the primary representational similarity tool the RQ proposes to use (paired-image CKA stability at the penultimate layer). This paper is the methodological foundation for CKA, establishing its properties, advantages over CCA/SVCCA, and practical use. It directly supports the RQ's choice of CKA as the representation stability metric.",
+  "key_quotes": [
+    {
+      "text": "Unlike CCA, CKA can reliably identify correspondences between representations in networks trained from different initializations",
+      "page_approx": 1,
+      "context": "Abstract summary of CKA's advantage over CCA for measuring neural network representation similarity"
+    },
+    {
+      "text": "CKA(K, L) = HSIC(K, L) / sqrt(HSIC(K, K) HSIC(L, L))",
+      "page_approx": 3,
+      "context": "Definition of centered kernel alignment as a normalised HSIC statistic"
+    },
+    {
+      "text": "neither CCA nor any other statistic that is invariant to invertible linear transformation can measure meaningful similarities between representations of higher dimension than the number of data points",
+      "page_approx": 1,
+      "context": "Theorem 1 limitation of CCA and related methods motivating CKA"
+    }
+  ],
+  "related_work_mentioned": [
+    "SVCCA: Singular vector canonical correlation analysis (Raghu et al., 2017)",
+    "Projection-weighted CCA (Morcos et al., 2018)",
+    "Representational similarity analysis (Kriegeskorte et al., 2008)",
+    "Canonical correlation analysis (CCA)",
+    "Hilbert-Schmidt Independence Criterion (Gretton et al., 2005)"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": null
+}

@@ -1,0 +1,53 @@
+{
+  "paper_id": "fba30c42c0920bd9590ddc274658c409938b2fb2",
+  "title": "Normalization Layers Are All That Sharpness-Aware Minimization Needs",
+  "authors": ["Mueller, M.", "Vlaar, T. J.", "Rolnick, D.", "Hein, M."],
+  "year": 2023,
+  "venue": "Neural Information Processing Systems",
+  "publication_status_observed": "NeurIPS 2023 (arXiv:2306.04226v2)",
+  "main_claims": [
+    "Perturbing only the affine normalization parameters (BatchNorm/LayerNorm, ~0.1% of parameters) in SAM's adversarial step outperforms perturbing all parameters across multiple SAM variants and architectures.",
+    "Alternative sparse perturbation methods do not achieve similar performance at the same extreme sparsity levels, demonstrating that this behavior is unique to normalization layers.",
+    "SAM-ON achieves higher generalization performance than SAM-all while finding sharper minima (higher measured sharpness), casting doubt on sharpness reduction as the sole explanation for SAM's effectiveness."
+  ],
+  "methodology": "SAM-ON (SAM-OnlyNorm) is evaluated on WideResNet-28-10, ResNet-56, ResNeXt, and ViT-S/T architectures on CIFAR-10/100 and ImageNet, with SAM, ASAM, and Fisher-SAM variants. Sharpness is measured using logit-normalized worst-case adaptive ℓ∞ m-sharpness with 20-step AutoPGD in weight space (following Jiang et al.). Feature rank is measured following Andriushchenko et al. Computational wall-clock time comparisons are reported. SAM-ON is also evaluated for adversarial robustness and OOD performance on ImageNet variants (ImageNetV2, ImageNetR, ImageNetA, ImageNetSketch, ObjectNet).",
+  "key_results": [
+    "SAM-ON achieves 84.19% on WRN-28-10/CIFAR-100 vs. 83.11% for SAM-all, while being sharper (20-step ℓ∞ sharpness 0.090 vs. 0.048 at ρ=0.003).",
+    "SAM-ON outperforms SAM-all on ImageNet OOD benchmarks (ImageNetR: 32.98% vs. 31.56%; ImageNetSketch: 19.35% vs. 18.50%; ObjectNet: 13.55% vs. 13.75%) for AdamW base optimizer on ViT-S/32.",
+    "Random mask at the same 99.93% sparsity as SAM-ON achieves only 80.97% vs. 84.19% for SAM-ON, confirming normalization layers specifically (not sparsity) drive the benefit."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "The mechanism by which perturbing only normalization layers improves generalization while increasing sharpness remains unexplained; the paper identifies the phenomenon without fully explaining it.",
+    "SAM-ON does not always reduce wall-clock time compared to SAM-all because full backpropagation is still needed for gradient computation.",
+    "OOD evaluation is limited to ImageNet variants; no corruption benchmarks (CIFAR-C) are evaluated."
+  ],
+  "relevance_to_rq": "Highly relevant to the RQ's core question: provides direct empirical evidence that SAM's generalization improvements are not solely caused by reduced sharpness (SAM-ON generalizes better but is sharper), supporting the hypothesis that other mechanisms—possibly representation-level effects—are at work. The OOD results on ImageNet variants are directly relevant to the ood_benchmarks sub-topic.",
+  "key_quotes": [
+    {
+      "text": "Although our findings reaffirm the effectiveness of SAM in improving generalization performance, they cast doubt on whether this is solely caused by reduced sharpness",
+      "page_approx": 1,
+      "context": "Central claim of the paper challenging the sharpness-reduction explanation of SAM"
+    },
+    {
+      "text": "the SAM-ON models obtain the best generalization performance, while having significantly higher sharpness than their SAM-all counterparts",
+      "page_approx": 9,
+      "context": "Key empirical finding: better generalization without lower sharpness in SAM-ON"
+    },
+    {
+      "text": "sparsity is not the sole cause for SAM-ON's success",
+      "page_approx": 8,
+      "context": "Ruling out sparsity as explanation, isolating normalization layer perturbation as the operative factor"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-aware minimization for efficiently improving generalization (Foret et al.)",
+    "Towards understanding sharpness-aware minimization (Andriushchenko & Flammarion)",
+    "Adaptive sharpness-aware minimization (ASAM, Kwon et al.)",
+    "Make sharpness-aware minimization stronger: A sparsified perturbation approach (SSAM, Mi et al.)",
+    "Predicting generalization performance of DNNs (Jiang et al.)"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": "evidence_strength is mixed: the key sharpness vs. generalization comparison is correlational/demonstrative; the sparsity ablation is causal. The OOD ImageNet results are demonstrative."
+}

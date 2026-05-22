@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "Bash(not exist *)",
+      "PowerShell(New-Item *)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(./venv/Scripts/python.exe scripts/run_queue.py --runner-id khanh_3070 --dry-run)"
+    ]
+  }
+}

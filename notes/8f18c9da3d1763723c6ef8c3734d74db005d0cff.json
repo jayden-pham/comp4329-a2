@@ -1,0 +1,52 @@
+{
+  "paper_id": "8f18c9da3d1763723c6ef8c3734d74db005d0cff",
+  "title": "Fantastic Generalization Measures and Where to Find Them",
+  "authors": ["Jiang, Y.", "Neyshabur, B.", "Mobahi, H.", "Krishnan, D.", "Bengio, S."],
+  "year": 2019,
+  "venue": "International Conference on Learning Representations",
+  "publication_status_observed": "ICLR 2020 (arXiv preprint dated Dec 2019, presented at ICLR 2020)",
+  "main_claims": [
+    "Sharpness-based measures (PAC-Bayesian bounds and the Keskar et al. sharpness measure) exhibit the highest correlation with generalization gap among 40+ complexity measures studied.",
+    "Many norm-based measures negatively correlate with generalization when optimizers inject stochasticity, rendering them unreliable.",
+    "Spurious correlations in generalization studies can be mitigated by using granulated Kendall's coefficient, which controls for hyperparameter axes."
+  ],
+  "methodology": "Over 10,000 convolutional networks were trained on CIFAR-10 and SVHN by systematically varying 7 hyperparameters (batch size, dropout, learning rate, depth, weight decay, width, optimizer). More than 40 complexity measures from theoretical and empirical literature were evaluated using Kendall rank correlation and a novel granulated Kendall coefficient that controls for individual hyperparameter axes.",
+  "key_results": [
+    "Sharpness-based measures (PAC-Bayes and Keskar sharpness) have highest overall correlation (granulated Kendall's Ψ) with generalization gap across all studied measures.",
+    "Spectral-norm-based bounds show strong negative correlation with generalization in the presence of stochastic optimizers.",
+    "Optimization-based measures (gradient noise, optimization speed) are also predictive of generalization."
+  ],
+  "evidence_strength": "correlational",
+  "limitations": [
+    "Correlation analysis cannot establish causal relationships between complexity measures and generalization.",
+    "Models are limited to convolutional architectures on CIFAR-10 and SVHN; conclusions may not extend to other architectures or tasks.",
+    "Measures are computed on sufficiently but not necessarily fully trained models."
+  ],
+  "relevance_to_rq": "This paper directly supports the RQ's premise: sharpness-based measures are the strongest empirical correlates of generalization gap, justifying SAM's sharpness-reduction objective. However, the correlational nature of the evidence (the paper's own limitation) is exactly what the RQ probes—CKA stability may track OOD generalization more tightly than sharpness alone.",
+  "key_quotes": [
+    {
+      "text": "Sharpness-based measures such as PAC-Bayesian bounds and sharpness measure proposed by Keskar et al. (2016) perform the best overall and seem to be promising candidates for further research.",
+      "page_approx": 1,
+      "context": "Summary of main finding on sharpness as a generalization predictor"
+    },
+    {
+      "text": "Many norm-based measures not only perform poorly, but negatively correlate with generalization specifically when the optimization procedure injects some stochasticity.",
+      "page_approx": 1,
+      "context": "Finding on norm-based measures failing under stochastic optimizers"
+    },
+    {
+      "text": "empirical correlation does not necessarily translate to a casual relationship between a measure and generalization.",
+      "page_approx": 1,
+      "context": "Key limitation of correlation-based analysis of complexity measures"
+    }
+  ],
+  "related_work_mentioned": [
+    "On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima",
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "Exploring Generalization in Deep Learning",
+    "Computing Nonvacuous Generalization Bounds for Deep (Stochastic) Neural Networks"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": null
+}

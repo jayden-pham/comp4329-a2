@@ -1,0 +1,53 @@
+{
+  "paper_id": "8ec5896b4490c6e127d1718ffc36a3439d84cb81",
+  "title": "On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima",
+  "authors": ["Keskar, N.", "Mudigere, D.", "Nocedal, J.", "Smelyanskiy, M.", "Tang, P. T. P."],
+  "year": 2016,
+  "venue": "International Conference on Learning Representations",
+  "publication_status_observed": "Published as a conference paper at ICLR 2017 (submitted 2016); arXiv:1609.04836v2 [cs.LG] 9 Feb 2017",
+  "main_claims": [
+    "Large-batch stochastic gradient methods tend to converge to sharp minimisers of the training function, which have poorer generalisation than the flat minimisers found by small-batch methods.",
+    "The cause of the large-batch generalisation gap is not overfitting or saddle-point attraction, but the inability of large-batch methods to escape basins of sharp minimisers due to less explorative noise.",
+    "Sharp minimisers are characterised by large positive eigenvalues of the Hessian, while flat minimisers have many small eigenvalues; the former generalise poorly and the latter generalise well."
+  ],
+  "methodology": "The authors train 6 network configurations (AlexNet, VGGNet, and fully-connected networks) on MNIST, TIMIT, and CIFAR-10 using both small-batch and large-batch SGD/Adam optimisers. Sharpness is quantified using a metric related to the maximum loss in a random subspace neighbourhood (epsilon-sharpness). Visualisation via 1D loss curves between large-batch and small-batch solutions provides qualitative evidence. Several strategies to bridge the generalisation gap (data augmentation, conservative training, injection of noise) are explored.",
+  "key_results": [
+    "Large-batch methods consistently converge to solutions with higher epsilon-sharpness than small-batch methods across all 6 tested configurations.",
+    "The generalisation gap between small-batch and large-batch methods is as high as 5% even for small networks, observed consistently across experiments.",
+    "Strategies to overcome the large-batch generalisation gap (conservative training, noise injection, dynamic sampling) provide partial improvements but do not fully close the gap."
+  ],
+  "evidence_strength": "correlational",
+  "limitations": [
+    "The sharp/flat minima measured by epsilon-sharpness may be affected by reparametrisation as later shown by Dinh et al. (2017), potentially undermining the causal claim.",
+    "The analysis is empirical and does not establish a causal mechanism linking sharpness to generalisation; the correlation is observed but not proved.",
+    "The epsilon-sharpness metric uses a random subspace, which mitigates but does not fully address the Dinh et al. parametrisation critique."
+  ],
+  "relevance_to_rq": "This is a foundational paper for the flatness-generalisation hypothesis that motivates the entire RQ. It empirically demonstrates the correlation between sharpness and poor generalisation, providing the baseline claim that SAM (which explicitly seeks flat minima) should improve OOD generalisation. It also defines epsilon-sharpness, one of the sharpness measures the RQ considers.",
+  "key_quotes": [
+    {
+      "text": "large-batch methods tend to converge to sharp minimizers of the training and testing functions—and as is well known, sharp minima lead to poorer generalization",
+      "page_approx": 1,
+      "context": "Abstract statement of the central finding linking large-batch training, sharp minima, and poor generalisation"
+    },
+    {
+      "text": "the lack of generalization ability is due to the fact that large-batch methods tend to converge to sharp minimizers of the training function. These minimizers are characterized by a significant number of large positive eigenvalues in ∇²f(x)",
+      "page_approx": 3,
+      "context": "Main observation stated formally in Section 2.1, characterising sharp minimisers by Hessian eigenvalues"
+    },
+    {
+      "text": "small-batch methods consistently converge to ﬂat minimizers, and our experiments support a commonly held view that this is due to the inherent noise in the gradient estimation",
+      "page_approx": 1,
+      "context": "Abstract explanation of why small-batch methods find flat minima via gradient noise"
+    }
+  ],
+  "related_work_mentioned": [
+    "Flat minima (Hochreiter & Schmidhuber, 1997)",
+    "Entropy-SGD: Biasing gradient descent into wide valleys (Chaudhari et al., 2016)",
+    "Understanding deep learning requires rethinking generalisation (Zhang et al., 2017)",
+    "Minimum description length theory (Rissanen, 1983)",
+    "ADAM: A method for stochastic optimisation (Kingma & Ba, 2015)"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": "evidence_strength is correlational: the paper demonstrates a correlation between sharpness and poor generalisation via numerical experiments but does not establish a causal mechanism. The Dinh et al. counter-argument (2017) is not addressed (predates it)."
+}

@@ -1,0 +1,22 @@
+# SWA smoke test (D0): short 10-epoch run on CIFAR-10 to verify the
+# SWA averaging + update_bn path before scaling to the full grid.
+#
+# Used by: python scripts/train.py --config configs/swa_smoke.yaml
+optimizer: swa
+swa_start_epoch: 7       # 70% through training, mirrors final-grid plan (75%)
+swa_lr: 0.05             # SWA LR after start; Izmailov 2018 default ~lr/2
+dataset: cifar10
+model: resnet18
+epochs: 10
+batch_size: 128
+lr: 0.1
+momentum: 0.9
+weight_decay: 0.0005
+augmentation: standard
+seed: 1
+
+use_amp: true
+amp_dtype: bfloat16
+num_workers: 4
+lr_schedule: cosine
+sharpness_batch_size: 512

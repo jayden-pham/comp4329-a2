@@ -1,0 +1,54 @@
+{
+  "paper_id": "b9af7e291f4ede06b251708f2477f2484b85e929",
+  "title": "GCSAM: Gradient Centralized Sharpness Aware Minimization",
+  "authors": ["Hassan, M.", "Vakanski, A.", "Zhang, B.", "Xian, M."],
+  "year": 2025,
+  "venue": "IEEE Access",
+  "publication_status_observed": "IEEE Access (journal); arXiv preprint arXiv:2501.11584v2, January 2025",
+  "main_claims": [
+    "Gradient Centralization (GC) applied to SAM's ascent step stabilizes gradients, reduces noise and variance, and improves generalization compared to standard SAM.",
+    "GCSAM outperforms SAM, Adam, and several SAM variants (ASAM, GSAM, CRSAM, MSAM) on both general vision (CIFAR-10) and medical imaging tasks.",
+    "The centralized gradient has magnitude always ≤ the original gradient, providing tighter sharpness bounds than SAM."
+  ],
+  "methodology": "GCSAM normalizes the gradient by subtracting its mean (gradient centralization) before computing the SAM perturbation. Evaluated on CIFAR-10 (ResNet-50, VGG16, ViT, Swin Transformer) and medical imaging datasets (breast ultrasound 6,046 images; COVID-19 CXR-4 16,955 images). Compared against Adam, SAM, and five SAM variants with relative speed measured as training time multiple of Adam.",
+  "key_results": [
+    "GCSAM achieves 90.4% test accuracy on COVID-19 with ResNet-50 vs SAM 89.2% and ASAM 90.2%, at 2.10× Adam speed vs SAM 2.27×.",
+    "GCSAM outperforms SAM on all four CIFAR-10 architectures (e.g., ResNet50: 91.2% vs 90.8%).",
+    "Theoretical bound shows ‖∇_GC L‖² ≤ ‖∇L‖², meaning centralized perturbations are smaller and yield tighter sharpness bounds."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "Evaluation is limited to image classification tasks without OOD corruption benchmarks (e.g., CIFAR-C).",
+    "No ablation separating the effect of GC on gradient noise from its effect on perturbation direction.",
+    "The improvement over SAM is modest (< 1%) on CIFAR-10, and statistical significance is not reported."
+  ],
+  "relevance_to_rq": "Peripheral to the RQ — GCSAM is a SAM variant that modifies the perturbation direction. It demonstrates that the specific form of SAM's perturbation affects generalization outcomes, indirectly supporting the view that SAM's mechanism involves more than simple flatness seeking. Not directly relevant to OOD CIFAR-C benchmarks or representation stability.",
+  "key_quotes": [
+    {
+      "text": "GCSAM normalizes gradients before the ascent step, reducing noise and variance, and improving stability during training.",
+      "page_approx": 1,
+      "context": "Core mechanism of GCSAM combining gradient centralization with SAM"
+    },
+    {
+      "text": "the centralized gradient magnitude is always less than or equal to the original gradient magnitude",
+      "page_approx": 9,
+      "context": "Theoretical result showing tighter sharpness bounds for GCSAM"
+    },
+    {
+      "text": "GCSAM consistently achieves higher test accuracy than the baseline Adam optimizer, SAM and its variants across all models",
+      "page_approx": 6,
+      "context": "Summary of empirical results on COVID-19 dataset"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "Adaptive SAM (ASAM)",
+    "Surrogate-Gap SAM (GSAM)",
+    "Efficient SAM (ESAM)",
+    "Gradient Centralization (GC)",
+    "Averaging Weights Leads to Wider Optima and Better Generalization (SWA)"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

@@ -1,0 +1,53 @@
+{
+  "paper_id": "d931b38b84d2fca1371a5b643546872984b0cfc0",
+  "title": "Improving Generalization in Federated Learning by Seeking Flat Minima",
+  "authors": ["Caldarola, D.", "Caputo, B.", "Ciccone, M."],
+  "year": 2022,
+  "venue": "European Conference on Computer Vision",
+  "publication_status_observed": "ECCV 2022 (arXiv:2203.11834v3)",
+  "main_claims": [
+    "Federated learning models converge to sharp minima due to statistical heterogeneity of client data, which explains their poor generalization.",
+    "Applying SAM or ASAM on the client-side during local training substantially reduces Hessian eigenvalues and improves generalization in both homogeneous and heterogeneous federated settings.",
+    "Combining client-side SAM/ASAM with server-side SWA achieves the best generalization performance, with FedASAM+SWA reducing λ_max from 93.46 to 24.57 in the heterogeneous scenario."
+  ],
+  "methodology": "Hessian eigenspectrum analysis (power iteration to compute top-50 eigenvalues) is used to characterize sharpness of federated models. SAM, ASAM, and SWA are integrated into FedAvg: SAM/ASAM replace SGD in the local client training loop; SWA averages server-side models cyclically from 75% of training. Experiments span CIFAR-10/100, Landmarks-User-160k, and IDDA semantic segmentation across heterogeneous (Dirichlet α∈{0,0.5}) and homogeneous (α=1000) settings.",
+  "key_results": [
+    "FedASAM reduces λ_max from 93.46 (FedAvg) to 30.11 in the heterogeneous setting (α=0) on CIFAR-100.",
+    "FedASAM+SWA further reduces λ_max to 24.57 and achieves 42.01% accuracy (vs. 30.25% for FedAvg E=1) in the most heterogeneous setting.",
+    "The combination of SAM/ASAM and SWA consistently outperforms each method individually across all federated scenarios and tasks."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Federated setting introduces communication overhead and heterogeneity that differ fundamentally from the centralized setting studied in the RQ; direct transferability of findings is limited.",
+    "Hessian eigenvalue analysis measures sharpness but is not paired with representation stability (CKA) measurements, limiting interpretation of the relative contributions of flatness vs. other factors.",
+    "SAM doubles local training computation per round, which is more costly in the federated setting than in centralized training."
+  ],
+  "relevance_to_rq": "Relevant to the flat_minima_for_dg and weight_averaging sub-topics: provides empirical evidence that flat minima (low λ_max) correlate with better generalization under distribution heterogeneity, and that SAM and SWA are complementary flat-minima methods. The Hessian eigenvalue analysis methodology is directly analogous to the sharpness measurement planned in the RQ's experiment.",
+  "key_quotes": [
+    {
+      "text": "we show that both converge to sharp minima, providing a plausible explanation for the highlighted lack of generalization",
+      "page_approx": 8,
+      "context": "Loss landscape analysis finding that FedAvg converges to sharp minima in both heterogeneous and homogeneous scenarios"
+    },
+    {
+      "text": "FedASAM+SWA 24.57 (λ_max, α=0)",
+      "page_approx": 10,
+      "context": "Quantitative Hessian eigenvalue result showing combined SAM+SWA achieves the lowest sharpness"
+    },
+    {
+      "text": "By seeking parameters in neighborhoods having uniform low loss, the model converges towards flatter minima and its generalization significantly improves in both homogeneous and heterogeneous scenarios",
+      "page_approx": 1,
+      "context": "Summary of the paper's main finding on flat minima and federated generalization"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-aware minimization for efficiently improving generalization (SAM, Foret et al.)",
+    "Adaptive sharpness-aware minimization (ASAM, Kwon et al.)",
+    "Averaging weights leads to wider optima and better generalization (SWA, Izmailov et al.)",
+    "On large-batch training for deep learning: Generalization gap and sharp minima (Keskar et al.)",
+    "FedAvg (McMahan et al.)"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": "evidence_strength is mixed: Hessian analysis is correlational (sharpness vs. generalization), while SAM/ASAM vs. FedAvg ablations are controlled but confounded by FL-specific factors."
+}

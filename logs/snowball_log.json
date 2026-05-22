@@ -1,0 +1,23 @@
+[
+  {
+    "seed": "Foret 2021",
+    "seed_id": "a2cd073b57be744533152202989228cb4122270a",
+    "refs_returned": 67,
+    "cites_returned": 100,
+    "added": 12
+  },
+  {
+    "seed": "Andriushchenko 2022",
+    "seed_id": "b698dbfaf9b961502062cbfcbe05d319047d8495",
+    "refs_returned": 48,
+    "cites_returned": 100,
+    "added": 8
+  },
+  {
+    "seed": "Wen 2023",
+    "seed_id": "07dbbb95eff2640e07ade6e42e666c14ae5d1d19",
+    "refs_returned": 23,
+    "cites_returned": 74,
+    "added": 5
+  }
+]

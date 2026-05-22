@@ -1,0 +1,2757 @@
+[
+  {
+    "paperId": "a2cd073b57be744533152202989228cb4122270a",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2010-01412",
+      "ArXiv": "2010.01412",
+      "MAG": "3091401866",
+      "CorpusId": 222134093
+    },
+    "title": "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "venue": "International Conference on Learning Representations",
+    "year": 2020,
+    "citationCount": 1878,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2010.01412, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2066217414",
+        "name": "Pierre Foret"
+      },
+      {
+        "authorId": "145946311",
+        "name": "Ariel Kleiner"
+      },
+      {
+        "authorId": "3232655",
+        "name": "H. Mobahi"
+      },
+      {
+        "authorId": "3007442",
+        "name": "Behnam Neyshabur"
+      }
+    ],
+    "abstract": "In today's heavily overparameterized models, the value of the training loss provides few guarantees on model generalization ability. Indeed, optimizing only the training loss value, as is commonly done, can easily lead to suboptimal model quality. Motivated by the connection between geometry of the loss landscape and generalization---including a generalization bound that we prove here---we introduce a novel, effective procedure for instead simultaneously minimizing loss value and loss sharpness. In particular, our procedure, Sharpness-Aware Minimization (SAM), seeks parameters that lie in neighborhoods having uniformly low loss; this formulation results in a min-max optimization problem on which gradient descent can be performed efficiently. We present empirical results showing that SAM improves model generalization across a variety of benchmark datasets (e.g., CIFAR-{10, 100}, ImageNet, finetuning tasks) and models, yielding novel state-of-the-art performance for several. Additionally, we find that SAM natively provides robustness to label noise on par with that provided by state-of-the-art procedures that specifically target learning with noisy labels.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "sam_origin"
+    ],
+    "seed_reason": "Origin of SAM; every subsequent SAM paper cites this."
+  },
+  {
+    "paperId": "b698dbfaf9b961502062cbfcbe05d319047d8495",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2206-06232",
+      "ArXiv": "2206.06232",
+      "DOI": "10.48550/arXiv.2206.06232",
+      "CorpusId": 249625761
+    },
+    "title": "Towards Understanding Sharpness-Aware Minimization",
+    "venue": "International Conference on Machine Learning",
+    "year": 2022,
+    "citationCount": 192,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2206.06232",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2206.06232, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "47669224",
+        "name": "Maksym Andriushchenko"
+      },
+      {
+        "authorId": "2288272044",
+        "name": "Nicolas Flammarion"
+      }
+    ],
+    "abstract": "Sharpness-Aware Minimization (SAM) is a recent training method that relies on worst-case weight perturbations which significantly improves generalization in various settings. We argue that the existing justifications for the success of SAM which are based on a PAC-Bayes generalization bound and the idea of convergence to flat minima are incomplete. Moreover, there are no explanations for the success of using $m$-sharpness in SAM which has been shown as essential for generalization. To better understand this aspect of SAM, we theoretically analyze its implicit bias for diagonal linear networks. We prove that SAM always chooses a solution that enjoys better generalization properties than standard gradient descent for a certain class of problems, and this effect is amplified by using $m$-sharpness. We further study the properties of the implicit bias on non-linear networks empirically, where we show that fine-tuning a standard model with SAM can lead to significant generalization improvements. Finally, we provide convergence results of SAM for non-convex objectives when used with stochastic gradients. We illustrate these results empirically for deep networks and discuss their relation to the generalization behavior of SAM. The code of our experiments is available at https://github.com/tml-epfl/understanding-sam.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "sam_mechanism"
+    ],
+    "seed_reason": "Argues SAM's benefit is NOT explained by flatness alone; load-bearing counterargument for the RQ."
+  },
+  {
+    "paperId": "07dbbb95eff2640e07ade6e42e666c14ae5d1d19",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2211-05729",
+      "ArXiv": "2211.05729",
+      "DOI": "10.48550/arXiv.2211.05729",
+      "CorpusId": 253446950
+    },
+    "title": "How Does Sharpness-Aware Minimization Minimize Sharpness?",
+    "venue": "arXiv.org",
+    "year": 2022,
+    "citationCount": 74,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2211.05729",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2211.05729, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2163583830",
+        "name": "Kaiyue Wen"
+      },
+      {
+        "authorId": "2114186424",
+        "name": "Tengyu Ma"
+      },
+      {
+        "authorId": "46947755",
+        "name": "Zhiyuan Li"
+      }
+    ],
+    "abstract": "Sharpness-Aware Minimization (SAM) is a highly effective regularization technique for improving the generalization of deep neural networks for various settings. However, the underlying working of SAM remains elusive because of various intriguing approximations in the theoretical characterizations. SAM intends to penalize a notion of sharpness of the model but implements a computationally efficient variant; moreover, a third notion of sharpness was used for proving generalization guarantees. The subtle differences in these notions of sharpness can indeed lead to significantly different empirical results. This paper rigorously nails down the exact sharpness notion that SAM regularizes and clarifies the underlying mechanism. We also show that the two steps of approximations in the original motivation of SAM individually lead to inaccurate local conclusions, but their combination accidentally reveals the correct effect, when full-batch gradients are applied. Furthermore, we also prove that the stochastic version of SAM in fact regularizes another notion of sharpness, which is most likely to be the preferred notion for practical performance. The key mechanism behind this intriguing phenomenon is the implicit alignment between the gradient and the top eigenvector of Hessian when running SAM.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "sam_mechanism"
+    ],
+    "seed_reason": "Theoretical decomposition of SAM's actual update; key for mechanism discussion."
+  },
+  {
+    "paperId": "1fae35d17aca0ec5ceb866824a17c14a6f6b0ba1",
+    "externalIds": {
+      "ArXiv": "2102.11600",
+      "DBLP": "conf/icml/KwonKPC21",
+      "CorpusId": 232013927
+    },
+    "title": "ASAM: Adaptive Sharpness-Aware Minimization for Scale-Invariant Learning of Deep Neural Networks",
+    "venue": "International Conference on Machine Learning",
+    "year": 2021,
+    "citationCount": 392,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2102.11600, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "9132284",
+        "name": "Jungmin Kwon"
+      },
+      {
+        "authorId": "2145438944",
+        "name": "Jeongseop Kim"
+      },
+      {
+        "authorId": "2110354994",
+        "name": "Hyunseong Park"
+      },
+      {
+        "authorId": "3277271",
+        "name": "I. Choi"
+      }
+    ],
+    "abstract": "Recently, learning algorithms motivated from sharpness of loss surface as an effective measure of generalization gap have shown state-of-the-art performances. Nevertheless, sharpness defined in a rigid region with a fixed radius, has a drawback in sensitivity to parameter re-scaling which leaves the loss unaffected, leading to weakening of the connection between sharpness and generalization gap. In this paper, we introduce the concept of adaptive sharpness which is scale-invariant and propose the corresponding generalization bound. We suggest a novel learning method, adaptive sharpness-aware minimization (ASAM), utilizing the proposed generalization bound. Experimental results in various benchmark datasets show that ASAM contributes to significant improvement of model generalization performance.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "sam_origin"
+    ],
+    "seed_reason": "Key SAM variant addressing scale invariance; often cited as immediate successor."
+  },
+  {
+    "paperId": "fba30c42c0920bd9590ddc274658c409938b2fb2",
+    "externalIds": {
+      "DBLP": "conf/nips/MullerVR023",
+      "ArXiv": "2306.04226",
+      "DOI": "10.48550/arXiv.2306.04226",
+      "CorpusId": 259095876
+    },
+    "title": "Normalization Layers Are All That Sharpness-Aware Minimization Needs",
+    "venue": "Neural Information Processing Systems",
+    "year": 2023,
+    "citationCount": 35,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2306.04226",
+      "status": "CLOSED",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2306.04226, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "80580587",
+        "name": "Maximilian Mueller"
+      },
+      {
+        "authorId": "14611312",
+        "name": "Tiffany J. Vlaar"
+      },
+      {
+        "authorId": "2381187",
+        "name": "D. Rolnick"
+      },
+      {
+        "authorId": "143610806",
+        "name": "Matthias Hein"
+      }
+    ],
+    "abstract": "Sharpness-aware minimization (SAM) was proposed to reduce sharpness of minima and has been shown to enhance generalization performance in various settings. In this work we show that perturbing only the affine normalization parameters (typically comprising 0.1% of the total parameters) in the adversarial step of SAM can outperform perturbing all of the parameters.This finding generalizes to different SAM variants and both ResNet (Batch Normalization) and Vision Transformer (Layer Normalization) architectures. We consider alternative sparse perturbation approaches and find that these do not achieve similar performance enhancement at such extreme sparsity levels, showing that this behaviour is unique to the normalization layers. Although our findings reaffirm the effectiveness of SAM in improving generalization performance, they cast doubt on whether this is solely caused by reduced sharpness.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "sam_mechanism"
+    ],
+    "seed_reason": "Empirical decomposition showing SAM's effect localises to normalization layers; mechanism evidence."
+  },
+  {
+    "paperId": "8ec5896b4490c6e127d1718ffc36a3439d84cb81",
+    "externalIds": {
+      "MAG": "2952095140",
+      "DBLP": "journals/corr/KeskarMNST16",
+      "ArXiv": "1609.04836",
+      "CorpusId": 5834589
+    },
+    "title": "On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima",
+    "venue": "International Conference on Learning Representations",
+    "year": 2016,
+    "citationCount": 3428,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1609.04836, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2844898",
+        "name": "N. Keskar"
+      },
+      {
+        "authorId": "2205699",
+        "name": "Dheevatsa Mudigere"
+      },
+      {
+        "authorId": "2784955",
+        "name": "J. Nocedal"
+      },
+      {
+        "authorId": "1711231",
+        "name": "M. Smelyanskiy"
+      },
+      {
+        "authorId": "144669504",
+        "name": "P. T. P. Tang"
+      }
+    ],
+    "abstract": "The stochastic gradient descent (SGD) method and its variants are algorithms of choice for many Deep Learning tasks. These methods operate in a small-batch regime wherein a fraction of the training data, say $32$-$512$ data points, is sampled to compute an approximation to the gradient. It has been observed in practice that when using a larger batch there is a degradation in the quality of the model, as measured by its ability to generalize. We investigate the cause for this generalization drop in the large-batch regime and present numerical evidence that supports the view that large-batch methods tend to converge to sharp minimizers of the training and testing functions - and as is well known, sharp minima lead to poorer generalization. In contrast, small-batch methods consistently converge to flat minimizers, and our experiments support a commonly held view that this is due to the inherent noise in the gradient estimation. We discuss several strategies to attempt to help large-batch methods eliminate this generalization gap.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "flatness_theory"
+    ],
+    "seed_reason": "Empirical foundation of the flat-minima-generalises hypothesis."
+  },
+  {
+    "paperId": "58123025178256279bb060ca5da971b62bc329ee",
+    "externalIds": {
+      "DBLP": "conf/icml/DinhPBB17",
+      "MAG": "2950928354",
+      "ArXiv": "1703.04933",
+      "CorpusId": 7636159
+    },
+    "title": "Sharp Minima Can Generalize For Deep Nets",
+    "venue": "International Conference on Machine Learning",
+    "year": 2017,
+    "citationCount": 885,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1703.04933, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "46573521",
+        "name": "Laurent Dinh"
+      },
+      {
+        "authorId": "1996134",
+        "name": "Razvan Pascanu"
+      },
+      {
+        "authorId": "1751569",
+        "name": "Samy Bengio"
+      },
+      {
+        "authorId": "1751762",
+        "name": "Yoshua Bengio"
+      }
+    ],
+    "abstract": "Despite their overwhelming capacity to overfit, deep learning architectures tend to generalize relatively well to unseen data, allowing them to be deployed in practice. However, explaining why this is the case is still an open area of research. One standing hypothesis that is gaining popularity, e.g. Hochreiter & Schmidhuber (1997); Keskar et al. (2017), is that the flatness of minima of the loss function found by stochastic gradient based methods results in good generalization. This paper argues that most notions of flatness are problematic for deep models and can not be directly applied to explain generalization. Specifically, when focusing on deep networks with rectifier units, we can exploit the particular geometry of parameter space induced by the inherent symmetries that these architectures exhibit to build equivalent models corresponding to arbitrarily sharper minima. Furthermore, if we allow to reparametrize a function, the geometry of its parameters can change drastically without affecting its generalization properties.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "flatness_theory"
+    ],
+    "seed_reason": "Counterargument: sharpness is reparametrisation-dependent; must be addressed in Related Work."
+  },
+  {
+    "paperId": "8f18c9da3d1763723c6ef8c3734d74db005d0cff",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-1912-02178",
+      "MAG": "2994848047",
+      "ArXiv": "1912.02178",
+      "CorpusId": 204893960
+    },
+    "title": "Fantastic Generalization Measures and Where to Find Them",
+    "venue": "International Conference on Learning Representations",
+    "year": 2019,
+    "citationCount": 709,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1912.02178, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "4614137",
+        "name": "Yiding Jiang"
+      },
+      {
+        "authorId": "3007442",
+        "name": "Behnam Neyshabur"
+      },
+      {
+        "authorId": "3232655",
+        "name": "H. Mobahi"
+      },
+      {
+        "authorId": "1707347",
+        "name": "Dilip Krishnan"
+      },
+      {
+        "authorId": "1751569",
+        "name": "Samy Bengio"
+      }
+    ],
+    "abstract": "Generalization of deep networks has been of great interest in recent years, resulting in a number of theoretically and empirically motivated complexity measures. However, most papers proposing such measures study only a small set of models, leaving open the question of whether the conclusion drawn from those experiments would remain valid in other settings. We present the first large scale study of generalization in deep networks. We investigate more then 40 complexity measures taken from both theoretical bounds and empirical studies. We train over 10,000 convolutional networks by systematically varying commonly used hyperparameters. Hoping to uncover potentially causal relationships between each measure and generalization, we analyze carefully controlled experiments and show surprising failures of some measures as well as promising measures for further research.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "flatness_theory"
+    ],
+    "seed_reason": "Large-scale empirical comparison of generalisation measures; finds sharpness predictive."
+  },
+  {
+    "paperId": "d8c0aabe41ec6036a2404cb2bfaea2a7d6424ae3",
+    "externalIds": {
+      "DBLP": "conf/nips/PetzkaKASB21",
+      "ArXiv": "2001.00939",
+      "CorpusId": 243734832
+    },
+    "title": "Relative Flatness and Generalization",
+    "venue": "Neural Information Processing Systems",
+    "year": 2020,
+    "citationCount": 99,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2001.00939, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "16986503",
+        "name": "Henning Petzka"
+      },
+      {
+        "authorId": "38718832",
+        "name": "Michael Kamp"
+      },
+      {
+        "authorId": "2127518735",
+        "name": "Linara Adilova"
+      },
+      {
+        "authorId": "1781120",
+        "name": "C. Sminchisescu"
+      },
+      {
+        "authorId": "1717148",
+        "name": "Mario Boley"
+      }
+    ],
+    "abstract": "Flatness of the loss curve is conjectured to be connected to the generalization ability of machine learning models, in particular neural networks. While it has been empirically observed that flatness measures consistently correlate strongly with generalization, it is still an open theoretical problem why and under which circumstances flatness is connected to generalization, in particular in light of reparameterizations that change certain flatness measures but leave generalization unchanged. We investigate the connection between flatness and generalization by relating it to the interpolation from representative data, deriving notions of representativeness, and feature robustness. The notions allow us to rigorously connect flatness and generalization and to identify conditions under which the connection holds. Moreover, they give rise to a novel, but natural relative flatness measure that correlates strongly with generalization, simplifies to ridge regression for ordinary least squares, and solves the reparameterization issue.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "flatness_theory"
+    ],
+    "seed_reason": "Reparametrisation-invariant flatness measure; addresses Dinh's critique."
+  },
+  {
+    "paperId": "49b64383fe36268410c430352637ed23b16820c5",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-1807-01697",
+      "MAG": "2963060032",
+      "ArXiv": "1903.12261",
+      "CorpusId": 56657912
+    },
+    "title": "Benchmarking Neural Network Robustness to Common Corruptions and Perturbations",
+    "venue": "International Conference on Learning Representations",
+    "year": 2019,
+    "citationCount": 4329,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1903.12261, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "3422872",
+        "name": "Dan Hendrycks"
+      },
+      {
+        "authorId": "144299726",
+        "name": "Thomas G. Dietterich"
+      }
+    ],
+    "abstract": "In this paper we establish rigorous benchmarks for image classifier robustness. Our first benchmark, ImageNet-C, standardizes and expands the corruption robustness topic, while showing which classifiers are preferable in safety-critical applications. Then we propose a new dataset called ImageNet-P which enables researchers to benchmark a classifier's robustness to common perturbations. Unlike recent robustness research, this benchmark evaluates performance on common corruptions and perturbations not worst-case adversarial perturbations. We find that there are negligible changes in relative corruption robustness from AlexNet classifiers to ResNet classifiers. Afterward we discover ways to enhance corruption and perturbation robustness. We even find that a bypassed adversarial defense provides substantial common perturbation robustness. Together our benchmarks may aid future work toward networks that robustly generalize.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "ood_benchmarks"
+    ],
+    "seed_reason": "Defines CIFAR-C / ImageNet-C; the OOD evaluation target."
+  },
+  {
+    "paperId": "1eb7f46b1a0a7df823194d86543e5554aa21021a",
+    "externalIds": {
+      "DBLP": "conf/nips/SnoekOFLNSDRN19",
+      "ArXiv": "1906.02530",
+      "MAG": "2970859221",
+      "CorpusId": 174803437
+    },
+    "title": "Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+    "venue": "Neural Information Processing Systems",
+    "year": 2019,
+    "citationCount": 2139,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1906.02530, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2067138676",
+        "name": "Yaniv Ovadia"
+      },
+      {
+        "authorId": "35105647",
+        "name": "Emily Fertig"
+      },
+      {
+        "authorId": "92095972",
+        "name": "Jie Jessie Ren"
+      },
+      {
+        "authorId": "81408931",
+        "name": "Zachary Nado"
+      },
+      {
+        "authorId": "1733143",
+        "name": "D. Sculley"
+      },
+      {
+        "authorId": "2388416",
+        "name": "Sebastian Nowozin"
+      },
+      {
+        "authorId": "2403637",
+        "name": "Joshua V. Dillon"
+      },
+      {
+        "authorId": "40627523",
+        "name": "Balaji Lakshminarayanan"
+      },
+      {
+        "authorId": "144108062",
+        "name": "Jasper Snoek"
+      }
+    ],
+    "abstract": "Modern machine learning methods including deep learning have achieved great success in predictive accuracy for supervised learning tasks, but may still fall short in giving useful estimates of their predictive {\\em uncertainty}. Quantifying uncertainty is especially critical in real-world settings, which often involve input distributions that are shifted from the training distribution due to a variety of factors including sample bias and non-stationarity. In such settings, well calibrated uncertainty estimates convey information about when a model's output should (or should not) be trusted. Many probabilistic deep learning methods, including Bayesian-and non-Bayesian methods, have been proposed in the literature for quantifying predictive uncertainty, but to our knowledge there has not previously been a rigorous large-scale empirical comparison of these methods under dataset shift. We present a large-scale benchmark of existing state-of-the-art methods on classification problems and investigate the effect of dataset shift on accuracy and calibration. We find that traditional post-hoc calibration does indeed fall short, as do several other previous methods. However, some methods that marginalize over models give surprisingly strong results across a broad spectrum of tasks.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "ood_benchmarks"
+    ],
+    "seed_reason": "Calibration under shift; anchors the ECE metric in the experiment."
+  },
+  {
+    "paperId": "6a5efb990b6558c21d9fdded4884c00ba152cb7c",
+    "externalIds": {
+      "MAG": "3039431315",
+      "DBLP": "journals/corr/abs-2007-01434",
+      "ArXiv": "2007.01434",
+      "CorpusId": 220347682
+    },
+    "title": "In Search of Lost Domain Generalization",
+    "venue": "International Conference on Learning Representations",
+    "year": 2020,
+    "citationCount": 1426,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2007.01434, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2708454",
+        "name": "Ishaan Gulrajani"
+      },
+      {
+        "authorId": "1401804750",
+        "name": "David Lopez-Paz"
+      }
+    ],
+    "abstract": "The goal of domain generalization algorithms is to predict well on distributions different from those seen during training. While a myriad of domain generalization algorithms exist, inconsistencies in experimental conditions -- datasets, architectures, and model selection criteria -- render fair and realistic comparisons difficult. In this paper, we are interested in understanding how useful domain generalization algorithms are in realistic settings. As a first step, we realize that model selection is non-trivial for domain generalization tasks. Contrary to prior work, we argue that domain generalization algorithms without a model selection strategy should be regarded as incomplete. Next, we implement DomainBed, a testbed for domain generalization including seven multi-domain datasets, nine baseline algorithms, and three model selection criteria. We conduct extensive experiments using DomainBed and find that, when carefully implemented, empirical risk minimization shows state-of-the-art performance across all datasets. Looking forward, we hope that the release of DomainBed, along with contributions from fellow researchers, will streamline reproducible and rigorous research in domain generalization.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "ood_benchmarks",
+      "flat_minima_for_dg"
+    ],
+    "seed_reason": "DomainBed framing; argues most DG methods don't beat ERM under fair eval. Methodological discipline."
+  },
+  {
+    "paperId": "4d87a9f6a0bc9c67088193402813da5cba3f06c1",
+    "externalIds": {
+      "DBLP": "conf/nips/ChaCLCPLP21",
+      "ArXiv": "2102.08604",
+      "CorpusId": 235367622
+    },
+    "title": "SWAD: Domain Generalization by Seeking Flat Minima",
+    "venue": "Neural Information Processing Systems",
+    "year": 2021,
+    "citationCount": 585,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2102.08604, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "3409691",
+        "name": "Junbum Cha"
+      },
+      {
+        "authorId": "2647582",
+        "name": "Sanghyuk Chun"
+      },
+      {
+        "authorId": "2109976613",
+        "name": "Kyungjae Lee"
+      },
+      {
+        "authorId": "2110737695",
+        "name": "Han-Cheol Cho"
+      },
+      {
+        "authorId": "7882243",
+        "name": "Seunghyun Park"
+      },
+      {
+        "authorId": "46357976",
+        "name": "Yunsung Lee"
+      },
+      {
+        "authorId": "71537829",
+        "name": "Sungrae Park"
+      }
+    ],
+    "abstract": "Domain generalization (DG) methods aim to achieve generalizability to an unseen target domain by using only training data from the source domains. Although a variety of DG methods have been proposed, a recent study shows that under a fair evaluation protocol, called DomainBed, the simple empirical risk minimization (ERM) approach works comparable to or even outperforms previous methods. Unfortunately, simply solving ERM on a complex, non-convex loss function can easily lead to sub-optimal generalizability by seeking sharp minima. In this paper, we theoretically show that finding flat minima results in a smaller domain generalization gap. We also propose a simple yet effective method, named Stochastic Weight Averaging Densely (SWAD), to find flat minima. SWAD finds flatter minima and suffers less from overfitting than does the vanilla SWA by a dense and overfit-aware stochastic weight sampling strategy. SWAD shows state-of-the-art performances on five DG benchmarks, namely PACS, VLCS, OfficeHome, TerraIncognita, and DomainNet, with consistent and large margins of +1.6% averagely on out-of-domain accuracy. We also compare SWAD with conventional generalization methods, such as data augmentation and consistency regularization methods, to verify that the remarkable performance improvements are originated from by seeking flat minima, not from better in-domain generalizability. Last but not least, SWAD is readily adaptable to existing DG methods without modification; the combination of SWAD and an existing DG method further improves DG performances. Source code is available at https://github.com/khanrc/swad.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "flat_minima_for_dg",
+      "weight_averaging"
+    ],
+    "seed_reason": "Most direct prior on flatness-for-DG; uses weight averaging variant."
+  },
+  {
+    "paperId": "beb8c38446343797168a0c35af0e941799117867",
+    "externalIds": {
+      "DBLP": "conf/cvpr/WangZLZ23",
+      "ArXiv": "2303.10353",
+      "DOI": "10.1109/CVPR52729.2023.00367",
+      "CorpusId": 257632155
+    },
+    "title": "Sharpness-Aware Gradient Matching for Domain Generalization",
+    "venue": "Computer Vision and Pattern Recognition",
+    "year": 2023,
+    "citationCount": 162,
+    "openAccessPdf": {
+      "url": "https://arxiv.org/pdf/2303.10353",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2303.10353, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "2108238034",
+        "name": "Pengfei Wang"
+      },
+      {
+        "authorId": "2175272847",
+        "name": "Zhaoxiang Zhang"
+      },
+      {
+        "authorId": "2153833080",
+        "name": "Zhen Lei"
+      },
+      {
+        "authorId": "2152836426",
+        "name": "Lei Zhang"
+      }
+    ],
+    "abstract": "The goal of domain generalization (DG) is to enhance the generalization capability of the model learned from a source domain to other unseen domains. The recently developed Sharpness-Aware Minimization (SAM) method aims to achieve this goal by minimizing the sharpness measure of the loss landscape. Though SAM and its variants have demonstrated impressive DG performance, they may not always converge to the desired flat region with a small loss value. In this paper, we present two conditions to ensure that the model could converge to a flat minimum with a small loss, and present an algorithm, named Sharpness-Aware Gradient Matching (SAGM), to meet the two conditions for improving model generalization capability. Specifically, the optimization objective of SAGM will simultaneously minimize the empirical risk, the perturbed loss (i.e., the maximum loss within a neighborhood in the parameter space), and the gap between them. By implicitly aligning the gradient directions between the empirical risk and the perturbed loss, SAGM improves the generalization capability over SAM and its variants without increasing the computational cost. Extensive experimental results show that our proposed SAGM method consistently outperforms the state-of-the-art methods on five DG benchmarks, including PACS, VLCS, OfficeHome, TerraIncognita, and DomainNet. Codes are available at https://github.com/Wang-pengfei/SAGM.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "flat_minima_for_dg",
+      "sam_origin"
+    ],
+    "seed_reason": "Recent SAM-for-DG; positions our work against SOTA."
+  },
+  {
+    "paperId": "b8989afff14fb630ca58b6afa917fb42574228ee",
+    "externalIds": {
+      "MAG": "2792287754",
+      "DBLP": "journals/corr/abs-1803-05407",
+      "ArXiv": "1803.05407",
+      "CorpusId": 3833416
+    },
+    "title": "Averaging Weights Leads to Wider Optima and Better Generalization",
+    "venue": "Conference on Uncertainty in Artificial Intelligence",
+    "year": 2018,
+    "citationCount": 2004,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1803.05407, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "7991830",
+        "name": "Pavel Izmailov"
+      },
+      {
+        "authorId": "2064138313",
+        "name": "Dmitrii Podoprikhin"
+      },
+      {
+        "authorId": "4936329",
+        "name": "T. Garipov"
+      },
+      {
+        "authorId": "2492721",
+        "name": "D. Vetrov"
+      },
+      {
+        "authorId": "145771261",
+        "name": "A. Wilson"
+      }
+    ],
+    "abstract": "Deep neural networks are typically trained by optimizing a loss function with an SGD variant, in conjunction with a decaying learning rate, until convergence. We show that simple averaging of multiple points along the trajectory of SGD, with a cyclical or constant learning rate, leads to better generalization than conventional training. We also show that this Stochastic Weight Averaging (SWA) procedure finds much flatter solutions than SGD, and approximates the recent Fast Geometric Ensembling (FGE) approach with a single model. Using SWA we achieve notable improvement in test accuracy over conventional SGD training on a range of state-of-the-art residual networks, PyramidNets, DenseNets, and Shake-Shake networks on CIFAR-10, CIFAR-100, and ImageNet. In short, SWA is extremely easy to implement, improves generalization, and has almost no computational overhead.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "weight_averaging"
+    ],
+    "seed_reason": "SWA origin; the flat-minima-oriented control baseline."
+  },
+  {
+    "paperId": "726320cdbd04804ffa8f3a78c095bd1b55a2a695",
+    "externalIds": {
+      "MAG": "2949558627",
+      "ArXiv": "1905.00414",
+      "DBLP": "journals/corr/abs-1905-00414",
+      "CorpusId": 141460329
+    },
+    "title": "Similarity of Neural Network Representations Revisited",
+    "venue": "International Conference on Machine Learning",
+    "year": 2019,
+    "citationCount": 2102,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1905.00414, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "40464924",
+        "name": "Simon Kornblith"
+      },
+      {
+        "authorId": "144739074",
+        "name": "Mohammad Norouzi"
+      },
+      {
+        "authorId": "1697141",
+        "name": "Honglak Lee"
+      },
+      {
+        "authorId": "1695689",
+        "name": "Geoffrey E. Hinton"
+      }
+    ],
+    "abstract": "Recent work has sought to understand the behavior of neural networks by comparing representations between layers and between different trained models. We examine methods for comparing neural network representations based on canonical correlation analysis (CCA). We show that CCA belongs to a family of statistics for measuring multivariate similarity, but that neither CCA nor any other statistic that is invariant to invertible linear transformation can measure meaningful similarities between representations of higher dimension than the number of data points. We introduce a similarity index that measures the relationship between representational similarity matrices and does not suffer from this limitation. This similarity index is equivalent to centered kernel alignment (CKA) and is also closely connected to CCA. Unlike CCA, CKA can reliably identify correspondences between representations in networks trained from different initializations.",
+    "discovery_source": "seed",
+    "seed_subtopics": [
+      "representation_analysis"
+    ],
+    "seed_reason": "CKA; the representation-stability measurement tool."
+  },
+  {
+    "paperId": "0265144c696bf9371a0a63ece590dd2403ee71be",
+    "externalIds": {
+      "ArXiv": "2202.00661",
+      "DBLP": "conf/nips/KaddourLSK22",
+      "DOI": "10.52202/068431-1206",
+      "CorpusId": 252873712
+    },
+    "title": "When Do Flat Minima Optimizers Work?",
+    "venue": "Neural Information Processing Systems",
+    "year": 2022,
+    "citationCount": 94,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2202.00661, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "66914903",
+        "name": "Jean Kaddour"
+      },
+      {
+        "authorId": "2111591",
+        "name": "Linqing Liu"
+      },
+      {
+        "authorId": "2140070169",
+        "name": "Ricardo M. A. Silva"
+      },
+      {
+        "authorId": "1940272",
+        "name": "Matt J. Kusner"
+      }
+    ],
+    "abstract": "Recently, flat-minima optimizers, which seek to find parameters in low-loss neighborhoods, have been shown to improve a neural network's generalization performance over stochastic and adaptive gradient-based optimizers. Two methods have received significant attention due to their scalability: 1. Stochastic Weight Averaging (SWA), and 2. Sharpness-Aware Minimization (SAM). However, there has been limited investigation into their properties and no systematic benchmarking of them across different domains. We fill this gap here by comparing the loss surfaces of the models trained with each method and through broad benchmarking across computer vision, natural language processing, and graph representation learning tasks. We discover several surprising findings from these results, which we hope will help researchers further improve deep learning optimizers, and practitioners identify the right optimizer for their problem.",
+    "discovery_source": "search",
+    "discovery_query": "weight averaging flat minima generalization"
+  },
+  {
+    "paperId": "edb93cd1046a923f465e17a3707176c6d0c8018b",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2412-05551",
+      "ArXiv": "2412.05551",
+      "DOI": "10.48550/arXiv.2412.05551",
+      "CorpusId": 274597358
+    },
+    "title": "GAQAT: gradient-adaptive quantization-aware training for domain generalization",
+    "venue": "arXiv.org",
+    "year": 2024,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2412.05551, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2277600980",
+        "name": "Jiacheng Jiang"
+      },
+      {
+        "authorId": "2260668917",
+        "name": "Yuan Meng"
+      },
+      {
+        "authorId": "2266423717",
+        "name": "Chen Tang"
+      },
+      {
+        "authorId": "2334504670",
+        "name": "Han Yu"
+      },
+      {
+        "authorId": "2295689978",
+        "name": "Qun Li"
+      },
+      {
+        "authorId": "2295848449",
+        "name": "Zhi Wang"
+      },
+      {
+        "authorId": "2277687596",
+        "name": "Wenwu Zhu"
+      }
+    ],
+    "abstract": "Research on loss surface geometry, such as Sharpness-Aware Minimization (SAM), shows that flatter minima improve generalization. Recent studies further reveal that flatter minima can also reduce the domain generalization (DG) gap. However, existing flatness-based DG techniques predominantly operate within a full-precision training process, which is impractical for deployment on resource-constrained edge devices that typically rely on lower bit-width representations (e.g., 4 bits, 3 bits). Consequently, low-precision quantization-aware training is critical for optimizing these techniques in real-world applications. In this paper, we observe a significant degradation in performance when applying state-of-the-art DG-SAM methods to quantized models, suggesting that current approaches fail to preserve generalizability during the low-precision training process. To address this limitation, we propose a novel Gradient-Adaptive Quantization-Aware Training (GAQAT) framework for DG. Our approach begins by identifying the scale-gradient conflict problem in low-precision quantization, where the task loss and smoothness loss induce conflicting gradients for the scaling factors of quantizers, with certain layers exhibiting opposing gradient directions. This conflict renders the optimization of quantized weights highly unstable. To mitigate this, we further introduce a mechanism to quantify gradient inconsistencies and selectively freeze the gradients of scaling factors, thereby stabilizing the training process and enhancing out-of-domain generalization. Extensive experiments validate the effectiveness of the proposed GAQAT framework. On PACS, our 3-bit and 4-bit models outperform direct DG-QAT integration by up to 4.5%. On DomainNet, the 4-bit model achieves near-lossless performance compared to full precision, with improvements of 1.39% (4-bit) and 1.06% (3-bit) over the SOTA QAT baseline.",
+    "discovery_source": "search",
+    "discovery_query": "sharpness-aware gradient matching domain generalization"
+  },
+  {
+    "paperId": "9a900ead92e413f909a815e1991dbcedf1b4c1e4",
+    "externalIds": {
+      "ArXiv": "2511.17568",
+      "DBLP": "conf/aaai/XuC26a",
+      "DOI": "10.1609/aaai.v40i48.42296",
+      "CorpusId": 283245163
+    },
+    "title": "Enhancing Robustness of Offline Reinforcement Learning Under Data Corruption via Sharpness-Aware Minimization (Student Abstract)",
+    "venue": "AAAI Conference on Artificial Intelligence",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2511.17568, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "2299757925",
+        "name": "Le Xu"
+      },
+      {
+        "authorId": "2394123520",
+        "name": "Jiayu Chen"
+      }
+    ],
+    "abstract": "Offline reinforcement learning (RL) is vulnerable to real-world data corruption, with even robust algorithms failing under challenging observation and mixture corruptions. We posit this failure stems from data corruption creating sharp minima in the loss landscape, leading to poor generalization. To address this, we are the first to apply Sharpness-Aware Minimization (SAM) as a\ngeneral-purpose, plug-and-play optimizer for offline RL. SAM seeks flatter minima, guiding models to more robust parameter regions. We integrate SAM into strong baselines for data corruption: IQL, a top-performing offline RL algorithm in this setting, and RIQL, an algorithm designed specifically for data-corruption robustness. We evaluate them on D4RL benchmarks with both random and adversarial corruption. Our SAM-enhanced methods consistently and significantly outperform the original baselines. Visualizations of the reward surface confirm that SAM finds smoother solutions, providing strong evidence for its effectiveness in improving the robustness of offline RL agents.",
+    "discovery_source": "search",
+    "discovery_query": "sharpness-aware minimization robustness"
+  },
+  {
+    "paperId": "0da44af38f5bbe7c342dd0bf05988378fb5dc192",
+    "externalIds": {
+      "ArXiv": "2503.23430",
+      "DBLP": "journals/corr/abs-2503-23430",
+      "DOI": "10.48550/arXiv.2503.23430",
+      "CorpusId": 277451781
+    },
+    "title": "DGSAM: Domain Generalization via Individual Sharpness-Aware Minimization",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2503.23430, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2296406036",
+        "name": "Y. Song"
+      },
+      {
+        "authorId": "2323503259",
+        "name": "Youngsik Hwang"
+      },
+      {
+        "authorId": "2345727300",
+        "name": "Jonghun Lee"
+      },
+      {
+        "authorId": "2116623975",
+        "name": "Heechan Lee"
+      },
+      {
+        "authorId": "2323376103",
+        "name": "Dong-Young Lim"
+      }
+    ],
+    "abstract": "Domain generalization (DG) aims to learn models that perform well on unseen target domains by training on multiple source domains. Sharpness-Aware Minimization (SAM), known for finding flat minima that improve generalization, has therefore been widely adopted in DG. However, our analysis reveals that SAM in DG may converge to \\textit{fake flat minima}, where the total loss surface appears flat in terms of global sharpness but remains sharp with respect to individual source domains. To understand this phenomenon more precisely, we formalize the average worst-case domain risk as the maximum loss under domain distribution shifts within a bounded divergence, and derive a generalization bound that reveals the limitations of global sharpness-aware minimization. In contrast, we show that individual sharpness provides a valid upper bound on this risk, making it a more suitable proxy for robust domain generalization. Motivated by these insights, we shift the DG paradigm toward minimizing individual sharpness across source domains. We propose \\textit{Decreased-overhead Gradual SAM (DGSAM)}, which applies gradual domain-wise perturbations in a computationally efficient manner to consistently reduce individual sharpness. Extensive experiments demonstrate that DGSAM not only improves average accuracy but also reduces performance variance across domains, while incurring less computational overhead than SAM.",
+    "discovery_source": "search",
+    "discovery_query": "sharpness-aware domain generalization"
+  },
+  {
+    "paperId": "627fcbbc030c7dd7c89457e436741ec79c5025f7",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2405-18890",
+      "ArXiv": "2405.18890",
+      "DOI": "10.48550/arXiv.2405.18890",
+      "CorpusId": 270094747
+    },
+    "title": "Locally Estimated Global Perturbations are Better than Local Perturbations for Federated Sharpness-aware Minimization",
+    "venue": "International Conference on Machine Learning",
+    "year": 2024,
+    "citationCount": 36,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2405.18890, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "9069836",
+        "name": "Ziqing Fan"
+      },
+      {
+        "authorId": "2176837980",
+        "name": "Shengchao Hu"
+      },
+      {
+        "authorId": "3213796",
+        "name": "Jiangchao Yao"
+      },
+      {
+        "authorId": "47537639",
+        "name": "Gang Niu"
+      },
+      {
+        "authorId": "2301417989",
+        "name": "Ya Zhang"
+      },
+      {
+        "authorId": "67154907",
+        "name": "Masashi Sugiyama"
+      },
+      {
+        "authorId": "2303413808",
+        "name": "Yanfeng Wang"
+      }
+    ],
+    "abstract": "In federated learning (FL), the multi-step update and data heterogeneity among clients often lead to a loss landscape with sharper minima, degenerating the performance of the resulted global model. Prevalent federated approaches incorporate sharpness-aware minimization (SAM) into local training to mitigate this problem. However, the local loss landscapes may not accurately reflect the flatness of global loss landscape in heterogeneous environments; as a result, minimizing local sharpness and calculating perturbations on client data might not align the efficacy of SAM in FL with centralized training. To overcome this challenge, we propose FedLESAM, a novel algorithm that locally estimates the direction of global perturbation on client side as the difference between global models received in the previous active and current rounds. Besides the improved quality, FedLESAM also speed up federated SAM-based approaches since it only performs once backpropagation in each iteration. Theoretically, we prove a slightly tighter bound than its original FedSAM by ensuring consistent perturbation. Empirically, we conduct comprehensive experiments on four federated benchmark datasets under three partition strategies to demonstrate the superior performance and efficiency of FedLESAM.",
+    "discovery_source": "snowball",
+    "discovery_seed": "b698dbfaf9b961502062cbfcbe05d319047d8495"
+  },
+  {
+    "paperId": "ad6a428ce6e834e194385052ada41d07d21b1809",
+    "externalIds": {
+      "DBLP": "conf/iclr/BaekKR24",
+      "ArXiv": "2405.03676",
+      "DOI": "10.48550/arXiv.2405.03676",
+      "CorpusId": 269605466
+    },
+    "title": "Why is SAM Robust to Label Noise?",
+    "venue": "International Conference on Learning Representations",
+    "year": 2024,
+    "citationCount": 25,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2405.03676, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2276961570",
+        "name": "Christina Baek"
+      },
+      {
+        "authorId": "117539586",
+        "name": "Zico Kolter"
+      },
+      {
+        "authorId": "2655157",
+        "name": "Aditi Raghunathan"
+      }
+    ],
+    "abstract": "Sharpness-Aware Minimization (SAM) is most known for achieving state-of the-art performances on natural image and language tasks. However, its most pronounced improvements (of tens of percent) is rather in the presence of label noise. Understanding SAM's label noise robustness requires a departure from characterizing the robustness of minimas lying in\"flatter\"regions of the loss landscape. In particular, the peak performance under label noise occurs with early stopping, far before the loss converges. We decompose SAM's robustness into two effects: one induced by changes to the logit term and the other induced by changes to the network Jacobian. The first can be observed in linear logistic regression where SAM provably up-weights the gradient contribution from clean examples. Although this explicit up-weighting is also observable in neural networks, when we intervene and modify SAM to remove this effect, surprisingly, we see no visible degradation in performance. We infer that SAM's effect in deeper networks is instead explained entirely by the effect SAM has on the network Jacobian. We theoretically derive the implicit regularization induced by this Jacobian effect in two layer linear networks. Motivated by our analysis, we see that cheaper alternatives to SAM that explicitly induce these regularization effects largely recover the benefits in deep networks trained on real-world datasets.",
+    "discovery_source": "snowball",
+    "discovery_seed": "b698dbfaf9b961502062cbfcbe05d319047d8495"
+  },
+  {
+    "paperId": "a82ae40ecc5ea5e33b52c87c9464510cab7bf9d9",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2110-03141",
+      "ArXiv": "2110.03141",
+      "CorpusId": 238419436
+    },
+    "title": "Efficient Sharpness-aware Minimization for Improved Training of Neural Networks",
+    "venue": "International Conference on Learning Representations",
+    "year": 2021,
+    "citationCount": 170,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2110.03141, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "50748225",
+        "name": "Jiawei Du"
+      },
+      {
+        "authorId": "143619442",
+        "name": "Hanshu Yan"
+      },
+      {
+        "authorId": "1698982",
+        "name": "Jiashi Feng"
+      },
+      {
+        "authorId": "2115939117",
+        "name": "Joey Tianyi Zhou"
+      },
+      {
+        "authorId": "1786516",
+        "name": "Liangli Zhen"
+      },
+      {
+        "authorId": "2264426875",
+        "name": "R. S. M. Goh"
+      },
+      {
+        "authorId": "2067120710",
+        "name": "Vincent Y. F. Tan"
+      }
+    ],
+    "abstract": "Overparametrized Deep Neural Networks (DNNs) often achieve astounding performances, but may potentially result in severe generalization error. Recently, the relation between the sharpness of the loss landscape and the generalization error has been established by Foret et al. (2020), in which the Sharpness Aware Minimizer (SAM) was proposed to mitigate the degradation of the generalization. Unfortunately, SAM s computational cost is roughly double that of base optimizers, such as Stochastic Gradient Descent (SGD). This paper thus proposes Efficient Sharpness Aware Minimizer (ESAM), which boosts SAM s efficiency at no cost to its generalization performance. ESAM includes two novel and efficient training strategies-StochasticWeight Perturbation and Sharpness-Sensitive Data Selection. In the former, the sharpness measure is approximated by perturbing a stochastically chosen set of weights in each iteration; in the latter, the SAM loss is optimized using only a judiciously selected subset of data that is sensitive to the sharpness. We provide theoretical explanations as to why these strategies perform well. We also show, via extensive experiments on the CIFAR and ImageNet datasets, that ESAM enhances the efficiency over SAM from requiring 100% extra computations to 40% vis-a-vis base optimizers, while test accuracies are preserved or even improved.",
+    "discovery_source": "search",
+    "discovery_query": "efficient sharpness-aware minimization"
+  },
+  {
+    "paperId": "5a41152cfa769414f9d54cf436b98f36ffb0b729",
+    "externalIds": {
+      "ArXiv": "2210.06895",
+      "DBLP": "conf/emnlp/ZhangL0022",
+      "ACL": "2022.emnlp-main.257",
+      "DOI": "10.48550/arXiv.2210.06895",
+      "CorpusId": 252873282
+    },
+    "title": "GA-SAM: Gradient-Strength based Adaptive Sharpness-Aware Minimization for Improved Generalization",
+    "venue": "Conference on Empirical Methods in Natural Language Processing",
+    "year": 2022,
+    "citationCount": 18,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2210.06895",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2210.06895, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "50317060",
+        "name": "Zhiyuan Zhang"
+      },
+      {
+        "authorId": "51152129",
+        "name": "Ruixuan Luo"
+      },
+      {
+        "authorId": "48987995",
+        "name": "Qi Su"
+      },
+      {
+        "authorId": "2116529923",
+        "name": "Xueting Sun"
+      }
+    ],
+    "abstract": "Recently, Sharpness-Aware Minimization (SAM) algorithm has shown state-of-the-art generalization abilities in vision tasks. It demonstrates that flat minima tend to imply better generalization abilities. However, it has some difficulty implying SAM to some natural language tasks, especially to models with drastic gradient changes, such as RNNs. In this work, we analyze the relation between the flatness of the local minimum and its generalization ability from a novel and straightforward theoretical perspective. We propose that the shift of the training and test distributions can be equivalently seen as a virtual parameter corruption or perturbation, which can explain why flat minima that are robust against parameter corruptions or perturbations have better generalization performances. On its basis, we propose a Gradient-Strength based Adaptive Sharpness-Aware Minimization (GA-SAM) algorithm to help to learn algorithms find flat minima that generalize better. Results in various language benchmarks validate the effectiveness of the proposed GA-SAM algorithm on natural language tasks.",
+    "discovery_source": "search",
+    "discovery_query": "adaptive sharpness-aware minimization"
+  },
+  {
+    "paperId": "75d56a94035b9f00591145d4a4b542305e9cc9e8",
+    "externalIds": {
+      "DBLP": "journals/remotesensing/DongYZWS24",
+      "DOI": "10.3390/rs16162877",
+      "CorpusId": 271788516
+    },
+    "title": "Implicit Sharpness-Aware Minimization for Domain Generalization",
+    "venue": "Remote Sensing",
+    "year": 2024,
+    "citationCount": 4,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.3390/rs16162877?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/rs16162877, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2188155925",
+        "name": "Mingrong Dong"
+      },
+      {
+        "authorId": "2315445701",
+        "name": "Yixuan Yang"
+      },
+      {
+        "authorId": "2282728103",
+        "name": "Kai Zeng"
+      },
+      {
+        "authorId": "2260710028",
+        "name": "Qingwang Wang"
+      },
+      {
+        "authorId": "2271765761",
+        "name": "Tao Shen"
+      }
+    ],
+    "abstract": "Domain generalization (DG) aims to learn knowledge from multiple related domains to achieve a robust generalization performance in unseen target domains, which is an effective approach to mitigate domain shift in remote sensing image classification. Although the sharpness-aware minimization (SAM) method enhances DG capability and improves remote sensing image classification performance by promoting the convergence of the loss minimum to a flatter loss surface, the perturbation loss (maximum loss within the neighborhood of a local minimum) of SAM fails to accurately measure the true sharpness of the loss landscape. Furthermore, its variants often overlook gradient conflicts, thereby limiting further improvement in DG performance. In this paper, we introduce implicit sharpness-aware minimization (ISAM), a novel method that addresses the deficiencies of SAM and mitigates gradient conflicts. Specifically, we demonstrate that the discrepancy in training loss during gradient ascent or descent serves as an equivalent measure of the dominant eigenvalue of the Hessian matrix. This discrepancy provides a reliable measure for sharpness. ISAM effectively reduces sharpness and mitigates potential conflicts between gradients by implicitly minimizing the discrepancy between training losses while ensuring a sufficiently low minimum through minimizing perturbation loss. Extensive experiments and analyses demonstrate that ISAM significantly enhances the model\u2019s generalization ability on remote sensing and DG datasets, outperforming existing state-of-the-art methods.",
+    "discovery_source": "search",
+    "discovery_query": "sharpness-aware domain generalization"
+  },
+  {
+    "paperId": "b9af7e291f4ede06b251708f2477f2484b85e929",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2501-11584",
+      "PubMedCentral": "12599882",
+      "ArXiv": "2501.11584",
+      "DOI": "10.1109/ACCESS.2025.3624332",
+      "CorpusId": 275757689,
+      "PubMed": "41221151"
+    },
+    "title": "GCSAM: Gradient Centralized Sharpness Aware Minimization",
+    "venue": "IEEE Access",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": "CCBY",
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2501.11584, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2315694437",
+        "name": "Mohamed Hassan"
+      },
+      {
+        "authorId": "2356826775",
+        "name": "Aleksandar Vakanski"
+      },
+      {
+        "authorId": "2325326195",
+        "name": "Boyu Zhang"
+      },
+      {
+        "authorId": "2265495421",
+        "name": "Min Xian"
+      }
+    ],
+    "abstract": "The generalization performance of deep neural networks (DNNs) is a critical factor in achieving robust model behavior on unseen data. Recent studies have highlighted the importance of sharpness-based measures in promoting generalization by encouraging convergence to flatter minima. Among these approaches, Sharpness-Aware Minimization (SAM) has emerged as an effective optimization technique for reducing the sharpness of the loss landscape, thereby improving generalization. However, SAM\u2019s computational overhead and sensitivity to noisy gradients limit its scalability and efficiency. To address these challenges, we propose Gradient-Centralized Sharpness-Aware Minimization (GCSAM), which incorporates Gradient Centralization (GC) to stabilize gradients and accelerate convergence. GCSAM normalizes gradients before the ascent step, reducing noise and variance, and improving stability during training. Our evaluations on both general vision benchmarks (CIFAR-10, CIFAR-100) and critical medical imaging datasets (breast ultrasound and COVID-19 chest X-rays) demonstrate that GCSAM consistently outperforms SAM and the Adam optimizer in terms of generalization and computational efficiency. These results highlight GCSAM\u2019s potential for improving reliability in domains where robust generalization is essential, particularly in medical image analysis. Our code is available at https://github.com/mhassann22/GCSAM",
+    "discovery_source": "search",
+    "discovery_query": "sharpness measures generalization"
+  },
+  {
+    "paperId": "1d83afc69d4b773c9ec808451f30f1157594a61e",
+    "externalIds": {
+      "ArXiv": "2501.08361",
+      "DBLP": "journals/corr/abs-2501-08361",
+      "DOI": "10.48550/arXiv.2501.08361",
+      "CorpusId": 275544290
+    },
+    "title": "Weight Averaging for Out-of-Distribution Generalization and Few-Shot Domain Adaptation",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2501.08361, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2400114078",
+        "name": "Shijia Xu"
+      }
+    ],
+    "abstract": "Empirical risk minimization (ERM) is not robust to changes in the distribution of data. When the distribution of test data is different from that of training data, the problem is known as out-of-distribution generalization. Recently, two techniques have been developed for addressing out-of-distribution generalization in computer vision: weight averaging (WA) and sharpness-aware minimization (SAM). WA involves training multiple models with different hyperparameters and then averaging the weights of these models, which can significantly improve out-of-distribution generalization performance. SAM optimizes a neural network to find minima in flat regions, which have been proven to perform well under distribution shifts. While these techniques have made great progress, there is still room for improvement and further exploration. In this thesis, we propose increasing the model diversity in WA explicitly by introducing gradient similarity as a loss regularizer to further improve out-of-distribution generalization performance. We also propose combining WA and SAM to solve the problem of few-shot domain adaptation. Our extensive experiments on digits datasets (MNIST, SVHN, USPS, MNIST-M) and other domain adaptation datasets (VLCS, PACS) show that combining WA and SAM leads to improved out-of-distribution generalization performance and significantly increases few-shot domain adaptation accuracy.",
+    "discovery_source": "search",
+    "discovery_query": "stochastic weight averaging domain generalization"
+  },
+  {
+    "paperId": "8407371dfe5d6a2ae082b6256b1ba1e25c0361c2",
+    "externalIds": {
+      "DOI": "10.3390/math13081259",
+      "CorpusId": 277752745
+    },
+    "title": "Exploring Flatter Loss Landscape Surface via Sharpness-Aware Minimization with Linear Mode Connectivity",
+    "venue": "Mathematics",
+    "year": 2025,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.3390/math13081259?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/math13081259, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2338806413",
+        "name": "Hailun Liang"
+      },
+      {
+        "authorId": "2277811715",
+        "name": "Haowen Zheng"
+      },
+      {
+        "authorId": "2346326481",
+        "name": "Hao Wang"
+      },
+      {
+        "authorId": "2355357893",
+        "name": "Liu He"
+      },
+      {
+        "authorId": "2231803885",
+        "name": "Hao Lin"
+      },
+      {
+        "authorId": "2116799354",
+        "name": "Yanyan Liang"
+      }
+    ],
+    "abstract": "The Sharpness-Aware Minimization (SAM) optimizer connects flatness and generalization, suggesting that loss basins with lower sharpness are correlated with better generalization. However, SAM requires manually tuning the open ball radius, which complicates its practical application. To address this, we propose a method inspired by linear connectivity, using two models initialized differently as endpoints to automatically determine the optimal open ball radius. Specifically, we introduce distance regularization between the two models during training, which encourages them to approach each other, thus dynamically adjusting the open ball radius. We design an optimization algorithm called \u2019Twin Stars Entwined\u2019 (TSE), where the stopping condition is defined by the models\u2019 linear connectivity, i.e., when they converge to a region of sufficiently low distance. As the models iteratively reduce their distance, they converge to a flatter region of the loss landscape. Our approach complements SAM by dynamically identifying flatter regions and exploring the geometric properties of multiple connected loss basins. Instead of searching for a single large-radius basin, we identify a group of connected basins as potential optimization targets. Experiments conducted across multiple models and in varied noise environments showed that our method achieved a performance on par with state-of-the-art techniques.",
+    "discovery_source": "search",
+    "discovery_query": "loss landscape sharpness generalization"
+  },
+  {
+    "paperId": "58ab7d67f2eeb4d753cf443da3bccaeaa7897fde",
+    "externalIds": {
+      "DBLP": "conf/iclr/ZhuangGYCADtD022",
+      "ArXiv": "2203.08065",
+      "DOI": "10.48550/arXiv.2203.08065",
+      "CorpusId": 247450846
+    },
+    "title": "Surrogate Gap Minimization Improves Sharpness-Aware Training",
+    "venue": "International Conference on Learning Representations",
+    "year": 2022,
+    "citationCount": 218,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2203.08065",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2203.08065, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "46251934",
+        "name": "Juntang Zhuang"
+      },
+      {
+        "authorId": "40206014",
+        "name": "Boqing Gong"
+      },
+      {
+        "authorId": "36001694",
+        "name": "Liangzhe Yuan"
+      },
+      {
+        "authorId": "2115350367",
+        "name": "Yin Cui"
+      },
+      {
+        "authorId": "2595180",
+        "name": "Hartwig Adam"
+      },
+      {
+        "authorId": "5507046",
+        "name": "N. Dvornek"
+      },
+      {
+        "authorId": "1688323",
+        "name": "S. Tatikonda"
+      },
+      {
+        "authorId": "2158859164",
+        "name": "James S. Duncan"
+      },
+      {
+        "authorId": "2115431213",
+        "name": "Ting Liu"
+      }
+    ],
+    "abstract": "The recently proposed Sharpness-Aware Minimization (SAM) improves generalization by minimizing a \\textit{perturbed loss} defined as the maximum loss within a neighborhood in the parameter space. However, we show that both sharp and flat minima can have a low perturbed loss, implying that SAM does not always prefer flat minima. Instead, we define a \\textit{surrogate gap}, a measure equivalent to the dominant eigenvalue of Hessian at a local minimum when the radius of the neighborhood (to derive the perturbed loss) is small. The surrogate gap is easy to compute and feasible for direct minimization during training. Based on the above observations, we propose Surrogate \\textbf{G}ap Guided \\textbf{S}harpness-\\textbf{A}ware \\textbf{M}inimization (GSAM), a novel improvement over SAM with negligible computation overhead. Conceptually, GSAM consists of two steps: 1) a gradient descent like SAM to minimize the perturbed loss, and 2) an \\textit{ascent} step in the \\textit{orthogonal} direction (after gradient decomposition) to minimize the surrogate gap and yet not affect the perturbed loss. GSAM seeks a region with both small loss (by step 1) and low sharpness (by step 2), giving rise to a model with high generalization capabilities. Theoretically, we show the convergence of GSAM and provably better generalization than SAM. Empirically, GSAM consistently improves generalization (e.g., +3.2\\% over SAM and +5.4\\% over AdamW on ImageNet top-1 accuracy for ViT-B/32). Code is released at \\url{ https://sites.google.com/view/gsam-iclr22/home}.",
+    "discovery_source": "search",
+    "discovery_query": "surrogate gap guided sharpness-aware minimization"
+  },
+  {
+    "paperId": "c8f88063357e270fef070c6f19ff142ccc5cd10c",
+    "externalIds": {
+      "DBLP": "conf/cvpr/LiuMCHY22",
+      "ArXiv": "2203.02714",
+      "DOI": "10.1109/CVPR52688.2022.01204",
+      "CorpusId": 247292067
+    },
+    "title": "Towards Efficient and Scalable Sharpness-Aware Minimization",
+    "venue": "Computer Vision and Pattern Recognition",
+    "year": 2022,
+    "citationCount": 171,
+    "openAccessPdf": {
+      "url": "https://arxiv.org/pdf/2203.02714",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2203.02714, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "1679704",
+        "name": "Y. Liu"
+      },
+      {
+        "authorId": "2157859882",
+        "name": "Siqi Mai"
+      },
+      {
+        "authorId": "2143737082",
+        "name": "Xiangning Chen"
+      },
+      {
+        "authorId": "1793529",
+        "name": "Cho-Jui Hsieh"
+      },
+      {
+        "authorId": "2054451943",
+        "name": "Yang You"
+      }
+    ],
+    "abstract": "Recently, Sharpness-Aware Minimization (SAM), which connects the geometry of the loss landscape and generalization, has demonstrated a significant performance boost on training large-scale models such as vision transformers. However, the update rule of SAM requires two sequential (non-parallelizable) gradient computations at each step, which can double the computational overhead. In this paper, we propose a novel algorithm LookSAM - that only periodically calculates the inner gradient ascent, to significantly reduce the additional training cost of SAM. The empirical results illustrate that LookSAM achieves similar accuracy gains to SAM while being tremendously faster - it enjoys comparable computational complexity with first-order optimizers such as SGD or Adam. To further evaluate the performance and scalability of LookSAM, we incorporate a layer-wise modification and perform experiments in the large-batch training scenario, which is more prone to converge to sharp local minima. Equipped with the proposed algorithms, we are the first to successfully scale up the batch size when training Vision Transformers (ViTs). With a 64k batch size, we are able to train ViTs from scratch in minutes while maintaining competitive performance. The code is available here: https://github.com/yong-6/LookSAM",
+    "discovery_source": "search",
+    "discovery_query": "efficient sharpness-aware minimization"
+  },
+  {
+    "paperId": "efeaa77602c13e521e8359d2dad21228cac435f6",
+    "externalIds": {
+      "ArXiv": "2303.00565",
+      "DBLP": "journals/nn/SunSZDCSLST24",
+      "DOI": "10.48550/arXiv.2303.00565",
+      "CorpusId": 257255005,
+      "PubMed": "37944247"
+    },
+    "title": "AdaSAM: Boosting Sharpness-Aware Minimization with Adaptive Learning Rate and Momentum for Training Deep Neural Networks",
+    "venue": "Neural Networks",
+    "year": 2023,
+    "citationCount": 50,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2303.00565",
+      "status": "CLOSED",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2303.00565, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2118181077",
+        "name": "Hao Sun"
+      },
+      {
+        "authorId": "2144035454",
+        "name": "Li Shen"
+      },
+      {
+        "authorId": "2114810150",
+        "name": "Qihuang Zhong"
+      },
+      {
+        "authorId": "46573238",
+        "name": "Liang Ding"
+      },
+      {
+        "authorId": "145891473",
+        "name": "Shixiang Chen"
+      },
+      {
+        "authorId": "46969142",
+        "name": "Jingwei Sun"
+      },
+      {
+        "authorId": "2152912323",
+        "name": "Jing Li"
+      },
+      {
+        "authorId": "2091052605",
+        "name": "Guangzhong Sun"
+      },
+      {
+        "authorId": "2135519749",
+        "name": "Dacheng Tao"
+      }
+    ],
+    "abstract": "Sharpness aware minimization (SAM) optimizer has been extensively explored as it can generalize better for training deep neural networks via introducing extra perturbation steps to flatten the landscape of deep learning models. Integrating SAM with adaptive learning rate and momentum acceleration, dubbed AdaSAM, has already been explored empirically to train large-scale deep neural networks without theoretical guarantee due to the triple difficulties in analyzing the coupled perturbation step, adaptive learning rate and momentum step. In this paper, we try to analyze the convergence rate of AdaSAM in the stochastic non-convex setting. We theoretically show that AdaSAM admits a O(1/bT) convergence rate, which achieves linear speedup property with respect to mini-batch size b. Specifically, to decouple the stochastic gradient steps with the adaptive learning rate and perturbed gradient, we introduce the delayed second-order momentum term to decompose them to make them independent while taking an expectation during the analysis. Then we bound them by showing the adaptive learning rate has a limited range, which makes our analysis feasible. To the best of our knowledge, we are the first to provide the non-trivial convergence rate of SAM with an adaptive learning rate and momentum acceleration. At last, we conduct several experiments on several NLP tasks and the synthetic task, which show that AdaSAM could achieve superior performance compared with SGD, AMSGrad, and SAM optimizers.",
+    "discovery_source": "search",
+    "discovery_query": "adaptive sharpness-aware minimization"
+  },
+  {
+    "paperId": "8adf430deefe6af08b894d28399eb027c2e8e69e",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2304-14647",
+      "ArXiv": "2304.14647",
+      "DOI": "10.48550/arXiv.2304.14647",
+      "CorpusId": 258418258
+    },
+    "title": "An Adaptive Policy to Employ Sharpness-Aware Minimization",
+    "venue": "International Conference on Learning Representations",
+    "year": 2023,
+    "citationCount": 48,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2304.14647",
+      "status": "CLOSED",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2304.14647, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2152123946",
+        "name": "Weisen Jiang"
+      },
+      {
+        "authorId": "1390621275",
+        "name": "Hansi Yang"
+      },
+      {
+        "authorId": "2153638098",
+        "name": "Yu Zhang"
+      },
+      {
+        "authorId": "2062528230",
+        "name": "J. Kwok"
+      }
+    ],
+    "abstract": "Sharpness-aware minimization (SAM), which searches for flat minima by min-max optimization, has been shown to be useful in improving model generalization. However, since each SAM update requires computing two gradients, its computational cost and training time are both doubled compared to standard empirical risk minimization (ERM). Recent state-of-the-arts reduce the fraction of SAM updates and thus accelerate SAM by switching between SAM and ERM updates randomly or periodically. In this paper, we design an adaptive policy to employ SAM based on the loss landscape geometry. Two efficient algorithms, AE-SAM and AE-LookSAM, are proposed. We theoretically show that AE-SAM has the same convergence rate as SAM. Experimental results on various datasets and architectures demonstrate the efficiency and effectiveness of the adaptive policy.",
+    "discovery_source": "search",
+    "discovery_query": "adaptive sharpness-aware minimization"
+  },
+  {
+    "paperId": "19fe3894ce5b0a0be8fc7a8e21afc67657d75915",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2505-01660",
+      "ArXiv": "2505.01660",
+      "DOI": "10.48550/arXiv.2505.01660",
+      "CorpusId": 278327612
+    },
+    "title": "Focal-SAM: Focal Sharpness-Aware Minimization for Long-Tailed Classification",
+    "venue": "International Conference on Machine Learning",
+    "year": 2025,
+    "citationCount": 12,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2505.01660, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "2301218392",
+        "name": "Sicong Li"
+      },
+      {
+        "authorId": "34679664",
+        "name": "Qianqian Xu"
+      },
+      {
+        "authorId": "16546250",
+        "name": "Zhiyong Yang"
+      },
+      {
+        "authorId": "2117414713",
+        "name": "Zitai Wang"
+      },
+      {
+        "authorId": "2359207570",
+        "name": "Linchao Zhang"
+      },
+      {
+        "authorId": "2149214322",
+        "name": "Xiaochun Cao"
+      },
+      {
+        "authorId": "2279863252",
+        "name": "Qingming Huang"
+      }
+    ],
+    "abstract": "Real-world datasets often follow a long-tailed distribution, making generalization to tail classes difficult. Recent methods resorted to long-tail variants of Sharpness-Aware Minimization (SAM), such as ImbSAM and CC-SAM, to improve generalization by flattening the loss landscape. However, these attempts face a trade-off between computational efficiency and control over the loss landscape. On the one hand, ImbSAM is efficient but offers only coarse control as it excludes head classes from the SAM process. On the other hand, CC-SAM provides fine-grained control through class-dependent perturbations but at the cost of efficiency due to multiple backpropagations. Seeing this dilemma, we introduce Focal-SAM, which assigns different penalties to class-wise sharpness, achieving fine-grained control without extra backpropagations, thus maintaining efficiency. Furthermore, we theoretically analyze Focal-SAM's generalization ability and derive a sharper generalization bound. Extensive experiments on both traditional and foundation models validate the effectiveness of Focal-SAM.",
+    "discovery_source": "search",
+    "discovery_query": "efficient sharpness-aware minimization"
+  },
+  {
+    "paperId": "f86ed04b3613fdbc0a83ce86d7dbad75423a0f9e",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2503-02225",
+      "ArXiv": "2503.02225",
+      "DOI": "10.48550/arXiv.2503.02225",
+      "CorpusId": 276776685
+    },
+    "title": "Sharpness-Aware Minimization: General Analysis and Improved Rates",
+    "venue": "International Conference on Learning Representations",
+    "year": 2025,
+    "citationCount": 11,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2503.02225, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2304955065",
+        "name": "Dimitris Oikonomou"
+      },
+      {
+        "authorId": "1941365",
+        "name": "Nicolas Loizou"
+      }
+    ],
+    "abstract": "Sharpness-Aware Minimization (SAM) has emerged as a powerful method for improving generalization in machine learning models by minimizing the sharpness of the loss landscape. However, despite its success, several important questions regarding the convergence properties of SAM in non-convex settings are still open, including the benefits of using normalization in the update rule, the dependence of the analysis on the restrictive bounded variance assumption, and the convergence guarantees under different sampling strategies. To address these questions, in this paper, we provide a unified analysis of SAM and its unnormalized variant (USAM) under one single flexible update rule (Unified SAM), and we present convergence results of the new algorithm under a relaxed and more natural assumption on the stochastic noise. Our analysis provides convergence guarantees for SAM under different step size selections for non-convex problems and functions that satisfy the Polyak-Lojasiewicz (PL) condition (a non-convex generalization of strongly convex functions). The proposed theory holds under the arbitrary sampling paradigm, which includes importance sampling as special case, allowing us to analyze variants of SAM that were never explicitly considered in the literature. Experiments validate the theoretical findings and further demonstrate the practical effectiveness of Unified SAM in training deep neural networks for image classification tasks.",
+    "discovery_source": "search",
+    "discovery_query": "normalization layers sharpness-aware minimization"
+  },
+  {
+    "paperId": "3a02d91d96f3594e0d25e9b978d3ea71c887d345",
+    "externalIds": {
+      "DOI": "10.3390/electronics13030503",
+      "CorpusId": 267264089
+    },
+    "title": "Deep Neural Network Confidence Calibration from Stochastic Weight Averaging",
+    "venue": "Electronics",
+    "year": 2024,
+    "citationCount": 9,
+    "openAccessPdf": {
+      "url": "https://www.mdpi.com/2079-9292/13/3/503/pdf?version=1706175683",
+      "status": "GOLD",
+      "license": "CCBY",
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.3390/electronics13030503?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/electronics13030503, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "1384467414",
+        "name": "Zongjing Cao"
+      },
+      {
+        "authorId": "2152885223",
+        "name": "Yan Li"
+      },
+      {
+        "authorId": "2205150263",
+        "name": "Dongho Kim"
+      },
+      {
+        "authorId": "2161094354",
+        "name": "Byeong-Seok Shin"
+      }
+    ],
+    "abstract": "Overconfidence in deep neural networks (DNN) reduces the model\u2019s generalization performance and increases its risk. The deep ensemble method improves model robustness and generalization of the model by combining prediction results from multiple DNNs. However, training multiple DNNs for model averaging is a time-consuming and resource-intensive process. Moreover, combining multiple base learners (also called inducers) is hard to master, and any wrong choice may result in lower prediction accuracy than from a single inducer. We propose an approximation method for deep ensembles that can obtain ensembles of multiple DNNs without any additional costs. Specifically, multiple local optimal parameters generated during the training phase are sampled and saved by using an intelligent strategy. We use cycle learning rates starting at 75% of the training process and save the weights associated with the minimum learning rate in every iteration. Saved sets of the multiple model parameters are used as weights for a new model to perform forward propagation during the testing phase. Experiments on benchmarks of two different modalities, static images and dynamic videos, show that our method not only reduces the calibration error of the model but also improves the accuracy of the model.",
+    "discovery_source": "search",
+    "discovery_query": "stochastic weight averaging"
+  },
+  {
+    "paperId": "b4926d7efab904a97475f0fd53f62f9fe2a926b3",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2510-14231",
+      "ArXiv": "2510.14231",
+      "DOI": "10.48550/arXiv.2510.14231",
+      "CorpusId": 282138513
+    },
+    "title": "When Flatness Does (Not) Guarantee Adversarial Robustness",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "citationCount": 4,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2510.14231, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2271510300",
+        "name": "Nils Philipp Walter"
+      },
+      {
+        "authorId": "2127518735",
+        "name": "Linara Adilova"
+      },
+      {
+        "authorId": "49688681",
+        "name": "J. Vreeken"
+      },
+      {
+        "authorId": "2309246726",
+        "name": "Michael Kamp"
+      }
+    ],
+    "abstract": "Despite their empirical success, neural networks remain vulnerable to small, adversarial perturbations. A longstanding hypothesis suggests that flat minima, regions of low curvature in the loss landscape, offer increased robustness. While intuitive, this connection has remained largely informal and incomplete. By rigorously formalizing the relationship, we show this intuition is only partially correct: flatness implies local but not global adversarial robustness. To arrive at this result, we first derive a closed-form expression for relative flatness in the penultimate layer, and then show we can use this to constrain the variation of the loss in input space. This allows us to formally analyze the adversarial robustness of the entire network. We then show that to maintain robustness beyond a local neighborhood, the loss needs to curve sharply away from the data manifold. We validate our theoretical predictions empirically across architectures and datasets, uncovering the geometric structure that governs adversarial vulnerability, and linking flatness to model confidence: adversarial examples often lie in large, flat regions where the model is confidently wrong. Our results challenge simplified views of flatness and provide a nuanced understanding of its role in robustness.",
+    "discovery_source": "search",
+    "discovery_query": "relative flatness neural network"
+  },
+  {
+    "paperId": "eb9eec791922d755667c0c7216f5c4d5135cb54e",
+    "externalIds": {
+      "ArXiv": "2305.05392",
+      "CorpusId": 259313825
+    },
+    "title": "Sharpness-Aware Minimization Alone can Improve Adversarial Robustness",
+    "venue": "",
+    "year": 2023,
+    "citationCount": 17,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2305.05392, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": null,
+    "authors": [
+      {
+        "authorId": "2191808925",
+        "name": "Zeming Wei"
+      },
+      {
+        "authorId": "2216749387",
+        "name": "Jingyu Zhu"
+      },
+      {
+        "authorId": "1971137",
+        "name": "Yihao Zhang"
+      }
+    ],
+    "abstract": "Sharpness-Aware Minimization (SAM) is an effective method for improving generalization ability by regularizing loss sharpness. In this paper, we explore SAM in the context of adversarial robustness. We find that using only SAM can achieve superior adversarial robustness without sacrificing clean accuracy compared to standard training, which is an unexpected benefit. We also discuss the relation between SAM and adversarial training (AT), a popular method for improving the adversarial robustness of DNNs. In particular, we show that SAM and AT differ in terms of perturbation strength, leading to different accuracy and robustness trade-offs. We provide theoretical evidence for these claims in a simplified model. Finally, while AT suffers from decreased clean accuracy and computational overhead, we suggest that SAM can be regarded as a lightweight substitute for AT under certain requirements. Code is available at https://github.com/weizeming/SAM_AT.",
+    "discovery_source": "search",
+    "discovery_query": "sharpness-aware minimization robustness"
+  },
+  {
+    "paperId": "6c895aa70c5649fce6abbd39d859ab12222be51b",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2511-20258",
+      "ArXiv": "2511.20258",
+      "DOI": "10.48550/arXiv.2511.20258",
+      "CorpusId": 283250603
+    },
+    "title": "Modality-Balanced Collaborative Distillation for Multi-Modal Domain Generalization",
+    "venue": "AAAI Conference on Artificial Intelligence",
+    "year": 2025,
+    "citationCount": 3,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2511.20258, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "2365351197",
+        "name": "Xiaohan Wang"
+      },
+      {
+        "authorId": "2174885298",
+        "name": "Zhangtao Cheng"
+      },
+      {
+        "authorId": "2362771508",
+        "name": "Ting Zhong"
+      },
+      {
+        "authorId": "2395605467",
+        "name": "Leiting Chen"
+      },
+      {
+        "authorId": "2357456026",
+        "name": "Fan Zhou"
+      }
+    ],
+    "abstract": "Weight Averaging (WA) has emerged as a powerful technique for enhancing generalization by promoting convergence to a flat loss landscape, which correlates with stronger out-of-distribution performance. However, applying WA directly to multi-modal domain generalization (MMDG) is challenging: differences in optimization speed across modalities lead WA to overfit to faster-converging ones in early stages, suppressing the contribution of slower yet complementary modalities, thereby hindering effective modality fusion and skewing the loss surface toward sharper, less generalizable minima.\nTo address this issue, we propose MBCD, a unified collaborative distillation framework that retains WA's flatness-inducing advantages while overcoming its shortcomings in multi-modal contexts. MBCD begins with adaptive modality dropout in the student model to curb early-stage bias toward dominant modalities. A gradient consistency constraint then aligns learning signals between uni-modal branches and the fused representation, encouraging coordinated and smoother optimization. Finally, a WA-based teacher conducts cross-modal distillation by transferring fused knowledge to each uni-modal branch, which strengthens cross-modal interactions and steer convergence toward flatter solutions. \nExtensive experiments on MMDG benchmarks show that MBCD consistently outperforms existing methods, achieving superior accuracy and robustness across diverse unseen domains.",
+    "discovery_source": "search",
+    "discovery_query": "flat minima domain generalization"
+  },
+  {
+    "paperId": "9f260770917a1bb7e86b36cb465cb6c10abbb2cc",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2602-11584",
+      "ArXiv": "2602.11584",
+      "DOI": "10.48550/arXiv.2602.11584",
+      "CorpusId": 285540478
+    },
+    "title": "Gradient Compression May Hurt Generalization: A Remedy by Synthetic Data Guided Sharpness Aware Minimization",
+    "venue": "arXiv.org",
+    "year": 2026,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2602.11584, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2304905656",
+        "name": "Yujie Gu"
+      },
+      {
+        "authorId": "9544024",
+        "name": "Richeng Jin"
+      },
+      {
+        "authorId": "2257785570",
+        "name": "Zhaoyang Zhang"
+      },
+      {
+        "authorId": "2273929447",
+        "name": "Huaiyu Dai"
+      }
+    ],
+    "abstract": "It is commonly believed that gradient compression in federated learning (FL) enjoys significant improvement in communication efficiency with negligible performance degradation. In this paper, we find that gradient compression induces sharper loss landscapes in federated learning, particularly under non-IID data distributions, which suggests hindered generalization capability. The recently emerging Sharpness Aware Minimization (SAM) effectively searches for a flat minima by incorporating a gradient ascent step (i.e., perturbing the model with gradients) before the celebrated stochastic gradient descent. Nonetheless, the direct application of SAM in FL suffers from inaccurate estimation of the global perturbation due to data heterogeneity. Existing approaches propose to utilize the model update from the previous communication round as a rough estimate. However, its effectiveness is hindered when model update compression is incorporated. In this paper, we propose FedSynSAM, which leverages the global model trajectory to construct synthetic data and facilitates an accurate estimation of the global perturbation. The convergence of the proposed algorithm is established, and extensive experiments are conducted to validate its effectiveness.",
+    "discovery_source": "search",
+    "discovery_query": "surrogate gap guided sharpness-aware minimization"
+  },
+  {
+    "paperId": "bf109c1cdab0c8d597081be6962ea5848fa06221",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2505-23866",
+      "ArXiv": "2505.23866",
+      "DOI": "10.48550/arXiv.2505.23866",
+      "CorpusId": 279071089
+    },
+    "title": "Towards Understanding The Calibration Benefits of Sharpness-Aware Minimization",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "citationCount": 2,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2505.23866, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2111729017",
+        "name": "Chengli Tan"
+      },
+      {
+        "authorId": "2364548926",
+        "name": "Yubo Zhou"
+      },
+      {
+        "authorId": "2261282732",
+        "name": "Haishan Ye"
+      },
+      {
+        "authorId": "2286299558",
+        "name": "Guang Dai"
+      },
+      {
+        "authorId": "2364545887",
+        "name": "Junmin Liu"
+      },
+      {
+        "authorId": "51139139",
+        "name": "Zengjie Song"
+      },
+      {
+        "authorId": "2273946824",
+        "name": "Jiangshe Zhang"
+      },
+      {
+        "authorId": "1747921",
+        "name": "Zixiang Zhao"
+      },
+      {
+        "authorId": "2279663804",
+        "name": "Yunda Hao"
+      },
+      {
+        "authorId": "2146648069",
+        "name": "Yong Xu"
+      }
+    ],
+    "abstract": "Deep neural networks have been increasingly used in safety-critical applications such as medical diagnosis and autonomous driving. However, many studies suggest that they are prone to being poorly calibrated and have a propensity for overconfidence, which may have disastrous consequences. In this paper, unlike standard training such as stochastic gradient descent, we show that the recently proposed sharpness-aware minimization (SAM) counteracts this tendency towards overconfidence. The theoretical analysis suggests that SAM allows us to learn models that are already well-calibrated by implicitly maximizing the entropy of the predictive distribution. Inspired by this finding, we further propose a variant of SAM, coined as CSAM, to ameliorate model calibration. Extensive experiments on various datasets, including ImageNet-1K, demonstrate the benefits of SAM in reducing calibration error. Meanwhile, CSAM performs even better than SAM and consistently achieves lower calibration error than other approaches",
+    "discovery_source": "search",
+    "discovery_query": "understanding sharpness-aware minimization"
+  },
+  {
+    "paperId": "570b747a6b225022fdc004ca41f52e23bed9caad",
+    "externalIds": {
+      "ArXiv": "2503.11078",
+      "DBLP": "journals/corr/abs-2503-11078",
+      "DOI": "10.1109/ICCV51701.2025.00467",
+      "CorpusId": 277043841
+    },
+    "title": "Understanding Flatness in Generative Models: Its Role and Benefits",
+    "venue": "IEEE International Conference on Computer Vision",
+    "year": 2025,
+    "citationCount": 2,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2503.11078, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "2319229455",
+        "name": "Taehwan Lee"
+      },
+      {
+        "authorId": "2349499857",
+        "name": "Kyeongkook Seo"
+      },
+      {
+        "authorId": "2349777162",
+        "name": "Jaejun Yoo"
+      },
+      {
+        "authorId": "2319185263",
+        "name": "Sung Whan Yoon"
+      }
+    ],
+    "abstract": "Flat minima, known to enhance generalization and robustness in supervised learning, remain largely unexplored in generative models. In this work, we systematically investigate the role of loss surface flatness in generative models, both theoretically and empirically, with a particular focus on diffusion models. We establish a theoretical claim that flatter minima improve robustness against perturbations in target prior distributions, leading to benefits such as reduced exposure bias-where errors in noise estimation accumulate over iterations-and significantly improved resilience to model quantization, preserving generative performance even under strong quantization constraints. We further observe that Sharpness-Aware Minimization (SAM), which explicitly controls the degree of flatness, effectively enhances flatness in diffusion models even surpassing the indirectly promoting flatness methods-Input Perturbation (IP) which enforces the Lipschitz condition, ensemblingbased approach like Stochastic Weight Averaging (SWA) and Exponential Moving Average (EMA)-are less effective. Through extensive experiments on CIFAR-10, LSUN Tower, and FFHQ, we demonstrate that flat minima in diffusion models indeed improve not only generative performance but also robustness.",
+    "discovery_source": "search",
+    "discovery_query": "weight averaging flat minima generalization"
+  },
+  {
+    "paperId": "cff1cdb0cb3a1b2d11e30f2ccb382ee173cb79fa",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2309-06337",
+      "ArXiv": "2309.06337",
+      "DOI": "10.1109/TKDE.2024.3392980",
+      "CorpusId": 261696753
+    },
+    "title": "Exploring Flat Minima for Domain Generalization With Large Learning Rates",
+    "venue": "IEEE Transactions on Knowledge and Data Engineering",
+    "year": 2023,
+    "citationCount": 7,
+    "openAccessPdf": {
+      "url": "https://arxiv.org/pdf/2309.06337",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2309.06337, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2151812616",
+        "name": "Jian Zhang"
+      },
+      {
+        "authorId": "1785352346",
+        "name": "Lei Qi"
+      },
+      {
+        "authorId": "2475959",
+        "name": "Yinghuan Shi"
+      },
+      {
+        "authorId": "2256635942",
+        "name": "Yang Gao"
+      }
+    ],
+    "abstract": "Domain Generalization (DG) aims to generalize to arbitrary unseen domains. A promising approach to improve model generalization in DG is the identification of flat minima. One typical method for this task is SWAD, which involves averaging weights along the training trajectory. However, the success of weight averaging depends on the diversity of weights, which is limited when training with a small learning rate. Instead, we observe that leveraging a large learning rate can simultaneously promote weight diversity and facilitate the identification of flat regions in the loss landscape. However, employing a large learning rate suffers from the convergence problem, which cannot be resolved by simply averaging the training weights. To address this issue, we introduce a training strategy called Lookahead which involves the weight interpolation, instead of average, between fast and slow weights. The fast weight explores the weight space with a large learning rate, which is not converged while the slow weight interpolates with it to ensure the convergence. Besides, weight interpolation also helps identify flat minima by implicitly optimizing the local entropy loss that measures flatness. To further prevent overfitting during training, we propose two variants to regularize the training weight with weighted averaged weight or with accumulated history weight. Taking advantage of this new perspective, our methods achieve state-of-the-art performance on both classification and semantic segmentation domain generalization benchmarks.",
+    "discovery_source": "search",
+    "discovery_query": "flat minima generalization"
+  },
+  {
+    "paperId": "6175af271685e1beefd8b1e0398434275e1acdd7",
+    "externalIds": {
+      "ArXiv": "2508.09418",
+      "DBLP": "journals/corr/abs-2508-09418",
+      "DOI": "10.48550/arXiv.2508.09418",
+      "CorpusId": 280642178
+    },
+    "title": "Domain-Generalization to Improve Learning in Meta-Learning Algorithms",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2508.09418, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2312362922",
+        "name": "Usman Anjum"
+      },
+      {
+        "authorId": "2360252396",
+        "name": "Chris Stockman"
+      },
+      {
+        "authorId": "2360250675",
+        "name": "Cat Luong"
+      },
+      {
+        "authorId": "2312367147",
+        "name": "J. Zhan"
+      }
+    ],
+    "abstract": "This paper introduces Domain Generalization Sharpness-Aware Minimization Model-Agnostic Meta-Learning (DGS-MAML), a novel meta-learning algorithm designed to generalize across tasks with limited training data. DGS-MAML combines gradient matching with sharpness-aware minimization in a bi-level optimization framework to enhance model adaptability and robustness. We support our method with theoretical analysis using PAC-Bayes and convergence guarantees. Experimental results on benchmark datasets show that DGS-MAML outperforms existing approaches in terms of accuracy and generalization. The proposed method is particularly useful for scenarios requiring few-shot learning and quick adaptation, and the source code is publicly available at GitHub.",
+    "discovery_source": "search",
+    "discovery_query": "sharpness-aware gradient matching domain generalization"
+  },
+  {
+    "paperId": "a4002b51cf357bd741882062806b9204ce6e6a33",
+    "externalIds": {
+      "ArXiv": "2412.05169",
+      "DBLP": "journals/corr/abs-2412-05169",
+      "DOI": "10.48550/arXiv.2412.05169",
+      "CorpusId": 274581958
+    },
+    "title": "Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization",
+    "venue": "arXiv.org",
+    "year": 2024,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2412.05169, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2334358747",
+        "name": "Samuel Schapiro"
+      },
+      {
+        "authorId": "2290004846",
+        "name": "Han Zhao"
+      }
+    ],
+    "abstract": "Recently, sharpness-aware minimization (SAM) has emerged as a promising method to improve generalization by minimizing sharpness, which is known to correlate well with generalization ability. Since the original proposal of SAM, many variants of SAM have been proposed to improve its accuracy and efficiency, but comparisons have mainly been restricted to the i.i.d. setting. In this paper we study SAM for out-of-distribution (OOD) generalization. First, we perform a comprehensive comparison of eight SAM variants on zero-shot OOD generalization, finding that the original SAM outperforms the Adam baseline by $4.76\\%$ and the strongest SAM variants outperform the Adam baseline by $8.01\\%$ on average. We then provide an OOD generalization bound in terms of sharpness for this setting. Next, we extend our study of SAM to the related setting of gradual domain adaptation (GDA), another form of OOD generalization where intermediate domains are constructed between the source and target domains, and iterative self-training is done on intermediate domains, to improve the overall target domain error. In this setting, our experimental results demonstrate that the original SAM outperforms the baseline of Adam on each of the experimental datasets by $0.82\\%$ on average and the strongest SAM variants outperform Adam by $1.52\\%$ on average. We then provide a generalization bound for SAM in the GDA setting. Asymptotically, this generalization bound is no better than the one for self-training in the literature of GDA. This highlights a further disconnection between the theoretical justification for SAM versus its empirical performance, with recent work finding that low sharpness alone does not account for all of SAM's generalization benefits. For future work, we provide several potential avenues for obtaining a tighter analysis for SAM in the OOD setting.",
+    "discovery_source": "search",
+    "discovery_query": "understanding sharpness-aware minimization"
+  },
+  {
+    "paperId": "154f74a36a8ead7c2cabbbfe31431edefbc9f6ae",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2409-09984",
+      "ArXiv": "2409.09984",
+      "DOI": "10.48550/arXiv.2409.09984",
+      "CorpusId": 272689363
+    },
+    "title": "Convergence of Sharpness-Aware Minimization Algorithms using Increasing Batch Size and Decaying Learning Rate",
+    "venue": "arXiv.org",
+    "year": 2024,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2409.09984, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2321403801",
+        "name": "Hinata Harada"
+      },
+      {
+        "authorId": "2273926736",
+        "name": "Hideaki Iiduka"
+      }
+    ],
+    "abstract": "The sharpness-aware minimization (SAM) algorithm and its variants, including gap guided SAM (GSAM), have been successful at improving the generalization capability of deep neural network models by finding flat local minima of the empirical loss in training. Meanwhile, it has been shown theoretically and practically that increasing the batch size or decaying the learning rate avoids sharp local minima of the empirical loss. In this paper, we consider the GSAM algorithm with increasing batch sizes or decaying learning rates, such as cosine annealing or linear learning rate, and theoretically show its convergence. Moreover, we numerically compare SAM (GSAM) with and without an increasing batch size and conclude that using an increasing batch size or decaying learning rate finds flatter local minima than using a constant batch size and learning rate.",
+    "discovery_source": "search",
+    "discovery_query": "surrogate gap guided sharpness-aware minimization"
+  },
+  {
+    "paperId": "4fd04422b0f8745d941cd3c33dfe98da90a225c8",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2508-19564",
+      "ArXiv": "2508.19564",
+      "DOI": "10.48550/arXiv.2508.19564",
+      "CorpusId": 280918628
+    },
+    "title": "Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2508.19564, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2360670176",
+        "name": "Yuhang Liu"
+      },
+      {
+        "authorId": "2149200590",
+        "name": "Tao Li"
+      },
+      {
+        "authorId": "2151325553",
+        "name": "Zhehao Huang"
+      },
+      {
+        "authorId": "2305033291",
+        "name": "Zuopeng Yang"
+      },
+      {
+        "authorId": "2266622882",
+        "name": "Xiaolin Huang"
+      }
+    ],
+    "abstract": "Fine-tuning large-scale pre-trained models with limited data presents significant challenges for generalization. While Sharpness-Aware Minimization (SAM) has proven effective in improving generalization by seeking flat minima, its substantial extra memory and computation overhead make it impractical for large models. Integrating SAM with parameter-efficient fine-tuning methods like Low-Rank Adaptation (LoRA) is a promising direction. However, we find that directly applying SAM to LoRA parameters limits the sharpness optimization to a restricted subspace, hindering its effectiveness. To address this limitation, we propose Bi-directional Low-Rank Adaptation (Bi-LoRA), which introduces an auxiliary LoRA module to model SAM's adversarial weight perturbations. It decouples SAM's weight perturbations from LoRA optimization: the primary LoRA module adapts to specific tasks via standard gradient descent, while the auxiliary module captures the sharpness of the loss landscape through gradient ascent. Such dual-module design enables Bi-LoRA to capture broader sharpness for achieving flatter minima while remaining memory-efficient. Another important benefit is that the dual design allows for simultaneous optimization and perturbation, eliminating SAM's doubled training costs. Extensive experiments across diverse tasks and architectures demonstrate Bi-LoRA's efficiency and effectiveness in enhancing generalization.",
+    "discovery_source": "search",
+    "discovery_query": "efficient sharpness-aware minimization"
+  },
+  {
+    "paperId": "91bdfebd256720253d142dd703fe93957846530b",
+    "externalIds": {
+      "ArXiv": "2508.00522",
+      "CorpusId": 286872998
+    },
+    "title": "Efficiently Seeking Flat Minima for Better Generalization in Fine-Tuning Large Language Models and Beyond",
+    "venue": "",
+    "year": 2025,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2508.00522, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": null,
+    "authors": [
+      {
+        "authorId": "2211055767",
+        "name": "Jiaxin Deng"
+      },
+      {
+        "authorId": "2372253690",
+        "name": "Qingcheng Zhu"
+      },
+      {
+        "authorId": "2284863516",
+        "name": "Junbiao Pang"
+      },
+      {
+        "authorId": "2293610506",
+        "name": "Linlin Yang"
+      },
+      {
+        "authorId": "2347691890",
+        "name": "Zhongqian Fu"
+      },
+      {
+        "authorId": "2284927782",
+        "name": "Baochang Zhang"
+      }
+    ],
+    "abstract": "Little research explores the correlation between the expressive ability and generalization ability of the low-rank adaptation (LoRA). Sharpness-Aware Minimization (SAM) improves model generalization for both Convolutional Neural Networks (CNNs) and Transformers by encouraging convergence to locally flat minima. However, the connection between sharpness and generalization has not been fully explored for LoRA due to the lack of tools to either empirically seek flat minima or develop theoretical methods. In this work, we propose Flat Minima LoRA (FMLoRA) and its efficient version, i.e., EFMLoRA, to seek flat minima for LoRA. Concretely, we theoretically demonstrate that perturbations in the full parameter space can be transferred to the low-rank subspace. This approach eliminates the potential interference introduced by perturbations across multiple matrices in the low-rank subspace. Our extensive experiments on large language models and vision-language models demonstrate that EFMLoRA achieves optimize efficiency comparable to that of LoRA while simultaneously attaining comparable or even better performance. For example, on the GLUE dataset with RoBERTa-large, EFMLoRA outperforms LoRA and full fine-tuning by 1.0% and 0.5% on average, respectively. On vision-language models, e.g., Qwen-VL-Chat, there are performance improvements of 1.5% and 1.0% on the SQA and VizWiz datasets, respectively. These empirical results also verify that the generalization of LoRA is closely related to sharpness, which is omitted by previous methods.",
+    "discovery_source": "search",
+    "discovery_query": "flat minima generalization"
+  },
+  {
+    "paperId": "bb536b6b08a43e7c7543cab19bdea177f6c474f5",
+    "externalIds": {
+      "DBLP": "journals/access/RatchatornT25",
+      "DOI": "10.1109/ACCESS.2025.3578265",
+      "CorpusId": 279287655
+    },
+    "title": "Improving Sharpness-Aware Minimization Using Label Smoothing and Adaptive Adversarial Cross-Entropy Loss",
+    "venue": "IEEE Access",
+    "year": 2025,
+    "citationCount": 1,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ACCESS.2025.3578265?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ACCESS.2025.3578265, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "66926135",
+        "name": "Tanapat Ratchatorn"
+      },
+      {
+        "authorId": "2307563514",
+        "name": "Masayuki Tanaka"
+      }
+    ],
+    "abstract": "Recent advances in learning algorithms have identified loss surface sharpness as an effective metric for reducing the generalization gap. Building on this principle, Sharpness-Aware Minimization (SAM) was introduced to improve model generalization and has achieved state-of-the-art performance through its weight perturbation and updating steps. However, SAM\u2019s perturbation is based solely on the gradient of the standard cross-entropy loss. As the model approaches convergence, this gradient diminishes and oscillates, leading to inconsistent perturbation directions. To address these limitations, we introduce SAM-CE-AACE and SAM-SCE-AACE. SAM-CE-AACE replaces the conventional cross-entropy loss with the Adaptive Adversarial Cross-Entropy (AACE) loss in the perturbation step. Unlike the standard loss, AACE increases in both value and gradient magnitude as the model converges, ensuring stable perturbation directions. Additionally, SAM-CE-AACE\u2019s perturbation utilizes AACE loss without normalization, enhancing the model\u2019s exploratory capabilities in near-optimum stages. Moreover, SAM-SCE-AACE further improves SAM-CE-AACE by integrating label smoothing into the weight-updating step, reducing overconfidence in predictions. Together, this combination of the AACE loss function and label smoothing technique leads to further improvement in model performance. Intensive empirical experiments have been conducted to confirm the effectiveness of our methods, with experiments demonstrating improved performance in image classification tasks using different network architectures across various datasets. The reproduction code is available online at https://www.vip.sc.eng.isct.ac.jp/proj/AACE",
+    "discovery_source": "search",
+    "discovery_query": "adaptive sharpness-aware minimization"
+  },
+  {
+    "paperId": "80f121d3d36bf4cf219f2b9856e13a04b2b7f210",
+    "externalIds": {
+      "ArXiv": "2405.09492",
+      "DBLP": "conf/ijcnn/LiT24b",
+      "DOI": "10.1109/IJCNN60899.2024.10650091",
+      "CorpusId": 269772865
+    },
+    "title": "MGSER-SAM: Memory-Guided Soft Experience Replay with Sharpness-Aware Optimization for Enhanced Continual Learning",
+    "venue": "IEEE International Joint Conference on Neural Network",
+    "year": 2024,
+    "citationCount": 0,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2405.09492",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2405.09492, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "2155444806",
+        "name": "Xingyu Li"
+      },
+      {
+        "authorId": "2273962220",
+        "name": "Bo Tang"
+      }
+    ],
+    "abstract": "Deep neural networks suffer from the catastrophic forgetting problem in the field of continual learning (CL). To address this challenge, we propose MGSER-SAM, a novel memory replay-based algorithm specifically engineered to enhance the generalization capabilities of CL models. We first intergrate the SAM optimizer, a component designed for optimizing flatness, which seamlessly fits into well-known Experience Replay frameworks such as ER and DER++. Then, MGSER-SAM distinctively addresses the complex challenge of reconciling conflicts in weight perturbation directions between ongoing tasks and previously stored memories, which is underexplored in the SAM optimizer. This is effectively accomplished by the strategic integration of soft logits and the alignment of memory gradient directions, where the regularization terms facilitate the concurrent minimization of various training loss terms integral to the CL process. Through rigorous experimental analysis conducted across multiple benchmarks, MGSER-SAM has demonstrated a consistent ability to outperform existing baselines in all three CL scenarios. Comparing to the representative memory replay-based baselines ER and DER++, MGSER-SAM not only improves the testing accuracy by 24.4% and 17.6% respectively, but also achieves the lowest forgetting on each benchmark.",
+    "discovery_source": "search",
+    "discovery_query": "SAM optimizer generalization"
+  },
+  {
+    "paperId": "7ba5cf55748aa1ee362bf45e925850b507291ca7",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2102-08604",
+      "CorpusId": 231942668
+    },
+    "title": "Domain Generalization Needs Stochastic Weight Averaging for Robustness on Domain Shifts",
+    "venue": "arXiv.org",
+    "year": 2021,
+    "citationCount": 15,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://arxiv.org/abs/2102.08604, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "3409691",
+        "name": "Junbum Cha"
+      },
+      {
+        "authorId": "2110737695",
+        "name": "Han-Cheol Cho"
+      },
+      {
+        "authorId": "2109976613",
+        "name": "Kyungjae Lee"
+      },
+      {
+        "authorId": "7882243",
+        "name": "Seunghyun Park"
+      },
+      {
+        "authorId": "46357976",
+        "name": "Yunsung Lee"
+      },
+      {
+        "authorId": "71537829",
+        "name": "Sungrae Park"
+      }
+    ],
+    "abstract": null,
+    "discovery_source": "search",
+    "discovery_query": "stochastic weight averaging domain generalization"
+  },
+  {
+    "paperId": "b5e53862f3274af5782b41b184effd275641d82d",
+    "externalIds": {
+      "CorpusId": 249282201
+    },
+    "title": "A Fair Comparison of Two Popular Flat-Minima Optimizers: Stochastic Weight Averaging vs. Sharpness-Aware Minimization",
+    "venue": "",
+    "year": 2022,
+    "citationCount": 7,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null
+    },
+    "publicationTypes": null,
+    "authors": [
+      {
+        "authorId": "66914903",
+        "name": "Jean Kaddour"
+      }
+    ],
+    "abstract": null,
+    "discovery_source": "search",
+    "discovery_query": "weight averaging flat minima generalization"
+  },
+  {
+    "paperId": "744ef5b04a5322bb5f1c336755c0471e19c8e3ae",
+    "externalIds": {
+      "DBLP": "conf/nips/BianLYYWZLJF24",
+      "ArXiv": "2404.00986",
+      "DOI": "10.48550/arXiv.2404.00986",
+      "CorpusId": 268819896
+    },
+    "title": "Make Continual Learning Stronger via C-Flat",
+    "venue": "Neural Information Processing Systems",
+    "year": 2024,
+    "citationCount": 36,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2404.00986, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2294360932",
+        "name": "Ang Bian"
+      },
+      {
+        "authorId": "2294513741",
+        "name": "Wei Li"
+      },
+      {
+        "authorId": "2151334837",
+        "name": "Hangjie Yuan"
+      },
+      {
+        "authorId": "2338398764",
+        "name": "Cheng-Wei Yu"
+      },
+      {
+        "authorId": "2294391266",
+        "name": "Zixiang Zhao"
+      },
+      {
+        "authorId": "2124703537",
+        "name": "Mang Wang"
+      },
+      {
+        "authorId": "2294362357",
+        "name": "Aojun Lu"
+      },
+      {
+        "authorId": "2294365559",
+        "name": "Tao Feng"
+      }
+    ],
+    "abstract": "Model generalization ability upon incrementally acquiring dynamically updating knowledge from sequentially arriving tasks is crucial to tackle the sensitivity-stability dilemma in Continual Learning (CL). Weight loss landscape sharpness minimization seeking for flat minima lying in neighborhoods with uniform low loss or smooth gradient is proven to be a strong training regime improving model generalization compared with loss minimization based optimizer like SGD. Yet only a few works have discussed this training regime for CL, proving that dedicated designed zeroth-order sharpness optimizer can improve CL performance. In this work, we propose a Continual Flatness (C-Flat) method featuring a flatter loss landscape tailored for CL. C-Flat could be easily called with only one line of code and is plug-and-play to any CL methods. A general framework of C-Flat applied to all CL categories and a thorough comparison with loss minima optimizer and flat minima based CL approaches is presented in this paper, showing that our method can boost CL performance in almost all cases. Code is available at https://github.com/WanNaa/C-Flat.",
+    "discovery_source": "snowball",
+    "discovery_seed": "b698dbfaf9b961502062cbfcbe05d319047d8495"
+  },
+  {
+    "paperId": "11adeccff9c777798482097a9bade806c027eeb6",
+    "externalIds": {
+      "DBLP": "journals/jmlr/BartlettLB23",
+      "ArXiv": "2210.01513",
+      "DOI": "10.48550/arXiv.2210.01513",
+      "CorpusId": 252693076
+    },
+    "title": "The Dynamics of Sharpness-Aware Minimization: Bouncing Across Ravines and Drifting Towards Wide Minima",
+    "venue": "Journal of machine learning research",
+    "year": 2022,
+    "citationCount": 54,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2210.01513",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2210.01513, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "1745169",
+        "name": "P. Bartlett"
+      },
+      {
+        "authorId": "144007105",
+        "name": "Philip M. Long"
+      },
+      {
+        "authorId": "1698617",
+        "name": "O. Bousquet"
+      }
+    ],
+    "abstract": "We consider Sharpness-Aware Minimization (SAM), a gradient-based optimization method for deep networks that has exhibited performance improvements on image and language prediction problems. We show that when SAM is applied with a convex quadratic objective, for most random initializations it converges to a cycle that oscillates between either side of the minimum in the direction with the largest curvature, and we provide bounds on the rate of convergence. In the non-quadratic case, we show that such oscillations effectively perform gradient descent, with a smaller step-size, on the spectral norm of the Hessian. In such cases, SAM's update may be regarded as a third derivative -- the derivative of the Hessian in the leading eigenvector direction -- that encourages drift toward wider minima.",
+    "discovery_source": "snowball",
+    "discovery_seed": "07dbbb95eff2640e07ade6e42e666c14ae5d1d19"
+  },
+  {
+    "paperId": "06bd069861fe1a35223b41404b82d9fd9b0f75c6",
+    "externalIds": {
+      "ArXiv": "2605.02105",
+      "CorpusId": 287950915
+    },
+    "title": "Sharpness-Aware Pretraining Mitigates Catastrophic Forgetting",
+    "venue": "",
+    "year": 2026,
+    "citationCount": 2,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2605.02105, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": null,
+    "authors": [
+      {
+        "authorId": "2297767230",
+        "name": "Ishaan Watts"
+      },
+      {
+        "authorId": "2387383377",
+        "name": "Catherine Li"
+      },
+      {
+        "authorId": "2378662500",
+        "name": "Sachin Goyal"
+      },
+      {
+        "authorId": "153481934",
+        "name": "Jacob Mitchell Springer"
+      },
+      {
+        "authorId": "2269982126",
+        "name": "Aditi Raghunathan"
+      }
+    ],
+    "abstract": "Pretraining optimizers are tuned to produce the strongest possible base model, on the assumption that a stronger starting point yields a stronger model after subsequent changes like post-training and quantization. This overlooks the geometry of the base model which controls how much of the base model's capabilities survive subsequent parameter updates. We study three pretraining optimization approaches that bias optimization toward flatter minima: Sharpness-Aware Minimization (SAM), large learning rates, and shortened learning rate annealing periods. Across model sizes ranging from 20M to 150M parameters, we find that these interventions consistently improve downstream performance after post-training on five common datasets with up to 80% less forgetting. These principles hold at scale: a short SAM mid-training phase applied to an existing OLMo-2-1B checkpoint reduces forgetting by 31% after MetaMath post-training and by 40% after 4-bit quantization.",
+    "discovery_source": "snowball",
+    "discovery_seed": "a2cd073b57be744533152202989228cb4122270a"
+  },
+  {
+    "paperId": "1c032413f8c26ff693aca0d941ceba48a4711b6e",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2206-02618",
+      "ArXiv": "2206.02618",
+      "DOI": "10.48550/arXiv.2206.02618",
+      "CorpusId": 249395531
+    },
+    "title": "Generalized Federated Learning via Sharpness Aware Minimization",
+    "venue": "International Conference on Machine Learning",
+    "year": 2022,
+    "citationCount": 221,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2206.02618",
+      "status": "CLOSED",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2206.02618, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "48500635",
+        "name": "Zhe Qu"
+      },
+      {
+        "authorId": "2155444806",
+        "name": "Xingyu Li"
+      },
+      {
+        "authorId": "2114202651",
+        "name": "Rui Duan"
+      },
+      {
+        "authorId": "2108923846",
+        "name": "Yaojiang Liu"
+      },
+      {
+        "authorId": "2065094541",
+        "name": "Bo Tang"
+      },
+      {
+        "authorId": "2140095415",
+        "name": "Zhuo Lu"
+      }
+    ],
+    "abstract": "Federated Learning (FL) is a promising framework for performing privacy-preserving, distributed learning with a set of clients. However, the data distribution among clients often exhibits non-IID, i.e., distribution shift, which makes efficient optimization difficult. To tackle this problem, many FL algorithms focus on mitigating the effects of data heterogeneity across clients by increasing the performance of the global model. However, almost all algorithms leverage Empirical Risk Minimization (ERM) to be the local optimizer, which is easy to make the global model fall into a sharp valley and increase a large deviation of parts of local clients. Therefore, in this paper, we revisit the solutions to the distribution shift problem in FL with a focus on local learning generality. To this end, we propose a general, effective algorithm, \\texttt{FedSAM}, based on Sharpness Aware Minimization (SAM) local optimizer, and develop a momentum FL algorithm to bridge local and global models, \\texttt{MoFedSAM}. Theoretically, we show the convergence analysis of these two algorithms and demonstrate the generalization bound of \\texttt{FedSAM}. Empirically, our proposed algorithms substantially outperform existing FL studies and significantly decrease the learning deviation.",
+    "discovery_source": "search",
+    "discovery_query": "sharpness-aware minimization"
+  },
+  {
+    "paperId": "ce871754f3ce42c507f4643082c17573509e54a6",
+    "externalIds": {
+      "DBLP": "journals/corr/abs-2403-12350",
+      "ArXiv": "2403.12350",
+      "DOI": "10.1109/CVPR52733.2024.00538",
+      "CorpusId": 268532137
+    },
+    "title": "Friendly Sharpness-Aware Minimization",
+    "venue": "Computer Vision and Pattern Recognition",
+    "year": 2024,
+    "citationCount": 53,
+    "openAccessPdf": {
+      "url": "https://ink.library.smu.edu.sg/context/sis_research/article/10021/viewcontent/2024_CVPR_FSAM.pdf",
+      "status": "GREEN",
+      "license": "CCBYNCND",
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2403.12350, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "2149200590",
+        "name": "Tao Li"
+      },
+      {
+        "authorId": "2274103291",
+        "name": "Pan Zhou"
+      },
+      {
+        "authorId": "1466446905",
+        "name": "Zhengbao He"
+      },
+      {
+        "authorId": "2261734426",
+        "name": "Xinwen Cheng"
+      },
+      {
+        "authorId": "2266622882",
+        "name": "Xiaolin Huang"
+      }
+    ],
+    "abstract": "Sharpness-Aware Minimization (SAM) has been instrumental in improving deep neural network training by minimizing both training loss and loss sharpness. Despite the practical success, the mechanisms behind SAM's generalization enhancements remain elusive, limiting its progress in deep learning optimization. In this work, we investigate SAM's core components for generalization improvement and introduce \u201cFriendly-SAM\u201d (F-SAM) to further enhance SAM's generalization. Our investigation reveals the key role of batch-specific stochastic gradient noise within the adversarial perturbation, i.e., the current minibatcli gradient, which significantly influences SAM's generalization performance. By decomposing the adversarial perturbation in SAM into full gradient and stochastic gradient noise components, we discover that relying solely on the full gradient component degrades generalization while excluding it leads to improved performance. The possible reason lies in the full gradient component's increase in sharpness loss for the entire dataset, creating inconsistencies with the subsequent sharpness minimization step solely on the current minibatcli data. Inspired by these insights, F-SAM aims to mitigate the negative effects of the full gradient component. It removes the full gradient estimated by an exponentially moving average (EMA) of historical stochastic gradients, and then leverages stochastic gradient noise for improved generalization. Moreover, we provide theoretical validation for the EMA approximation and prove the convergence of F-SAM on non-convex problems. Extensive experiments demonstrate the superior generalization performance and robustness of F-SAM over vanilla SAM. Code is available at https://github.com/nblt/F-SAM.",
+    "discovery_source": "search",
+    "discovery_query": "sharpness-aware minimization"
+  },
+  {
+    "paperId": "aa12f44062c06f90526cb128f10e829846145b1f",
+    "externalIds": {
+      "MAG": "3104140305",
+      "DBLP": "conf/nips/SchneiderRE0BB20",
+      "ArXiv": "2006.16971",
+      "CorpusId": 220266097
+    },
+    "title": "Improving robustness against common corruptions by covariate shift adaptation",
+    "venue": "Neural Information Processing Systems",
+    "year": 2020,
+    "citationCount": 627,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2006.16971, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "1742225443",
+        "name": "Steffen Schneider"
+      },
+      {
+        "authorId": "13466492",
+        "name": "E. Rusak"
+      },
+      {
+        "authorId": "1782459532",
+        "name": "L. Eck"
+      },
+      {
+        "authorId": "143756149",
+        "name": "O. Bringmann"
+      },
+      {
+        "authorId": "40634590",
+        "name": "Wieland Brendel"
+      },
+      {
+        "authorId": "1731199",
+        "name": "M. Bethge"
+      }
+    ],
+    "abstract": "Today's state-of-the-art machine vision models are vulnerable to image corruptions like blurring or compression artefacts, limiting their performance in many real-world applications. We here argue that popular benchmarks to measure model robustness against common corruptions (like ImageNet-C) underestimate model robustness in many (but not all) application scenarios. The key insight is that in many scenarios, multiple unlabeled examples of the corruptions are available and can be used for unsupervised online adaptation. Replacing the activation statistics estimated by batch normalization on the training set with the statistics of the corrupted images consistently improves the robustness across 25 different popular computer vision models. Using the corrected statistics, ResNet-50 reaches 62.2% mCE on ImageNet-C compared to 76.7% without adaptation. With the more robust AugMix model, we improve the state of the art from 56.5% mCE to 51.0% mCE. Even adapting to a single sample improves robustness for the ResNet-50 and AugMix models, and 32 samples are sufficient to improve the current state of the art for a ResNet-50 architecture. We argue that results with adapted statistics should be included whenever reporting scores in corruption benchmarks and other out-of-distribution generalization settings.",
+    "discovery_source": "search",
+    "discovery_query": "common corruptions robustness"
+  },
+  {
+    "paperId": "613ce6b5cf9c5b7093582134631ef77f368a9067",
+    "externalIds": {
+      "ArXiv": "2501.12666",
+      "DBLP": "journals/corr/abs-2501-12666",
+      "DOI": "10.48550/arXiv.2501.12666",
+      "CorpusId": 275789835
+    },
+    "title": "Explicit Eigenvalue Regularization Improves Sharpness-Aware Minimization",
+    "venue": "arXiv.org",
+    "year": 2025,
+    "citationCount": 21,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2501.12666, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "authors": [
+      {
+        "authorId": "2341879391",
+        "name": "Haocheng Luo"
+      },
+      {
+        "authorId": "2249549105",
+        "name": "Tuan Truong"
+      },
+      {
+        "authorId": "2251265408",
+        "name": "Tung Pham"
+      },
+      {
+        "authorId": "23911916",
+        "name": "Mehrtash Harandi"
+      },
+      {
+        "authorId": "1400659302",
+        "name": "Dinh Q. Phung"
+      },
+      {
+        "authorId": "2249909946",
+        "name": "Trung Le"
+      }
+    ],
+    "abstract": "Sharpness-Aware Minimization (SAM) has attracted significant attention for its effectiveness in improving generalization across various tasks. However, its underlying principles remain poorly understood. In this work, we analyze SAM's training dynamics using the maximum eigenvalue of the Hessian as a measure of sharpness, and propose a third-order stochastic differential equation (SDE), which reveals that the dynamics are driven by a complex mixture of second- and third-order terms. We show that alignment between the perturbation vector and the top eigenvector is crucial for SAM's effectiveness in regularizing sharpness, but find that this alignment is often inadequate in practice, limiting SAM's efficiency. Building on these insights, we introduce Eigen-SAM, an algorithm that explicitly aims to regularize the top Hessian eigenvalue by aligning the perturbation vector with the leading eigenvector. We validate the effectiveness of our theory and the practical advantages of our proposed approach through comprehensive experiments. Code is available at https://github.com/RitianLuo/EigenSAM.",
+    "discovery_source": "search",
+    "discovery_query": "sharpness-aware minimization"
+  },
+  {
+    "paperId": "d931b38b84d2fca1371a5b643546872984b0cfc0",
+    "externalIds": {
+      "ArXiv": "2203.11834",
+      "DBLP": "journals/corr/abs-2203-11834",
+      "DOI": "10.48550/arXiv.2203.11834",
+      "CorpusId": 247596693
+    },
+    "title": "Improving Generalization in Federated Learning by Seeking Flat Minima",
+    "venue": "European Conference on Computer Vision",
+    "year": 2022,
+    "citationCount": 149,
+    "openAccessPdf": {
+      "url": "http://arxiv.org/pdf/2203.11834",
+      "status": "GREEN",
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2203.11834, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "2086972816",
+        "name": "Debora Caldarola"
+      },
+      {
+        "authorId": "1752593147",
+        "name": "Barbara Caputo"
+      },
+      {
+        "authorId": "153738445",
+        "name": "Marco Ciccone"
+      }
+    ],
+    "abstract": "Models trained in federated settings often suffer from degraded performances and fail at generalizing, especially when facing heterogeneous scenarios. In this work, we investigate such behavior through the lens of geometry of the loss and Hessian eigenspectrum, linking the model's lack of generalization capacity to the sharpness of the solution. Motivated by prior studies connecting the sharpness of the loss surface and the generalization gap, we show that i) training clients locally with Sharpness-Aware Minimization (SAM) or its adaptive version (ASAM) and ii) averaging stochastic weights (SWA) on the server-side can substantially improve generalization in Federated Learning and help bridging the gap with centralized models. By seeking parameters in neighborhoods having uniform low loss, the model converges towards flatter minima and its generalization significantly improves in both homogeneous and heterogeneous scenarios. Empirical results demonstrate the effectiveness of those optimizers across a variety of benchmark vision datasets (e.g. CIFAR10/100, Landmarks-User-160k, IDDA) and tasks (large scale classification, semantic segmentation, domain generalization).",
+    "discovery_source": "search",
+    "discovery_query": "flat minima generalization"
+  },
+  {
+    "paperId": "aa5741c74b7fac10680c1cfbdd49d9ffb5751a68",
+    "externalIds": {
+      "MAG": "2951458896",
+      "DBLP": "journals/corr/abs-1901-09960",
+      "ArXiv": "1901.09960",
+      "CorpusId": 59336190
+    },
+    "title": "Using Pre-Training Can Improve Model Robustness and Uncertainty",
+    "venue": "International Conference on Machine Learning",
+    "year": 2019,
+    "citationCount": 827,
+    "openAccessPdf": {
+      "url": "",
+      "status": null,
+      "license": null,
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1901.09960, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+    },
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "authors": [
+      {
+        "authorId": "3422872",
+        "name": "Dan Hendrycks"
+      },
+      {
+        "authorId": "3436470",
+        "name": "Kimin Lee"
+      },
+      {
+        "authorId": "16787428",
+        "name": "Mantas Mazeika"
+      }
+    ],
+    "abstract": "He et al. (2018) have called into question the utility of pre-training by showing that training from scratch can often yield similar performance to pre-training. We show that although pre-training may not improve performance on traditional classification metrics, it improves model robustness and uncertainty estimates. Through extensive experiments on adversarial examples, label corruption, class imbalance, out-of-distribution detection, and confidence calibration, we demonstrate large gains from pre-training and complementary effects with task-specific methods. We introduce adversarial pre-training and show approximately a 10% absolute improvement over the previous state-of-the-art in adversarial robustness. In some cases, using pre-training without task-specific methods also surpasses the state-of-the-art, highlighting the need for pre-training when evaluating future methods on robustness and uncertainty tasks.",
+    "discovery_source": "search",
+    "discovery_query": "corruption robustness calibration"
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "paper_id": "1fae35d17aca0ec5ceb866824a17c14a6f6b0ba1",
+  "title": "ASAM: Adaptive Sharpness-Aware Minimization for Scale-Invariant Learning of Deep Neural Networks",
+  "authors": ["Kwon, J.", "Kim, J.", "Park, H.", "Choi, I."],
+  "year": 2021,
+  "venue": "International Conference on Machine Learning",
+  "publication_status_observed": "ICML 2021 (Proceedings of the 38th International Conference on Machine Learning, PMLR 139, 2021); arXiv:2102.11600v3",
+  "main_claims": [
+    "SAM's fixed-radius sharpness measure is sensitive to parameter re-scaling (scale-dependent), weakening its correlation with the generalization gap.",
+    "Adaptive sharpness with a normalization operator is scale-invariant and shows stronger correlation with the generalization gap than standard sharpness.",
+    "ASAM, which minimizes adaptive sharpness, consistently improves generalization performance over SAM on image classification and machine translation tasks."
+  ],
+  "methodology": "The authors define adaptive sharpness using a normalization operator T_w that cancels the effect of parameter rescaling, and prove scale-invariance (Theorem 1). They derive ASAM, which uses element-wise or filter-wise normalization to define the maximization region. Correlation of adaptive vs. standard sharpness with generalization gap is measured via Kendall rank correlation across hyperparameter sweeps. ASAM is evaluated on CIFAR-10/100, ImageNet (ResNet-50, WideResNet), and machine translation (Transformer).",
+  "key_results": [
+    "Kendall rank correlation: standard sharpness tau=0.174 (p=2) vs. adaptive sharpness tau=0.636 (p=2) with generalization gap.",
+    "ASAM outperforms SAM on CIFAR-100 with WideResNet-28-10, achieving lower test error.",
+    "ASAM consistently improves generalization on image classification across diverse architectures (ResNets, WideResNets) and machine translation."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "The paper covers only element-wise and filter-wise normalization operators; node-wise and layer-wise normalizations are discussed but excluded due to practical concerns.",
+    "Translation-dependency of sharpness for bias parameters is noted but not fully addressed.",
+    "The scale-dependency problem specifically applies to rectifier networks; the generality to other architectures is not fully explored."
+  ],
+  "relevance_to_rq": "Relevant to the sam_origin and flatness_theory sub-topics: ASAM directly addresses the Dinh et al. counter-argument that sharpness can be made arbitrarily large via reparametrization without affecting generalization, which is a key limitation of the flatness explanation for SAM's OOD gains. This is important background for motivating scale-invariant sharpness measures in our study.",
+  "key_quotes": [
+    {
+      "text": "sharpness defined in a rigid region with a fixed radius, has a drawback in sensitivity to parameter re-scaling which leaves the loss unaffected, leading to weakening of the connection between sharpness and generalization gap.",
+      "page_approx": 1,
+      "context": "Core problem motivation: SAM's fixed-radius sharpness is scale-dependent, undermining the flatness-generalization link"
+    },
+    {
+      "text": "Kendall rank correlation coefficient of adaptive sharpness is greater than that of sharpness regardless of the value of p.",
+      "page_approx": 5,
+      "context": "Main empirical result: adaptive sharpness has higher rank correlation with generalization gap than standard sharpness"
+    },
+    {
+      "text": "neural networks with w and Aw can have arbitrarily different values of sharpness defined in Equation 2, although they have the same generalization gaps.",
+      "page_approx": 3,
+      "context": "Formal statement of the scale-dependency problem for SAM's sharpness measure"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "Sharp Minima Can Generalize For Deep Nets (Dinh et al.)",
+    "Exploring Generalization in Deep Learning",
+    "Fantastic Generalization Measures and Where to Find Them",
+    "Normalizing the Weights for Reliable Sharpness"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": null
+}

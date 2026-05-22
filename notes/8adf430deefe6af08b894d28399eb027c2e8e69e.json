@@ -1,0 +1,53 @@
+{
+  "paper_id": "8adf430deefe6af08b894d28399eb027c2e8e69e",
+  "title": "An Adaptive Policy to Employ Sharpness-Aware Minimization",
+  "authors": ["Jiang, W.", "Yang, H.", "Zhang, Y.", "Kwok, J."],
+  "year": 2023,
+  "venue": "International Conference on Learning Representations",
+  "publication_status_observed": "Published as a conference paper at ICLR 2023; arXiv:2304.14647v1 [cs.LG] 28 Apr 2023",
+  "main_claims": [
+    "SAM updates are more beneficial in sharp regions of the loss landscape than in flat regions, so adaptively switching between SAM and ERM updates based on local geometry can reduce compute without sacrificing generalisation.",
+    "The squared stochastic gradient norm, modelled by a running normal distribution, provides an efficient proxy for local sharpness to drive the adaptive SAM/ERM switching policy.",
+    "AE-SAM achieves the same convergence rate as SAM (theoretically) while using fewer SAM updates, and AE-LookSAM extends this to LookSAM for further efficiency."
+  ],
+  "methodology": "The adaptive policy uses the squared gradient norm ||∇L||² at the current iterate, modelled as a normal distribution with parameters estimated by exponential moving average. A threshold is set such that SAM is used when the gradient variance is high (sharp region) and ERM is used otherwise. AE-SAM's convergence rate is proved to match SAM's under mild assumptions. AE-LookSAM applies the same policy to the LookSAM algorithm. Experiments are conducted on CIFAR-10/100 with ResNet-18, WRN-28-10, and PyramidNet-110, and on ImageNet.",
+  "key_results": [
+    "AE-SAM matches SAM's test accuracy while using ~50% fewer SAM updates on CIFAR-100 with WRN-28-10, approximately halving training time.",
+    "AE-LookSAM achieves better accuracy than LookSAM while also being faster, showing the adaptive policy is compatible with existing efficient SAM variants.",
+    "Gradient variance visualisation (Fig. 1) confirms that gradient variance is higher for SAM than ERM in early training, justifying the adaptive policy."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "The gradient norm threshold must be tuned; the normal distribution assumption for gradient norms may not hold precisely for all architectures.",
+    "The convergence guarantee requires standard smoothness and bounded-gradient assumptions that idealise practical deep learning.",
+    "The paper does not evaluate OOD generalisation under distribution shift; all experiments use standard i.i.d. test sets."
+  ],
+  "relevance_to_rq": "This paper is peripherally relevant. It analyses when SAM updates are most useful (sharp regions) vs. unnecessary (flat regions), which implicitly touches on the question of whether SAM's generalisation benefit is tied to sharpness reduction. However, it does not study OOD performance, CKA stability, or comparison with SWA.",
+  "key_quotes": [
+    {
+      "text": "the SAM update is more useful in sharp regions than in ﬂat regions",
+      "page_approx": 1,
+      "context": "Core intuition motivating the adaptive policy: SAM should only be applied when the loss landscape is sharp"
+    },
+    {
+      "text": "we design an adaptive policy to employ SAM based on the loss landscape geometry",
+      "page_approx": 1,
+      "context": "Statement of the main contribution in the introduction"
+    },
+    {
+      "text": "sharpness-based measures (ﬂatness) are related to generalization of minimizers",
+      "page_approx": 2,
+      "context": "Reference to Jiang et al. (2020) large-scale study confirming sharpness-generalisation correlation"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-aware minimization for efficiently improving generalization (Foret et al., 2021)",
+    "ASAM: Adaptive sharpness-aware minimization (Kwon et al., 2021)",
+    "GSAM: Surrogate gap minimization (Zhuang et al., 2022)",
+    "LookSAM (Liu et al., 2022)",
+    "SS-SAM (Zhao et al., 2022)"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

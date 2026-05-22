@@ -1,0 +1,53 @@
+{
+  "paper_id": "6175af271685e1beefd8b1e0398434275e1acdd7",
+  "title": "Domain-Generalization to Improve Learning in Meta-Learning Algorithms",
+  "authors": ["Anjum, U.", "Stockman, C.", "Luong, C.", "Zhan, J."],
+  "year": 2025,
+  "venue": "arXiv.org",
+  "publication_status_observed": "arXiv preprint arXiv:2508.09418v1 [cs.LG] 13 Aug 2025",
+  "main_claims": [
+    "DGS-MAML integrates gradient matching (via SAGM's surrogate gap) into the MAML bi-level optimization framework to achieve better generalisation and faster convergence than SharpMAML.",
+    "DGS-MAML achieves a convergence rate of O(1/T), improving over SharpMAML's O(1/sqrt(T)), while not increasing per-iteration cost.",
+    "Adding the delta hyperparameter from domain generalisation to the PAC-Bayes bound further tightens the generalisation error compared to SharpMAML."
+  ],
+  "methodology": "The authors combine SAGM's gradient matching objective (minimising empirical loss, perturbed loss, and surrogate gap angle) with the bi-level MAML structure. Convergence analysis for single-level SAGM is derived (new contribution, as original SAGM paper had none), then extended to bi-level DGS-MAML with stochastic gradient variance assumptions. PAC-Bayes bound is derived following SharpMAML's framework with an added delta term. Experiments are conducted on Mini-Imagenet, Omniglot, DoubleMNIST, and TripleMNIST using 5-way/10-way 1-shot and 5-shot settings.",
+  "key_results": [
+    "DGS-MAML achieves 5-way 1-shot accuracy of 0.4665 (delta=2.0) vs. SharpMAML 0.4509 on Mini-Imagenet, a +1.56% improvement over the best SharpMAML configuration.",
+    "DGS-MAML achieves convergence rate O(1/T) vs. SharpMAML O(1/sqrt(T)), a qualitative improvement in convergence speed.",
+    "Runtime per epoch for DGS-MAML is 60-70 seconds, comparable to SharpMAML (60-65 seconds), confirming negligible computational overhead."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Fine-tuning delta is crucial for best accuracy, and the authors lack a method for automatic delta selection, requiring numerical grid search.",
+    "The convergence analysis uses bounded stochastic gradient and Lipschitz assumptions that are idealised for real deep networks.",
+    "Experiments are on few-shot classification tasks only; OOD robustness under distributional shift (e.g., corruptions) is not evaluated."
+  ],
+  "relevance_to_rq": "This paper is only tangentially relevant. It applies SAM-derived flatness objectives in meta-learning, not the discriminative OOD generalisation setting of the RQ. The connection to CIFAR-C benchmarks, CKA representation stability, and the SAM vs. SWA comparison is absent.",
+  "key_quotes": [
+    {
+      "text": "DGS-MAML combines gradient matching with sharpness-aware minimization in a bi-level optimization framework to enhance model adaptability and robustness",
+      "page_approx": 1,
+      "context": "Abstract description of the proposed method"
+    },
+    {
+      "text": "With α, δ, γ all chosen to be O(sqrt(1/T)), we have that 1/T sum ||∇L(θt)||² = O(1/T)",
+      "page_approx": 11,
+      "context": "Corollary 1 stating the convergence rate of SAGM (and by extension DGS-MAML)"
+    },
+    {
+      "text": "the results reveal using domain generalization, we improve the accuracy of sharpMAML and we are able to outperform the state-of-the-art algorithms in all the datasets",
+      "page_approx": 17,
+      "context": "Summary of empirical results from the experimental section"
+    }
+  ],
+  "related_work_mentioned": [
+    "Model-agnostic meta-learning (Finn et al., 2017)",
+    "Sharp-MAML: Sharpness-aware model-agnostic meta learning (Abbas et al., 2022)",
+    "Sharpness-aware minimization for efficiently improving generalization (Foret et al., 2020)",
+    "Sharpness-aware gradient matching for domain generalization (Wang et al., 2023)",
+    "Surrogate gap minimization improves sharpness-aware training (Zhuang et al., 2022)"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

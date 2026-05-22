@@ -1,0 +1,51 @@
+{
+  "paper_id": "aa5741c74b7fac10680c1cfbdd49d9ffb5751a68",
+  "title": "Using Pre-Training Can Improve Model Robustness and Uncertainty",
+  "authors": ["Hendrycks, D.", "Lee, K.", "Mazeika, M."],
+  "year": 2019,
+  "venue": "International Conference on Machine Learning",
+  "publication_status_observed": "Proceedings of the 36th ICML, Long Beach, California, PMLR 97, 2019; arXiv preprint arXiv:1901.09960v5",
+  "main_claims": [
+    "Pre-training on a large related dataset substantially improves model robustness to adversarial perturbations, label corruption, and class imbalance, even when it does not improve clean accuracy.",
+    "Adversarial pre-training (pre-training with untargeted adversarial examples) improves adversarial robustness by approximately 10% absolute over prior state-of-the-art.",
+    "Pre-training significantly improves confidence calibration and out-of-distribution detection, often by more than halving the calibration error."
+  ],
+  "methodology": "Wide ResNet models are pre-trained on Downsampled ImageNet (32x32), then fine-tuned on CIFAR-10 and CIFAR-100. The paper tests robustness under adversarial perturbations (PGD), label corruption (forward correction, GLC), class imbalance, OOD detection (AUROC/AUPR), and calibration (RMS/MAD). Comparisons are made against training-from-scratch baselines and task-specific robustness methods.",
+  "key_results": [
+    "Adversarial pre-training + fine-tuning achieves 57.4% adversarial accuracy on CIFAR-10 vs 45.8% for adversarial training from scratch.",
+    "Pre-training with no correction achieves AUC of 15.9% on CIFAR-10 label corruption, surpassing Forward Correction (25.5%) without pre-training.",
+    "RMS calibration error reduced by more than half on all datasets with pre-training (e.g., CIFAR-100: 13.3% → 3.6%)."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "Pre-training benefits are specific to scenarios where diverse unlabeled data is available for pre-training.",
+    "The mechanism by which pre-training improves robustness and calibration is not fully characterized.",
+    "Experiments use 32x32 Downsampled ImageNet; the findings may not transfer to all architectures and scales."
+  ],
+  "relevance_to_rq": "Tangentially relevant to the ood_benchmarks sub-topic: demonstrates that representation quality (from pre-training) improves robustness and calibration under distribution shift, motivating the study of representation stability as a driver of OOD accuracy — aligned with the RQ's CKA stability hypothesis. However, the paper does not involve SAM or flatness measures.",
+  "key_quotes": [
+    {
+      "text": "pre-training substantially improves the quality of various complementary model components",
+      "page_approx": 1,
+      "context": "Core claim about pre-training improving robustness beyond clean accuracy"
+    },
+    {
+      "text": "pre-training may not improve performance on traditional classification metrics, it improves model robustness and uncertainty estimates.",
+      "page_approx": 1,
+      "context": "Key distinction: pre-training helps OOD/robustness but not clean accuracy"
+    },
+    {
+      "text": "the MAD error on CIFAR-100 is reduced by a factor of 4.1 with pre-training",
+      "page_approx": 8,
+      "context": "Quantitative calibration improvement from pre-training"
+    }
+  ],
+  "related_work_mentioned": [
+    "Rethinking ImageNet pre-training (He et al. 2018)",
+    "Towards deep learning models resistant to adversarial attacks (Madry et al.)",
+    "Benchmarking Neural Network Robustness to Common Corruptions and Perturbations (Hendrycks & Dietterich)"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

@@ -1,0 +1,70 @@
+\section{Related Work}
+
+\subsection{Sharpness-Aware Minimization and its Variants}
+
+SAM is a family rather than a single algorithm; variants diverge on what they measure and where perturbation is applied. The base formulation is a min-max neighbourhood objective with radius $\rho$, solved by two gradient evaluations per iteration with $\rho=0.05$ as the default for ResNet/CIFAR \cite{foret2020_sharpness_aware}.
+% src: a2cd073b57be744533152202989228cb4122270a pp.1 (main_claims) — "min-max formulation solved with two gradient computations per iteration"
+ASAM neutralises the parameter-rescaling pathology Dinh et al.\ (\S2.2) identify, introducing a scale-invariant adaptive sharpness whose Kendall rank correlation with the generalisation gap rises from $0.174$ to $0.636$ \cite{kwon2021_asam_adaptive}.
+% src: 1fae35d17aca0ec5ceb866824a17c14a6f6b0ba1 pp.5 (key_results) — "adaptive sharpness tau=0.636 vs standard tau=0.174 with gen. gap"
+GSAM augments the objective with a surrogate gap that, for small $\rho$ near a local minimum, is approximately proportional to the dominant Hessian eigenvalue ($\sigma_{\max}\!\approx\!2h(w^*)/\rho^2$, Lemma~3.3), since low perturbed loss can coexist with sharp curvature \cite{zhuang2022_surrogate_gap}.
+% src: 58ab7d67f2eeb4d753cf443da3bccaeaa7897fde pp.3 (key_results) — "sigma_max approximately 2h(w*)/rho^2 near local minimum"
+F-SAM decomposes the perturbation gradient and reports that the stochastic noise component, not the full-gradient projection, drives SAM's accuracy gains on ResNet-18/CIFAR-100 \cite{li2024_friendly_sharpness}.
+% src: ce871754f3ce42c507f4643082c17573509e54a6 pp.2 (main_claims) — "effectiveness primarily arises from stochastic gradient noise component"
+All four share the assumption that minimising a surrogate of neighbourhood loss locates flat minima that generalise.
+
+\subsection{Flatness and Generalization: Theory and Counter-Arguments}
+
+The empirical foundation is Keskar et al.'s finding that large-batch training converges to solutions with larger $\varepsilon$-sharpness, co-occurring with up to a five-point generalisation gap across six configurations \cite{keskar2016_large_batch}.
+% src: 8ec5896b4490c6e127d1718ffc36a3439d84cb81 pp.1 (main_claims) — "large-batch methods converge to sharp minimisers with poorer generalization"
+Dinh et al.\ counter with an explicit construction: under non-negative homogeneity of ReLU networks, every minimum is observationally equivalent to arbitrarily sharper or flatter minima, so naive sharpness measures cannot explain generalisation without a fixed parametrisation \cite{dinh2017_sharp_minima}.
+% src: 58123025178256279bb060ca5da971b62bc329ee pp.1 (main_claims) — "most notions of flatness are problematic for deep models"
+Jiang et al.\ partially rehabilitate the empirical claim: PAC-Bayes and Keskar sharpness are associated with the generalisation gap more strongly than 40 alternative complexity measures across $10^4$ networks, while explicitly noting the correlation is not causal \cite{jiang2019_fantastic_generalization}.
+% src: 8f18c9da3d1763723c6ef8c3734d74db005d0cff pp.1 (main_claims) — "sharpness-based measures perform best overall but correlation is not causal"
+Petzka et al.\ partially address Dinh's critique with a reparametrisation-invariant relative flatness, valid where feature-space labels are locally constant, that correlates with the generalisation gap more strongly than the Hessian trace on CIFAR-10 \cite{petzka2020_relative_flatness}.
+% src: d8c0aabe41ec6036a2404cb2bfaea2a7d6424ae3 pp.1 (main_claims) — "relative flatness measure invariant to linear reparameterizations"
+Walter et al.\ report a complementary limit: flatness implies a local but not a global robustness radius, with adversarial examples lying in flat ``Uncanny Valley'' regions \cite{walter2025_when_flatness}.
+% src: b4926d7efab904a97475f0fd53f62f9fe2a926b3 pp.1 (main_claims) — "flatness implies local but not global adversarial robustness"
+Even granting this association, whether flatness causally explains SAM's gains is contested.
+
+\subsection{SAM's Mechanism Is Not Just Flatness}
+
+Andriushchenko and Flammarion show the PAC-Bayes flat-minima account is incomplete: only m-SAM with small batch ($m=128$) substantially improves test error on ResNet-18/CIFAR-10, whereas n-SAM and random perturbations do not, and for diagonal linear networks SAM provably selects sparser solutions than GD \cite{andriushchenko2022_towards_understanding}.
+% src: b698dbfaf9b961502062cbfcbe05d319047d8495 pp.3 (key_results) — "only low-m SAM substantially improves generalization; flat-minima convergence does not"
+In a recent arXiv preprint, Wen et al.\ prove that full-batch SAM tracks Riemannian gradient flow on $\lambda_{\max}$ of the Hessian, while batch-size-1 SAM minimises an average-direction sharpness proportional to the Hessian trace, leaving practical mini-batch SAM characterised by neither limit \cite{wen2022_how_does}.
+% src: 07dbbb95eff2640e07ade6e42e666c14ae5d1d19 pp.10 (key_results) — "Theorem 4.5 full-batch SAM tracks lambda_max; Theorem 5.4 1-SAM minimises Hessian trace"
+The most direct counter-example is SAM-ON: perturbing only the $\sim\!0.1\%$ of parameters in normalisation layers reaches $84.19\%$ on WRN-28-10/CIFAR-100 versus SAM-all's $83.11\%$, while measuring higher $\ell_\infty$ $m$-sharpness ($0.090$ vs.\ $0.048$) \cite{mueller2023_normalization_layers}.
+% src: fba30c42c0920bd9590ddc274658c409938b2fb2 pp.9 (key_results) — "SAM-ON 84.19% vs SAM-all 83.11% with higher measured sharpness"
+Baek et al.\ attribute SAM's label-noise robustness to perturbation of the network Jacobian, not flatness at convergence: J-SAM reaches $69.17\%$ under 30\% label noise, matching SAM's $69.47\%$, while logit-only perturbation degrades to $54.13\%$ \cite{baek2024_why_is}.
+% src: ad6a428ce6e834e194385052ada41d07d21b1809 pp.2 (key_results) — "1-SAM 69.47%, J-SAM 69.17%, L-SAM 54.13% under 30% label noise"
+An arXiv preprint by Schapiro and Zhao reports SAM and FriendlySAM gains of $4.76\%$ and $8.01\%$ over Adam on four small-scale zero-shot OOD benchmarks (rotated/coloured MNIST, Cover Type, Portraits), not CIFAR-C, echoing Wen et al.'s observation that low sharpness alone does not fully account for SAM's gains \cite{schapiro2024_towards_understanding}.
+% src: a4002b51cf357bd741882062806b9204ce6e6a33 pp.1 (key_results) — "SAM +4.76%, FriendlySAM +8.01% over Adam on four small zero-shot OOD benchmarks"
+These results collectively motivate a mechanism beyond flatness, but no candidate has been tested on the canonical corruption benchmarks.
+
+\subsection{OOD Benchmarks and Flat-Minima Optimizers for Domain Generalization}
+
+CIFAR-10-C, CIFAR-100-C and ImageNet-C define the standard corruption protocol: 15 corruption types at 5 severity levels, summarised by mean Corruption Error normalised to AlexNet \cite{hendrycks2019_benchmarking_neural}.
+% src: 49b64383fe36268410c430352637ed23b16820c5 pp.1 (main_claims) — "15 corruption types x 5 severity levels standardised benchmark"
+Ovadia et al.\ show temperature-scaled in-distribution calibration does not transfer under these corruptions, anchoring ECE as a secondary metric for OOD comparisons \cite{ovadia2019_can_you}.
+% src: 1eb7f46b1a0a7df823194d86543e5554aa21021a pp.5 (key_results) — "calibration on validation set does not guarantee calibration on shifted data"
+Schneider et al.\ show that re-estimating BatchNorm statistics on corrupted test images reduces ResNet-50 mCE on ImageNet-C from $76.7\%$ to $62.2\%$, a confound for any optimiser-level CIFAR-C comparison \cite{schneider2020_improving_robustness}; SWA's late-epoch weight averaging touches BatchNorm running statistics directly via the standard \texttt{update\_bn} pass \cite{izmailov2018_averaging_weights}.
+% src: aa12f44062c06f90526cb128f10e829846145b1f pp.1 (key_results) — "ResNet-50 76.7% to 62.2% mCE on ImageNet-C via BN-statistic adaptation"
+% src: b8989afff14fb630ca58b6afa917fb42574228ee pp.5 (methodology) — "SWA requires a BN-statistic update pass over training data after averaging"
+DomainBed formalises model-selection discipline and shows carefully tuned ERM matches specialised DG algorithms, a lesson that transfers to optimiser comparisons \cite{gulrajani2020_search_lost}.
+% src: 6a5efb990b6558c21d9fdded4884c00ba152cb7c pp.2 (main_claims) — "ERM matches specialized DG algorithms under fair evaluation"
+SWAD couples dense overfit-aware weight averaging with a flatness bound, lifting the five-benchmark DomainBed average from $63.3\%$ (ERM) to $66.9\%$, and reports SWA flatter than SAM on PACS by local flatness $F_\gamma$ \cite{cha2021_swad_domain}.
+% src: 4d87a9f6a0bc9c67088193402813da5cba3f06c1 pp.4 (key_quotes[1]) — "SWA finds flatter minima than SAM on PACS by Fgamma"
+SAGM extends SAM with gradient matching, reaching $66.1\%$ on DomainBed \cite{wang2023_sharpness_aware}.
+% src: beb8c38446343797168a0c35af0e941799117867 pp.8 (key_results) — "SAGM 66.1% on DomainBed vs SAM 64.5% via gradient matching"
+Kaddour et al., the closest comparator, benchmark SWA, SAM and WASAM across 42 tasks and find $\lambda_{\max}=237$ for SAM versus $265$ for SWA on WRN-28-10/CIFAR-100, but evaluate i.i.d.\ only \cite{kaddour2022_when_do}.
+% src: 0265144c696bf9371a0a63ece590dd2403ee71be pp.1 (key_results) — "SAM lambda_max=237 vs SWA=265 on WRN/CIFAR-100, i.i.d. only"
+SWAD reports SWA flatter than SAM on PACS, whereas Kaddour et al.\ report SAM flatter than SWA on CIFAR-100; this contradiction has not been examined on CIFAR-C.
+
+\subsection{Representation Similarity and Our Gap}
+
+Kornblith et al.\ establish linear Centred Kernel Alignment as the standard representation-similarity tool, identifying corresponding layers across networks at $99.3\%$ accuracy versus $10.6\%$ for CCA and $15.1\%$ for SVCCA \cite{kornblith2019_similarity_neural}.
+% src: 726320cdbd04804ffa8f3a78c095bd1b55a2a695 pp.1 (key_results) — "Linear CKA 99.3% layer-matching vs CCA 10.6% and SVCCA 15.1%"
+Izmailov et al.\ establish the SWA baseline used here as a non-perturbation flat-minima control: averaging late SGD iterates with cyclical learning rates centres the trajectory in a wider basin of the same landscape, improving WRN-28-10/CIFAR-100 from $80.82\%$ to $82.15\%$ \cite{izmailov2018_averaging_weights}.
+% src: b8989afff14fb630ca58b6afa917fb42574228ee pp.1 (main_claims) — "SWA finds wider optima via cyclical-LR weight averaging"
+Zhang et al.\ provide the only prior pairing of CKA with flat-minima analysis in a DG setting, reporting in-domain CKA of $0.7882$ at large vs.\ $0.9822$ at small learning rate as a proxy for feature diversity, not clean-versus-corrupted stability \cite{zhang2023_exploring_flat}.
+% src: cff1cdb0cb3a1b2d11e30f2ccb382ee173cb79fa pp.4 (key_results) — "large-LR CKA 0.7882 vs small-LR 0.9822 in DG context"
+No prior work jointly measures sharpness, paired-image representation stability between clean and corrupted versions of the same image, and OOD accuracy across SAM, SWA and SGD on CIFAR-C. We close this gap: SAM and SWA reach flat regions through adversarial perturbation and trajectory averaging respectively, and we test whether residual SAM-vs-SWA OOD differences are associated with paired-image representation stability beyond what sharpness captures, framed as exploratory associational evidence.

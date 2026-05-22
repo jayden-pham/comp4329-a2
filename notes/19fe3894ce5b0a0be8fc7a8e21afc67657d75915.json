@@ -1,0 +1,54 @@
+{
+  "paper_id": "19fe3894ce5b0a0be8fc7a8e21afc67657d75915",
+  "title": "Focal-SAM: Focal Sharpness-Aware Minimization for Long-Tailed Classification",
+  "authors": ["Li, S.", "Xu, Q.", "Yang, Z.", "Wang, Z.", "Zhang, L.", "Cao, X.", "Huang, Q."],
+  "year": 2025,
+  "venue": "International Conference on Machine Learning",
+  "publication_status_observed": "ICML 2025 (Proceedings of the 42nd International Conference on Machine Learning, Vancouver, Canada, PMLR 267, 2025)",
+  "main_claims": [
+    "Global SAM and ImbSAM provide either coarse or computationally expensive control over class-wise sharpness in long-tailed settings; Focal-SAM achieves fine-grained class-wise sharpness control without extra backpropagations.",
+    "Focal-SAM's generalization bound is sharper (O(1/n) rate) than SAM or CC-SAM (O(1/sqrt(n)) rate).",
+    "Focal-SAM consistently outperforms SAM-based baselines on long-tailed recognition and long-tailed OOD generalization tasks."
+  ],
+  "methodology": "Focal-SAM assigns focal-mechanism weights (decreasing from head to tail classes) to class-wise sharpness terms, achieving fine-grained control without per-class backpropagation. The method is evaluated on CIFAR-10 LT, CIFAR-100 LT, ImageNet-LT, and iNaturalist using ResNet backbones from scratch, and also on CLIP fine-tuning. OOD evaluation uses ImageNet-Sketch, ImageNetV2, and ImageNet-C. Generalization is analyzed via PAC-Bayesian bounds.",
+  "key_results": [
+    "Focal-SAM reduces training time to ~1.36x SAM on CIFAR-10 LT vs. CC-SAM's ~2.05x overhead.",
+    "Focal-SAM improves OOD performance by approximately 0.5%~4.3% when combined with baselines on ImageNet-C and other OOD test sets.",
+    "The PAC-Bayesian generalization bound for Focal-SAM decreases at O(1/n) rate vs. O(1/sqrt(n)) for SAM and CC-SAM.",
+    "Focal-SAM flattens loss landscape for both head and tail classes (lower lambda_max and Tr(H)), whereas ImbSAM sharpens head classes."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Focal-SAM requires class frequency information (pi_y) during training, limiting applicability to settings without class labels or known class distributions.",
+    "The hyperparameters gamma and lambda require tuning; the paper notes that the estimated perturbation radius could deviate from optimal without careful tuning.",
+    "OOD evaluation is limited to ImageNet-scale long-tailed settings; CIFAR-C style corruption benchmarks are not the primary focus."
+  ],
+  "relevance_to_rq": "Peripheral relevance: Focal-SAM is a SAM variant for long-tailed learning, not the CIFAR-C corruption robustness setting of our study. It does evaluate on ImageNet-C (an OOD benchmark), providing some connection to the ood_benchmarks sub-topic, but the study's focus on class imbalance rather than representation stability under corruptions makes it tangential to the core RQ.",
+  "key_quotes": [
+    {
+      "text": "ImbSAM is efficient but offers only coarse control as it excludes head classes from the SAM process. On the other hand, CC-SAM provides fine-grained control through class-dependent perturbations but at the cost of efficiency due to multiple backpropagations.",
+      "page_approx": 1,
+      "context": "Motivation: characterizing the efficiency-vs-control tradeoff problem in long-tail SAM variants that Focal-SAM addresses"
+    },
+    {
+      "text": "Focal-SAM improves performance by approximately 0.5%∼4.3% when combined with baselines on OOD test sets.",
+      "page_approx": 1,
+      "context": "Key OOD generalization result for Focal-SAM on long-tailed domain generalization tasks"
+    },
+    {
+      "text": "The generalization bound consists of three components. Specifically, (III) decreases at a faster rate of O_tilde(1/n).",
+      "page_approx": 6,
+      "context": "Theoretical advantage of Focal-SAM's PAC-Bayesian bound compared to SAM's O(1/sqrt(n)) rate"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "Benchmarking Neural Network Robustness to Common Corruptions and Perturbations",
+    "Long-Tailed Recognition by Routing Diverse Distribution-Aware Experts",
+    "CLIP: Learning Transferable Visual Models From Natural Language Supervision",
+    "Imbalanced SAM (ImbSAM)"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

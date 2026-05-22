@@ -1,0 +1,53 @@
+{
+  "paper_id": "a82ae40ecc5ea5e33b52c87c9464510cab7bf9d9",
+  "title": "Efficient Sharpness-aware Minimization for Improved Training of Neural Networks",
+  "authors": ["Du, J.", "Yan, H.", "Feng, J.", "Zhou, J. T.", "Zhen, L.", "Goh, R. S. M.", "Tan, V. Y. F."],
+  "year": 2021,
+  "venue": "International Conference on Learning Representations",
+  "publication_status_observed": "Published as a conference paper at ICLR 2022; arXiv preprint arXiv:2110.03141v2",
+  "main_claims": [
+    "ESAM achieves near-SAM generalization performance while reducing SAM's 100% extra computational overhead to approximately 40% by combining Stochastic Weight Perturbation (SWP) and Sharpness-Sensitive Data Selection (SDS).",
+    "SWP maintains the expected perturbation direction identical to SAM's while perturbing only a stochastically selected subset of weights, and improves linearity of the loss function.",
+    "SDS selects only the sharpness-sensitive data subset (highest loss increase under perturbation), which upper-bounds the SAM loss and enables efficient optimization."
+  ],
+  "methodology": "ESAM integrates SWP (random parameter selection with probability β) and SDS (select fraction γ of data with highest loss change after perturbation). Experiments on CIFAR-10/100 with ResNet-18, WideResNet-28-10, PyramidNet-110, and ImageNet with ResNet-50/101. Hyperparameters β and γ tuned by grid search; 3 random seeds reported.",
+  "key_results": [
+    "ESAM achieves 140.3% training speed of SAM on CIFAR-10/ResNet-18 while improving accuracy from 96.52% (SAM) to 96.56%.",
+    "On CIFAR-100/PyramidNet-110, ESAM reaches 85.56% accuracy vs SAM's 84.46% at 137.9% SAM's speed.",
+    "On ImageNet ResNet-50, ESAM achieves 77.05% top-1 accuracy vs SAM's 76.70% at 129.3% SAM's speed."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Theoretical justification for SWP's performance improvement via improved linearity is empirically observed but not fully proven.",
+    "The improvement from ESAM over SAM on generalization, while consistent, is modest (< 1%) and the mechanism is not fully explained.",
+    "Experiments do not evaluate OOD performance on corruption benchmarks like CIFAR-C."
+  ],
+  "relevance_to_rq": "ESAM is a SAM variant relevant as methodological context for SAM variants in the RQ's literature review. It demonstrates that SAM's computational overhead can be reduced, and shows that the perturbation mechanism (not just flatness) matters for generalization. Peripheral to the OOD/representation stability question.",
+  "key_quotes": [
+    {
+      "text": "ESAM enhances the efficiency over SAM from requiring 100% extra computational overhead to 40% vis-a-vis base optimizers, while test accuracies are preserved or even improved.",
+      "page_approx": 1,
+      "context": "Main efficiency result of ESAM"
+    },
+    {
+      "text": "It can be clearly seen that both SAM and ESAM improve the sharpness significantly in comparison to SGD.",
+      "page_approx": 8,
+      "context": "Visual confirmation that ESAM finds flat minima like SAM"
+    },
+    {
+      "text": "SWP maintains the expected weight perturbation of SWP equals to the original SAM's perturbation in the sense of the ℓ2 norm and direction.",
+      "page_approx": 4,
+      "context": "Theoretical justification for SWP maintaining SAM's perturbation properties"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "Adaptive SAM (ASAM)",
+    "LookSAM",
+    "Sharp minima can generalize for deep nets",
+    "On Large-Batch Training for Deep Learning"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": null
+}

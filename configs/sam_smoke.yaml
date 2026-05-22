@@ -1,0 +1,21 @@
+# SAM smoke test (D0): short 10-epoch run on CIFAR-10 to verify the
+# SAM two-step update + AMP path before scaling to the full grid.
+#
+# Used by: python scripts/train.py --config configs/sam_smoke.yaml
+optimizer: sam
+rho: 0.05                # Foret default for ResNet/CIFAR
+dataset: cifar10
+model: resnet18
+epochs: 10               # short — just verifying the pipeline, not training to convergence
+batch_size: 128
+lr: 0.1
+momentum: 0.9
+weight_decay: 0.0005
+augmentation: standard
+seed: 1
+
+use_amp: true
+amp_dtype: bfloat16
+num_workers: 4
+lr_schedule: cosine
+sharpness_batch_size: 512

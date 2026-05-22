@@ -1,0 +1,53 @@
+{
+  "paper_id": "4fd04422b0f8745d941cd3c33dfe98da90a225c8",
+  "title": "Bi-LoRA: Efficient Sharpness-Aware Minimization for Fine-Tuning Large-Scale Models",
+  "authors": ["Liu, Y.", "Li, T.", "Huang, Z.", "Yang, Z.", "Huang, X."],
+  "year": 2025,
+  "venue": "arXiv.org",
+  "publication_status_observed": "Published as a conference paper at ICLR 2026 (arXiv:2508.19564v2, 19 Apr 2026)",
+  "main_claims": [
+    "Directly applying SAM to LoRA parameters (LoRA-SAM) restricts adversarial perturbations to the restricted subspace Col(B) / Row(A), limiting sharpness exploration in the full parameter space.",
+    "Bi-LoRA introduces an auxiliary LoRA module for sharpness optimization decoupled from the primary LoRA module for task adaptation, enabling parallel (not sequential) gradient steps and thus eliminating SAM's doubled training cost.",
+    "Bi-LoRA achieves a flatter loss landscape in the full parameter space than LoRA-SAM, leading to better generalization across diverse NLP and vision fine-tuning tasks."
+  ],
+  "methodology": "Bi-LoRA adds an auxiliary LoRA module (B2, A2) that undergoes gradient ascent while the primary module (B1, A1) undergoes gradient descent, all in a single forward/backward pass. A norm constraint clips the auxiliary module to keep perturbations within radius rho. Experiments fine-tune Llama 2-7B, Llama 3.1-8B, Qwen 2.5-14B, and SDXL on mathematical reasoning (GSM8K), coding (HumanEval), dialogue (MT-Bench), MMLU, text-to-image generation, and NLU tasks (T5-base on GLUE/CoLA). Flatness is measured via filter-normalized loss landscape visualization.",
+  "key_results": [
+    "Bi-LoRA outperforms LoRA-SAM on Llama 2-7B: GSM8K 60.32 vs 59.16, HumanEval 27.20 vs 26.59, MT-Bench 6.26 vs 5.97, at identical cost (×1 gradient steps vs LoRA-SAM's ×2).",
+    "Bi-LoRA achieves the greatest flatness in the full parameter space among LoRA, LoRA-SAM, and Bi-LoRA on T5-base fine-tuned on CoLA.",
+    "Proposition 3: Bi-LoRA is equivalent to LoRA with an explicit low-rank gradient-norm regularizer (Ky Fan r-norm), connecting it to the gradient-norm view of SAM."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "The analysis assumes the inner maximization converges to optimality for theoretical equivalence (Proposition 3); in practice only one inner step is performed, creating a gap between theory and practice.",
+    "Experiments focus on language models and text-to-image; applicability to computer vision classification tasks (e.g., ResNet on CIFAR) is not demonstrated.",
+    "The auxiliary LoRA module still requires a separate set of parameters during training, adding modest memory overhead beyond standard LoRA."
+  ],
+  "relevance_to_rq": "Peripheral relevance: Bi-LoRA is a SAM variant for efficient fine-tuning of large language and vision-language models. While it demonstrates SAM's flatness benefits and the cost-of-SAM problem (the doubled compute SAM incurs), it focuses on LLM fine-tuning rather than the CIFAR-C OOD robustness setting. It relates to the sam_origin sub-topic as a SAM variant, but does not address representation stability or corruption robustness.",
+  "key_quotes": [
+    {
+      "text": "directly applying SAM to LoRA parameters limits the sharpness optimization to a restricted subspace, hindering its effectiveness.",
+      "page_approx": 1,
+      "context": "Core problem: LoRA-SAM's perturbation is confined to Col(B)/Row(A), missing sharpness in the broader parameter space"
+    },
+    {
+      "text": "Bi-LoRA transforms SAM's sequential computation of adversarial perturbation and gradient descent into a parallel form, which roughly halves the time and conquers the main obstacle of applying SAM in LoRA.",
+      "page_approx": 1,
+      "context": "Key efficiency benefit: parallel bi-directional updates eliminate SAM's doubled training cost"
+    },
+    {
+      "text": "Bi-LoRA can be viewed as LoRA equipped with an explicit low-rank gradient-norm regularizer.",
+      "page_approx": 5,
+      "context": "Theoretical interpretation: Bi-LoRA regularizes via Ky Fan r-norm of the gradient, connecting to gradient-norm view of SAM"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "Low-Rank Adaptation of Large Language Models (LoRA)",
+    "Towards Understanding Sharpness-Aware Minimization",
+    "Flat-LoRA: Low-Rank Adapters Are Secretly Trainable Full-Rank Operators",
+    "Efficient SAM (ESAM)"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

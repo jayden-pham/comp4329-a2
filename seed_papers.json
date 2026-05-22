@@ -1,0 +1,197 @@
+[
+  {
+    "title": "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "arxiv_id": "2010.01412",
+    "doi": null,
+    "first_author_last": "Foret",
+    "year": 2021,
+    "semantic_scholar_id": "a2cd073b57be744533152202989228cb4122270a",
+    "subtopics": [
+      "sam_origin"
+    ],
+    "why": "Origin of SAM; every subsequent SAM paper cites this."
+  },
+  {
+    "title": "Towards Understanding Sharpness-Aware Minimization",
+    "arxiv_id": "2206.06232",
+    "doi": null,
+    "first_author_last": "Andriushchenko",
+    "year": 2022,
+    "semantic_scholar_id": "b698dbfaf9b961502062cbfcbe05d319047d8495",
+    "subtopics": [
+      "sam_mechanism"
+    ],
+    "why": "Argues SAM's benefit is NOT explained by flatness alone; load-bearing counterargument for the RQ."
+  },
+  {
+    "title": "How Does Sharpness-Aware Minimization Minimize Sharpness?",
+    "arxiv_id": "2211.05729",
+    "doi": null,
+    "first_author_last": "Wen",
+    "year": 2023,
+    "semantic_scholar_id": "07dbbb95eff2640e07ade6e42e666c14ae5d1d19",
+    "subtopics": [
+      "sam_mechanism"
+    ],
+    "why": "Theoretical decomposition of SAM's actual update; key for mechanism discussion."
+  },
+  {
+    "title": "ASAM: Adaptive Sharpness-Aware Minimization for Scale-Invariant Learning of Deep Neural Networks",
+    "arxiv_id": "2102.11600",
+    "doi": null,
+    "first_author_last": "Kwon",
+    "year": 2021,
+    "semantic_scholar_id": "1fae35d17aca0ec5ceb866824a17c14a6f6b0ba1",
+    "subtopics": [
+      "sam_origin"
+    ],
+    "why": "Key SAM variant addressing scale invariance; often cited as immediate successor."
+  },
+  {
+    "title": "Normalization Layers Are All That Sharpness-Aware Minimization Needs",
+    "arxiv_id": "2306.04226",
+    "doi": null,
+    "first_author_last": "Mueller",
+    "year": 2023,
+    "semantic_scholar_id": "fba30c42c0920bd9590ddc274658c409938b2fb2",
+    "subtopics": [
+      "sam_mechanism"
+    ],
+    "why": "Empirical decomposition showing SAM's effect localises to normalization layers; mechanism evidence."
+  },
+  {
+    "title": "On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima",
+    "arxiv_id": "1609.04836",
+    "doi": null,
+    "first_author_last": "Keskar",
+    "year": 2017,
+    "semantic_scholar_id": "8ec5896b4490c6e127d1718ffc36a3439d84cb81",
+    "subtopics": [
+      "flatness_theory"
+    ],
+    "why": "Empirical foundation of the flat-minima-generalises hypothesis."
+  },
+  {
+    "title": "Sharp Minima Can Generalize For Deep Nets",
+    "arxiv_id": "1703.04933",
+    "doi": null,
+    "first_author_last": "Dinh",
+    "year": 2017,
+    "semantic_scholar_id": "58123025178256279bb060ca5da971b62bc329ee",
+    "subtopics": [
+      "flatness_theory"
+    ],
+    "why": "Counterargument: sharpness is reparametrisation-dependent; must be addressed in Related Work."
+  },
+  {
+    "title": "Fantastic Generalization Measures and Where to Find Them",
+    "arxiv_id": "1912.02178",
+    "doi": null,
+    "first_author_last": "Jiang",
+    "year": 2020,
+    "semantic_scholar_id": "8f18c9da3d1763723c6ef8c3734d74db005d0cff",
+    "subtopics": [
+      "flatness_theory"
+    ],
+    "why": "Large-scale empirical comparison of generalisation measures; finds sharpness predictive."
+  },
+  {
+    "title": "Relative Flatness and Generalization",
+    "arxiv_id": "2001.00939",
+    "doi": null,
+    "first_author_last": "Petzka",
+    "year": 2021,
+    "semantic_scholar_id": "d8c0aabe41ec6036a2404cb2bfaea2a7d6424ae3",
+    "subtopics": [
+      "flatness_theory"
+    ],
+    "why": "Reparametrisation-invariant flatness measure; addresses Dinh's critique."
+  },
+  {
+    "title": "Benchmarking Neural Network Robustness to Common Corruptions and Perturbations",
+    "arxiv_id": "1903.12261",
+    "doi": null,
+    "first_author_last": "Hendrycks",
+    "year": 2019,
+    "semantic_scholar_id": "49b64383fe36268410c430352637ed23b16820c5",
+    "subtopics": [
+      "ood_benchmarks"
+    ],
+    "why": "Defines CIFAR-C / ImageNet-C; the OOD evaluation target."
+  },
+  {
+    "title": "Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+    "arxiv_id": "1906.02530",
+    "doi": null,
+    "first_author_last": "Ovadia",
+    "year": 2019,
+    "semantic_scholar_id": "1eb7f46b1a0a7df823194d86543e5554aa21021a",
+    "subtopics": [
+      "ood_benchmarks"
+    ],
+    "why": "Calibration under shift; anchors the ECE metric in the experiment."
+  },
+  {
+    "title": "In Search of Lost Domain Generalization",
+    "arxiv_id": "2007.01434",
+    "doi": null,
+    "first_author_last": "Gulrajani",
+    "year": 2021,
+    "semantic_scholar_id": "6a5efb990b6558c21d9fdded4884c00ba152cb7c",
+    "subtopics": [
+      "ood_benchmarks",
+      "flat_minima_for_dg"
+    ],
+    "why": "DomainBed framing; argues most DG methods don't beat ERM under fair eval. Methodological discipline."
+  },
+  {
+    "title": "SWAD: Domain Generalization by Seeking Flat Minima",
+    "arxiv_id": "2102.08604",
+    "doi": null,
+    "first_author_last": "Cha",
+    "year": 2021,
+    "semantic_scholar_id": "4d87a9f6a0bc9c67088193402813da5cba3f06c1",
+    "subtopics": [
+      "flat_minima_for_dg",
+      "weight_averaging"
+    ],
+    "why": "Most direct prior on flatness-for-DG; uses weight averaging variant."
+  },
+  {
+    "title": "Sharpness-Aware Gradient Matching for Domain Generalization",
+    "arxiv_id": "2303.10353",
+    "doi": null,
+    "first_author_last": "Wang",
+    "year": 2023,
+    "semantic_scholar_id": "beb8c38446343797168a0c35af0e941799117867",
+    "subtopics": [
+      "flat_minima_for_dg",
+      "sam_origin"
+    ],
+    "why": "Recent SAM-for-DG; positions our work against SOTA."
+  },
+  {
+    "title": "Averaging Weights Leads to Wider Optima and Better Generalization",
+    "arxiv_id": "1803.05407",
+    "doi": null,
+    "first_author_last": "Izmailov",
+    "year": 2018,
+    "semantic_scholar_id": "b8989afff14fb630ca58b6afa917fb42574228ee",
+    "subtopics": [
+      "weight_averaging"
+    ],
+    "why": "SWA origin; the flat-minima-oriented control baseline."
+  },
+  {
+    "title": "Similarity of Neural Network Representations Revisited",
+    "arxiv_id": "1905.00414",
+    "doi": null,
+    "first_author_last": "Kornblith",
+    "year": 2019,
+    "semantic_scholar_id": "726320cdbd04804ffa8f3a78c095bd1b55a2a695",
+    "subtopics": [
+      "representation_analysis"
+    ],
+    "why": "CKA; the representation-stability measurement tool."
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "paper_id": "0da44af38f5bbe7c342dd0bf05988378fb5dc192",
+  "title": "DGSAM: Domain Generalization via Individual Sharpness-Aware Minimization",
+  "authors": ["Song, Y.", "Hwang, Y.", "Lee, J.", "Lee, H.", "Lim, D.-Y."],
+  "year": 2025,
+  "venue": "arXiv.org",
+  "publication_status_observed": "arXiv preprint under review (arXiv:2503.23430v2, 30 Jun 2025)",
+  "main_claims": [
+    "Global SAM in domain generalization can converge to fake flat minima where the total loss surface is flat but individual domain losses remain sharp, undermining cross-domain robustness.",
+    "Individual sharpness (per-domain) provides a valid upper bound on average worst-case domain risk, while global sharpness does not.",
+    "DGSAM's gradual domain-wise perturbation achieves both fine-grained individual sharpness control and lower computational overhead than standard SAM."
+  ],
+  "methodology": "The authors formalize the fake flat minima problem theoretically (Proposition 3.1, Theorem 3.2) and propose DGSAM, which performs S+1 sequential domain-specific gradient ascent steps followed by an aggregated descent update. They prove epsilon-stationarity convergence (Theorem 4.1). Experiments follow the DomainBed protocol on five benchmarks (PACS, VLCS, OfficeHome, TerraIncognita, DomainNet) using ResNet-50 pretrained on ImageNet, comparing against 20 baselines including SAM, SAGM, GSAM, and SWAD.",
+  "key_results": [
+    "DGSAM achieves the highest average accuracy 67.2% and lowest domain-level variance 10.3 across five DomainBed benchmarks, outperforming SAM (64.5%), SWAD (66.9%), and SAGM (66.1%).",
+    "DGSAM reduces individual sharpness more effectively than SAM: on DomainNet, SAM shows mean individual sharpness of 4.79 vs. DGSAM's lower values, while SAM fails to flatten individual domain losses.",
+    "DGSAM combined with SWAD reaches 67.8% average accuracy, suggesting complementary mechanisms.",
+    "Computational cost of DGSAM (0.169 s/iter) is lower than SAM (0.217 s/iter) and similar to ERM (0.110 s/iter)."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Theoretical analysis assumes the fake flat minima phenomenon but does not prove it always occurs for standard SAM in practice.",
+    "DGSAM requires domain labels during training, limiting applicability to settings without domain annotations.",
+    "The convergence theorem assumes standard smoothness conditions that may not fully hold for deep networks."
+  ],
+  "relevance_to_rq": "Supporting relevance: this paper shows that global SAM's flatness can be misleading in multi-domain settings because it may not reduce per-domain sharpness. This is relevant to the RQ's examination of whether SAM's flatness explanation is sufficient — specifically the sam_mechanism and flat_minima_for_dg sub-topics. However, it focuses on multi-source domain generalization rather than the CIFAR-C single-source corruption robustness setting in our study.",
+  "key_quotes": [
+    {
+      "text": "SAM in DG may converge to fake flat minima, where the total loss surface appears flat in terms of global sharpness but remains sharp with respect to individual source domains.",
+      "page_approx": 1,
+      "context": "Core problem identification motivating DGSAM: global SAM misses individual domain sharpness"
+    },
+    {
+      "text": "minimizing global sharpness does not ensure a reduction in the average worst-case domain risk and therefore may fail to generalize under distribution shift.",
+      "page_approx": 5,
+      "context": "Theorem 3.2 consequence: individual sharpness is the tighter upper bound on worst-case domain risk"
+    },
+    {
+      "text": "DGSAM achieves the highest average accuracy 67.2% and the lowest domain-level variance 10.3 among all methods",
+      "page_approx": 9,
+      "context": "Main empirical result comparing DGSAM to all 20 baseline algorithms on DomainBed"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "SWAD: Domain Generalization by Seeking Flat Minima",
+    "Surrogate Gap Guided Sharpness-Aware Minimization",
+    "Sharp-Aware Minimization Alone Can Improve Adversarial Robustness",
+    "Adaptive Sharpness-Aware Minimization for Scale-Invariant Learning"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": null
+}

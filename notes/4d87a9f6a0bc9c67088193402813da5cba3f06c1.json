@@ -1,0 +1,54 @@
+{
+  "paper_id": "4d87a9f6a0bc9c67088193402813da5cba3f06c1",
+  "title": "SWAD: Domain Generalization by Seeking Flat Minima",
+  "authors": ["Cha, J.", "Chun, S.", "Lee, K.", "Cho, H.-C.", "Park, S.", "Lee, Y.", "Park, S."],
+  "year": 2021,
+  "venue": "Neural Information Processing Systems",
+  "publication_status_observed": "NeurIPS 2021 (35th Conference on Neural Information Processing Systems); arXiv:2102.08604v4",
+  "main_claims": [
+    "Flat minima result in a smaller domain generalization gap: the DG target domain error is upper bounded by the robust empirical risk (flat solution) plus domain divergence and confidence terms (Theorems 1–2).",
+    "SWAD (dense + overfit-aware stochastic weight averaging) finds flatter minima than vanilla SWA, SAM, and ERM, and achieves state-of-the-art DG performance.",
+    "The improvements from SWAD come from seeking flat minima, not from better in-domain generalization: data augmentation methods (Mixup, CutMix) that improve in-domain accuracy do not improve out-of-domain accuracy."
+  ],
+  "methodology": "SWAD modifies SWA with a dense sampling strategy (every iteration) and overfit-aware scheduling (sampling between the first validation loss optimum and the onset of overfitting). Theory derives a generalization bound (Theorems 1–2) relating flat minima to DG gap. Local flatness is measured via Monte Carlo loss-gap estimation Fγ(θ) = E[E(θ') - E(θ)] for θ' on sphere of radius γ. Experiments cover five DG benchmarks (PACS, VLCS, OfficeHome, TerraIncognita, DomainNet) with three repetitions.",
+  "key_results": [
+    "SWAD achieves average DG accuracy 66.9% across five benchmarks, vs. ERM 63.3% (+3.6pp) and best prior method 65.3% (+1.6pp).",
+    "SWAD finds flatter minima than ERM, SAM, SWA on all four PACS target domains as measured by local flatness Fγ(θ).",
+    "Combining SWAD with previous SOTA DG method achieves 67.3% average accuracy, demonstrating composability.",
+    "Mixup and CutMix improve in-domain generalizability but fail to improve out-of-domain accuracy, confirming flatness is the driver of SWAD's DG gains."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "SWAD requires a validation set for overfit-aware scheduling; its performance depends on the quality of this validation signal.",
+    "The theoretical bound (Theorem 1) uses a covering-number argument with assumptions that may be loose for high-dimensional neural networks.",
+    "SWAD's dense sampling strategy increases memory and computational overhead compared to vanilla SWA."
+  ],
+  "relevance_to_rq": "Core relevance to the flat_minima_for_dg and weight_averaging sub-topics: SWAD is a key flat-minima-oriented optimizer applied to domain generalization, and directly relevant as a comparison point for SWA in our study. The paper's finding that SWA finds flatter minima than SAM on PACS (in terms of local flatness Fγ) is noteworthy given our study compares SAM and SWA on CIFAR-C. SWAD also provides the DomainBed protocol context.",
+  "key_quotes": [
+    {
+      "text": "SWAD finds flatter minima and suffers less from overfitting than does the vanilla SWA by a dense and overfit-aware stochastic weight sampling strategy.",
+      "page_approx": 1,
+      "context": "Core characterization of SWAD's advantage over vanilla SWA: denser, overfit-aware sampling"
+    },
+    {
+      "text": "SWA finds flatter minima than SAM (See Figure 3). We illustrate an overview of SWA in Figure 2a.",
+      "page_approx": 4,
+      "context": "Key comparison: on PACS, SWA finds flatter minima than SAM as measured by local flatness Fγ"
+    },
+    {
+      "text": "we verify that the remarkable performance improvements are originated from by seeking flat minima, not from better in-domain generalizability.",
+      "page_approx": 1,
+      "context": "Attribution of SWAD's DG gains to flatness rather than in-distribution improvements"
+    }
+  ],
+  "related_work_mentioned": [
+    "Averaging Weights Leads to Wider Optima and Better Generalization (SWA)",
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "In Search of Lost Domain Generalization (DomainBed)",
+    "DGSAM: Domain Generalization via Individual Sharpness-Aware Minimization",
+    "Model soups: averaging weights of fine-tuned models"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": null
+}

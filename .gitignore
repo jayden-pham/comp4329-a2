@@ -1,0 +1,76 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.brf
+*.nav
+*.snm
+*.vrb
+
+# Pipeline outputs - regenerable
+papers/pdfs/
+papers/parsed/
+
+# Environment / secrets
+.env
+.env.local
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Experiment outputs (runs.jsonl + tables/figures kept in git)
+checkpoints/
+wandb/
+lightning_logs/
+
+# Hugging Face / torch cache
+.cache/
+
+# Datasets
+data/
+*.tar
+*.tar.gz
+*.zip
+*.npy
+
+# Model artifacts
+*.pt
+*.pth
+*.ckpt
+checkpoints/
+
+# Notebook/runtime scratch
+.ipynb_checkpoints/
+runs/
+tmp/
+temp/
+
+# Local smoke/canonical experiment scratch
+results/runs.jsonl
+results/failed_*.jsonl
+
+# Personal files
+student-wall-calendar.pdf

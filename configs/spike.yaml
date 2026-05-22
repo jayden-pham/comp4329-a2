@@ -1,0 +1,23 @@
+# Stage D0 feasibility spike — single SGD run on CIFAR-10 with reduced
+# epochs to validate the entire pipeline end-to-end before locking the grid.
+#
+# Used by: python scripts/train.py --config configs/spike.yaml
+optimizer: sgd
+dataset: cifar10
+model: resnet18
+epochs: 50
+batch_size: 128
+lr: 0.1
+momentum: 0.9
+weight_decay: 0.0005
+augmentation: standard
+seed: 1
+
+# Performance settings
+use_amp: true            # bf16 autocast; ~1.6-2x speedup on Ampere
+amp_dtype: bfloat16      # bfloat16 | float16 (bfloat16 skips GradScaler complexity)
+num_workers: 4           # bump from default 2; reduces dataloader bottleneck on Windows
+
+# Optional fields (defaults shown):
+lr_schedule: cosine      # cosine | none
+sharpness_batch_size: 512

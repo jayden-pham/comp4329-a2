@@ -1,0 +1,53 @@
+{
+  "paper_id": "570b747a6b225022fdc004ca41f52e23bed9caad",
+  "title": "Understanding Flatness in Generative Models: Its Role and Benefits",
+  "authors": ["Lee, T.", "Seo, K.", "Yoo, J.", "Yoon, S. W."],
+  "year": 2025,
+  "venue": "IEEE International Conference on Computer Vision",
+  "publication_status_observed": "arXiv preprint arXiv:2503.11078v2 [cs.CV] 6 Aug 2025; submitted to IEEE ICCV per header",
+  "main_claims": [
+    "Flat minima improve robustness against perturbations in the target prior distribution in diffusion models, provably bounding the divergence between learned and true distributions.",
+    "SAM induces significantly flatter loss surfaces in diffusion models than SWA, EMA, or Input Perturbation as measured by LPF and perturbation-based metrics.",
+    "Flat diffusion models (trained with SAM) exhibit reduced exposure bias and greatly improved robustness to 8-bit model quantization compared to baselines."
+  ],
+  "methodology": "The authors derive theoretical bounds linking parameter-space flatness (delta-flat minima) to distributional gap robustness for score-based generative models. They then empirically train ADM diffusion models on CIFAR-10, LSUN Tower, and FFHQ using SAM, SWA, EMA, and Input Perturbation, evaluating FID, LPF flatness, exposure bias (L2 norm gap), and quantization degradation under 8-bit precision.",
+  "key_results": [
+    "SAM+ADM achieves FID 9.01 vs. 34.47 for plain ADM on CIFAR-10 at 20 sampling steps, the largest improvement among all flatness methods.",
+    "LPF flatness for ADM+SAM is 0.063 vs. 0.097 for ADM, 0.099 for ADM+SWA, and 0.099 for ADM+EMA, showing SAM exclusively reduces flatness.",
+    "Under 8-bit quantization, ADM+SAM FID degrades by only -0.07 (20 steps) vs. +13.65 for plain ADM, demonstrating near-zero quantization sensitivity."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Theoretical analysis uses a simplified random feature model for the score network, which may not fully represent large-scale diffusion architectures.",
+    "Experiments are on relatively low-resolution datasets (up to 64x64); extension to higher-resolution tasks is left to future work.",
+    "The paper focuses on diffusion models rather than discriminative classifiers, so its findings do not directly address SAM's OOD generalization in supervised settings."
+  ],
+  "relevance_to_rq": "This paper empirically and theoretically compares SAM and SWA as flatness-oriented methods in a generative setting, finding SAM produces substantially flatter minima than SWA/EMA. This directly informs the RQ by showing that SAM and SWA differ in their realized flatness even when both nominally seek flat minima, a key confound the RQ intends to disentangle in discriminative OOD tasks.",
+  "key_quotes": [
+    {
+      "text": "we find that ensemble-like averaging, such as +SWA and +EMA, fail to induce additional flatness. In contrast, +SAM finds a flatter loss surface by explicitly perturbing model weights",
+      "page_approx": 7,
+      "context": "Flatness measurement results showing SAM uniquely reduces LPF, while SWA and EMA do not"
+    },
+    {
+      "text": "flatter minima improve robustness against perturbations in target prior distributions, leading to benefits such as reduced exposure bias",
+      "page_approx": 1,
+      "context": "Abstract and introduction summarising the theoretical contribution linking flatness to distributional robustness"
+    },
+    {
+      "text": "SAM-applied models consistently maintain L2 norms closer to the training curve, indicating a lower degree of exposure bias",
+      "page_approx": 7,
+      "context": "Exposure bias analysis showing flat diffusion models generalise better across sampling timesteps"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-aware minimization for efficiently improving generalization (Foret et al., 2021)",
+    "Averaging weights leads to wider optima and better generalization (Izmailov et al., 2018)",
+    "SWAD: Domain generalization by seeking flat minima (Cha et al., 2021)",
+    "Low-pass filtering SGD for recovering flat optima (Bisla et al., 2022)",
+    "Input perturbation reduces exposure bias in diffusion models (Ning et al., 2023)"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": "evidence_strength is mixed: theoretical claims are derivational/theoretical; empirical comparisons are demonstrative/correlational. The venue header says IEEE ICCV but the arXiv metadata says 'submitted'; treated as arXiv preprint for calibration."
+}

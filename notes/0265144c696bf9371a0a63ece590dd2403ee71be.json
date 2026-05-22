@@ -1,0 +1,61 @@
+{
+  "paper_id": "0265144c696bf9371a0a63ece590dd2403ee71be",
+  "title": "When Do Flat Minima Optimizers Work?",
+  "authors": ["Kaddour, J.", "Liu, L.", "Silva, R. M. A.", "Kusner, M. J."],
+  "year": 2022,
+  "venue": "Neural Information Processing Systems",
+  "publication_status_observed": "NeurIPS 2022 main track (36th Conference on Neural Information Processing Systems)",
+  "main_claims": [
+    "Despite SAM finding flatter solutions than SWA as quantified by Hessian eigenvalues, SAM solutions can be close to sharp directions, a phenomenon overlooked in prior SAM literature.",
+    "Averaging SAM iterates (WASAM) leads to the flattest minima among all methods and often achieves the best generalization performance.",
+    "The effectiveness of SWA and SAM is heavily dependent on dataset and architecture: SWA underperforms on NLP tasks while SAM beats SWA on NLP; SWA beats SAM on graph representation learning tasks.",
+    "Flat-minima optimizers offer asymmetric payoffs: at worst -0.30% and at best +2.60% over baselines across 42 tasks."
+  ],
+  "methodology": "The authors compare SWA, SAM, and their combination WASAM against non-flat baselines across 42 tasks spanning CV (supervised and self-supervised), NLP, and graph representation learning, using multiple architectures (MLP, CNN, Transformer, GNN). They characterize minima geometry via linear interpolations between solutions and median dominant Hessian eigenvalues (power iteration), and conduct rigorous model selection via grid search on held-out validation sets for optimizer-specific hyperparameters.",
+  "key_results": [
+    "SAM achieves flatter minima than SWA by Hessian eigenvalue: lambda_max(SGD)=673, lambda_max(SWA)=265, lambda_max(SAM)=237, lambda_max(WASAM)=117 on WRN/CIFAR-100.",
+    "SAM improves over the non-flat baseline in 7/10 NLP tasks, while SWA never performs best and hurts 4/10 NLP tasks.",
+    "WASAM outperforms min(SWA, SAM) in 39/42 tasks, demonstrating robustness across all settings.",
+    "Flat-minima optimizers fail when train-to-test loss minimizers are uncorrelated (e.g., GraphSAGE on OGB-Proteins).",
+    "SAM finds different loss basins than SGD/SWA (high-loss barrier observed), while SWA and SGD occupy the same basin."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Fixed shared hyperparameters from prior work may disadvantage flat optimizers; ideal design would tune all hyperparameters independently per optimizer, but this is computationally infeasible.",
+    "Many unexplored domains remain, including bi-level optimization problems common in generative modeling, deep RL, and meta-learning.",
+    "The analysis does not fully explain why training loss flatness does not always correspond to hold-out accuracy gains."
+  ],
+  "relevance_to_rq": "This paper is directly relevant to the RQ: it provides a systematic comparison of SWA and SAM as two flat-minima-oriented optimizers, characterizes their geometric differences via Hessian eigenvalues and loss landscape visualizations, and benchmarks both on CV tasks including CIFAR-100, making it a key reference for the flat_minima_for_dg and weight_averaging sub-topics.",
+  "key_quotes": [
+    {
+      "text": "despite SAM finding flatter solutions than SWA as quantified by Hessian eigenvalues, they can be close to sharp directions, a phenomenon that has been overlooked in the previous SAM literature.",
+      "page_approx": 1,
+      "context": "Summary of geometric insight distinguishing SAM from SWA despite both being flat-minima optimizers"
+    },
+    {
+      "text": "averaging SAM iterates leads to the flattest among all minima.",
+      "page_approx": 1,
+      "context": "Key result on WASAM achieving lowest Hessian eigenvalue"
+    },
+    {
+      "text": "Flat-minima optimizers offer asymmetric payoffs: at worst, they decreased performance by −0.30%, at best, they increased it by 2.60%.",
+      "page_approx": 9,
+      "context": "Summary finding on the bounded downside risk of flat-minima optimizers across 42 tasks"
+    },
+    {
+      "text": "when SWA/SAM did not improve over baselines, common assumptions seemed broken (i.e., train-to-test loss minimizers were not correlated).",
+      "page_approx": 10,
+      "context": "Diagnosis of failure modes for flat-minima optimizers"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "Averaging Weights Leads to Wider Optima and Better Generalization",
+    "Towards Understanding Sharpness-Aware Minimization",
+    "SWAD: Domain Generalization by Seeking Flat Minima",
+    "Sharpness-Aware Minimization Alone can Improve Adversarial Robustness"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": "evidence_strength is mixed: geometric analysis is demonstrative/correlational (Hessian eigenvalues, loss interpolations), while benchmark results are empirical comparisons without causal intervention."
+}

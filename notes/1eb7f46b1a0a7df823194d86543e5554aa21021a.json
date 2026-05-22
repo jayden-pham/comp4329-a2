@@ -1,0 +1,54 @@
+{
+  "paper_id": "1eb7f46b1a0a7df823194d86543e5554aa21021a",
+  "title": "Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+  "authors": ["Ovadia, Y.", "Fertig, E.", "Ren, J.", "Nado, Z.", "Sculley, D.", "Nowozin, S.", "Dillon, J. V.", "Lakshminarayanan, B.", "Snoek, J."],
+  "year": 2019,
+  "venue": "Neural Information Processing Systems",
+  "publication_status_observed": "NeurIPS 2019 (33rd Conference on Neural Information Processing Systems, Vancouver, Canada)",
+  "main_claims": [
+    "Post-hoc calibration (temperature scaling) that achieves low ECE on the i.i.d. test set does not maintain calibration under distributional shift.",
+    "Deep ensembles consistently achieve the best accuracy and calibration under distributional shift across image, text, and categorical modalities.",
+    "Methods that marginalize over models (ensembles, Bayesian approaches) give stronger uncertainty estimates under dataset shift than single-model methods."
+  ],
+  "methodology": "The authors benchmark seven uncertainty estimation methods (Vanilla, Temperature Scaling, Dropout, Ensembles, SVI, LL-SVI, LL-Dropout) on classification tasks across three modalities: image (MNIST, CIFAR-10, ImageNet), text (20newsgroups), and categorical (Criteo). Distributional shift is induced via Hendrycks & Dietterich (2019) corruptions (80 types × severity levels for CIFAR-10 and ImageNet) and completely OOD datasets. Metrics include accuracy, ECE, Brier score, and predictive entropy.",
+  "key_results": [
+    "Temperature scaling maintains low ECE on i.i.d. test sets but ECE increases significantly under distributional shift on CIFAR-10 and ImageNet.",
+    "Deep ensembles consistently achieve highest accuracy under shift; on CIFAR-10 they maintain superior accuracy at all 5 severity levels while also achieving the best ECE for high-shift conditions.",
+    "SVI shows the lowest accuracy on i.i.d. test sets but is significantly more robust to dataset shift on MNIST (lower Brier score, higher predictive entropy on OOD).",
+    "Most methods exhibit very low entropy (confidently wrong) on completely OOD data, indicating a fundamental limitation of single-model uncertainty methods."
+  ],
+  "evidence_strength": "correlational",
+  "limitations": [
+    "The benchmark does not include SAM or flat-minima optimizers as methods; the connection to loss landscape geometry is not examined.",
+    "The ECE metric has known limitations (binning artifacts, not a proper scoring rule), but is included for its intuitive appeal and wide use.",
+    "SVI does not scale to large models like ImageNet (excluded due to training difficulties) or the Criteo dataset."
+  ],
+  "relevance_to_rq": "Directly relevant to the ood_benchmarks sub-topic: this paper establishes CIFAR-10-C (Hendrycks & Dietterich 2019 corruptions) as a key benchmark for evaluating accuracy and calibration under distributional shift, which is our primary OOD evaluation setting. The ECE metric used here is one of our secondary metrics. The finding that calibration under i.i.d. does not transfer to shift is important context for interpreting ECE results in our study.",
+  "key_quotes": [
+    {
+      "text": "traditional post-hoc calibration does indeed fall short, as do several other previous methods. However, some methods that marginalize over models give surprisingly strong results across a broad spectrum of tasks.",
+      "page_approx": 1,
+      "context": "Main finding: temperature scaling fails under shift; model-marginalizing methods (ensembles) are more robust"
+    },
+    {
+      "text": "while calibrating on the validation set leads to well-calibrated predictions on the test set, it does not guarantee calibration on shifted data.",
+      "page_approx": 5,
+      "context": "Key finding on the failure of i.i.d. calibration to transfer to distributional shift, motivating OOD-aware evaluation"
+    },
+    {
+      "text": "Quantifying uncertainty is especially critical in real-world settings, which often involve input distributions that are shifted from the training distribution due to a variety of factors including sample bias and non-stationarity.",
+      "page_approx": 1,
+      "context": "Motivation for evaluating predictive uncertainty under dataset shift — directly relevant to CIFAR-C evaluation context"
+    }
+  ],
+  "related_work_mentioned": [
+    "Benchmarking Neural Network Robustness to Common Corruptions and Perturbations",
+    "Deep Ensembles: A Loss Landscape Perspective on Predictive Uncertainty",
+    "On Calibration of Modern Neural Networks",
+    "Dropout as a Bayesian Approximation",
+    "Weight Uncertainty in Neural Networks"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": null
+}

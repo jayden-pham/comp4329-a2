@@ -1,0 +1,53 @@
+{
+  "paper_id": "1d83afc69d4b773c9ec808451f30f1157594a61e",
+  "title": "Weight Averaging for Out-of-Distribution Generalization and Few-Shot Domain Adaptation",
+  "authors": ["Xu, S."],
+  "year": 2025,
+  "venue": "arXiv.org",
+  "publication_status_observed": "arXiv preprint (arXiv:2501.08361v1, 14 Jan 2025); originally an MSc thesis at EPFL (February 2023)",
+  "main_claims": [
+    "Incorporating gradient similarity as a regularizer explicitly increases model diversity in weight averaging, improving OOD generalization performance.",
+    "Combining weight averaging (WA) and SAM leads to improved OOD generalization and significantly increased few-shot domain adaptation accuracy.",
+    "Weight averaging with gradient diversity (WA + SAM + grad) achieves the best in-distribution performance on CIFAR-100 (84.31%) compared to ERM, DiWA, and WA+Adam+grad."
+  ],
+  "methodology": "The author proposes weight averaging with gradient similarity regularization: multiple models are trained from shared initialization with different hyperparameters, with a gradient similarity term (cosine similarity between model gradients) added to the loss to enforce diversity. The final model averages all trained weights. For few-shot domain adaptation, weight averaging is either applied before or after few-shot fine-tuning. Experiments use ImageNet-pretrained ResNet50 on PACS, VLCS (DomainBed), and CIFAR-100.",
+  "key_results": [
+    "WA (SAM + grad) achieves 84.31% on CIFAR-100 vs. ERM baseline 79.54%, DiWA 84.12%, and WA (Adam + grad) 84.11%.",
+    "On PACS DomainBed, the method achieves best performance on the Cartoon domain and is comparable to DiWA with fewer averaged models.",
+    "Combining WA and SAM significantly increases few-shot domain adaptation accuracy on digits datasets (MNIST, SVHN, USPS, MNIST-M) and domain adaptation datasets (VLCS, PACS)."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "Experiments are limited to PACS and VLCS from DomainBed due to time and computation constraints; results on TerraIncognita, OfficeHome, and DomainNet are not provided.",
+    "The thesis does not provide ablation on the relative contributions of gradient diversity vs. SAM in the combined method.",
+    "The thesis-level work lacks rigorous statistical comparisons and the paper is a repost of an MSc thesis, not a peer-reviewed publication."
+  ],
+  "relevance_to_rq": "Supporting relevance to the RQ's weight_averaging sub-topic: this work directly combines SWA/weight averaging with SAM for OOD generalization, showing complementary benefits. It uses DomainBed benchmarks rather than CIFAR-C corruptions, but the finding that WA+SAM outperforms either alone is relevant context for our flat-minima comparison.",
+  "key_quotes": [
+    {
+      "text": "weight averaging with gradient similarity optimized by SAM achieves the best performance.",
+      "page_approx": 22,
+      "context": "Main result on CIFAR-100 showing WA+SAM+gradient diversity outperforms all baselines"
+    },
+    {
+      "text": "combining WA and SAM leads to improved out-of-distribution generalization performance and significantly increases few-shot domain adaptation accuracy.",
+      "page_approx": 2,
+      "context": "Abstract-level summary of both OOD generalization and domain adaptation benefits of WA+SAM combination"
+    },
+    {
+      "text": "SAM optimizes a neural network to find minima in flat regions, which have been proven to perform well under distribution shifts.",
+      "page_approx": 2,
+      "context": "Motivation for using SAM in the OOD generalization context"
+    }
+  ],
+  "related_work_mentioned": [
+    "Model soups: averaging weights of fine-tuned models improves accuracy and robustness",
+    "SWAD: Domain Generalization by Seeking Flat Minima",
+    "Averaging Weights Leads to Wider Optima and Better Generalization (SWA)",
+    "DiWA: Diverse Weight Averaging for Out-of-Distribution Generalization",
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": "Publication status is unusual: this is an arXiv repost of an MSc thesis from 2023. Content is demonstrative (showing that the combination works) rather than rigorously empirical."
+}

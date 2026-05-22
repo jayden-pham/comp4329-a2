@@ -1,0 +1,38 @@
+[
+  {
+    "paperId": "75d56a94035b9f00591145d4a4b542305e9cc9e8",
+    "title": "Implicit Sharpness-Aware Minimization for Domain Generalization",
+    "reason": "no source URL available"
+  },
+  {
+    "paperId": "8407371dfe5d6a2ae082b6256b1ba1e25c0361c2",
+    "title": "Exploring Flatter Loss Landscape Surface via Sharpness-Aware Minimization with Linear Mode Connectivity",
+    "reason": "no source URL available"
+  },
+  {
+    "paperId": "3a02d91d96f3594e0d25e9b978d3ea71c887d345",
+    "title": "Deep Neural Network Confidence Calibration from Stochastic Weight Averaging",
+    "attempts": [
+      {
+        "src": "s2_oa",
+        "url": "https://www.mdpi.com/2079-9292/13/3/503/pdf?version=1706175683",
+        "reason": "http 403"
+      }
+    ]
+  },
+  {
+    "paperId": "bb536b6b08a43e7c7543cab19bdea177f6c474f5",
+    "title": "Improving Sharpness-Aware Minimization Using Label Smoothing and Adaptive Adversarial Cross-Entropy Loss",
+    "reason": "no source URL available"
+  },
+  {
+    "paperId": "7ba5cf55748aa1ee362bf45e925850b507291ca7",
+    "title": "Domain Generalization Needs Stochastic Weight Averaging for Robustness on Domain Shifts",
+    "reason": "no source URL available"
+  },
+  {
+    "paperId": "b5e53862f3274af5782b41b184effd275641d82d",
+    "title": "A Fair Comparison of Two Popular Flat-Minima Optimizers: Stochastic Weight Averaging vs. Sharpness-Aware Minimization",
+    "reason": "no source URL available"
+  }
+]

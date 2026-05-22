@@ -1,0 +1,53 @@
+{
+  "paper_id": "744ef5b04a5322bb5f1c336755c0471e19c8e3ae",
+  "title": "Make Continual Learning Stronger via C-Flat",
+  "authors": ["Bian, A.", "Li, W.", "Yuan, H.", "Yu, C.", "Wang, M.", "Zhao, Z.", "Lu, A.", "Feng, T."],
+  "year": 2024,
+  "venue": "Neural Information Processing Systems",
+  "publication_status_observed": "38th Conference on Neural Information Processing Systems (NeurIPS 2024); arXiv:2404.00986v2 [cs.LG] 1 Nov 2024",
+  "main_claims": [
+    "Zeroth-order sharpness-aware minimisation (SAM) can favour sharper over flatter minima in certain scenarios because minimising the perturbed loss does not guarantee minimising the dominant Hessian eigenvalue.",
+    "C-Flat, which uses first-order gradient-landscape flatness (maximising the neighbourhood gradient norm), finds globally flatter minima than zeroth-order SAM and improves continual learning performance.",
+    "C-Flat is a plug-and-play, one-line-of-code enhancement applicable to any continual learning method, consistently improving performance across memory-based, regularisation-based, and expansion-based CL categories."
+  ],
+  "methodology": "C-Flat augments the training loss with a first-order sharpness term R^1_rho(theta) = rho * max{||∇l_S(theta')||_2 : theta' in B(theta, rho)}, which measures maximum gradient norm in the neighbourhood rather than maximum loss. Experiments compare C-Flat with SAM-based and standard CL approaches across diverse benchmarks (Split-CIFAR, Split-TinyImageNet, PMNIST) in task-incremental, domain-incremental, and class-incremental settings using various CL methods as base.",
+  "key_results": [
+    "C-Flat consistently improves CL performance in 'almost all cases' across diverse CL methods and settings, outperforming both standard optimisers and zeroth-order SAM variants.",
+    "The authors demonstrate (citing Zhuang et al., 2022) that zeroth-order sharpness optimisers may favour sharper over flatter solutions because low perturbed loss does not imply low dominant Hessian eigenvalue.",
+    "C-Flat achieves better loss landscape flatness (measured by gradient norm in neighbourhood) than SAM, addressing the limitation identified in the related GSAM/GSAM++ literature."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "The paper is specific to continual learning; it does not evaluate OOD generalisation under input corruptions or domain shift.",
+    "The first-order sharpness measure is computationally more expensive than zeroth-order SAM, though the authors claim manageable overhead.",
+    "No direct comparison to SWA or weight-averaging methods as flat-minima baselines is presented."
+  ],
+  "relevance_to_rq": "This paper reinforces the concern that standard SAM (zeroth-order sharpness) does not reliably find the flattest minima, which is relevant to the RQ's scepticism about whether SAM's OOD gains are driven by sharpness reduction. However, the paper's domain is continual learning rather than OOD corruptions, so it is only peripherally relevant.",
+  "key_quotes": [
+    {
+      "text": "zeroth-order sharpness used in the current work is proved to favor sharper minima than a flat solution",
+      "page_approx": 2,
+      "context": "Motivation for C-Flat, citing the SAM limitation from GSAM literature"
+    },
+    {
+      "text": "loss landscape flatness is emphasized to strengthen model generalization ability. Thus, the model can always converge to a flat minima in each phase, and then smoothly migrate to the global optimal",
+      "page_approx": 2,
+      "context": "Description of C-Flat's approach to overcoming catastrophic forgetting via flatness"
+    },
+    {
+      "text": "C-Flat could be easily called with only one line of code and is plug-and-play to any CL methods",
+      "page_approx": 1,
+      "context": "Practical contribution describing C-Flat's simplicity and generality"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-aware minimization for efficiently improving generalization (Foret et al., 2021)",
+    "Surrogate gap minimization improves sharpness-aware training (Zhuang et al., 2022)",
+    "SWAD: Domain generalization by seeking flat minima (Cha et al., 2021)",
+    "Experience Replay (ER)",
+    "Dark Experience Replay (DER++)"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

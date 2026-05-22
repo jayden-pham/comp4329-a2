@@ -1,0 +1,54 @@
+{
+  "paper_id": "49b64383fe36268410c430352637ed23b16820c5",
+  "title": "Benchmarking Neural Network Robustness to Common Corruptions and Perturbations",
+  "authors": ["Hendrycks, D.", "Dietterich, T. G."],
+  "year": 2019,
+  "venue": "International Conference on Learning Representations",
+  "publication_status_observed": "ICLR 2019 (Published as a conference paper); arXiv:1903.12261v1",
+  "main_claims": [
+    "ImageNet-C (15 corruption types × 5 severity levels = 75 corruptions applied to ImageNet validation images) and ImageNet-P (perturbation sequences) provide standardized, comprehensive benchmarks for evaluating image classifier robustness to common corruptions and perturbations.",
+    "There are negligible changes in relative corruption robustness from AlexNet to ResNet classifiers, indicating architectural advances have not systematically improved corruption robustness.",
+    "Some methods, including adversarial defenses (Adversarial Logit Pairing), data augmentation, and specific architectures, substantially improve corruption and perturbation robustness."
+  ],
+  "methodology": "The authors apply 15 types of algorithmically generated corruptions (noise, blur, weather, digital categories) at 5 severity levels to ImageNet validation images to create ImageNet-C. They also create ImageNet-P with temporal perturbation sequences for 10 perturbation types. Performance is summarized via mean Corruption Error (mCE, normalized by AlexNet), Relative mCE, Flip Probability (FP) and Flip Rate (FR). Comparable CIFAR-10-C, CIFAR-100-C, and Tiny ImageNet-C versions are provided.",
+  "key_results": [
+    "AlexNet achieves mCE = 100 (baseline); ResNet-50 achieves mCE ~76.7 on ImageNet-C, showing limited improvement in relative robustness despite large accuracy gains.",
+    "Adversarial Logit Pairing (ALP) achieves mCE ~68.8 on ImageNet-C, a substantially larger robustness improvement than purely architectural advances.",
+    "Data augmentation with the Stylized-ImageNet texture bias correction substantially improves ImageNet-C robustness.",
+    "CIFAR-10-C, CIFAR-100-C are also provided, enabling benchmarking at smaller scale."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "Corruptions are algorithmically generated and may not perfectly capture all real-world distribution shifts; performance on the benchmark does not guarantee robustness to all natural corruptions.",
+    "The benchmarks should not be used for training (test set only); this constrains experimental design.",
+    "mCE is normalized by AlexNet performance on each corruption type, which introduces dependence on the baseline choice."
+  ],
+  "relevance_to_rq": "Core relevance to the ood_benchmarks sub-topic: this paper introduces ImageNet-C and CIFAR-10-C, which are the primary OOD benchmarks for our study (CIFAR-10-C and CIFAR-100-C). The 15 corruption types × 5 severity levels framework, mCE metric, and the design principle of separating training from test corruptions are directly adopted in our experiment design.",
+  "key_quotes": [
+    {
+      "text": "Our first benchmark, IMAGENET-C, standardizes and expands the corruption robustness topic, while showing which classifiers are preferable in safety-critical applications.",
+      "page_approx": 1,
+      "context": "Statement of purpose: ImageNet-C as the standardized corruption robustness benchmark"
+    },
+    {
+      "text": "We find that there are negligible changes in relative corruption robustness from AlexNet classifiers to ResNet classifiers.",
+      "page_approx": 1,
+      "context": "Key finding: architectural advances do not improve corruption robustness, motivating dedicated robustness research"
+    },
+    {
+      "text": "we provide CIFAR-10-C, TINY IMAGENET-C, IMAGENET 64 × 64-C, and Inception-sized editions.",
+      "page_approx": 3,
+      "context": "Availability of CIFAR-10-C as a smaller-scale benchmark directly used in our study"
+    }
+  ],
+  "related_work_mentioned": [
+    "Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+    "Adversarial Examples Are Not Easily Detected",
+    "Deep Residual Learning for Image Recognition",
+    "ImageNet Large Scale Visual Recognition Challenge",
+    "Stylized-ImageNet: Imagenet-trained CNNs are biased towards textures"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": null
+}

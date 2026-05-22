@@ -1,0 +1,52 @@
+{
+  "paper_id": "ad6a428ce6e834e194385052ada41d07d21b1809",
+  "title": "Why is SAM Robust to Label Noise?",
+  "authors": ["Baek, C.", "Kolter, Z.", "Raghunathan, A."],
+  "year": 2024,
+  "venue": "International Conference on Learning Representations",
+  "publication_status_observed": "Published as a conference paper at ICLR 2024; arXiv preprint arXiv:2405.03676v1",
+  "main_claims": [
+    "SAM's most pronounced gains (tens of percent) occur in the label noise setting through early stopping, not from convergence to flat minima.",
+    "In deep networks, SAM's label noise robustness is explained almost entirely by the Jacobian term (how SAM perturbs the network Jacobian), not by the logit reweighting term.",
+    "SAM's Jacobian effect implicitly regularizes the norm of intermediate activations and last-layer weights, which explains its label noise robustness via implicit up-weighting of clean examples."
+  ],
+  "methodology": "The sample-wise gradient is decomposed into logit scale and Jacobian components. Ablation variants (L-SAM: only logit perturbation; J-SAM: only Jacobian perturbation) are empirically compared on CIFAR-10 with ResNet-18 (layer norm), 2-layer DLN, and 2-layer MLP under 30% synthetic label noise. Theoretical analysis of J-SAM for 2-layer deep linear networks proves implicit activation/weight norm regularization.",
+  "key_results": [
+    "1-SAM achieves 69.47% best test accuracy under 30% label noise; J-SAM matches at 69.17%; L-SAM degrades to 54.13% (vs SGD 52.48%).",
+    "SAM's logit scale preferentially up-weights clean examples' gradient norms, but this effect is negligible in deep networks.",
+    "Regularized SGD (ℓ2 penalty on last layer weights and activations) achieves 60.8% vs SGD 52.48%, partially recovering SAM's benefit."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Analysis focused on label noise setting; whether the Jacobian mechanism explains SAM's OOD/corruption robustness is not studied.",
+    "Theoretical results are for 2-layer linear networks; extension to deep nonlinear networks is empirical only.",
+    "1-SAM with batch normalization replaced by layer normalization may differ from standard SAM behavior."
+  ],
+  "relevance_to_rq": "Highly relevant to the sam_mechanism sub-topic: demonstrates that SAM's gains come from trajectory effects (Jacobian regularization) rather than flatness at convergence. This is direct evidence that the flatness explanation is incomplete, supporting the RQ's hypothesis that representation effects (related to Jacobian/activation norms) may explain OOD gains independently of sharpness.",
+  "key_quotes": [
+    {
+      "text": "the peak performance under label noise occurs with early stopping, far before the loss converges",
+      "page_approx": 1,
+      "context": "Key observation that flatness at convergence cannot explain SAM's label noise gains"
+    },
+    {
+      "text": "just keeping SAM's perturbation on the network Jacobian term retains nearly identical performance to SAM",
+      "page_approx": 2,
+      "context": "Core finding that Jacobian term, not logit reweighting, drives label noise robustness"
+    },
+    {
+      "text": "SAM adds an activation norm regularization to the first layer... SAM adds a weight norm penalty to the second layer weights",
+      "page_approx": 7,
+      "context": "Theoretical result showing SAM implicitly regularizes activations/weights in 2-layer DLN"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "Towards Understanding Sharpness-Aware Minimization (Andriushchenko & Flammarion)",
+    "Sharpness minimization algorithms do not only minimize sharpness (Wen et al.)",
+    "Sharpness-aware minimization leads to low-rank features (Andriushchenko et al. 2023)"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": null
+}

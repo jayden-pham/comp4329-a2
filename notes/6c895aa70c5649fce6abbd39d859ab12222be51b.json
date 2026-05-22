@@ -1,0 +1,53 @@
+{
+  "paper_id": "6c895aa70c5649fce6abbd39d859ab12222be51b",
+  "title": "Modality-Balanced Collaborative Distillation for Multi-Modal Domain Generalization",
+  "authors": ["Wang, X.", "Cheng, Z.", "Zhong, T.", "Chen, L.", "Zhou, F."],
+  "year": 2025,
+  "venue": "AAAI Conference on Artificial Intelligence",
+  "publication_status_observed": "arXiv:2511.20258v3 [cs.CV] 28 Jan 2026; venue header states 'AAAI Conference on Artificial Intelligence' (AAAI 2026)",
+  "main_claims": [
+    "Directly applying EMA/weight averaging to multi-modal domain generalisation leads to modality imbalance: dominant modalities converge faster and skew the averaged parameters toward sharper, less generalisable minima.",
+    "MBCD—combining adaptive modality dropout, a gradient consistency constraint, and EMA-based collaborative distillation—retains EMA's flatness-inducing advantages while correcting for modality imbalance.",
+    "MBCD consistently outperforms existing MMDG methods on EPIC-Kitchens and HAC benchmarks while converging to flatter loss landscapes."
+  ],
+  "methodology": "MBCD uses three components: (1) Adaptive modality dropout probabilistically suppresses over-dominant modalities based on confidence ratio; (2) A gradient consistency constraint aligns gradients of uni-modal and multi-modal losses via inner-product maximisation; (3) An EMA-based teacher provides cross-modal distillation via KL-divergence loss from the fused prediction. Loss landscape flatness is measured by perturbation-based loss increase. Experiments use EPIC-Kitchens and HAC with three modalities (video, audio, optical flow), comparing to ERM, RNA-Net, SimMMDG, MOOSA, and CMRF.",
+  "key_results": [
+    "MBCD achieves average 67.58% accuracy on EPIC-Kitchens tri-modal multi-source DG, vs. 65.47% for CMRF (the next best) and 50.55% for ERM.",
+    "Flatness analysis (Fig. 3) shows MBCD consistently converges to flatter minima than all baselines including EMA and CMRF, demonstrating that modality-balanced training leads to flatter solutions.",
+    "Ablation shows EMA alone provides the largest single-component gain (+4.47% over ERM), with adaptive dropout, gradient consistency, and distillation each contributing additional improvements."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "The method is specific to multi-modal domain generalisation; there is no analysis of uni-modal discriminative OOD settings.",
+    "Theoretical analysis is limited to a bias-variance decomposition argument; no formal flatness guarantees are derived.",
+    "Experiments use only two multi-modal benchmarks; generalisation to other MMDG settings is not evaluated."
+  ],
+  "relevance_to_rq": "This paper is peripheral to the RQ. It uses weight averaging for flatness in a multi-modal DG context, which is tangentially related to the SWA/flatness component of the RQ. However, it does not address CIFAR-C corruptions, SAM, CKA representation stability, or the SAM-vs-SWA comparison central to the RQ.",
+  "key_quotes": [
+    {
+      "text": "Weight Averaging (WA) has emerged as a powerful technique for enhancing generalization by promoting convergence to a flat loss landscape, which correlates with stronger out-of-distribution performance",
+      "page_approx": 1,
+      "context": "Abstract opening motivating weight averaging for OOD generalisation via flatness"
+    },
+    {
+      "text": "MBCD consistently converges to flatter minima than all baselines across both EPIC-Kitchens (D1, D3 →D2) and HAC (A, C → H) datasets",
+      "page_approx": 6,
+      "context": "Flatness analysis section confirming MBCD achieves the flattest loss landscape among compared methods"
+    },
+    {
+      "text": "differences in optimization speed across modalities lead WA to overfit to faster-converging ones in early stages, suppressing the contribution of slower yet complementary modalities",
+      "page_approx": 1,
+      "context": "Abstract identifying the core limitation of naive EMA in multi-modal settings"
+    }
+  ],
+  "related_work_mentioned": [
+    "SWAD: Domain generalization by seeking flat minima (Cha et al., 2021)",
+    "Averaging weights leads to wider optima and better generalization (Izmailov et al., 2018)",
+    "Sharpness-aware minimization for efficiently improving generalization (Foret et al., 2020)",
+    "SimMMDG: A simple and effective framework for multi-modal domain generalization (Dong et al., 2023)",
+    "Cross-modal representation flattening for multi-modal domain generalization (Fan et al., 2024)"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

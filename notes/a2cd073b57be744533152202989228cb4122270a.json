@@ -1,0 +1,53 @@
+{
+  "paper_id": "a2cd073b57be744533152202989228cb4122270a",
+  "title": "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+  "authors": ["Foret, P.", "Kleiner, A.", "Mobahi, H.", "Neyshabur, B."],
+  "year": 2020,
+  "venue": "International Conference on Learning Representations",
+  "publication_status_observed": "Published as a conference paper at ICLR 2021; arXiv preprint arXiv:2010.01412v3",
+  "main_claims": [
+    "SAM improves model generalization by simultaneously minimizing training loss value and loss sharpness via a min-max optimization problem solved efficiently with two gradient computations per iteration.",
+    "SAM achieves state-of-the-art performance on CIFAR-10, CIFAR-100, ImageNet, and finetuning tasks when applied to a broad range of architectures.",
+    "m-sharpness (sharpness computed per small data subset) better correlates with actual generalization gap than full-training-set sharpness, and smaller m yields better generalization."
+  ],
+  "methodology": "SAM formulates a PAC-Bayes-motivated generalization bound that includes a neighborhood-wise training loss term. The inner maximization is approximated via a first-order Taylor expansion, solved in two gradient computations per iteration. Experiments span CIFAR-10/100 with WideResNets, PyramidNets, ImageNet with ResNets, finetuning of EfficientNet models, and noisy-label classification, all using 5 independent random seeds.",
+  "key_results": [
+    "SAM reduces WideResNet-28-10 test error from 3.5% to 2.7% on CIFAR-10 (basic augmentation, 200 epochs) and from 18.8% to 16.5% on CIFAR-100.",
+    "SAM improves ResNet-152 ImageNet top-1 error from 20.3% to 18.4% at 400 epochs.",
+    "SAM model trained with SAM reaches λmax ≈1.0 at convergence vs ≈24 without SAM for a WideResNet on CIFAR-10, confirming reduced curvature."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "SAM requires approximately twice the computational cost of base optimizers due to two gradient computations per step.",
+    "The PAC-Bayes generalization bound relies on assumptions (e.g., Gaussian perturbation does not decrease test error) that may not hold universally.",
+    "Second-order terms are dropped in the gradient approximation; including them was found to degrade performance in initial experiments."
+  ],
+  "relevance_to_rq": "This is the foundational SAM paper central to the RQ. It establishes the SAM formulation (ρ=0.05 default for ResNet+CIFAR), provides the Hessian spectrum evidence that SAM finds flatter minima, and introduces m-sharpness. The RQ directly asks whether SAM's OOD gains are explained by this flatness mechanism or by representation stability — this paper is the origin point of the flatness explanation.",
+  "key_quotes": [
+    {
+      "text": "SAM, seeks parameters that lie in neighborhoods having uniformly low loss; this formulation results in a min-max optimization problem on which gradient descent can be performed efficiently.",
+      "page_approx": 1,
+      "context": "Core SAM objective definition"
+    },
+    {
+      "text": "the maximum eigenvalue (λmax) at convergence (approximately 24 without SAM, 1.0 with SAM)",
+      "page_approx": 9,
+      "context": "Empirical evidence that SAM reduces Hessian sharpness"
+    },
+    {
+      "text": "smaller values of m tend to yield models having better generalization ability",
+      "page_approx": 8,
+      "context": "Finding on m-sharpness and its role in SAM's generalization benefits"
+    }
+  ],
+  "related_work_mentioned": [
+    "Flat minima (Hochreiter & Schmidhuber 1997)",
+    "On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima",
+    "Fantastic Generalization Measures and Where to Find Them",
+    "Averaging Weights Leads to Wider Optima and Better Generalization",
+    "Sharp minima can generalize for deep nets"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": null
+}

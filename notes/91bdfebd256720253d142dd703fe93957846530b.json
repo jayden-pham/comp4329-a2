@@ -1,0 +1,52 @@
+{
+  "paper_id": "91bdfebd256720253d142dd703fe93957846530b",
+  "title": "Efficiently Seeking Flat Minima for Better Generalization in Fine-Tuning Large Language Models and Beyond",
+  "authors": ["Deng, J.", "Zhu, Q.", "Pang, J.", "Yang, L.", "Fu, Z.", "Zhang, B."],
+  "year": 2025,
+  "venue": null,
+  "publication_status_observed": "AAAI 2026 (copyright line states Association for the Advancement of Artificial Intelligence 2026; arXiv preprint arXiv:2508.00522v3)",
+  "main_claims": [
+    "Perturbations in the full parameter space of LoRA can be theoretically re-parameterized as perturbations in a single low-rank subspace, avoiding interference between two matrices.",
+    "EFMLoRA achieves generalization improvements comparable to FMLoRA (full SAM on LoRA) with near-LoRA computational efficiency by using EMA-estimated perturbations.",
+    "Reducing sharpness is highly correlated with improved generalization in PEFT tasks, a connection previously unexplored for LoRA."
+  ],
+  "methodology": "The authors derive a mathematical equivalence showing that SAM's full-parameter perturbation can be transferred to a single low-rank matrix (B) in LoRA. They propose FMLoRA (exact perturbation transfer) and EFMLoRA (EMA-based approximation). Experiments cover LLMs (RoBERTa-large, GPT-2) on GLUE/E2E and VLMs (CLIP, Qwen-VL-Chat) on SQA/VizWiz with multiple random seeds.",
+  "key_results": [
+    "EFMLoRA outperforms LoRA by 1.0% average on GLUE benchmark with RoBERTa-large.",
+    "EFMLoRA achieves 1.5% and 1.0% improvements on SQA and VizWiz over LoRA for Qwen-VL-Chat.",
+    "EFMLoRA requires only 1.1–1.2× the runtime of LoRA versus FMLoRA's 2.1× overhead."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Theoretical analysis relies on approximations (pseudo-inverse, convexity assumption near local minimum) that may not hold in practice.",
+    "Experiments focus on NLP and VLM fine-tuning; no evaluation on CIFAR-C or image corruption benchmarks."
+  ],
+  "relevance_to_rq": "This paper addresses SAM's mechanism in the LoRA context rather than OOD vision generalization. It is tangentially relevant as evidence that reducing sharpness correlates with generalization in fine-tuning settings, but does not address CIFAR-C OOD benchmarks or representation stability, making it peripheral to the RQ.",
+  "key_quotes": [
+    {
+      "text": "We empirically show that reducing sharpness is highly correlated with improved generalization in PEFT tasks, which has been rarely explored in PEFT studies before.",
+      "page_approx": 1,
+      "context": "Main empirical claim about sharpness and generalization in LoRA fine-tuning"
+    },
+    {
+      "text": "SAM incurs a computational cost twice that of Stochastic Gradient Descent (SGD)",
+      "page_approx": 2,
+      "context": "SAM computational overhead motivating efficient variants"
+    },
+    {
+      "text": "perturbations in the full parameter space can be equivalently re-parameterized as perturbations within the low-rank space.",
+      "page_approx": 2,
+      "context": "Core theoretical result of FMLoRA"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "LoRA: Low-Rank Adaptation of Large Language Models",
+    "Adaptive SAM (ASAM)",
+    "Sharp minima can generalize for deep nets",
+    "Flat-LoRA: Low-Rank Adaptation over a Flat Loss Landscape"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

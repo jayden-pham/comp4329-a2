@@ -1,0 +1,232 @@
+[
+  {
+    "query": "sharpness-aware minimization",
+    "returned": 8,
+    "new": 5
+  },
+  {
+    "query": "sharpness aware minimization",
+    "returned": 8,
+    "new": 0
+  },
+  {
+    "query": "adaptive sharpness-aware minimization",
+    "returned": 8,
+    "new": 7
+  },
+  {
+    "query": "understanding sharpness-aware minimization",
+    "returned": 8,
+    "new": 7
+  },
+  {
+    "query": "m-sharpness sharpness-aware minimization",
+    "returned": 8,
+    "new": 0
+  },
+  {
+    "query": "normalization layers sharpness-aware minimization",
+    "returned": 8,
+    "new": 5
+  },
+  {
+    "query": "sharpness-aware minimization flat minima",
+    "returned": 0,
+    "new": 0
+  },
+  {
+    "query": "sharpness-aware minimization robustness",
+    "returned": 8,
+    "new": 6
+  },
+  {
+    "query": "sharpness-aware minimization corruption robustness",
+    "returned": 8,
+    "new": 2
+  },
+  {
+    "query": "SAM optimizer generalization",
+    "returned": 8,
+    "new": 8
+  },
+  {
+    "query": "efficient sharpness-aware minimization",
+    "returned": 8,
+    "new": 7
+  },
+  {
+    "query": "surrogate gap guided sharpness-aware minimization",
+    "returned": 8,
+    "new": 7
+  },
+  {
+    "query": "friendly sharpness-aware minimization",
+    "returned": 0,
+    "new": 0
+  },
+  {
+    "query": "flat minima generalization",
+    "returned": 8,
+    "new": 7
+  },
+  {
+    "query": "sharp minima generalization",
+    "returned": 8,
+    "new": 4
+  },
+  {
+    "query": "loss landscape sharpness generalization",
+    "returned": 8,
+    "new": 8
+  },
+  {
+    "query": "Hessian eigenvalue generalization",
+    "returned": 0,
+    "new": 0
+  },
+  {
+    "query": "relative flatness neural network",
+    "returned": 8,
+    "new": 8
+  },
+  {
+    "query": "sharpness measures generalization",
+    "returned": 8,
+    "new": 7
+  },
+  {
+    "query": "out-of-distribution generalization image classification",
+    "returned": 8,
+    "new": 8
+  },
+  {
+    "query": "common corruptions robustness",
+    "returned": 8,
+    "new": 7
+  },
+  {
+    "query": "CIFAR-C robustness",
+    "returned": 8,
+    "new": 8
+  },
+  {
+    "query": "CIFAR-10-C CIFAR-100-C robustness",
+    "returned": 8,
+    "new": 4
+  },
+  {
+    "query": "ImageNet-C corruption robustness",
+    "returned": 8,
+    "new": 6
+  },
+  {
+    "query": "corruption robustness calibration",
+    "returned": 8,
+    "new": 7
+  },
+  {
+    "query": "dataset shift calibration deep learning",
+    "returned": 8,
+    "new": 8
+  },
+  {
+    "query": "sharpness-aware domain generalization",
+    "returned": 8,
+    "new": 5
+  },
+  {
+    "query": "flat minima domain generalization",
+    "returned": 8,
+    "new": 3
+  },
+  {
+    "query": "sharpness-aware gradient matching domain generalization",
+    "returned": 8,
+    "new": 4
+  },
+  {
+    "query": "SAM out-of-distribution generalization",
+    "returned": 8,
+    "new": 6
+  },
+  {
+    "query": "sharpness distribution shift",
+    "returned": 8,
+    "new": 5
+  },
+  {
+    "query": "domain generalization benchmark DomainBed",
+    "returned": 8,
+    "new": 8
+  },
+  {
+    "query": "SWAD domain generalization flat minima",
+    "returned": 8,
+    "new": 0
+  },
+  {
+    "query": "stochastic weight averaging",
+    "returned": 8,
+    "new": 8
+  },
+  {
+    "query": "stochastic weight averaging wider optima",
+    "returned": 8,
+    "new": 5
+  },
+  {
+    "query": "stochastic weight averaging domain generalization",
+    "returned": 8,
+    "new": 7
+  },
+  {
+    "query": "weight averaging generalization",
+    "returned": 8,
+    "new": 5
+  },
+  {
+    "query": "weight averaging flat minima generalization",
+    "returned": 8,
+    "new": 4
+  },
+  {
+    "query": "centered kernel alignment representation similarity",
+    "returned": 8,
+    "new": 8
+  },
+  {
+    "query": "CKA neural network representations",
+    "returned": 0,
+    "new": 0
+  },
+  {
+    "query": "representation similarity distribution shift",
+    "returned": 8,
+    "new": 7
+  },
+  {
+    "query": "feature stability distribution shift",
+    "returned": 8,
+    "new": 8
+  },
+  {
+    "query": "representation robustness common corruptions",
+    "returned": 8,
+    "new": 7
+  },
+  {
+    "query": "calibration under dataset shift",
+    "returned": 8,
+    "new": 5
+  },
+  {
+    "query": "expected calibration error dataset shift",
+    "returned": 8,
+    "new": 8
+  },
+  {
+    "query": "expected calibration error common corruptions",
+    "returned": 0,
+    "new": 0
+  }
+]

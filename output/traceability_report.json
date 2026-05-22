@@ -1,0 +1,26 @@
+{
+  "n_cites": 25,
+  "fails": [],
+  "warns": [
+    {
+      "file": "02_related_work.tex",
+      "line": 31,
+      "reason": "definitive verb 'prove' near cite \u2014 fact-checker should verify peer-review status"
+    },
+    {
+      "file": "02_related_work.tex",
+      "line": 33,
+      "reason": "definitive verb 'prove' near cite \u2014 fact-checker should verify peer-review status"
+    },
+    {
+      "file": "02_related_work.tex",
+      "line": 64,
+      "reason": "definitive verb 'establish' near cite \u2014 fact-checker should verify peer-review status"
+    },
+    {
+      "file": "02_related_work.tex",
+      "line": 66,
+      "reason": "definitive verb 'establish' near cite \u2014 fact-checker should verify peer-review status"
+    }
+  ]
+}

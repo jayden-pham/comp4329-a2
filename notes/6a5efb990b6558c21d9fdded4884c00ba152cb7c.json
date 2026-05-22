@@ -1,0 +1,53 @@
+{
+  "paper_id": "6a5efb990b6558c21d9fdded4884c00ba152cb7c",
+  "title": "In Search of Lost Domain Generalization",
+  "authors": ["Gulrajani, I.", "Lopez-Paz, D."],
+  "year": 2020,
+  "venue": "International Conference on Learning Representations",
+  "publication_status_observed": "arXiv preprint arXiv:2007.01434v1 [cs.LG] 2 Jul 2020; listed as 'Preprint. Under review' in the paper",
+  "main_claims": [
+    "Model selection is a non-trivial and often neglected component of domain generalisation research, and algorithms without a specified model selection strategy are incomplete.",
+    "When carefully implemented with modern neural architectures and data augmentation, empirical risk minimisation (ERM) achieves state-of-the-art performance across all seven DomainBed datasets.",
+    "DomainBed provides a standardised testbed with seven datasets, nine algorithms, and three model selection criteria to enable rigorous and reproducible domain generalisation research."
+  ],
+  "methodology": "The authors implement nine domain generalisation algorithms (including IRM, CORAL, GroupDRO, Mixup, MLDG, DANN, CDANN, VREx, and ERM) under a unified framework with standardised architectures (ResNet-50 backbone), data augmentation, and hyperparameter search (random search, 20 trials). Three model selection criteria are evaluated: training-domain validation, leave-one-domain-out cross-validation, and oracle test-domain validation. Experiments cover VLCS, PACS, Office-Home, TerraIncognita, DomainNet, RotatedMNIST, and ColoredMNIST.",
+  "key_results": [
+    "ERM with modern architecture and augmentation matches or outperforms more complex DG algorithms on all seven DomainBed datasets under fair comparison conditions.",
+    "On PACS, the authors' ERM achieves 85.7% average accuracy, surpassing the previous best published result of 84.5% (Asadi et al., 2019).",
+    "Model selection criterion has a large effect on reported performance, with oracle selection often inflating apparent gains of complex algorithms."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "The study does not include flatness-oriented optimisers such as SAM or SWA, so implications for the role of loss landscape geometry are indirect.",
+    "Using a fixed ResNet-50 backbone may limit conclusions about algorithm-specific inductive biases.",
+    "The paper is a benchmark/re-evaluation study; it proposes no new DG algorithm."
+  ],
+  "relevance_to_rq": "DomainBed provides the standard evaluation framework and datasets for domain generalisation benchmarking. While the RQ focuses on CIFAR-C corruptions rather than multi-domain DG, this paper establishes that fair comparison methodology and model selection are critical—a lesson that applies to evaluating SAM vs. SWA on CIFAR-C. ERM as a strong baseline also grounds the RQ's experimental design.",
+  "key_quotes": [
+    {
+      "text": "when carefully implemented, empirical risk minimization shows state-of-the-art performance across all datasets",
+      "page_approx": 2,
+      "context": "Summary of the main finding from DomainBed experiments showing ERM matches specialised DG algorithms"
+    },
+    {
+      "text": "a domain generalization algorithm without a model selection strategy should be regarded as incomplete",
+      "page_approx": 2,
+      "context": "Recommendation 1 arguing that model selection is a required component of any DG method"
+    },
+    {
+      "text": "the goal of domain generalization algorithms is to predict well on distributions different from those seen during training",
+      "page_approx": 1,
+      "context": "Problem definition for domain generalisation benchmarking context"
+    }
+  ],
+  "related_work_mentioned": [
+    "Invariant risk minimisation (Arjovsky et al., 2019)",
+    "Domain adversarial neural networks (DANN)",
+    "CORAL: Deep CORAL (Sun & Saenko)",
+    "PACS dataset (Li et al.)",
+    "Office-Home dataset"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": "Paper content exceeds token limit; full results section was not read, but sufficient content was read to fill all schema fields from abstract, introduction, and first few results tables."
+}

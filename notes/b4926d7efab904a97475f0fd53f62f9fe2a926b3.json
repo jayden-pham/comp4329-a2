@@ -1,0 +1,53 @@
+{
+  "paper_id": "b4926d7efab904a97475f0fd53f62f9fe2a926b3",
+  "title": "When Flatness Does (Not) Guarantee Adversarial Robustness",
+  "authors": ["Walter, N. P.", "Adilova, L.", "Vreeken, J.", "Kamp, M."],
+  "year": 2025,
+  "venue": "arXiv.org",
+  "publication_status_observed": "arXiv preprint arXiv:2510.14231v1, submitted October 2025",
+  "main_claims": [
+    "Flatness implies local but not global adversarial robustness: flat minima guarantee robustness within small neighborhoods but do not prevent adversarial examples at larger perturbation radii.",
+    "Adversarial examples often lie in large, flat, high-confidence regions ('Uncanny Valley'), meaning flatness at a point does not indicate it is clean-correctly classified.",
+    "Relative sharpness at the penultimate layer (a closed-form expression derived from the Hessian and weight norms) determines the local robustness radius, and this geometry propagates through the network."
+  ],
+  "methodology": "A closed-form expression for relative flatness (relative sharpness) in the penultimate layer is derived for cross-entropy loss. Theoretical analysis shows flatness constrains the loss variation in a local neighborhood in feature space, which propagates to input space via local Lipschitz continuity of the feature extractor. The 'Uncanny Valley' phenomenon (adversarial examples in flat regions) is validated empirically across architectures and datasets.",
+  "key_results": [
+    "Relative sharpness κ_Tr(w) = ‖w‖² Tr(H(w,S)) decomposes into model confidence, feature scale, and weight magnitude components.",
+    "Adversarial perturbations (FGSM/PGD) move inputs from initially sharp regions into flat, high-confidence regions — the Uncanny Valley.",
+    "Flatness guarantees a lower bound on the robustness radius locally, but adversarial examples can exist beyond this local neighborhood in flat regions."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Theoretical results hold under technical assumptions (local Lipschitz continuity, third-derivative bounds) that may not be tight in practice.",
+    "Empirical validation is limited to specific architectures and datasets; generality of the Uncanny Valley phenomenon needs further study.",
+    "Focus is on adversarial robustness, not OOD generalization under natural corruptions."
+  ],
+  "relevance_to_rq": "Directly relevant to the flatness_theory sub-topic: rigorously shows that flatness does not fully guarantee robustness, challenging simplified flatness-based explanations for OOD gains. The derivation of relative sharpness at the penultimate layer connects to the RQ's interest in representation-level analysis (CKA measures penultimate layer features). The Uncanny Valley insight challenges the assumption that flatter models are more robust.",
+  "key_quotes": [
+    {
+      "text": "flatness implies local but not global adversarial robustness",
+      "page_approx": 1,
+      "context": "Core theoretical claim of the paper"
+    },
+    {
+      "text": "adversarial examples often lie in large, flat regions where the model is confidently wrong",
+      "page_approx": 1,
+      "context": "Uncanny Valley finding: flat regions can contain adversarial examples"
+    },
+    {
+      "text": "relative sharpness consists of three intuitive components: the network's confidence, the scale of the feature representation, and the weight magnitude",
+      "page_approx": 5,
+      "context": "Closed-form decomposition of relative sharpness connecting to representation analysis"
+    }
+  ],
+  "related_work_mentioned": [
+    "Flat minima (Hochreiter & Schmidhuber 1994)",
+    "Fantastic Generalization Measures and Where to Find Them",
+    "Sharp minima can generalize for deep nets (Dinh et al.)",
+    "Stochastic Weight Averaging (Izmailov et al.)",
+    "Sharpness-Aware Minimization (Foret et al.)"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": null
+}

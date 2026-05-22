@@ -1,0 +1,53 @@
+{
+  "paper_id": "ce871754f3ce42c507f4643082c17573509e54a6",
+  "title": "Friendly Sharpness-Aware Minimization",
+  "authors": ["Li, T.", "Zhou, P.", "He, Z.", "Cheng, X.", "Huang, X."],
+  "year": 2024,
+  "venue": "Computer Vision and Pattern Recognition",
+  "publication_status_observed": "CVPR 2024 (arXiv:2403.12350v1)",
+  "main_claims": [
+    "The batch-specific stochastic gradient noise in SAM's perturbation direction is the key component driving SAM's generalization improvements, not the full gradient component.",
+    "Using only the full gradient component as perturbation (SAM-full) degrades generalization below the base optimizer, while using only the noise component (SAM-noise) improves it above vanilla SAM.",
+    "F-SAM removes the full gradient component via an EMA approximation and achieves superior generalization with better robustness to perturbation radius than vanilla SAM."
+  ],
+  "methodology": "The minibatch gradient in SAM's perturbation step is decomposed into a full-gradient projection and an orthogonal stochastic noise component. Controlled ablations (SAM-full, SAM-db, SAM-noise) test each component on CIFAR-10/100 with ResNet-18/VGG16-BN, and on transfer learning tasks with DeiT-S. F-SAM uses an exponentially moving average of historical stochastic gradients to approximate the full gradient and subtracts it before computing the perturbation. Convergence on non-convex objectives is proved theoretically.",
+  "key_results": [
+    "SAM-noise achieves 81.21% test accuracy on ResNet-18/CIFAR-100, compared to 80.88% for SAM and 78.02% for SAM-full.",
+    "F-SAM outperforms vanilla SAM across multiple datasets and is more robust to the choice of perturbation radius ρ.",
+    "Increasing minibatch size for the perturbation step (which strengthens the full-gradient component) monotonically decreases SAM's accuracy on CIFAR-100."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Convergence proof assumes SGD as base optimizer; Adam-based variants lack theoretical guarantees.",
+    "No OOD corruption benchmarks (e.g. CIFAR-C) are evaluated; OOD analysis is limited to standard in-distribution splits.",
+    "EMA approximation introduces an additional hyperparameter (λ) whose sensitivity is not fully explored under distribution shift."
+  ],
+  "relevance_to_rq": "Highly relevant to the RQ's mechanistic sub-question: provides causal-style ablation evidence that SAM's OOD gains are driven by gradient noise rather than sharpness reduction, directly challenging the flatness-centric explanation of SAM.",
+  "key_quotes": [
+    {
+      "text": "using only the full gradient component for perturbation significantly degrades SAM's generalization",
+      "page_approx": 2,
+      "context": "Central ablation finding: full gradient direction in perturbation is harmful"
+    },
+    {
+      "text": "the effectiveness of SAM primarily arises from the presence of the stochastic gradient noise component within the minibatch gradient",
+      "page_approx": 2,
+      "context": "Core mechanistic claim of the paper"
+    },
+    {
+      "text": "relying solely on the full gradient component degrades generalization while excluding it leads to improved performance",
+      "page_approx": 1,
+      "context": "Abstract-level summary of the decomposition result"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-aware minimization for efficiently improving generalization (Foret et al.)",
+    "Towards understanding sharpness-aware minimization (Andriushchenko & Flammarion)",
+    "How sharpness-aware minimization minimizes sharpness? (Wen et al.)",
+    "Surrogate gap minimization improves sharpness-aware training (Zhuang et al.)",
+    "Normalization layers are all that sharpness-aware minimization needs (Mueller et al.)"
+  ],
+  "depth_recommendation": "core",
+  "confidence": "high",
+  "extraction_issues": "NOTE: This paper_id (ce871754...) appears to be the same paper as bf109c1c... Both IDs parse to 'Friendly Sharpness-Aware Minimization' by the same authors, same year, same CVPR 2024 venue, same arXiv ID 2403.12350. The notes are substantively identical. Mixed evidence_strength because ablations are controlled interventions (causal) but final generalization claims are correlational."
+}

@@ -1,0 +1,53 @@
+{
+  "paper_id": "627fcbbc030c7dd7c89457e436741ec79c5025f7",
+  "title": "Locally Estimated Global Perturbations are Better than Local Perturbations for Federated Sharpness-aware Minimization",
+  "authors": ["Fan, Z.", "Hu, S.", "Yao, J.", "Niu, G.", "Zhang, Y.", "Sugiyama, M.", "Wang, Y."],
+  "year": 2024,
+  "venue": "International Conference on Machine Learning",
+  "publication_status_observed": "Proceedings of the 41st International Conference on Machine Learning (ICML 2024), Vienna, Austria. PMLR 235",
+  "main_claims": [
+    "In heterogeneous federated learning, minimising local sharpness with client-data-based perturbations does not align with minimising global sharpness, leading to suboptimal generalisation.",
+    "The direction of the global perturbation (parallel to the global gradient) can be locally estimated as the difference between consecutive global model checkpoints, enabling FedLESAM.",
+    "FedLESAM achieves superior performance over existing federated SAM methods while eliminating the extra backpropagation step, reducing compute to a single backpropagation per iteration."
+  ],
+  "methodology": "The authors analyse the discrepancy between local and global sharpness minimisation in FL under data heterogeneity and prove that consistent perturbation direction is necessary for SAM to be effective. FedLESAM estimates the global perturbation direction as (w_old - w_current) / ||w_old - w_current|| where w_old is the global model from the previous active round. Convergence bounds are provided showing a slightly tighter bound than FedSAM. Experiments are conducted on four federated datasets (CIFAR-10, CIFAR-100, FashionMNIST, Shakespeare) under three heterogeneity levels (Dirichlet 0.6, 0.06, and Pathological).",
+  "key_results": [
+    "FedLESAM consistently outperforms FedSAM, MoFedSAM, FedGAMMA, and FedSMOO across four datasets and three partition strategies in terms of test accuracy.",
+    "FedLESAM requires only one backpropagation per iteration (vs. two for standard federated SAM methods), halving the per-round computation overhead.",
+    "Visualisation shows FedLESAM converges to a flatter global loss landscape than local-SAM-based methods under heterogeneous federated settings."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "The global perturbation estimate relies on receiving a global model every round; in partial participation scenarios the estimate may be stale.",
+    "The method is specific to federated learning; it does not directly transfer to centralised training.",
+    "The convergence bound improvement over FedSAM is described as 'slightly tighter' and the practical significance depends on the level of heterogeneity."
+  ],
+  "relevance_to_rq": "This paper is only peripherally relevant. It addresses SAM in a federated learning setting, not the supervised discriminative OOD setting of the RQ. The key insight—that global vs. local flatness can diverge—has an analogy to the RQ's interest in whether SAM's flatness genuinely corresponds to OOD robustness, but the paper does not study CKA stability or CIFAR-C benchmarks.",
+  "key_quotes": [
+    {
+      "text": "the local loss landscapes may not accurately reflect the flatness of global loss landscape in heterogeneous environments; as a result, minimizing local sharpness and calculating perturbations on client data might not align the efficacy of SAM in FL with centralized training",
+      "page_approx": 1,
+      "context": "Abstract and introduction motivating FedLESAM by showing local SAM perturbations are misaligned in FL"
+    },
+    {
+      "text": "to align the efficacy of SAM in FL with centralized training, it is essential to ensure the consistency between local and global updates and between local and global perturbations",
+      "page_approx": 3,
+      "context": "Core design principle motivating the global perturbation estimation strategy"
+    },
+    {
+      "text": "FedLESAM also speed up federated SAM-based approaches since it only performs once backpropagation in each iteration",
+      "page_approx": 1,
+      "context": "Efficiency advantage of FedLESAM highlighted in the abstract"
+    }
+  ],
+  "related_work_mentioned": [
+    "FedSAM (Caldarola et al., 2022; Qu et al., 2022)",
+    "FedSMOO (Sun et al., 2023)",
+    "FedGAMMA (Dai et al., 2023)",
+    "Scaffold (Karimireddy et al., 2020)",
+    "Sharpness-aware minimization for efficiently improving generalization (Foret et al., 2021)"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": "Paper content exceeds token limit; methodology and results read from first 3 pages plus Table 1. Sufficient for schema fields."
+}

@@ -1,0 +1,53 @@
+{
+  "paper_id": "efeaa77602c13e521e8359d2dad21228cac435f6",
+  "title": "AdaSAM: Boosting Sharpness-Aware Minimization with Adaptive Learning Rate and Momentum for Training Deep Neural Networks",
+  "authors": ["Sun, H.", "Shen, L.", "Zhong, Q.", "Ding, L.", "Chen, S.", "Sun, J.", "Li, J.", "Sun, G.", "Tao, D."],
+  "year": 2023,
+  "venue": "Neural Networks",
+  "publication_status_observed": "Neural Networks journal (arXiv:2303.00565v1)",
+  "main_claims": [
+    "AdaSAM, which combines SAM with adaptive learning rate (AMSGrad-style) and momentum, achieves an O(1/√(bT)) convergence rate in the stochastic non-convex setting.",
+    "AdaSAM achieves linear speedup with respect to mini-batch size b, making it theoretically favorable for large-batch training.",
+    "Empirical experiments on GLUE benchmark with RoBERTa show AdaSAM outperforms SGD, AMSGrad, and SAM on 6 of 8 tasks."
+  ],
+  "methodology": "The convergence analysis decouples the three coupled steps (perturbation, adaptive learning rate, momentum) using a delayed second-order momentum term and an auxiliary sequence. Assumptions include L-smoothness, bounded variance, and bounded stochastic gradients. The algorithm follows SAM's perturbation step followed by AMSGrad-style adaptive rate update with momentum. Experiments apply AdaSAM to RoBERTa fine-tuning on the GLUE benchmark.",
+  "key_results": [
+    "AdaSAM admits O(1/√(bT)) convergence rate, achieving linear speedup with batch size b.",
+    "AdaSAM wins 6 of 8 GLUE tasks compared to SGD, AMSGrad, and SAM in NLP fine-tuning experiments.",
+    "AdaSAM recovers SAM when β2=1 (no adaptive learning rate), demonstrating the generality of the analysis."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "Theoretical analysis requires bounded gradient assumption (∥∇fi(x)∥∞ ≤ G), which can be overly restrictive.",
+    "Experiments are limited to NLP (GLUE/RoBERTa) fine-tuning; no vision or OOD generalization experiments are reported.",
+    "The convergence rate O(1/√(bT)) matches SGD and does not provide a theoretical advantage over base optimizers with respect to iteration complexity."
+  ],
+  "relevance_to_rq": "Peripheral to the core RQ: provides convergence theory for SAM variants but does not study OOD generalization, CIFAR-C, or representation stability. The adaptive SAM formulation is not used in the RQ's experimental design (which uses vanilla SAM with SGD base optimizer).",
+  "key_quotes": [
+    {
+      "text": "AdaSAM admits a O(1/√(bT)) convergence rate, which achieves linear speedup property with respect to mini-batch size b",
+      "page_approx": 1,
+      "context": "Main theoretical result of the paper"
+    },
+    {
+      "text": "SAM-type methods suffer from several issues during training the deep neural networks, especially for huge computation costs and heavily hyper-parameter tuning procedure",
+      "page_approx": 1,
+      "context": "Motivation for combining SAM with adaptive learning rate to ease hyperparameter tuning"
+    },
+    {
+      "text": "sharp minima may lead to poor generalization whereas flat minima perform better",
+      "page_approx": 2,
+      "context": "Background premise motivating sharpness-aware minimization"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-aware minimization for efficiently improving generalization (SAM, Foret et al.)",
+    "Surrogate gap minimization improves sharpness-aware training (GSAM, Zhuang et al.)",
+    "Adaptive sharpness-aware minimization (ASAM, Kwon et al.)",
+    "AMSGrad: On the convergence of Adam and beyond (Reddi et al.)",
+    "Efficient sharpness-aware minimization (ESAM, Du et al.)"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": "evidence_strength is mixed: convergence rate is theoretical; NLP experiment results are demonstrative comparisons without OOD evaluation."
+}

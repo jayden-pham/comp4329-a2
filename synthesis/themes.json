@@ -1,0 +1,329 @@
+{
+  "themes": [
+    {
+      "id": "sam_formulation_variants",
+      "label": "SAM Formulation and Core Variants",
+      "description": "The original SAM algorithm and its direct algorithmic variants that modify the perturbation scheme, normalization, or batch construction while retaining the two-step min-max structure. Covers Foret et al.'s PAC-Bayes-motivated formulation, ASAM's scale-invariant extension, GSAM's surrogate-gap refinement, F-SAM's noise-only perturbation, and efficiency-oriented variants (ESAM, LookSAM, AE-SAM). All variants share the assumption that minimizing some form of neighbourhood loss leads to flat minima and better generalization.",
+      "subtopic_ids": ["sam_origin"],
+      "papers": [
+        "a2cd073b57be744533152202989228cb4122270a",
+        "1fae35d17aca0ec5ceb866824a17c14a6f6b0ba1",
+        "58ab7d67f2eeb4d753cf443da3bccaeaa7897fde",
+        "a82ae40ecc5ea5e33b52c87c9464510cab7bf9d9",
+        "c8f88063357e270fef070c6f19ff142ccc5cd10c",
+        "bf109c1cdab0c8d597081be6962ea5848fa06221",
+        "ce871754f3ce42c507f4643082c17573509e54a6",
+        "8adf430deefe6af08b894d28399eb027c2e8e69e",
+        "613ce6b5cf9c5b7093582134631ef77f368a9067",
+        "b9af7e291f4ede06b251708f2477f2484b85e929",
+        "efeaa77602c13e521e8359d2dad21228cac435f6",
+        "f86ed04b3613fdbc0a83ce86d7dbad75423a0f9e",
+        "154f74a36a8ead7c2cabbbfe31431edefbc9f6ae",
+        "19fe3894ce5b0a0be8fc7a8e21afc67657d75915"
+      ],
+      "core_papers": [
+        "a2cd073b57be744533152202989228cb4122270a",
+        "1fae35d17aca0ec5ceb866824a17c14a6f6b0ba1",
+        "58ab7d67f2eeb4d753cf443da3bccaeaa7897fde",
+        "bf109c1cdab0c8d597081be6962ea5848fa06221",
+        "ce871754f3ce42c507f4643082c17573509e54a6"
+      ],
+      "consensus_findings": "SAM's default ρ=0.05 (Foret et al., CIFAR/ResNet) consistently reduces measured sharpness and improves clean-set generalization across architectures. Scale-invariant variants (ASAM, Kwon et al.) and surrogate-gap variants (GSAM, Zhuang et al.) improve upon vanilla SAM. F-SAM (Li et al.) and Eigen-SAM (Luo et al.) converge on the finding that the perturbation direction—specifically its alignment with the loss landscape eigenvectors—matters more than simply finding a low-loss neighbourhood.",
+      "open_debates": "F-SAM (bf109c1c / ce871754) provides causal ablation evidence that the stochastic noise component, not the full-gradient projection, drives generalization gain. This conflicts with Wen et al.'s (07dbbb95) theoretical result that full-batch SAM minimizes the top Hessian eigenvalue, suggesting that mini-batch SAM and full-batch SAM are mechanistically distinct. Whether ρ should be tuned per architecture or fixed at 0.05 remains unresolved; Andriushchenko & Flammarion (b698dbfa) argue that a lower ρ disconnects convergence from flatness.",
+      "methodological_trends": "Controlled ablations on CIFAR-10/100 with ResNet-18, WideResNet-28-10, and ViTs on ImageNet. Sharpness measured via Hessian eigenvalues (power iteration) or SAM-style neighbourhood loss. Efficiency measured as training-time multiple of SGD/Adam.",
+      "temporal_progression": "Foret et al. (2021) established the formulation. Kwon et al. (ASAM, 2021) and Zhuang et al. (GSAM, 2022) addressed scale-dependence and surrogate-gap reliability. Post-2022 variants (F-SAM 2024, Eigen-SAM 2024/2025) increasingly argue that the specific perturbation direction—not just flatness—is the operative factor, converging with the mechanistic critique literature."
+    },
+    {
+      "id": "sam_mechanism_critique",
+      "label": "Critical Analyses of SAM's Mechanism: Flatness Is Not the Full Story",
+      "description": "Papers that empirically or theoretically demonstrate that flatness reduction alone is an incomplete explanation for SAM's generalization gains. This theme captures the core intellectual tension driving the RQ: Andriushchenko & Flammarion (ICML 2022) show m-sharpness with small batches is the key ingredient, not convergence to flat minima per se; Mueller et al. (NeurIPS 2023, SAM-ON) show that better generalisation accompanies higher measured sharpness when only normalization layers are perturbed; Baek et al. (ICLR 2024) show SAM's label-noise gains are driven by Jacobian regularization rather than flatness at convergence. Bartlett et al. and Wen et al. provide the theoretical machinery for understanding what SAM actually minimises.",
+      "subtopic_ids": ["sam_mechanism"],
+      "papers": [
+        "b698dbfaf9b961502062cbfcbe05d319047d8495",
+        "fba30c42c0920bd9590ddc274658c409938b2fb2",
+        "ad6a428ce6e834e194385052ada41d07d21b1809",
+        "07dbbb95eff2640e07ade6e42e666c14ae5d1d19",
+        "11adeccff9c777798482097a9bade806c027eeb6",
+        "613ce6b5cf9c5b7093582134631ef77f368a9067",
+        "a4002b51cf357bd741882062806b9204ce6e6a33"
+      ],
+      "core_papers": [
+        "b698dbfaf9b961502062cbfcbe05d319047d8495",
+        "fba30c42c0920bd9590ddc274658c409938b2fb2",
+        "ad6a428ce6e834e194385052ada41d07d21b1809",
+        "07dbbb95eff2640e07ade6e42e666c14ae5d1d19"
+      ],
+      "consensus_findings": "There is a consistent empirical and theoretical consensus that flatness reduction alone does not account for SAM's full generalization benefit. Andriushchenko & Flammarion find only m-SAM with small batch size improves generalization; n-SAM and random perturbations do not. Mueller et al. provide the sharpest direct evidence: SAM-ON achieves 84.19% on WRN-28-10/CIFAR-100 vs. SAM-all's 83.11%, while being sharper (ℓ∞ m-sharpness 0.090 vs. 0.048). Baek et al. attribute SAM's label-noise gains to Jacobian-norm regularization rather than flatness at convergence.",
+      "open_debates": "What the non-flatness mechanism is remains contested. Candidates include: (1) implicit sparsity bias via m-sharpness (Andriushchenko & Flammarion); (2) normalization-layer-specific regularization (Mueller et al.); (3) Jacobian/activation-norm regularization (Baek et al.); (4) stochastic gradient noise in the perturbation direction (F-SAM, bf109c1c). These explanations are not mutually exclusive but have not been experimentally unified. Wen et al.'s theory applies to the full-batch limit, which may not describe practical stochastic SAM.",
+      "methodological_trends": "Controlled ablations isolating SAM components (layer subsets, perturbation decompositions, batch-size sweeps). Sharpness measured post-hoc with multi-step AutoPGD or power iteration. OOD evaluation on ImageNet variants (ImageNetR, ImageNetA, ObjectNet) in Mueller et al., but not on CIFAR-C corruption benchmarks.",
+      "temporal_progression": "Andriushchenko & Flammarion (2022) opened the critical front. Mueller et al. (2023) provided the most direct counter-evidence (better generalization + higher sharpness). Baek et al. (2024) extended the critique to the label-noise domain, providing mechanistic decompositions. Schapiro & Zhao (2024, a4002b51) synthesized the gap between theory and OOD empirics."
+    },
+    {
+      "id": "flatness_generalization_theory",
+      "label": "Flatness and Generalization: Theory, Measures, and Counter-Arguments",
+      "description": "The theoretical and empirical literature establishing (and contesting) the link between loss-landscape flatness and generalization. Covers Keskar et al.'s empirical foundation, Dinh et al.'s reparametrization counter-argument, Jiang et al.'s large-scale correlation study finding sharpness to be among the best predictors, and Petzka et al.'s reparametrization-invariant relative flatness measure. Walter et al. (2025) extend the critique to show flatness guarantees only local but not global adversarial robustness.",
+      "subtopic_ids": ["flatness_theory"],
+      "papers": [
+        "8ec5896b4490c6e127d1718ffc36a3439d84cb81",
+        "58123025178256279bb060ca5da971b62bc329ee",
+        "8f18c9da3d1763723c6ef8c3734d74db005d0cff",
+        "d8c0aabe41ec6036a2404cb2bfaea2a7d6424ae3",
+        "b4926d7efab904a97475f0fd53f62f9fe2a926b3"
+      ],
+      "core_papers": [
+        "8ec5896b4490c6e127d1718ffc36a3439d84cb81",
+        "58123025178256279bb060ca5da971b62bc329ee",
+        "8f18c9da3d1763723c6ef8c3734d74db005d0cff",
+        "d8c0aabe41ec6036a2404cb2bfaea2a7d6424ae3"
+      ],
+      "consensus_findings": "Sharpness-based measures are among the strongest empirical predictors of generalization gap (Jiang et al.: PAC-Bayes and Keskar sharpness outperform 40+ other complexity measures on CIFAR-10). Keskar et al.'s ε-sharpness provides the empirical foundation for the flat-minima hypothesis. Petzka et al. prove a reparametrization-invariant relative flatness measure that addresses Dinh's critique. The practical consensus is that scale-invariant sharpness measures (ASAM's adaptive sharpness, Petzka's relative flatness) are more reliable than raw Hessian eigenvalues.",
+      "open_debates": "Dinh et al.'s (2017) reparametrization argument is foundational: every minimum of a ReLU network is observationally equivalent to arbitrarily sharp or flat minima via scale transformations. This is not fully resolved by Petzka's relative flatness or ASAM's adaptive sharpness because those measures assume specific parametrizations. Walter et al. (2025) further show that flatness guarantees only local, not global, adversarial robustness, with adversarial examples lying in 'Uncanny Valley' flat regions. The field has not converged on a single parametrization-invariant, empirically reliable sharpness measure.",
+      "methodological_trends": "Large-scale correlation studies (Jiang et al.: 10,000+ networks); theoretical construction of counter-examples (Dinh et al.); derivation of invariant measures (Petzka et al.); loss landscape visualization (Keskar et al., 1D interpolations between solutions).",
+      "temporal_progression": "Keskar et al. (2017) established the empirical correlation. Dinh et al. (2017, same year) immediately challenged it theoretically. Jiang et al. (2020) rehabilitated sharpness as a correlate at scale. Petzka et al. (2021) provided a principled invariant measure. Walter et al. (2025) added a new attack angle: even flat minima are not globally robust."
+    },
+    {
+      "id": "ood_corruption_benchmarks",
+      "label": "OOD Benchmarks: CIFAR-C, ImageNet-C, and Calibration Under Shift",
+      "description": "Papers that establish or characterize the benchmarking infrastructure for evaluating robustness to common corruptions and distribution shifts. Hendrycks & Dietterich define CIFAR-C and ImageNet-C (15 corruption types × 5 severity levels) and introduce the mCE metric. Ovadia et al. establish that calibration (ECE) degrades under shift even when well-calibrated in-distribution, motivating the RQ's ECE secondary metric. Gulrajani & Lopez-Paz's DomainBed establishes methodological discipline for multi-domain OOD evaluation.",
+      "subtopic_ids": ["ood_benchmarks"],
+      "papers": [
+        "49b64383fe36268410c430352637ed23b16820c5",
+        "1eb7f46b1a0a7df823194d86543e5554aa21021a",
+        "6a5efb990b6558c21d9fdded4884c00ba152cb7c",
+        "aa12f44062c06f90526cb128f10e829846145b1f",
+        "aa5741c74b7fac10680c1cfbdd49d9ffb5751a68"
+      ],
+      "core_papers": [
+        "49b64383fe36268410c430352637ed23b16820c5",
+        "1eb7f46b1a0a7df823194d86543e5554aa21021a",
+        "6a5efb990b6558c21d9fdded4884c00ba152cb7c"
+      ],
+      "consensus_findings": "CIFAR-10-C and CIFAR-100-C are standard, publicly available corruption benchmarks that should not be included in training. The severity-averaged mean Corruption Error (mCE) normalized by a baseline model is the standard summary metric. Ovadia et al. establish that temperature-scaled calibration (low ECE) on i.i.d. test sets does not transfer to corrupted distribution shift—motivating the RQ's inclusion of OOD ECE as a secondary metric. Gulrajani & Lopez-Paz demonstrate that careful model selection and strong ERM baselines should be included as controls.",
+      "open_debates": "Schneider et al. (aa12f44) show that adapting BatchNorm statistics to test-time corrupted images substantially improves robustness, raising the question of whether any optimizer-level OOD gain partly reflects incidental BN adaptation. This is relevant to interpreting SAM-vs-SWA comparisons on CIFAR-C since both methods affect BN behavior differently.",
+      "methodological_trends": "Standardized benchmark protocols (separate test sets, algorithmic corruptions). Calibration measured by ECE, Brier score, and predictive entropy. Severity-level disaggregation to distinguish robustness at mild vs. extreme corruptions.",
+      "temporal_progression": "Hendrycks & Dietterich (2019) created the benchmarks. Ovadia et al. (2019) and Schneider et al. (2020) characterized calibration and BN adaptation properties. Gulrajani & Lopez-Paz (2021) extended fair evaluation methodology to multi-domain settings."
+    },
+    {
+      "id": "flat_minima_ood_methods",
+      "label": "Flat-Minima Optimizers Applied to OOD and Domain Generalization",
+      "description": "Works that apply flatness-oriented optimization (SAM, SWA, SWAD, SAGM, Lookahead) specifically to OOD generalization and domain shift benchmarks, providing the most direct prior work for the RQ's experimental framing. SWAD (Cha et al.) and SAGM (Wang et al.) demonstrate that seeking flatter minima improves DomainBed OOD accuracy; SWAD finds SWA locates flatter minima than SAM on PACS. Kaddour et al. provide a direct SWA-vs-SAM comparison across 42 tasks. Schapiro & Zhao (a4002b51) study SAM variants on zero-shot OOD with theoretical bounds. Zhang et al. (cff1cdb0) demonstrate Lookahead for DG via CKA-measured diversity.",
+      "subtopic_ids": ["flat_minima_for_dg"],
+      "papers": [
+        "4d87a9f6a0bc9c67088193402813da5cba3f06c1",
+        "beb8c38446343797168a0c35af0e941799117867",
+        "cff1cdb0cb3a1b2d11e30f2ccb382ee173cb79fa",
+        "0265144c696bf9371a0a63ece590dd2403ee71be",
+        "a4002b51cf357bd741882062806b9204ce6e6a33",
+        "0da44af38f5bbe7c342dd0bf05988378fb5dc192",
+        "570b747a6b225022fdc004ca41f52e23bed9caad",
+        "1d83afc69d4b773c9ec808451f30f1157594a61e",
+        "5a41152cfa769414f9d54cf436b98f36ffb0b729",
+        "d931b38b84d2fca1371a5b643546872984b0cfc0"
+      ],
+      "core_papers": [
+        "4d87a9f6a0bc9c67088193402813da5cba3f06c1",
+        "beb8c38446343797168a0c35af0e941799117867",
+        "0265144c696bf9371a0a63ece590dd2403ee71be",
+        "a4002b51cf357bd741882062806b9204ce6e6a33"
+      ],
+      "consensus_findings": "Flat-minima optimizers consistently improve OOD accuracy on DomainBed-style multi-domain benchmarks: SWAD +3.6pp over ERM, SAGM +2.2pp, DGSAM +2.7pp. The flatness-DG link is supported by theoretical bounds (Cha et al. Theorems 1–2) and sharpness measurements (local flatness Fγ, surrogate gap h_ρ). Kaddour et al. find WASAM (averaging SAM iterates) achieves the lowest Hessian eigenvalue (λmax=117 vs SAM=237 vs SWA=265) and outperforms both SAM and SWA in 39/42 tasks.",
+      "open_debates": "SWAD reports SWA finds flatter minima than SAM on PACS (using local flatness Fγ), while Kaddour et al. report SAM finds flatter minima than SWA by Hessian eigenvalue on WRN/CIFAR-100. This contradiction reflects differences in flatness measure and benchmark—it is unresolved whether SAM or SWA is the flatter optimizer in the corruption-robustness (CIFAR-C) setting, which is exactly the RQ's empirical question. None of the flat-minima-for-DG works use CIFAR-C as their OOD benchmark; all use DomainBed (multi-domain) or ImageNet variants.",
+      "methodological_trends": "DomainBed protocol (ResNet-50, ImageNet-pretrained, 5 datasets, 3 repetitions). Sharpness measured by local flatness Fγ or surrogate gap h_ρ rather than Hessian eigenvalues. No work measures paired-image CKA stability alongside sharpness and OOD accuracy in the same experiment.",
+      "temporal_progression": "SWAD (2021) established the flat-minima-for-DG paradigm. SAGM (2023) showed SAM's surrogate gap is unreliable and added gradient matching. DGSAM (2025) identified 'fake flat minima' in multi-domain settings. Schapiro & Zhao (2024) brought zero-shot OOD benchmarks into the SAM comparison. No work combines sharpness measurement, SWA as a control, and CIFAR-C corruptions."
+    },
+    {
+      "id": "weight_averaging_flat_minima",
+      "label": "Stochastic Weight Averaging and Related Weight-Trajectory Methods",
+      "description": "SWA (Izmailov et al.) and related weight-averaging methods as flatness-oriented baselines distinct from the adversarial-perturbation mechanism of SAM. SWA centers the optimization trajectory within a wide flat basin via late-epoch averaging; SWAD makes this dense and overfit-aware. This theme covers SWA's original formulation and the empirical characterization of its geometry relative to SAM (same basin, flatter region; Kaddour et al. confirm SAM can be in the same or different basin).",
+      "subtopic_ids": ["weight_averaging"],
+      "papers": [
+        "b8989afff14fb630ca58b6afa917fb42574228ee",
+        "4d87a9f6a0bc9c67088193402813da5cba3f06c1",
+        "0265144c696bf9371a0a63ece590dd2403ee71be",
+        "1d83afc69d4b773c9ec808451f30f1157594a61e"
+      ],
+      "core_papers": [
+        "b8989afff14fb630ca58b6afa917fb42574228ee",
+        "4d87a9f6a0bc9c67088193402813da5cba3f06c1",
+        "0265144c696bf9371a0a63ece590dd2403ee71867"
+      ],
+      "consensus_findings": "SWA finds solutions in flatter loss basins than SGD via weight trajectory averaging, without additional gradient computations at test time. SWAD's dense + overfit-aware variant finds even flatter minima. Kaddour et al. confirm SWA and SGD occupy the same loss basin, while SAM may find a different basin (high-loss barrier observed between SAM and SGD/SWA solutions on some tasks), making them qualitatively different optimizers.",
+      "open_debates": "Whether SWA's flatness is comparable to SAM's remains benchmark-dependent (see flat_minima_ood_methods above). More importantly, SWA's 'flatness' arises from weight averaging across the optimization trajectory, which may carry ensemble-like averaging effects that are not captured by sharpness measures alone. This 'latent ensemble' effect is one reason the RQ explicitly declines to label SWA as 'flatness-only'.",
+      "methodological_trends": "Loss landscape visualization along random directions and linear interpolation paths. Hessian eigenvalues (power iteration) as the primary flatness metric. SWA evaluated primarily on clean i.i.d. test sets; OOD evaluation absent from Izmailov et al.'s original paper.",
+      "temporal_progression": "Izmailov et al. (2018) established SWA. SWAD (Cha et al. 2021) extended it to the DG setting. Kaddour et al. (2022) provided the most systematic multi-task comparison of SWA vs. SAM. No paper evaluates SWA on CIFAR-C corruption benchmarks with matched-protocol comparisons to SAM."
+    },
+    {
+      "id": "representation_similarity_tools",
+      "label": "Representation Similarity Analysis: CKA and Related Methods",
+      "description": "Papers that develop or apply tools for measuring neural network representation similarity. Kornblith et al. (2019) establish CKA as the state-of-the-art method for comparing neural network representations, proving that CCA and SVCCA cannot reliably identify corresponding layers in networks of different widths. Zhang et al. (cff1cdb0) use CKA to measure feature diversity under large-vs-small learning rates in a DG context, providing a precedent for CKA in OOD analysis. The RQ directly builds on Kornblith et al.'s linear CKA for paired-image representation stability.",
+      "subtopic_ids": ["representation_analysis"],
+      "papers": [
+        "726320cdbd04804ffa8f3a78c095bd1b55a2a695",
+        "cff1cdb0cb3a1b2d11e30f2ccb382ee173cb79fa"
+      ],
+      "core_papers": [
+        "726320cdbd04804ffa8f3a78c095bd1b55a2a695"
+      ],
+      "consensus_findings": "Linear CKA is the preferred representation similarity measure for deep networks: it achieves 99.3% layer-matching accuracy vs. 10.6% for CCA and 9.9% for SVCCA across 10 independently trained networks. CKA is invariant to isotropic scaling and orthogonal transformation but not to non-isotropic rescaling, which means the Dinh et al. reparametrization caveat partially applies. CKA applied to paired clean-vs-corrupted images (the RQ's paired-image variant) has not been used in prior work on SAM or SWA.",
+      "open_debates": "CKA collapses representation similarity to a scalar, losing information about which feature directions contribute. The RQ's paired-image CKA stability (CKA(ϕ(x), ϕ(corrupt(x)))) is a novel adaptation not studied in Kornblith et al. or any SAM/SWA paper; its correlation with OOD accuracy is the core empirical question.",
+      "methodological_trends": "Layer-by-layer similarity matrices (heatmaps). Linear and RBF kernel variants. Post-hoc analysis of trained models, not a training objective.",
+      "temporal_progression": "Kornblith et al. (2019) established CKA. Zhang et al. (2023, cff1cdb0) used CKA to measure feature diversity in a DG context. No prior work applies paired-image CKA stability as a diagnostic for SAM vs. SWA on corruption benchmarks."
+    }
+  ],
+  "cross_theme_bridges": [
+    {
+      "paper_id": "fba30c42c0920bd9590ddc274658c409938b2fb2",
+      "themes": ["sam_formulation_variants", "sam_mechanism_critique"],
+      "bridge_note": "SAM-ON is both a SAM variant (perturbs only normalization layers) and the most direct empirical challenge to the flatness explanation: it achieves higher generalization with higher measured sharpness, making it central to both the algorithmic variants theme and the mechanism critique theme."
+    },
+    {
+      "paper_id": "4d87a9f6a0bc9c67088193402813da5cba3f06c1",
+      "themes": ["flat_minima_ood_methods", "weight_averaging_flat_minima"],
+      "bridge_note": "SWAD extends SWA with dense overfit-aware averaging for domain generalization, making it simultaneously the key weight-averaging method applied to OOD and the strongest prior result in the flat-minima-for-DG theme."
+    },
+    {
+      "paper_id": "0265144c696bf9371a0a63ece590dd2403ee71be",
+      "themes": ["flat_minima_ood_methods", "weight_averaging_flat_minima"],
+      "bridge_note": "Kaddour et al. (When Do Flat Minima Optimizers Work?) provide the only systematic head-to-head SAM vs. SWA comparison with Hessian eigenvalue measurements across 42 tasks, bridging both the OOD application and weight-averaging geometry themes."
+    },
+    {
+      "paper_id": "cff1cdb0cb3a1b2d11e30f2ccb382ee173cb79fa",
+      "themes": ["flat_minima_ood_methods", "representation_similarity_tools"],
+      "bridge_note": "Zhang et al.'s Lookahead paper uses CKA to measure feature diversity under large learning rates in a domain generalization context, bridging the flat-minima-for-DG and representation analysis themes—the only prior work that combines both."
+    },
+    {
+      "paper_id": "b698dbfaf9b961502062cbfcbe05d319047d8495",
+      "themes": ["sam_formulation_variants", "sam_mechanism_critique"],
+      "bridge_note": "Andriushchenko & Flammarion is simultaneously the seminal reference for USAM (a SAM variant with unnormalized perturbation) and the canonical challenge to the flatness explanation, appearing in both the variant and critique literatures."
+    },
+    {
+      "paper_id": "a4002b51cf357bd741882062806b9204ce6e6a33",
+      "themes": ["sam_mechanism_critique", "flat_minima_ood_methods"],
+      "bridge_note": "Schapiro & Zhao (2024) empirically demonstrate SAM's OOD benefit while acknowledging that theory does not explain it, bridging the mechanism critique and OOD application themes and directly preceding the RQ's gap argument."
+    },
+    {
+      "paper_id": "58ab7d67f2eeb4d753cf443da3bccaeaa7897fde",
+      "themes": ["sam_formulation_variants", "sam_mechanism_critique"],
+      "bridge_note": "GSAM (Zhuang et al.) is both a SAM variant (adds surrogate-gap minimization) and a mechanistic argument that SAM's perturbed loss does not reliably minimize sharpness, central to both the variant and critique themes."
+    },
+    {
+      "paper_id": "1fae35d17aca0ec5ceb866824a17c14a6f6b0ba1",
+      "themes": ["sam_formulation_variants", "flatness_generalization_theory"],
+      "bridge_note": "ASAM addresses Dinh et al.'s reparametrization critique by introducing scale-invariant adaptive sharpness, bridging the SAM variants theme and the flatness theory debate."
+    }
+  ],
+  "peripheral_papers": [
+    {
+      "paper_id": "91bdfebd256720253d142dd703fe93957846530b",
+      "reason": "SAM for LoRA fine-tuning of LLMs (EFMLoRA) — NLP fine-tuning domain, no vision OOD or corruption benchmarks"
+    },
+    {
+      "paper_id": "9a900ead92e413f909a815e1991dbcedf1b4c1e4",
+      "reason": "SAM for offline reinforcement learning — RL domain, no image classification or representation analysis"
+    },
+    {
+      "paper_id": "9f260770917a1bb7e86b36cb465cb6c10abbb2cc",
+      "reason": "SAM in federated learning with gradient compression (FedSynSAM) — federated learning setting"
+    },
+    {
+      "paper_id": "627fcbbc030c7dd7c89457e436741ec79c5025f7",
+      "reason": "FedLESAM — federated learning setting, no CIFAR-C or representation stability"
+    },
+    {
+      "paper_id": "d931b38b84d2fca1371a5b643546872984b0cfc0",
+      "reason": "FedSAM/FedASAM — federated learning setting; Hessian methodology relevant but domain differs"
+    },
+    {
+      "paper_id": "1c032413f8c26ff693aca0d941ceba48a4711b6e",
+      "reason": "FedSAM/MoFedSAM — federated learning"
+    },
+    {
+      "paper_id": "744ef5b04a5322bb5f1c336755c0471e19c8e3ae",
+      "reason": "C-Flat for continual learning — continual learning domain"
+    },
+    {
+      "paper_id": "80f121d3d36bf4cf219f2b9856e13a04b2b7f210",
+      "reason": "MGSER-SAM for continual learning — continual learning domain"
+    },
+    {
+      "paper_id": "eb9eec791922d755667c0c7216f5c4d5135cb54e",
+      "reason": "SAM for adversarial robustness (PGD) — adversarial rather than corruption OOD; workshop paper"
+    },
+    {
+      "paper_id": "6175af271685e1beefd8b1e0398434275e1acdd7",
+      "reason": "DGS-MAML for meta-learning — meta-learning domain"
+    },
+    {
+      "paper_id": "edb93cd1046a923f465e17a3707176c6d0c8018b",
+      "reason": "GAQAT — quantization-aware DG training, tangential"
+    },
+    {
+      "paper_id": "6c895aa70c5649fce6abbd39d859ab12222be51b",
+      "reason": "MBCD — multi-modal DG, no CIFAR-C or SAM/SWA comparison"
+    },
+    {
+      "paper_id": "5a41152cfa769414f9d54cf436b98f36ffb0b729",
+      "reason": "GA-SAM — NLP tasks only, no vision OOD"
+    },
+    {
+      "paper_id": "aa5741c74b7fac10680c1cfbdd49d9ffb5751a68",
+      "reason": "Pre-training for robustness — no SAM or flatness connection"
+    },
+    {
+      "paper_id": "4fd04422b0f8745d941cd3c33dfe98da90a225c8",
+      "reason": "Bi-LoRA — LLM fine-tuning variant of SAM"
+    },
+    {
+      "paper_id": "154f74a36a8ead7c2cabbbfe31431edefbc9f6ae",
+      "reason": "GSAM convergence theory — peripheral theoretical analysis"
+    },
+    {
+      "paper_id": "efeaa77602c13e521e8359d2dad21228cac435f6",
+      "reason": "AdaSAM — NLP fine-tuning only"
+    },
+    {
+      "paper_id": "19fe3894ce5b0a0be8fc7a8e21afc67657d75915",
+      "reason": "Focal-SAM — long-tailed learning, not corruption OOD"
+    }
+  ],
+  "suggested_section_mapping": {
+    "02_related_work": [
+      "a2cd073b57be744533152202989228cb4122270a",
+      "1fae35d17aca0ec5ceb866824a17c14a6f6b0ba1",
+      "58ab7d67f2eeb4d753cf443da3bccaeaa7897fde",
+      "bf109c1cdab0c8d597081be6962ea5848fa06221",
+      "b698dbfaf9b961502062cbfcbe05d319047d8495",
+      "fba30c42c0920bd9590ddc274658c409938b2fb2",
+      "ad6a428ce6e834e194385052ada41d07d21b1809",
+      "07dbbb95eff2640e07ade6e42e666c14ae5d1d19",
+      "11adeccff9c777798482097a9bade806c027eeb6",
+      "a4002b51cf357bd741882062806b9204ce6e6a33",
+      "8ec5896b4490c6e127d1718ffc36a3439d84cb81",
+      "58123025178256279bb060ca5da971b62bc329ee",
+      "8f18c9da3d1763723c6ef8c3734d74db005d0cff",
+      "d8c0aabe41ec6036a2404cb2bfaea2a7d6424ae3",
+      "b4926d7efab904a97475f0fd53f62f9fe2a926b3",
+      "49b64383fe36268410c430352637ed23b16820c5",
+      "1eb7f46b1a0a7df823194d86543e5554aa21021a",
+      "6a5efb990b6558c21d9fdded4884c00ba152cb7c",
+      "aa12f44062c06f90526cb128f10e829846145b1f",
+      "4d87a9f6a0bc9c67088193402813da5cba3f06c1",
+      "beb8c38446343797168a0c35af0e941799117867",
+      "cff1cdb0cb3a1b2d11e30f2ccb382ee173cb79fa",
+      "0265144c696bf9371a0a63ece590dd2403ee71be",
+      "b8989afff14fb630ca58b6afa917fb42574228ee",
+      "726320cdbd04804ffa8f3a78c095bd1b55a2a695",
+      "0da44af38f5bbe7c342dd0bf05988378fb5dc192",
+      "570b747a6b225022fdc004ca41f52e23bed9caad",
+      "1d83afc69d4b773c9ec808451f30f1157594a61e"
+    ],
+    "03_method": [
+      "b8989afff14fb630ca58b6afa917fb42574228ee",
+      "726320cdbd04804ffa8f3a78c095bd1b55a2a695",
+      "a2cd073b57be744533152202989228cb4122270a",
+      "49b64383fe36268410c430352637ed23b16820c5",
+      "07dbbb95eff2640e07ade6e42e666c14ae5d1d19",
+      "8f18c9da3d1763723c6ef8c3734d74db005d0cff"
+    ]
+  }
+}

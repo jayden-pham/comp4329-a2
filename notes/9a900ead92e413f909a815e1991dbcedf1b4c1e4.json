@@ -1,0 +1,52 @@
+{
+  "paper_id": "9a900ead92e413f909a815e1991dbcedf1b4c1e4",
+  "title": "Enhancing Robustness of Offline Reinforcement Learning Under Data Corruption via Sharpness-Aware Minimization (Student Abstract)",
+  "authors": ["Xu, L.", "Chen, J."],
+  "year": 2025,
+  "venue": "AAAI Conference on Artificial Intelligence",
+  "publication_status_observed": "Accepted as Oral Presentation at AAAI 2026 Student Abstract and Poster Program (SAPP); arXiv preprint arXiv:2511.17568v1",
+  "main_claims": [
+    "Data corruption in offline RL creates sharp minima in the loss landscape, leading to poor generalization and policy degradation.",
+    "Applying SAM as a plug-and-play optimizer for the value function network in IQL and RIQL consistently improves performance under both random and adversarial data corruption.",
+    "SAM finds smoother reward surfaces in offline RL settings, visually confirmed through reward surface visualization."
+  ],
+  "methodology": "SAM is integrated as a wrapper optimizer replacing Adam for the value function (V-function) network in IQL and RIQL baselines. Experiments are conducted on three D4RL continuous control environments (halfcheetah, walker2d, hopper) under random and adversarial observation and mixture corruptions (30% corruption rate, 3 seeds). Ablation studies identify the V-function as the optimal application target.",
+  "key_results": [
+    "SAM raises average normalized score from 34.47 to 44.40 for IQL under random corruption, and from 22.45 to 36.03 under adversarial corruption.",
+    "SAM raises RIQL average from 33.97 to 39.47 under random corruption.",
+    "Applying SAM to V-function only (best configuration) yields average score of 29.03 vs baseline RIQL 26.03 in ablation."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "Experiments limited to D4RL continuous control; generalization to other offline RL settings unknown.",
+    "Student abstract format; limited methodological detail and theoretical justification.",
+    "ρ requires environment-specific tuning, limiting plug-and-play generalizability."
+  ],
+  "relevance_to_rq": "This paper applies SAM in offline RL to improve robustness under input corruption, paralleling the RQ's interest in SAM for OOD generalization. While the domain (RL) differs from image classification, the mechanism (SAM seeking flat loss minima to improve robustness to corrupted inputs) directly relates to the flatness-vs-robustness decomposition in the RQ.",
+  "key_quotes": [
+    {
+      "text": "We hypothesize this vulnerability arises because data corruption creates sharp, unreliable minima in the loss landscape.",
+      "page_approx": 1,
+      "context": "Motivating hypothesis for applying SAM to corrupted offline RL"
+    },
+    {
+      "text": "Our SAM-enhanced methods consistently and significantly outperform the original baselines.",
+      "page_approx": 1,
+      "context": "Main empirical result of the paper"
+    },
+    {
+      "text": "Visualizations of the reward surface confirm that SAM finds smoother solutions, providing strong evidence for its effectiveness in improving the robustness of offline RL agents.",
+      "page_approx": 1,
+      "context": "Visual evidence linking flatness to robustness under corruption"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "Offline Reinforcement Learning with Implicit Q-Learning",
+    "Towards Robust Offline Reinforcement Learning under Diverse Data Corruption",
+    "Sharpness-Aware Training for Free"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

@@ -1,0 +1,42 @@
+# ============================================================================
+# Literature-review pipeline (scripts/00_*.py through 07_*.py)
+# ============================================================================
+requests>=2.31.0
+pymupdf>=1.23.0
+
+# ============================================================================
+# Experiment pipeline (scripts/train.py, eval_ood.py, sharpness.py, cka.py,
+# aggregate.py). All run identical code across 3 target environments:
+#   1. Local Windows + RTX 3070 (primary author, Python 3.13)
+#   2. Local Linux/Windows + RTX 3060 (collaborator)
+#   3. Colab Pro (T4 / L4 / A100 depending on availability)
+# ============================================================================
+#
+# === STEP 1: install torch + torchvision (do this FIRST, separately) ===
+#
+# Choose ONE based on environment:
+#
+#   Local with NVIDIA GPU (any modern driver, Python 3.11 / 3.12 / 3.13):
+#     pip install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu124
+#
+#   If cu124 has no wheel for your Python version, try cu126:
+#     pip install --upgrade torch torchvision --index-url https://download.pytorch.org/whl/cu126
+#
+#   Colab Pro (do NOTHING — torch is preinstalled with CUDA support):
+#     # already available; verify with: python -c "import torch; print(torch.cuda.is_available())"
+#
+#   CPU-only (smoke testing, not for real runs):
+#     pip install --upgrade torch torchvision
+#
+# Verify torch sees CUDA:
+#   python -c "import torch; print(torch.__version__, torch.cuda.is_available(), torch.version.cuda)"
+# Expected on a GPU machine:
+#   2.5.x or 2.6.x or newer, True, 12.4 (or 12.6)
+#
+# === STEP 2: install the rest ===
+#   pip install -r requirements.txt
+#
+# ============================================================================
+pyyaml>=6.0
+matplotlib>=3.7
+numpy>=1.24

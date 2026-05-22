@@ -1,0 +1,57 @@
+{
+  "paper_id": "06bd069861fe1a35223b41404b82d9fd9b0f75c6",
+  "title": "Sharpness-Aware Pretraining Mitigates Catastrophic Forgetting",
+  "authors": ["Watts, I.", "Li, C.", "Goyal, S.", "Springer, J. M.", "Raghunathan, A."],
+  "year": 2026,
+  "venue": null,
+  "publication_status_observed": "arXiv preprint v1 (arXiv:2605.02105v1, 4 May 2026)",
+  "main_claims": [
+    "SAM pretraining consistently reduces catastrophic forgetting after fine-tuning on downstream tasks compared to AdamW, with up to 80% less forgetting at matched fine-tuning loss.",
+    "The learning-forgetting benefit of SAM grows with pretraining token budget and persists at matched pretraining loss, ruling out early-stopping as the explanation.",
+    "Implicit sharpness minimization via higher peak learning rates and shorter annealing periods yields similar learning-forgetting improvements without the compute overhead of SAM.",
+    "Applying SAM only during the learning-rate annealing phase recovers much of full-run SAM's benefit at roughly the annealing fraction in extra compute (~10%).",
+    "SAM reduces directional sharpness along the fine-tuning perturbation direction, and this reduction empirically upper-bounds and explains improved post-fine-tuning loss."
+  ],
+  "methodology": "The authors pretrain OLMo-style transformer models (20M–150M parameters) on 4B–192B DCLM-Baseline tokens using AdamW and SAM, then fine-tune on five datasets (StarCoder, GSM8K, StackMathQA, Tülu-3, MusicPile). They measure the learning-forgetting Pareto frontier by sweeping fine-tuning learning rates, the compression-forgetting tradeoff via 4-bit quantization, and sensitivity to Gaussian weight noise. At scale, they mid-train an OLMo-2-1B checkpoint for 50B tokens with SAM vs. AdamW and evaluate on four post-training datasets. Hessian directional curvature is measured to verify the sharpness explanation.",
+  "key_results": [
+    "SAM reduces StarCoder forgetting by 80% at matched fine-tuning loss for OLMo-60M at 192B tokens.",
+    "SAM mid-training of OLMo-2-1B reduces forgetting by 31% on MetaMath and 40% under 4-bit quantization vs. OLMo baseline.",
+    "SAM-pretrained checkpoints show reduced directional sharpness along the fine-tuning direction compared to AdamW, consistent with the quadratic forgetting approximation.",
+    "The advantage of SAM over AdamW grows from 12B to 192B pretraining tokens, and AdamW checkpoints become increasingly fragile at high token budgets.",
+    "Applying SAM only during WSD decay (10% of training steps) achieves similar learning-forgetting and compression-forgetting gains as full-run SAM."
+  ],
+  "evidence_strength": "mixed",
+  "limitations": [
+    "The quadratic Taylor approximation of forgetting becomes a loose upper bound at large token budgets and large fine-tuning learning rates, suggesting non-linear effects.",
+    "SAM with small batch size primarily reduces trace of Hessian rather than fine-tuning-directional curvature—the curvature reduction is endogenous to the (base, fine-tuning) pair, not a pure property of the base model.",
+    "Study focuses on language models; results may not transfer directly to computer vision settings such as CIFAR-C robustness."
+  ],
+  "relevance_to_rq": "Peripherally relevant to the RQ: this paper shows SAM produces flatter, more perturbation-robust models in a language modeling context, providing mechanistic evidence that SAM's sharpness reduction translates to robustness under parameter shifts. However, it focuses on catastrophic forgetting in LLMs, not on OOD visual corruption robustness or representation stability, so it maps to the sam_mechanism sub-topic rather than the core experiment.",
+  "key_quotes": [
+    {
+      "text": "SAM reduces StarCoder forgetting by 80% at matched fine-tuning loss, with degradation of +0.1 instead of +0.5.",
+      "page_approx": 4,
+      "context": "Main quantitative result on SAM's learning-forgetting improvement for OLMo-60M at 192B tokens"
+    },
+    {
+      "text": "the reduced sensitivity induced by SAM, in fact, arises from the flattening of the base model along the direction of fine-tuning, rather than from any reduction in the fine-tuning step size.",
+      "page_approx": 9,
+      "context": "Mechanistic explanation: SAM's benefit is attributable to directional sharpness reduction, not step-size effects"
+    },
+    {
+      "text": "SAM mid-training reduces catastrophic forgetting by 31% on MetaMath, 22% on StackMathQA, and 35% on Tülu-3, despite slightly worse base performance.",
+      "page_approx": 8,
+      "context": "Scale validation: SAM mid-training at 1B parameter scale reduces forgetting across multiple post-training datasets"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "Averaging Weights Leads to Wider Optima and Better Generalization",
+    "OLMo: Accelerating the Science of Language Models",
+    "Catastrophic forgetting in neural networks",
+    "Edge of Stability"
+  ],
+  "depth_recommendation": "supporting",
+  "confidence": "high",
+  "extraction_issues": "evidence_strength is mixed: main results are empirical comparisons (correlational), Hessian analysis provides mechanistic evidence (causal-ish), and quadratic approximation analysis is theoretical/demonstrative."
+}

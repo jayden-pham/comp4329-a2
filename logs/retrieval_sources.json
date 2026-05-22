@@ -1,0 +1,272 @@
+{
+  "a2cd073b57be744533152202989228cb4122270a": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2010.01412.pdf",
+    "id_check": "recall=1.00"
+  },
+  "b698dbfaf9b961502062cbfcbe05d319047d8495": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2206.06232.pdf",
+    "id_check": "recall=1.00"
+  },
+  "07dbbb95eff2640e07ade6e42e666c14ae5d1d19": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2211.05729.pdf",
+    "id_check": "recall=1.00"
+  },
+  "1fae35d17aca0ec5ceb866824a17c14a6f6b0ba1": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2102.11600.pdf",
+    "id_check": "recall=1.00"
+  },
+  "fba30c42c0920bd9590ddc274658c409938b2fb2": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2306.04226.pdf",
+    "id_check": "recall=1.00"
+  },
+  "8ec5896b4490c6e127d1718ffc36a3439d84cb81": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/1609.04836.pdf",
+    "id_check": "recall=1.00"
+  },
+  "58123025178256279bb060ca5da971b62bc329ee": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/1703.04933.pdf",
+    "id_check": "recall=1.00"
+  },
+  "8f18c9da3d1763723c6ef8c3734d74db005d0cff": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/1912.02178.pdf",
+    "id_check": "recall=1.00"
+  },
+  "d8c0aabe41ec6036a2404cb2bfaea2a7d6424ae3": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2001.00939.pdf",
+    "id_check": "recall=1.00"
+  },
+  "49b64383fe36268410c430352637ed23b16820c5": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/1903.12261.pdf",
+    "id_check": "recall=1.00"
+  },
+  "1eb7f46b1a0a7df823194d86543e5554aa21021a": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/1906.02530.pdf",
+    "id_check": "recall=1.00"
+  },
+  "6a5efb990b6558c21d9fdded4884c00ba152cb7c": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2007.01434.pdf",
+    "id_check": "recall=1.00"
+  },
+  "4d87a9f6a0bc9c67088193402813da5cba3f06c1": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2102.08604.pdf",
+    "id_check": "recall=1.00"
+  },
+  "beb8c38446343797168a0c35af0e941799117867": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2303.10353.pdf",
+    "id_check": "recall=1.00"
+  },
+  "b8989afff14fb630ca58b6afa917fb42574228ee": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/1803.05407.pdf",
+    "id_check": "recall=1.00"
+  },
+  "726320cdbd04804ffa8f3a78c095bd1b55a2a695": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/1905.00414.pdf",
+    "id_check": "recall=1.00"
+  },
+  "0265144c696bf9371a0a63ece590dd2403ee71be": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2202.00661.pdf",
+    "id_check": "recall=1.00"
+  },
+  "edb93cd1046a923f465e17a3707176c6d0c8018b": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2412.05551.pdf",
+    "id_check": "recall=1.00"
+  },
+  "9a900ead92e413f909a815e1991dbcedf1b4c1e4": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2511.17568.pdf",
+    "id_check": "recall=1.00"
+  },
+  "0da44af38f5bbe7c342dd0bf05988378fb5dc192": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2503.23430.pdf",
+    "id_check": "recall=0.88"
+  },
+  "627fcbbc030c7dd7c89457e436741ec79c5025f7": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2405.18890.pdf",
+    "id_check": "recall=1.00"
+  },
+  "ad6a428ce6e834e194385052ada41d07d21b1809": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2405.03676.pdf",
+    "id_check": "recall=1.00"
+  },
+  "a82ae40ecc5ea5e33b52c87c9464510cab7bf9d9": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2110.03141.pdf",
+    "id_check": "recall=1.00"
+  },
+  "5a41152cfa769414f9d54cf436b98f36ffb0b729": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2210.06895.pdf",
+    "id_check": "recall=1.00"
+  },
+  "b9af7e291f4ede06b251708f2477f2484b85e929": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2501.11584.pdf",
+    "id_check": "recall=1.00"
+  },
+  "1d83afc69d4b773c9ec808451f30f1157594a61e": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2501.08361.pdf",
+    "id_check": "recall=1.00"
+  },
+  "58ab7d67f2eeb4d753cf443da3bccaeaa7897fde": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2203.08065.pdf",
+    "id_check": "recall=1.00"
+  },
+  "c8f88063357e270fef070c6f19ff142ccc5cd10c": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2203.02714.pdf",
+    "id_check": "recall=0.86"
+  },
+  "efeaa77602c13e521e8359d2dad21228cac435f6": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2303.00565.pdf",
+    "id_check": "recall=1.00"
+  },
+  "8adf430deefe6af08b894d28399eb027c2e8e69e": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2304.14647.pdf",
+    "id_check": "recall=1.00"
+  },
+  "19fe3894ce5b0a0be8fc7a8e21afc67657d75915": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2505.01660.pdf",
+    "id_check": "recall=1.00"
+  },
+  "f86ed04b3613fdbc0a83ce86d7dbad75423a0f9e": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2503.02225.pdf",
+    "id_check": "recall=1.00"
+  },
+  "b4926d7efab904a97475f0fd53f62f9fe2a926b3": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2510.14231.pdf",
+    "id_check": "recall=1.00"
+  },
+  "eb9eec791922d755667c0c7216f5c4d5135cb54e": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2305.05392.pdf",
+    "id_check": "recall=1.00"
+  },
+  "6c895aa70c5649fce6abbd39d859ab12222be51b": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2511.20258.pdf",
+    "id_check": "recall=1.00"
+  },
+  "9f260770917a1bb7e86b36cb465cb6c10abbb2cc": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2602.11584.pdf",
+    "id_check": "recall=1.00"
+  },
+  "bf109c1cdab0c8d597081be6962ea5848fa06221": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2505.23866.pdf",
+    "id_check": "recall=1.00"
+  },
+  "570b747a6b225022fdc004ca41f52e23bed9caad": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2503.11078.pdf",
+    "id_check": "recall=1.00"
+  },
+  "cff1cdb0cb3a1b2d11e30f2ccb382ee173cb79fa": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2309.06337.pdf",
+    "id_check": "recall=1.00"
+  },
+  "6175af271685e1beefd8b1e0398434275e1acdd7": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2508.09418.pdf",
+    "id_check": "recall=1.00"
+  },
+  "a4002b51cf357bd741882062806b9204ce6e6a33": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2412.05169.pdf",
+    "id_check": "recall=1.00"
+  },
+  "154f74a36a8ead7c2cabbbfe31431edefbc9f6ae": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2409.09984.pdf",
+    "id_check": "recall=1.00"
+  },
+  "4fd04422b0f8745d941cd3c33dfe98da90a225c8": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2508.19564.pdf",
+    "id_check": "recall=1.00"
+  },
+  "91bdfebd256720253d142dd703fe93957846530b": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2508.00522.pdf",
+    "id_check": "recall=1.00"
+  },
+  "80f121d3d36bf4cf219f2b9856e13a04b2b7f210": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2405.09492.pdf",
+    "id_check": "recall=1.00"
+  },
+  "744ef5b04a5322bb5f1c336755c0471e19c8e3ae": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2404.00986.pdf",
+    "id_check": "recall=1.00"
+  },
+  "11adeccff9c777798482097a9bade806c027eeb6": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2210.01513.pdf",
+    "id_check": "recall=1.00"
+  },
+  "06bd069861fe1a35223b41404b82d9fd9b0f75c6": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2605.02105.pdf",
+    "id_check": "recall=1.00"
+  },
+  "1c032413f8c26ff693aca0d941ceba48a4711b6e": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2206.02618.pdf",
+    "id_check": "recall=1.00"
+  },
+  "ce871754f3ce42c507f4643082c17573509e54a6": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2403.12350.pdf",
+    "id_check": "recall=1.00"
+  },
+  "aa12f44062c06f90526cb128f10e829846145b1f": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2006.16971.pdf",
+    "id_check": "recall=1.00"
+  },
+  "613ce6b5cf9c5b7093582134631ef77f368a9067": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2501.12666.pdf",
+    "id_check": "recall=1.00"
+  },
+  "d931b38b84d2fca1371a5b643546872984b0cfc0": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/2203.11834.pdf",
+    "id_check": "recall=1.00"
+  },
+  "aa5741c74b7fac10680c1cfbdd49d9ffb5751a68": {
+    "label": "arxiv",
+    "url": "https://arxiv.org/pdf/1901.09960.pdf",
+    "id_check": "recall=1.00"
+  }
+}

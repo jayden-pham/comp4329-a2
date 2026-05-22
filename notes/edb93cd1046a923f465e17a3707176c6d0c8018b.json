@@ -1,0 +1,53 @@
+{
+  "paper_id": "edb93cd1046a923f465e17a3707176c6d0c8018b",
+  "title": "GAQAT: gradient-adaptive quantization-aware training for domain generalization",
+  "authors": ["Jiang, J.", "Meng, Y.", "Tang, C.", "Yu, H.", "Li, Q.", "Wang, Z.", "Zhu, W."],
+  "year": 2024,
+  "venue": "arXiv.org",
+  "publication_status_observed": "arXiv preprint arXiv:2412.05551v1",
+  "main_claims": [
+    "Directly applying DG-SAM methods (e.g. SAGM) to quantized models causes severe performance degradation (up to 28.36% drop at 4-bit on PACS) due to gradient conflicts between task loss and smoothness loss in quantizer scaling factors.",
+    "A 'gradient disorder' metric can detect when scaling factor gradients are inconsistently directed across training steps, indicating sub-optimal convergence.",
+    "GAQAT's dynamic freezing strategy—selectively freezing scaling factor task gradients based on gradient disorder—stabilizes training and recovers near-full-precision OOD generalization."
+  ],
+  "methodology": "SAGM's smoothness objective is incorporated into quantization-aware training by including scaling factors in the sharpness-aware perturbation. Gradient disorder is defined as the fraction of steps where gradient direction reverses sign. A dynamic algorithm selectively freezes scaling factor task gradients (gtask) for K steps when their disorder falls below threshold r. Experiments use LSQ-type QAT with ResNet-50 (MoCo-v2 pretrained) on PACS and DomainNet at 3-bit and 4-bit precision, following the DomainBed protocol.",
+  "key_results": [
+    "GAQAT 4-bit achieves 61.33% average test accuracy on PACS, outperforming LSQ (58.98%) and SAGM+LSQ (56.93%) by up to 4.5%.",
+    "GAQAT 4-bit on DomainNet achieves 40.74%, near the full-precision baseline of 40.95%.",
+    "Reverse freezing (freezing high-disorder scaling factors) decreases performance, validating the gradient disorder indicator."
+  ],
+  "evidence_strength": "demonstrative",
+  "limitations": [
+    "Only ResNet-50 is evaluated; generalizability to other architectures or higher-precision quantization is not studied.",
+    "Different domains in PACS show varying sensitivity to hyperparameters (freeze steps, threshold r), suggesting the method may need per-domain tuning.",
+    "The paper is an arXiv preprint without peer review."
+  ],
+  "relevance_to_rq": "Peripheral: the paper applies SAM-based flatness optimization in the quantization setting, with limited relevance to the RQ's central comparison of SAM vs. SWA on CIFAR-C. However, it demonstrates that gradient conflicts (related to competing optimization objectives in SAM) can undermine OOD generalization—consistent with the RQ's interest in understanding what drives SAM's OOD gains.",
+  "key_quotes": [
+    {
+      "text": "the average out-of-domain performance drops by 28.36% when quantized to 4 bits in PACS",
+      "page_approx": 1,
+      "context": "Quantitative evidence of performance degradation when naively applying DG-SAM to quantized models"
+    },
+    {
+      "text": "significant conflicts between task loss and smoothness loss induced by the gradient approximations cause the generalization ability of the trained model to degrade",
+      "page_approx": 2,
+      "context": "Core diagnostic finding: gradient conflicts between SAM's two objectives harm OOD generalization"
+    },
+    {
+      "text": "flatter minimum could lead to a smaller DG gap",
+      "page_approx": 1,
+      "context": "Motivation citing prior work connecting flatness to domain generalization gap"
+    }
+  ],
+  "related_work_mentioned": [
+    "Sharpness-aware gradient matching for domain generalization (SAGM, Wang et al.)",
+    "SWAD: Domain generalization by seeking flat minima (Cha et al.)",
+    "Sharpness-aware minimization (SAM, Foret et al.)",
+    "Surrogate gap minimization improves sharpness-aware training (GSAM, Zhuang et al.)",
+    "Towards efficient and scalable sharpness-aware minimization (LookSAM, Liu et al.)"
+  ],
+  "depth_recommendation": "peripheral",
+  "confidence": "high",
+  "extraction_issues": null
+}

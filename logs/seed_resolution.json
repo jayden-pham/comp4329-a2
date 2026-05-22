@@ -1,0 +1,146 @@
+[
+  {
+    "title": "Sharpness-Aware Minimization for Efficiently Improving Generalization",
+    "first_author_last": "Foret",
+    "year": 2021,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "a2cd073b57be744533152202989228cb4122270a"
+  },
+  {
+    "title": "Towards Understanding Sharpness-Aware Minimization",
+    "first_author_last": "Andriushchenko",
+    "year": 2022,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "b698dbfaf9b961502062cbfcbe05d319047d8495"
+  },
+  {
+    "title": "How Does Sharpness-Aware Minimization Minimize Sharpness?",
+    "first_author_last": "Wen",
+    "year": 2023,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "07dbbb95eff2640e07ade6e42e666c14ae5d1d19"
+  },
+  {
+    "title": "ASAM: Adaptive Sharpness-Aware Minimization for Scale-Invariant Learning of Deep Neural Networks",
+    "first_author_last": "Kwon",
+    "year": 2021,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "1fae35d17aca0ec5ceb866824a17c14a6f6b0ba1"
+  },
+  {
+    "title": "Normalization Layers Are All That Sharpness-Aware Minimization Needs",
+    "first_author_last": "Mueller",
+    "year": 2023,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "fba30c42c0920bd9590ddc274658c409938b2fb2"
+  },
+  {
+    "title": "On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima",
+    "first_author_last": "Keskar",
+    "year": 2017,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "8ec5896b4490c6e127d1718ffc36a3439d84cb81"
+  },
+  {
+    "title": "Sharp Minima Can Generalize For Deep Nets",
+    "first_author_last": "Dinh",
+    "year": 2017,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "58123025178256279bb060ca5da971b62bc329ee"
+  },
+  {
+    "title": "Fantastic Generalization Measures and Where to Find Them",
+    "first_author_last": "Jiang",
+    "year": 2020,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "8f18c9da3d1763723c6ef8c3734d74db005d0cff"
+  },
+  {
+    "title": "Relative Flatness and Generalization",
+    "first_author_last": "Petzka",
+    "year": 2021,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "d8c0aabe41ec6036a2404cb2bfaea2a7d6424ae3"
+  },
+  {
+    "title": "Benchmarking Neural Network Robustness to Common Corruptions and Perturbations",
+    "first_author_last": "Hendrycks",
+    "year": 2019,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "49b64383fe36268410c430352637ed23b16820c5"
+  },
+  {
+    "title": "Can You Trust Your Model's Uncertainty? Evaluating Predictive Uncertainty Under Dataset Shift",
+    "first_author_last": "Ovadia",
+    "year": 2019,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "1eb7f46b1a0a7df823194d86543e5554aa21021a"
+  },
+  {
+    "title": "In Search of Lost Domain Generalization",
+    "first_author_last": "Gulrajani",
+    "year": 2021,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "6a5efb990b6558c21d9fdded4884c00ba152cb7c"
+  },
+  {
+    "title": "SWAD: Domain Generalization by Seeking Flat Minima",
+    "first_author_last": "Cha",
+    "year": 2021,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "4d87a9f6a0bc9c67088193402813da5cba3f06c1"
+  },
+  {
+    "title": "Sharpness-Aware Gradient Matching for Domain Generalization",
+    "first_author_last": "Wang",
+    "year": 2023,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "beb8c38446343797168a0c35af0e941799117867"
+  },
+  {
+    "title": "Averaging Weights Leads to Wider Optima and Better Generalization",
+    "first_author_last": "Izmailov",
+    "year": 2018,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "b8989afff14fb630ca58b6afa917fb42574228ee"
+  },
+  {
+    "title": "Similarity of Neural Network Representations Revisited",
+    "first_author_last": "Kornblith",
+    "year": 2019,
+    "resolved": true,
+    "basis": "arxiv",
+    "reason": "cos=1.00",
+    "result_id": "726320cdbd04804ffa8f3a78c095bd1b55a2a695"
+  }
+]
